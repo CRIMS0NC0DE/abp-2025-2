@@ -13,3 +13,20 @@
 
 A aplicação organiza e apresenta os dados em uma interface limpa, permitindo que o usuário visualize informações de maneira clara, com filtros, seleções e consultas personalizadas. Dessa forma, torna-se possível acompanhar os parâmetros ambientais e hidrológicos sem a complexidade dos relatórios técnicos.
 </p>
+
+## FUNCIONALIDADES 💡
+
+<ul>
+ <li>
+  Exibição simplificada de dados limnológicos e metereológicos;
+ </li>
+ <li>
+  Filtros por período, tipo de dado e local de coleta;
+ </li>
+ <li>
+ Organização de informações de campanhas manuais e coletas automáticas do SIMA;
+ </li>
+ <li>
+  Visualização clara e acessível para pesquisadores, estudantes e demais interessados.
+ </li>
+</ul>
