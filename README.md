@@ -5,6 +5,7 @@
 <div align=center>
  <img src=assets/Logo.jpeg height=320px alt="Logo CrimsonCode.">
 </div>
+
 ## SOBRE O PROJETO 📕
 
 <p>
