@@ -10,7 +10,6 @@
 <h2 align="center">
   Aplicação Web para Visualização e Disseminação de Dados Limnológicos
 </h2>
-<hr style="border: 1px solid black; width: 80%;">
 
 ## SOBRE O PROJETO 📕
 
