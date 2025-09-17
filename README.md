@@ -40,7 +40,7 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
  </li>
 </ul>
 
-<h2 align="center" >REQUISITOS</h2>
+<h2 align="center" >BACKLOG DO PRODUTO</h2>
 
 ## REQUISITOS FUNCIONAIS: 
 
@@ -92,6 +92,22 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
   RP04: A aplicação deve utilizar containers independentes para o banco de dados, o back-end e o front-end.
  </li>
 </ul>
+
+## HISTÓRIAS DE USUÁRIOS
+
+## TECNOLOGIAS UTILIZADAS
+
+#### Backend
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+
+#### Frontend
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
 ## EQUIPE💻
 
