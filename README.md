@@ -1,7 +1,6 @@
 
-      <img src="assets/LogoFatec.png" alt="Fatec" height="80">
-      <h1>2º DSM FATEC/SP - Jacareí</h1>
-      <img src="assets/LogoInpe.png" alt="INPE" height="80">
+
+<h1 align="center">2º DSM FATEC/SP - Jacareí</h1>
   
 
 # CRIMSONCODE. 🟥
