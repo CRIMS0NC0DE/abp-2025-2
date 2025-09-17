@@ -6,7 +6,8 @@
  <img src=assets/Logo.jpeg height=320px alt="Logo CrimsonCode.">
 </div>
 
-<h2 align="center" >Aplicação Web para visualização e disseminação de dsdos limnológicos</h2>
+
+<h2 align="center" >Aplicação Web para visualização e disseminação de dados limnológicos</h2>
 
 ## SOBRE O PROJETO 📕
 
