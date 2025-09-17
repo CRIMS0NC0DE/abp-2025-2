@@ -113,7 +113,7 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 
 <br align="center" >
 
-| NOME              | FUNÇÂO        | GITHUB                                                    |
+| NOME              | FUNÇÃO        | GITHUB                                                    |
 |-------------------|---------------|-----------------------------------------------------------|
 | Márcio Bueno      | Scrum Master  | [MarcioBuenoo](https://github.com/MarcioBuenoo)           |
 | Vinicius Ledro    | Product Owner | [ViniciusLedro](https://github.com/ViniciusLedro)         |
