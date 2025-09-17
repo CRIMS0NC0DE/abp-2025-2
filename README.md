@@ -1,4 +1,16 @@
-<h1 align="center" >2º DSM FATEC/SP - Jacareí</h1>
+<table width="100%">
+  <tr>
+    <td align="left" width="20%">
+      <img src="assets/LogoFatec.png" alt="Fatec" height="60">
+    </td>
+    <td align="center" width="60%">
+      <h1>2º DSM FATEC/SP - Jacareí</h1>
+    </td>
+    <td align="right" width="20%">
+      <img src="assets/LogoInpe.png" alt="INPE" height="60">
+    </td>
+  </tr>
+</table>
 
 # CRIMSONCODE. 🟥
 
