@@ -92,3 +92,19 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
   RP04: A aplicação deve utilizar containers independentes para o banco de dados, o back-end e o front-end.
  </li>
 </ul>
+
+## EQUIPE💻
+
+<br align="center" >
+
+| NOME              | FUNÇÂO        | GITHUB                                                    |
+|-------------------|---------------|-----------------------------------------------------------|
+| Márcio Bueno      | Scrum Master  | [MarcioBuenoo](https://github.com/MarcioBuenoo)           |
+| Vinicius Ledro    | Product Owner | [ViniciusLedro](https://github.com/ViniciusLedro)         |
+| Leonardo Broinizi | Dev. Team     | [Leonardo-Broinizi](https://github.com/Leonardo-Broinizi) |
+| Bruno Mark        | Dev. Team     | [bruno-mark](https://github.com/bruno-mark)               |
+| Davi Snaider      | Dev. Team     | [davisnaider06](https://github.com/davisnaider06)         |
+| Henrique Pinho    | Dev. Team     | [rickshf](https://github.com/rickshf)                     |
+| Eric França       | Dev. Team     | [EricFranca96](https://github.com/EricFranca96)           |
+ 
+<br>
