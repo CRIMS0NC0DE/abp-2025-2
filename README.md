@@ -46,19 +46,32 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 
 <ul>
  <li>
-  RF01: Permitir aos usuários visualizar todos os paramêtros armazenados, filtrando por instituição, reservatório e período de tempo - em formato semelhante a um painel interativo;
+  RF-ABP01: Permitir aos usuários visualizar todos os paramêtros armazenados, filtrando por instituição, reservatório e período de tempo - em formato semelhante a um painel interativo;
  </li>
  <li>
-  RF02: Consultar e visualizar os dados no formato de tabelas;
+  RF-ABP02: Consultar e visualizar os dados no formato de tabelas;
  </li>
  <li>
-  RF03: Consultar e exportar os dados no formato CSV;
+  RF-ABP03: Consultar e exportar os dados no formato CSV;
  </li>
  <li>
-  RF04: Consultar e visualizar a localização dos dados em um mapa interativo;
+  RF-ABP04: Consultar e visualizar a localização dos dados em um mapa interativo;
  </li>
  <li>
-  RF05: Exibir os dados de séries temporais (paramêtros coletados pelo SIMA) em gráficos.
+   <li>
+  RF-BDR05: Implementar no Sistema filtros espaciais;
+ </li>
+   <li>
+  RF-BDR06: Implementar no Sistema cálculos de médias e outras estatísticas sobre níveis de carbono nos reservátórios;
+ </li>
+   <li>
+  RF-DWII07: Prototificar a aplicação no FIGMA;
+ </li>
+    <li>
+  RF-DWII08: Desenvolver Front-End;
+ </li>
+    <li>
+  RF-TPI09: Consultar e Analisar os dados em um Mapa Interativo;
  </li>
 </ul>
 
@@ -66,13 +79,27 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 
 <ul>
  <li>
-  RNF01: A usuabilidade será um requisito crítico, exigindo uma interface intuitiva, clara e de fácil navegação, mesmo para usuários sem conhecimento técnico aprofundado;
+  RNF-ABP010: A usuabilidade será um requisito crítico, exigindo uma interface intuitiva, clara e de fácil navegação, mesmo para usuários sem conhecimento técnico aprofundado;
  </li>
  <li>
-  RNF02: A aplicação deve apresentar desempenho otimizado, garantindo carregamento rápido dos dados;
+  RNF-ABP11: A aplicação deve apresentar desempenho otimizado, garantindo carregamento rápido dos dados;
  </li>
   <li>
-  RNF03: A interface deve seguir os padrões institucionais do INPE e a identidade visual definida pelo cliente.
+  RNF-ABP12: A interface deve seguir os padrões institucionais do INPE e a identidade visual definida pelo cliente.
+ </li>
+   <li>
+  RNF-BDR13: Melhorar a performance da aplicação utilizando índices nos campos mais consultados e procedures para operações complexas.
+ </li>
+   RF-EGS14: Elaborar Diagrama de Caso de Uso;
+ </li>
+   <li>
+  RF-EGS15: Elaborar Diagrama de Classes;
+ </li>
+   <li>
+  RF-EGS16: Elaborar Diagrama de Sequência;
+ </li>
+   <li>
+  RF-EGS17: Elaborar Documentação Caso de Teste;
  </li>
 </ul>
 
@@ -94,6 +121,14 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 </ul>
 
 ## HISTÓRIAS DE USUÁRIOS
+
+## SPRINT BACKLOG - SP1
+
+| Item | Descrição                        | Tipo de Requisito | Justificativa                                                                 |
+|------|----------------------------------|-------------------|-------------------------------------------------------------------------------|
+| RF-DWII07    | Prototipar aplicação no FIGMA    | Não Funcional     | Protótipo de interface, auxilia na definição de usabilidade e design         |
+|  RF-EGS14    | Elaborar Diagrama de Caso de Uso | Não Funcional     | Documento que define os fluxos de interação entre usuários e sistema         |
+| RF-DWII08    | Desenvolver Front-End            | Funcional          | Entrega funcional do sistema — implementação real da interface para o usuário |
 
 ## TECNOLOGIAS UTILIZADAS
 
