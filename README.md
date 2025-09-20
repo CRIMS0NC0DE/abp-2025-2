@@ -42,7 +42,7 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 
 <h2 align="center" >BACKLOG DO PRODUTO</h2>
 
-## REQUISITOS FUNCIONAIS: 
+## REQUISITOS FUNCIONAIS - RF: 
 
 <ul>
  <li>
@@ -74,7 +74,7 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
  </li>
 </ul>
 
-## REQUISITOS NÃO FUNCIONAIS:
+## REQUISITOS NÃO FUNCIONAIS - RNF:
 
 <ul>
  <li>
