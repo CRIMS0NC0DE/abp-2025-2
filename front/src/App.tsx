@@ -1,6 +1,8 @@
-export default function App() {
+import './styles/footer.css';
+import Footer from "./components/Footer";
 
-  return(
-    <div>oi</div>
-  )
+export default function App() {
+  return (
+    <Footer />   
+  );
 }

@@ -1,0 +1,36 @@
+:root {
+  --azul-base: #2864AD;
+}
+
+.footer-container {
+  background-color: var(--azul-base);
+  color: white;
+  padding: 1.25rem 1rem; /* Padding vertical para dar um respiro */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Centraliza o conteúdo em uma linha */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Garante que a tag <p> dentro do footer não tenha margens extras */
+.footer-container p {
+  margin: 0;
+}
+
+.footer-container a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline; /* O sublinhado como na imagem */
+  padding: 0 0.3rem; /* Um pequeno espaçamento lateral para o link */
+}
+
+.footer-container a:hover {
+  opacity: 0.8; /* Um efeito simples ao passar o mouse */
+}
