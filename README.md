@@ -57,7 +57,6 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
  <li>
   RF-ABP04: Consultar e visualizar a localização dos dados em um mapa interativo;
  </li>
- <li>
    <li>
   RF-BDR05: Implementar no Sistema filtros espaciais;
  </li>
