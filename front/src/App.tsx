@@ -1,19 +1,10 @@
-
 import { ExportCSV } from './pages/ExportCSV/ExportCSV'; 
+import './styles/footer.css';
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
   return (
-    <>
-      {/* Colocar Header e outras coisas */}
-      {/* Por exemplo: <Header /> */}
-      
-      <main>
-        <ExportCSV /> 
-      </main>
-      
-      {/*Footer */}
-    </>
+    <ExportCSV /> 
+    <Footer />   
   );
 }
-
-export default App;
