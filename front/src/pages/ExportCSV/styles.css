@@ -1,0 +1,71 @@
+/* Centraliza tudo e define a fonte padrão */
+.page-container {
+    display: flex;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Barras laterais azuis */
+.sidebar {
+    flex-basis: 60px; /* Largura da barra */
+    background-color: #1a3c91; /* Tom de azul similar ao da imagem */
+    flex-shrink: 0;
+}
+
+/* Área de conteúdo principal */
+.content-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fdfdfd; /* Fundo levemente off-white */
+}
+
+/* Estilo do título "Exportar CSV" */
+.title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Destaque azul para a palavra "CSV" */
+.title-highlight {
+    color: #1a3c91;
+    font-weight: bold;
+}
+
+/* A caixa principal de exportação */
+.export-box {
+    width: 250px;
+    height: 250px;
+    border: 2px dashed #a0b4e8; /* Borda tracejada azul claro */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f7ff; /* Fundo azul bem claro */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre a caixa */
+.export-box:hover {
+    background-color: #e9effc;
+    border-color: #1a3c91;
+}
+
+/* Estilo do ícone de download */
+.download-icon {
+    width: 100px; /* Defina a largura desejada */
+    height: auto; /* A altura se ajustará automaticamente */
+}
+
+/* Texto de instrução abaixo da caixa */
+.instruction-text {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #555;
+}
