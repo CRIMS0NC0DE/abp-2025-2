@@ -1,6 +1,6 @@
 import React from 'react';
-import govLogo from "../../../../assets/govLogo.png";
-import inpeLogo from "../../../../assets/inpeLogo.png";
+import govLogo from "../../../assets/govLogo.png";
+import inpeLogo from "../../../assets/LogoInpe.png";
 
 const Header: React.FC = () => {
   return (
