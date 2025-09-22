@@ -1,5 +1,5 @@
 
-import { ExportCSV } from './pages/ExportCSV/ExportCSV'; // 1. IMPORTE A PÁGINA
+import { ExportCSV } from './pages/ExportCSV/ExportCSV'; 
 
 function App() {
   return (
