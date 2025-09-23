@@ -1,0 +1,32 @@
+.card-container {
+  width: 250px;
+  height: 200px;
+  background-color: #e2e8f0; /* Um cinza claro similar à imagem */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 60px; /* Ajuste o tamanho conforme seus ícones */
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.card-label {
+  margin: 0;
+  font-family: 'Poppins', sans-serif; /* Usando a mesma fonte da outra página */
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #2d3748;
+}
