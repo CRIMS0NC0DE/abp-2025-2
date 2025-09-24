@@ -1,8 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-=======
 import '../styles/footer.css'; // <--- ADICIONE ESTA LINHA
->>>>>>> 82bad15 (feat: initialize front-end project with React, Vite, and TypeScript)
 
 const Footer: React.FC = () => {
   return (
