@@ -1,0 +1,33 @@
+idcampotabela;idsensor;nomecampo;rotulo;unidademedida;ordem
+1;\N;sonda_bateria;Bateria da PTT;V;26
+2;8;sonda_chl;Clorofila;ug/l;25
+3;10;sonda_DO;Conc. de DO;mg/l;20
+4;13;sonda_NH4;Conc. de NH4+;mg/l;22
+5;12;sonda_NO3;Conc. de NO3-;mg/l;23
+6;\N;sonda_cond;Condutividade;uS/cm;18
+7;\N;datahora;Data e horário;UTC;1
+8;1;dirvt;Direção do vento;°NV;2
+9;2;intensvt;Intensidade do vento;m/s;3
+10;11;sonda_pH;pH;\N;21
+11;10;sonda_DOsat;Porcentagem de DO;%;19
+12;6;pressatm;Pressão atmosférica;hPa;12
+13;7;radincid;Radiação incidente;W/m2;13
+14;7;radrefl;Radiação refletida;W/m2;14
+15;3;tempag1;Temp. da água 2m;°C;6
+16;3;tempag2;Temp. da água 5m;°C;7
+17;3;tempag3;Temp. da água 20m;°C;8
+18;3;tempag4;Temp. da água 40m;°C;9
+19;\N;sonda_temp;Temp. da sonda;°C;17
+20;3;tempar;Temp. do ar;°C;10
+21;9;sonda_turb;Turbidez;NTU;24
+22;4;ur;Umidade relativa do ar;%;11
+23;15;corr_norte;Vel. meridional da corrente;cm/s;15
+24;2;u_vel;Vel. zonal do vento;m/s;4
+25;15;corr_leste;Vel. zonal da corrente;cm/s;16
+26;2;v_vel;Vel. meridional do vento;m/s;5
+27;\N;sonda_bateria;Bateria da PTT;V;26
+28;8;sonda_chl;Clorofila;ug/l;25
+29;10;sonda_DO;Conc. de DO;mg/l;20
+30;13;sonda_NH4;Conc. de NH4+;mg/l;22
+31;12;sonda_NO3;Conc. de NO3-;mg/l;23
+32;\N;sonda_cond;Condutividade;uS/cm;18
