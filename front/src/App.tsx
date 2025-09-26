@@ -1,15 +1,13 @@
-import Header from "./components/Header";
+import { ExportCSV } from './pages/ExportCSV/ExportCSV'; 
+import './styles/footer.css';
 import Footer from "./components/Footer";
-import HomePage from "./pages/HomePage";
-
-
-
+import Header from './components/Header';
 export default function App() {
   return (
-    <>
+      <>
       <Header />
       <HomePage />
       <Footer />
-    </>
+    </> 
   );
 }

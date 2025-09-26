@@ -1,10 +1,10 @@
+// >>>>>>> 82bad15 (feat: initialize front-end project with React, Vite, and TypeScript)
+=======
 import React from 'react';
-// Caminhos corrigidos para as imagens
-import govLogo from "../assets/govLogo.png";
-import inpeLogo from "../assets/LogoInpe.png"; // Corrigido para o nome de arquivo correto
+import govLogo from "../../../assets/govLogo.png";
+import inpeLogo from "../../../assets/LogoInpe.png";
 
 const Header: React.FC = () => {
-  // O restante do seu código permanece o mesmo...
   return (
     <header>
       {/* NAVBAR SUPERIOR (branca) */}
@@ -128,7 +128,5 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: 16,
   },
 };
-
-
-// >>>>>>> 82bad15 (feat: initialize front-end project with React, Vite, and TypeScript)
+  
 export default Header;

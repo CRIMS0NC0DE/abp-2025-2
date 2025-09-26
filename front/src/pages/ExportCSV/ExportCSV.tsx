@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
-import downloadIcon from "../../assets/download-logo.png";
+import downloadIcon from "../../../../assets/download-logo.png";
 
 // --- DADOS MOCADOS
 const mockData = [
@@ -86,4 +86,5 @@ export const ExportCSV: React.FC = () => {
       <div className="sidebar right"></div>
     </div>
   );
+
 };

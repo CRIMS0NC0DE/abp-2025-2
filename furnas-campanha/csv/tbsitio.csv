@@ -1,0 +1,1216 @@
+idsitio;idreservatorio;nome;lat;lng;descricao
+2001;2;Dique - FL30;-22.51755556;-44.62452778;
+2002;2;FL40;-22.56458333;-44.59833333;
+2003;2;FL50;-22.532;-44.56394444;Barragem de Funil
+2004;2;Barragem;-22.53191667;-44.56438889;
+2005;2;Areias - Ribeirao de Santana;-22.61883333;-44.63183333;
+2006;2;Odilon - FL42;-22.57277778;-44.57608333;
+2007;2;1.500 m a jusante da barragem de Funil;-22.52777778;-44.57755556;
+2008;2;Montante da barragem na divisa RJ/SP;-22.52538889;-44.73447222;
+2009;2;Clube nautico de Resende;-22.529;-44.55044444;
+2010;2;FLFU1;-22.50933333;-44.62341667;Proximo ao Dique - FL30
+2011;2;Proximo ao FL42 - FLFU2;-22.57786111;-44.57086111;
+2012;2;FLFU3;-22.52802778;-44.55383333;Canal em frente a barragem, ~1.3 km
+2013;2;FLHS1;-22.51077778;-44.62447222;Proximo ao Dique - FL30
+2014;2;FLHS2;-22.59738889;-44.59405556;Rio Paraiba do Sul, proximo ao FL40
+2015;2;FLHS3;-22.52869444;-44.56266667;Proximo a montante da barragem, ~200 m
+2016;2;FLHS3A;-22.52844444;-44.56155556;Proximo a montante da barragem, FL50 (~200 m)
+2017;2;FLCOD1;-22.54019444;-44.65747222;Rio Paraiba do Sul - FL20
+2018;2;FLCOD2;-22.62127778;-44.63566667;Ribeirao Santana
+2019;2;FLCOD3;-22.59488889;-44.54852778;Ribeirao da Laje
+2020;2;FLCOD4;-22.56833333;-44.59325;Cachoeira do Roger, proximo ao FL40
+2021;2;FLSED1;-22.52591667;-44.54886111;Ponto proximo ao clube nautico de Resende
+2022;2;FLPFQ1;-22.51641667;-44.62197222;Proximo ao Dique - FL30
+2023;2;FLPFQ3A;-22.52819444;-44.56208333;Proximo a barragem, FL50 (~50m)
+2024;2;FLPFQ4;-22.60458333;-44.55269444;Ribeirao da Laje
+2025;2;BraÃ§o em frente a barragem;-22.36169444;-44.55538889;
+2026;2;Boia do INPE;-22.53233333;-44.56380556;
+2027;2;Perto da boia do INPE;-22.53647222;-44.56258333;
+2028;2;Boia do INPE;-22.53158333;-44.56358333;
+2029;2;Segunda boia do INPE a montante;-22.51369444;-44.63791667;
+2030;2;Dique - FL30;-22.51116667;-44.62672222;
+2031;2;BraÃ§o a vista da barragem;-22.53669444;-44.56236111;
+2032;2;Ponte da antiga estrada Rio-Sao Paulo;-22.62816667;-44.64208333;
+2033;2;Rio Paraiba do Sul a montante;-22.52522222;-44.73241667;
+2034;2;Jusante antes da cidade de Resende;-22.46547222;-44.47977778;
+2035;2;Clube Nautico de Resende (solo â€“ pasto);-22.52916667;-44.55083333;
+2036;2;Proximo ao dique (FL30) - FLHS1A;-22.50961111;-44.62369444;
+2037;2;Proximo a barragem (~200 m) - FLHS3B;-22.52902778;-44.56391667;
+2038;2;BraÃ§o proximo a boia do INPE - FLHS4;-22.53908333;-44.55805556;
+2039;2;Rio Paraiba do Sul (FL20) - FLCOD1;-22.5175;-44.69713889;
+2040;2;Clube Nautico - braÃ§o sul;-22.5285;-44.55536111;
+2041;2;Boia do INPE;-22.5325;-44.56097222;
+2042;2;Dique - FL30;-22.5145;-44.62330556;
+2043;2;Rio Paraiba do Sul, a montante;-22.52505556;-44.73283333;
+2044;2;Corrego Santana;-22.61802778;-44.63158333;
+2045;2;Confluencia Santana/Paraiba do Sul;-22.56505556;-44.59447222;
+2046;2;Proximo ao dique, FL30 - FLFU1A;-22.51086111;-44.62516667;
+2047;2;Ribeirao da Laje, proximo ao FL42 - FLFU2A;-22.58027778;-44.57341667;
+2048;2;Proximo a barragem, ~100m - FLHS3A;-22.52888889;-44.56475;
+2049;2;Rio Paraiba do Sul, FL20 - FLCOD1B;-22.53469444;-44.67247222;
+2050;2;Ribeirao Santana - FLCOD2;-22.62258333;-44.63711111;
+2051;2;Jusante da barragem no rio Paraiba do Sul - FLCOD4;-22.525;-44.73286111;
+2052;2;Clube Nautico de Resende (solo - pasto);-22.52916667;-44.55083333;
+2053;2;FL 60;-22.51447244;-44.57500227;Jusante da barragem
+2054;2;FL 50;-22.52807319;-44.56336956;Proximo a barragem
+2055;2;FL 40 ME;-22.56037682;-44.59408104;Confluencia Paraiba - 1o. Trib.- margem esquerda
+2056;2;FL 40 ME-CE;-22.56178648;-44.59424227;Confl. Paraiba - 1o.Trib.- entre margem esquerda e centro
+2057;2;FL 40 CE;-22.56403622;-44.59438158;Confluencia Paraiba - 1o.Trib.- centro
+2058;2;FL 40 MD-CE;-22.56545504;-44.59459142;Confl. Paraiba - 1o.Trib.- entre margem direita e centro
+2059;2;FL 40 MD;-22.56616921;-44.5947936;Confluencia Paraiba - 1o. Trib.- margem direita
+2060;2;FL 42;-22.57514997;-44.57092549;Intermediario 2o. Tributario
+2061;2;FL 48;-22.59495104;-44.55085207;Rio - 2o. Tributario
+2062;2;FL 34;-22.61575752;-44.62948287;Rio - 1o. Tributario
+2063;2;FL 30;-22.51620975;-44.62332168;Dique - coleta conjunta c/ COPPE/UFRJ
+2064;2;FL 31;-22.50956221;-44.62388417;Dique
+2065;2;FL 20b;-22.53554754;-44.66679688;Paraiba - Remanso
+2066;2;FL 51;-22.53463397;-44.56089835;Proximo a barragem - coleta conjunta com a equipe da COPPE/UFRJ
+2067;2;FL Boia 1;-22.53074463;-44.56243736;A 100m ao norte da boia do INPE
+2068;2;FL Boia 2;-22.53100817;-44.56301026;A 100m ao sul da boia do INPE
+2069;2;FL 30;-22.50938129;-44.6237777;Dique
+2070;2;FL 20;-22.53800401;-44.66645062;Rio Paraiba - Remanso 
+2071;2;FL 10;-22.5274155;-44.71793617;Rio Paraiba - Remanso a 800m do ponto original
+2072;2;FL 20;-22.53555736;-44.66717612;Rio Paraiba - Remanso 
+8001;8;Porto do Custodio;-13.8125;-48.33370972;
+8002;8;Ponte Velha;-14.51666641;-49.04238892;
+8003;8;Encontro dos rios Maranhao e Bagagem;-14.03011131;-48.45891571;
+8004;8;Rio Bagagem;-13.99197197;-48.32627869;PFQ4SM
+8005;8;Barra dos Macacos;-14.32913876;-48.33370972;
+8006;8;Porto do Custodio;-13.81191635;-48.33319473;PFQ1SM
+8007;8;Rio Maranhao em Frente ao Porto;-14.51669407;-49.04077911;PFQ2SM
+8008;8;Rio Tocantinzinho;-14.19805527;-48.27183151;PFQ6SM
+8009;8;Rio Maranhao;-14.53324986;-49.02288818;PFQ7SM
+8010;8;Rio Passa Tres;-14.47341633;-49.04672241;PFQ9SM
+8011;8;Ponte Niquelandia no rio Maranhao;-14.50069427;-49.02858353;PFQ10SM
+8012;8;Custodio;-13.8125;-48.33366776;Mesa 1
+8013;8;Custodio 2;-13.81338882;-48.33152771;Mesa 2
+8014;8;Corrego do Quati;-13.9020834;-48.3445549;Mesa 3
+8015;8;Pedra Branca;-13.89344406;-48.34358215;Mesa 4
+8016;8;Proximo ao MRN10;-14.50883333;-49.04791667;Mesa 5
+8017;8;Proximo ao PST10 - foz do rio Passa Tres;-14.49783333;-49.0295;Mesa 6
+8018;8;Confluencia dos rios Maranhao e das Alma;-14.53252778;-49.02305556;Mesa 7
+8019;8;Encontro dos rios Maranhao e Bagagem;-14.49783325;-49.02949905;F09SM
+8020;8;Rio Maranhao;-14.00138889;-48.42411111;F08SM
+8021;8;Encontro dos rios Maranhao e Bagaginho;-14.00138855;-48.42411041;F10SM
+8022;8;Rio Tocantinzinho;-13.92836111;-48.29630556;F11SM
+8023;8;Rio Maranhao / Rio dos Macacos;-13.99202824;-48.32627869;F12SM
+8024;8;Rio Passa Tres;-14.47302778;-49.04691667;F13SM
+8025;8;Porto do Custodio;-13.81222248;-48.33333206;F01SM
+8026;8;Rio Maranhao;-14.5007782;-49.02866745;F06SM
+8027;8;Rio Tocantinzinho;-13.92855549;-48.29639053;F11SM
+8028;8;Porto do Custodio - outro lado do canal;-13.81444454;-48.33638763;F14SM
+8029;8;Rio Tocantinzinho;-13.9509449;-48.30424881;F15SM
+8030;8;Rio Maranhao - outra margem do F06SM;-14.49638844;-49.03013992;F16SM
+8031;8;Custodio;-13.81277752;-48.33388901;
+8032;8;Jusante da barragem;-13.83166695;-48.30083466;
+8033;8;Porto da barragem;-13.82388878;-48.3133316;
+8034;8;Barragem;-14.00194454;-48.42388916;
+8035;8;Barragem;-13.82333374;-48.3133316;
+8036;8;Barragem;-13.82277775;-48.31305695;
+8037;8;Jusante da barragem;-13.83138847;-48.29639053;
+8038;8;Jusante - Ponte Antiga;-13.83138847;-48.20083237;
+8039;8;Ponte Velha - UruaÃ§u;-14.51861095;-49.04499817;
+8040;8;Ponte Velha - UruaÃ§u;-14.51861095;-49.04472351;
+8041;8;Ponte Velha - Paliteiro;-14.51666641;-49.04249954;
+8042;8;Ponte Velha;-14.51666641;-49.04222107;
+8043;8;Ponte Velha;-14.51694489;-49.04222107;
+8044;8;Ponte Velha;-14.51777744;-49.04111099;
+8045;8;Jusante da Ponte Velha;-14.32888889;-49.00611115;
+8046;8;Ponte Velha - terra firme - UruaÃ§u;-14.51527786;-49.35777664;
+8047;8;Rio Tocantins;-13.35611153;-48.1669426;
+8048;8;Rio Tocantins - margem;-13.35583305;-48.1669426;
+8049;8;Corrego do Quati;-13.90222263;-48.34472275;
+8050;8;Corrego do Quati;-13.90083313;-48.3441658;
+8051;8;Porto do Custodio;-13.81416702;-48.33361053;
+8052;8;Porto do Custodio;-13.81297207;-48.33405685;
+8053;8;Porto do Custodio - em terra firme;-13.81197262;-48.33411026;
+8054;8;Porto do Custodio - Enseada;-13.81236076;-48.33458328;
+8055;8;Porto do Custodio - margem oposta;-13.81400013;-48.33680725;
+8056;8;BGG20;-14.1246109;-48.28822327;
+8057;8;MRN40;-13.99847221;-48.39744568;
+8058;8;Jusante - saida da Turbina;-13.83127785;-48.30088806;
+8059;8;Ponte Velha - UruaÃ§u;-14.51827812;-49.04033279;
+8060;8;Rio das Almas - Montante;-14.66372204;-49.01427841;
+8061;8;Rio das Almas - Montante;-14.63544464;-49.02233505;
+8062;8;Barra do Olho D'agua;-14.43047237;-48.98152924;
+8063;8;Rio Maranhao;-14.97841644;-48.67491531;Rio Maranhao, montante da barragem, no cruzamento com a BR414 km 176, povoado de Sao Miguel do Quebra Linha
+8064;8;Rio Tocantins;-12.74377823;-48.25455475;Ponte sobre o Rio Tocantins, municipio de Sao Salvador, corredeira em baixo da ponte. Jusante de Serra da Mesa e Cana Brava
+8065;8;Rio Maranhao;-14.04163933;-48.44939041;
+8066;8;Rio Tocantinzinho;-13.95952797;-48.24616623;
+8067;8;Custodio;-13.81233311;-48.33338928;
+8068;8;Custodio;-13.81497192;-48.33719635;
+8069;8;Jusante na Ponte;-13.83183289;-48.29680634;
+8070;8;Rio Maranhao;-14.04161072;-48.44961166;
+8071;8;Proximo ao Custodio;-13.80844402;-48.33200073;
+8072;8;Boia do INPE;-13.84433365;-48.31611252;
+8073;8;Jusante - Cana Brava;-13.39700031;-48.14730453;
+8074;8;Olho D'agua;-14.4315834;-48.98199844;
+8075;8;Pedra Branca;-14.50002766;-49.02936172;
+8076;8;Pedra Branca;-14.4972496;-49.03022385;
+8077;8;Rio das Almas - corredeira;-14.69658375;-49.01077652;
+8078;8;Rio das Almas - Fazenda Jandira;-14.60644436;-49.04650116;
+8079;8;Olho D'agua;-14.4315834;-48.98197174;
+8080;8;Fazenda Julio Ortega;-14.50002766;-49.02933502;
+8081;8;Corrego do Areiao;-13.80211067;-48.32466507;
+8082;8;Rio Tocantinzinho;-14.2836113;-47.93722153;
+8083;8;Jusante da barragem;-13.83125019;-48.30097198;
+8084;8;Corrego da Bateinha;-13.77241707;-48.34144592;
+8085;8;Rio Maranhao;-14.58677769;-49.04355621;Proximo a confluencia com o Rio das Almas
+8086;8;Rio das Almas;-14.74219418;-49.0716095;
+8087;8;Rio Bagaginho;-14.56833363;-48.1586113;
+8088;8;Rio das Almas;-14.58677769;-49.04355621;Antes da confluencia com Rio Maranhao
+8089;8;Rio Maranhao;-14.00194454;-48.42416763;Sitio em Frente a Base 2
+8090;8;Cachoeira;-13.98827744;-48.34755707;
+8091;8;Tocantinzinho;-13.92836094;-48.29630661;
+8092;8;Barra do Macaco;-14.32905579;-49.0059166;
+8093;8;Rio Passa Tres;-14.47302818;-49.04689026;
+8094;8;Rio Maranhao;-14.53252792;-49.02305603;Proximo ao F07SM
+8095;8;Jusante da Barragem de Cana Brava;-13.35638905;-48.1669426;
+8096;8;Corrego da Bateinha;-13.76636124;-48.3409462;CODSM1
+8097;8;Corrego do Areiao;-13.79941654;-48.32511139;CODSM2
+8098;8;Rio das Almas;-14.69658375;-49.01080704;CODSM7 - ponte na GO 324
+8099;8;Rios Bagaginho - Maranhao;-13.9881115;-48.34766769;CODSM9 - Cachoeira (Rios Bagaginho/Maranhao)
+8100;8;Tocantinzinho - encontro com Rio Maranhao;-13.9325552;-48.29911041;CODSM10
+8101;8;Barra do Macaco;-14.328722;-49.00699997;CODSM11
+8102;8;Rio Passa Tres;-14.4729166;-49.04727936;CODSM12
+8103;8;Rio Maranhao - proximo ao F07SM;-14.53252792;-49.02305603;CODSM13
+8104;8;Jusante da Barragem de Cana Brava;-14.35638905;-48.1669426;CODSM14
+8105;8;Ponte Velha;-14.51777744;-49.3133316;
+8106;8;Ancoradouro Custodio;-13.81261158;-48.33375168;
+8107;8;Ponte Velha;-14.05627823;-49.04694366;
+8108;8;Serra da Mesa - solo;-13.74638844;-48.32138824;
+8109;8;Ancoradouro Custodio;-13.80822182;-48.33177948;
+8110;8;Imediatamente a montante da barragem;-13.83956814;-48.31035995;MRN 50
+8111;8;Montante da barragem;-13.82483006;-48.31158447;MRN 50 b - a montante da barragem, entre o embarcadouro da usina e a tomada de agua
+8112;8;Rio Bagagem;-14.07542992;-48.29726791;BGG 20
+8113;8;Ponto Serrinha;-14.02006721;-48.49903488;MRN 40
+8114;8;Proximo a foz do rio Passa Tres;-14.47345;-49.06874444;PST 10
+8115;8;Jusante da confluencia dos rios Maranhao e das Almas;-14.5148716;-49.04541016;MRN 10
+8116;8;MRN 10;-14.51536094;-49.04452594;
+8117;8;MRN 30;-14.12390804;-48.74478737;
+8118;8;MRN 40;-14.04617748;-48.48254085;
+8119;8;MRN 50;-13.82406839;-48.3129168;
+8120;8;MRN 55;-13.83080021;-48.3007759;
+8121;8;PST 10;-14.47196811;-49.07109786;
+8122;8;BGG 20;-14.07358099;-48.29829082;
+8123;8;Ponte Velha - UruaÃ§u;-14.51694444;-49.04222222;
+8124;8;Rio das Almas;-14.69658333;-49.01077778;Corredeira - montante
+8125;8;Fazenda da Jandira;-14.60644444;-49.0465;
+8126;8;Clube de Furnas;-13.79194444;-48.305;Proximo a barragem
+8127;8;MRN 55;-13.83197941;-48.30127651;Rio Tocantins a jusante da barragem
+8128;8;MRN 50;-13.8250151;-48.31034191;Reservatorio, a montante da barragem, entre o embarcadouro da usina e a tomada de agua
+8129;8;TCT 20;-13.98840029;-48.24694778;Reservatorio - rio Tocantinzinho
+8130;8;BGG 20;-14.08151829;-48.30370973;Reservatorio - rio Bagagem
+8131;8;MRN 40;-14.02776325;-48.52347218;Reservatorio - no local do Ponto Serrinha
+8132;8;MRN 30;-14.12744608;-48.74730563;Reservatorio - na confluencia com o rio Palmeira
+8133;8;PST 10;-14.47316931;-49.0688138;Reservatorio - proximo a foz do rio Passa Tres
+8134;8;MRN 10;-14.51507143;-49.04556603;Reservatorio - a jusante da confluencia dos rios Maranhao e das Almas
+8135;8;MRN 50;-13.82472059;-48.31066883;Reservatorio, a montante da barragem, entre o embarcadouro da usina e a tomada de agua
+8136;8;TCT 20;-14.08102092;-48.30366005;Reservatorio - rio Tocantinzinho
+8137;8;BGG 20;-13.98847223;-48.24691917;Reservatorio - rio Bagagem
+8138;8;MRN 30;-14.12777064;-48.74722836;Reservatorio - na confluencia com o rio Palmeira
+8139;8;MRN 10;-14.51533858;-49.04509059;Reservatorio - a jusante da confluencia dos rios Maranhao e das Almas
+10001;10;Entrada do Rio da Casca;-14.88786125;-55.78636169;Manso 03
+10002;10;Entrada do Rio da Casca II;-14.89225006;-55.78263855;Manso 04
+10003;10;Jusante da Ponte MT-020;-14.87522221;-55.49052811;PFQM3
+10004;10;Entrada do Rio da Casca;-14.88772202;-55.78633499;PFQM4
+10005;10;Rio dos Quilombos;-15.01197243;-55.72530365;PFQM5
+10006;10;Rio dos Quilombos;-15.00619411;-55.64961243;PFQM6
+10007;10;Marina do Altair;-14.95938873;-55.75616837;PFQM7
+10008;10;Rio da Casca;-14.92194462;-55.76422119;PFQM8
+10009;10;Rio Palmeira;-14.78683333;-55.59569444;Manso2
+10010;10;Rio dos Quilombos;-15.0125;-55.72619444;Manso 5
+10011;10;Entrada do Rio da Casca;-14.78683376;-55.5956955;Manso 05
+10012;10;Rio da Casca - Fazenda Minuza;-14.99869442;-55.65977859;Manso 03
+10013;10;Jusante da Ponte MT-020;-15.01249981;-55.72619629;Manso 01
+10014;10;Rio da Casca - Fazenda Minuza;-15.00052738;-55.65972137;Manso 03
+10015;10;Rio dos Quilombos;-15.01158333;-55.72463989;Manso 04
+10016;10;Entrada do Rio da Casca;-14.88769436;-55.78527832;Manso 05
+10017;10;Estreitamento Casca - Quilombo;-14.92083359;-55.75658417;Manso 07
+10018;10;Rio da Casca - Fazenda Minuza;-14.99666691;-55.65113831;Manso 09
+10019;10;Rio da Casca;-14.88827801;-55.77086258;Manso 10
+10020;10;Enseada - Barragem;-14.52611065;-49.14527893;
+10021;10;Ponte a Jusante da Barragem;-14.87138844;-49.79166794;
+10022;10;Entrada do rio Casca;-14.90916634;-49.76444626;
+10023;10;Serra da EsperanÃ§a;-14.96694469;-49.68777847;
+10024;10;Serra da EsperanÃ§a;-14.98444462;-49.67944336;
+10025;10;Enseada - Ancoradouro;-14.88861084;-49.80083466;
+10026;10;Entrada do Rio da Casca;-14.88777733;-55.7863884;
+10027;10;Entrada do Rio da Casca;-14.8922224;-55.78250122;
+10028;10;Entrada do Rio da Casca - estreito;-14.90916634;-55.76472092;
+10029;10;MRN30;-14.82805538;-55.67527771;
+10030;10;Palmeira - Fundao do BraÃ§o Norte;-14.78944397;-55.59555435;
+10031;10;Entrada do rio Palmeira - ponto da Peninsula;-14.81305599;-55.64194489;
+10032;10;MAN30;-14.82777786;-55.69166565;
+10033;10;Ponte Velha - proximo ao MAN30;-14.82777786;-55.69138718;
+10034;10;Rio da Casca;-15.00141621;-53.6566124;
+10035;10;Rio dos Quilombos;-15.01191711;-53.72636032;
+10036;10;Rio dos Quilombos;-15.01263905;-53.72566605;
+10037;10;Rio da Casca - Fazenda Minuza;-15.00141621;-53.65711212;
+10038;10;Barragem;-14.88869476;-53.78614044;
+10039;10;Rio Manso - Corredeira;-14.8265276;-55.35447311;
+10040;10;MT020 - apos a balsa;-14.87519455;-55.4905014;
+10041;10;Entrada do Rio da Casca;-14.83769417;-55.78627777;
+10042;10;Praia Marina do Altair;-14.95816708;-55.75569534;
+10043;10;Jusante - ~2 km da Barragem;-14.86527824;-55.80833435;
+10044;10;Jusante - ~500m da Barragem;-14.87150002;-55.79119492;
+10045;10;Pier Marina do Altair;-14.95811081;-55.75533295;
+10046;10;Praia Marina - Cerrado;-14.95849991;-55.75483322;
+10047;10;Rio Cuiaba;-15.36069489;-56.24783325;Nossa Senhora da Guia â€“ a 150 km a jusante da barragem de Manso
+10048;10;Rio Manso;-14.85247231;-55.89147186;Ponte jusante da barragem
+10049;10;Ponte Jusante da Barragem;-14.87191677;-55.79166794;
+10050;10;Ponta do Pier na Marina do Altair;-14.95811081;-55.75569534;
+10051;10;Rio Manso;-14.82522202;-52.35402679;Trecho de pedras grandes, montante do reservatorio (agua corrente)
+10052;10;Confluencia dos rios Manso-Palmeiras - reservatorio;-14.82038879;-55.63302612;
+10053;10;Boia do INPE;-14.87024975;-55.77088928;
+10054;10;Dique - reservatorio;-14.89019489;-55.78897095;
+10055;10;Rio da Casca;-15.00663853;-55.65016556;Rio da Casca - boca (reservatorio)
+10056;10;Pier Marina do Altair;-14.95816708;-55.75574875;
+10057;10;Rio da Casca;-15.17330551;-55.65016556;Rio da Casca - entrada, estreito de comunicaÃ§ao (reservatorio)
+10058;10;Marina do Altair;-14.95811081;-55.7547226;Marina do Altair - Chalana 1
+10059;10;Ponto do Gaucho;-14.86069489;-55.53730392;
+10060;10;Rio Palmeira;-14.79222202;-55.60733414;
+10061;10;Jusante da Usina;-14.87333298;-55.78610992;APMMC3
+10062;10;Rio dos Quilombos;-15.01519489;-55.73786163;
+10063;10;Rio da Casca;-14.98099995;-55.70502853;
+10064;10;Rio Manso â€“ Corrente Verde;-14.81972218;-55.35388947;APMMC6
+10065;10;Rio Palmeira;-14.76200008;-55.52836227;APMMC7 - ~8Km do MAN-10
+10066;10;Rio dos Quilombos;-15.14400005;-55.66702652;APMMC8
+10067;10;Rio da Casca;-15.06222248;-55.48027802;APMMC9 - Roncador
+10068;10;PoÃ§o Raso;-14.95852757;-55.7563324;PoÃ§o Raso a 4,5m da Marina do Altair
+10069;10;Marina do Altair;-14.95883369;-55.75485992;Agua 1
+10070;10;100 m da Barra de Sao Joaquim;-14.81750011;-55.69194412;MSO 5
+10071;10;Rio Quilombo;-15.08697796;-55.70249176;QLB 10
+10072;10;Rio da Casca - proximo a barragem;-14.93824863;-55.76634216;CSC 30
+10073;10;Proximo a barragem;-14.88591862;-55.7951355;MAN 40
+10074;10;Rio da Casca - proximo a confluencia com o corrego Sapozal;-15.02600833;-55.55251944;CSC 20
+10075;10;Na confluencia entre o rio da Casca e o rio Quilombo;-14.95714188;-55.72536087;CSC 25
+10076;10;A jusante da confluencia com o rio Palmeiras;-14.83723068;-55.70344543;MAN 30
+10077;10;A jusante da ponte da MT-020;-14.85951996;-55.54058075;MAN 20
+10078;10;Na regiao do rio Palmeiras;-14.79191875;-55.60169601;PLM 20
+10079;10;MAN 10;-14.80799902;-55.27705753;
+10080;10;MAN 20;-14.85744659;-55.53945404;
+10081;10;MAN 30;-14.84104743;-55.69846497;
+10082;10;MAN 40;-14.87276786;-55.77765663;
+10083;10;MAN 50;-14.87281166;-55.79275969;
+10084;10;PLM 10;-14.81347975;-55.64247229;
+10085;10;PLM 20;-14.78579067;-55.6012479;
+10086;10;QLB 10;-15.21487855;-55.64337841;
+10087;10;QLB 20;-14.96370631;-55.72022885;
+10088;10;CSC 10;-15.0618591;-55.48890112;
+10089;10;CSC 20;-15.02249442;-55.54959992;
+10090;10;CSC 25;-14.95504994;-55.71758388;
+10091;10;CSC 30;-14.93837397;-55.76545101;
+10092;10;MAN 30;-14.82777778;-55.69166667;
+10093;10;D3;-15.00141667;-53.65661111;
+10094;10;D4;-15.01263889;-55.72566667;
+10095;10;Rio da Casca;-15.00663889;-55.65016667;
+10096;10;Rio Quilombo;-15.06002778;-55.72541667;MANSO 4
+10097;10;Rio da Casca;-15.17330556;-55.65016667;MANSO 3
+10098;10;Marina do Altair;-14.63166667;-55.75666667;
+10099;10;MAN 50;-14.87183938;-55.79072608;Rio Manso, a jusante da barragem, debaixo da ponte da rodovia MT-351
+10100;10;MAN 40;-14.88598299;-55.79525754;Reservatorio, proximo a barragem
+10101;10;MAN 30;-14.84141625;-55.69873787;Reservatorio, a jusante da confluencia com o rio Palmeiras
+10102;10;CSC 30;-14.93876195;-55.76592871;Reservatorio, na regiao do rio da Casca, proximo a barragem
+10103;10;CSC 25;-14.96018448;-55.70379824;Reservatorio, na confluencia entre o rio da Casca e o rio Quilombo
+10104;10;QLB 20;-14.96681297;-55.72352631;Reservatorio, na regiao do rio Quilombo, proximo a confluencia com o ribeirao Bom Jardim
+10105;10;MAN 20;-14.85787945;-55.53980044;Reservatorio, a jusante da ponte da MT-020
+10106;10;CSC 20;-15.02319935;-55.55006579;Reservatorio, na regiao do rio da Casca, proximo a confluencia com o corrego Sapozal
+10107;10;QLB 10;-15.13812569;-55.67364225;Reservatorio, na regiao do rio Quilombo
+10108;10;PLM 20;-14.78617869;-55.60168753;Reservatorio, na regiao do rio Palmeiras
+10109;10;MAN 40;-14.88614281;-55.79470825;Reservatorio, proximo a barragem
+10110;10;CSC 25;-14.96020742;-55.70306357;Reservatorio, na confluencia entre o rio da Casca e o rio Quilombo
+10111;10;QLB 20;-14.96667094;-55.72399206;Reservatorio, na regiao do rio Quilombo, proximo a confluencia com o ribeirao Bom Jardim
+10112;10;MAN 20;-14.85955769;-55.54075563;Reservatorio, a jusante da ponte da MT-020
+10113;10;CSC 20;-15.02276442;-55.55131493;Reservatorio, na regiao do rio da Casca, proximo a confluencia com o corrego Sapozal
+10114;10;QLB 10;-15.13865589;-55.67465325;Reservatorio, na regiao do rio Quilombo
+10115;10;PLM 20;-14.78602413;-55.60153988;Reservatorio, na regiao do rio Palmeiras
+10116;10;200 m a montante da barragem de Manso;-14.87488889;-55.76925;
+10117;10;Forquilha entre Manso e Palmeiras;-14.82072222;-55.63686111;
+10118;10;Barragem;-14.88783333;-55.79552778;
+10119;10;Boia do INPE;-14.87494444;-55.76766667;
+10120;10;Ponte sobre o rio Cuiabazinho a 25 km a Jusante;-14.88127778;-55.89527778;
+10121;10;Proximo a Marina do Altair;-14.94830556;-55.75794444;
+10122;10;Rio Quilombo;-15.16975;-55.66844444;
+10123;10;Entrada do rio Casca;-15.00691667;-55.65002778;
+10124;10;Boia do INPE;-14.87405556;-55.76791667;
+10125;10;Boia do INPE;-14.87383333;-55.77133333;
+10126;10;Entrada do rio Casca;-14.88841667;-55.78880556;Proximo a barragem - MANFU5
+10127;10;MANFU7A;-14.92222222;-55.75636111;Rio Casca
+10128;10;MANFU8;-14.809;-55.65066667;Entrada do rio Palmeiras
+10129;10;MANFU9;-14.83625;-55.71136111;Rio Manso - entrada do bra?o da pousada Jussara
+10130;10;Pousada Remanso;-14.83144444;-55.01194444;
+10131;10;Pousada Remanso;-14.82977778;-55.01194444;
+10132;10;APMHS1;-14.01444444;-55.01277778;Proximo a barragem, ~2000 m
+10133;10;APMHS2;-14.94541667;-55.74625;Meio do canal do rio Casca - em frente a Marina do Altair
+10134;10;APMHS3;-14.81516667;-55.6485;Rio Palmeiras
+10135;10;APMCOD1;-14.01361111;-55.35802778;Rio Manso - corrente verde
+10136;10;APMCOD2;-14.76352778;-55.00861111;Rio Palmeiras
+10137;10;APMCOD3;-15.00083333;-55.48972222;Rio Casca
+10138;10;APMCOD4;-15.16916667;-55.66805556;Rio dos Quilombos
+10139;10;APMCOD6;-14.01083333;-55.89522222;Jusante - ponte sobre o rio Cuiabazinho
+10140;10;APMCOD7;-15.00083333;-55.01333333;Ribeirao Bom Jardim
+10141;10;APMCOD8;-14.01611111;-55.01361111;Ribeirao Conceicao
+10142;10;APMCOD9;-14.01277778;-55.01027778;Rio do Almo
+10143;10;APMCOD10;-14.01305556;-55.01111111;Corrego S?o Joaquim
+10144;10;APMPFQ6;-14.86891667;-55.76116667;MAN40, ~1 km da barragem
+10145;10;APMPFQ7;-14.8805;-55.79413889;Proximo a barragem
+10146;10;APMPFQ8;-14.87183333;-55.77886111;Proximo a barragem, ~200 m
+10147;10;APMPFQ8';-14.87188889;-55.77916667;Proximo a barragem, ~200 m
+10148;10;100 m da Pousada Remanso;-14.82972222;-55.71916667;Solo com vegetaÃ§ao de cerrado
+10149;10;5m da Pousada Remanso;-14.83;-55.72027778;Solo com vegetaÃ§ao de pasto
+10150;10;Boia do INPE - APMHS1A;-14.86955556;-55.76955556;
+10151;10;Rio Palmeiras - APMHS3;-14.81472222;-55.6475;
+10152;10;Rio Manso (Corrente Verde) - APMCOD1;-14.823;-55.36672222;
+10153;10;Rio Palmeiras - APMCOD2;-14.7615;-55.52847222;
+10154;10;Rio Casca - APMCOD3;-14.79891667;-55.64480556;
+10155;10;Rio Quilombo - APMCOD4;-14.88744444;-55.77061111;
+10156;10;Jusante a ~500 m da barragem;-15.06680556;-55.47572222;Ponte rio Manso - APMCOD6
+10157;10;Ribeirao Bom Jardim - APMCOD7;-15.16122222;-55.67036111;
+10158;10;Rio do AlmoÃ§o - APMCOD9;-15.055;-55.82416667;
+10159;10;Corrego Sao Joaquim - APMCOD10;-14.96833333;-55.82861111;
+10160;10;Rio Palmeiras (reservatorio) - APMCOD11;-14.76472222;-55.62502778;
+10161;10;Boia do INPE - APMCOD12;-14.79691667;-55.67066667;
+10162;10;Rio Palmeiras - APMPFQ9;-14.8145;-55.64194444;
+12125;12;Jusante;-18.40475082;-48.10438919;ITCOD4B
+10163;10;Meio do canal do rio Casca;-14.94541667;-55.77958333;Em frente a Marina do Altair - APMPFQ10
+10164;10;Entre a pousada Remanso e a barragem;-14.84294444;-55.70777778;
+10165;10;Boia do INPE;-14.86941667;-55.76994444;
+10166;10;A 2 km da Marina do Altair;-14.93725;-55.75869444;
+10167;10;Boia do INPE, proximo a barragem;-14.87369444;-55.77077778;
+10168;10;Rio Manso, a montante;-14.85275;-55.42888889;
+10169;10;Confluencia dos rios Manso e Palmeiras;-14.82036111;-55.63302778;
+10170;10;Marina do Altair;-14.93130556;-55.76138889;
+10171;10;Rio Casca, a montante;-15.16091667;-55.671;
+10172;10;Ponte a 500 m a jusante da barragem de Manso;-14.87194444;-55.79166667;
+10173;10;Segunda ponte sobre o rio Manso;-14.85225;-55.89222222;17 km a jusante da barragem
+10174;10;Remanso em frente a pousada;-14.84719444;-55.71069444;
+10175;10;Baia Remanso;-14.84625;-55.71286111;
+10176;10;Em frente a Marina do Altair (2,87km);-14.85897222;-55.80911111;
+10177;10;Enseada Remanso;-14.84655556;-55.71566667;
+10178;10;Corrego Zarraia, a jusante da barragem;-14.84322222;-55.80844444;
+10179;10;Ponte do Genesio sobre o rio Manso, a 13,9km a jusante da barra;-14.85183333;-55.90863889;
+10180;10;150m a jusante da saida das turbinas;-14.87188889;-55.78688889;
+10181;10;2,85km a jusante da barragem;-14.85894444;-55.80911111;
+10182;10;Confluencia dos rios Manso e Palmeiras;-14.82019444;-55.63602778;
+10183;10;Rio Manso, a montante;-14.82563889;-55.35413889;
+10184;10;Confluencia dos rios Manso e Palmeiras;-14.82022222;-55.636;
+10185;10;Rio Casca, ~3km da Marina do Altair - MANFU7A;-14.89191667;-55.76333333;
+10186;10;Entrada do rio Palmeiras, MANFU8A;-14.81208333;-55.56125;
+10187;10;Meio do canal do Rio da Casca, ~3km da Marina do Altair - APMHS;-14.94155556;-55.76344444;
+10188;10;Proximo a barragem, montante ~40m;-14.87072222;-55.78375;
+10189;10;Rio Manso (corrente verde) - APMCOD6;-14.82;-55.36666667;
+10190;10;Rio Casca - APMCOD9;-15.04;-55.51;
+10191;10;Jusante a ~500m da barragem (ponte Rio Manso) - APMCOD12;-14.86733333;-55.80052778;
+10192;10;Rio do AlmoÃ§o - APMCOD14;-14.77166667;-55.62888889;
+10193;10;Meio do canal do rio Casca, ~3km da Marina do Altair - APMPFQ10;-14.92488889;-55.76344444;
+10194;10;MAN 50;-14.8709483;-55.78983273;Rio Manso, a jusante da barragem, debaixo da ponte da rodovia MT-351
+10195;10;MAN 40;-14.88652683;-55.79392855;Reservatorio de Manso, proximo a barragem
+10196;10;MAN 30 ME;-14.85607228;-55.67568093;Reservatorio de Manso, a jusante da confluencia com o rio Palmeiras - margem esquerda
+10197;10;MAN 30 ME-CE;-14.84906443;-55.68153171;Reservatorio de Manso, a jusante da confluencia com o rio Palmeiras - entre margem esquerda e calha central
+10198;10;MAN 30 CE;-14.83980024;-55.68960736;Reservatorio de Manso, a jusante da confluencia com o rio Palmeiras - calha central
+10199;10;MAN 30 MD-CE;-14.83381653;-55.69441966;Reservatorio de Manso, a jusante da confluencia com o rio Palmeiras - entre margem direita e calha central
+10200;10;MAN 30 MD;-14.82969173;-55.69869092;Reservatorio de Manso, a jusante da confluencia com o rio Palmeiras - margem direita
+10201;10;CSC 30;-14.9374572;-55.76552114;Reservatorio de Manso, na regiao do rio da Casca, proximo a barragem
+10202;10;CSC 25;-14.9593478;-55.70308172;Reservatorio de Manso, no rio da Casca
+10203;10;QLB 20;-14.96677999;-55.72266534;Reservatorio de Manso, na regiao do rio Quilombo, proximo a confluencia com o ribeirao Bom Jardim
+10204;10;MAN 20;-14.85666133;-55.53879102;Reservatorio Manso, a jusante da ponte da MT-020
+10205;10;CSC 20;-15.02151156;-55.55066756;Reservatorio de Manso, na regiao do rio da Casca, proximo a confluencia com o corrego do Sapozal
+10206;10;QLB 10b;-15.13718548;-55.67241426;Reservatorio de Manso, 10 km a jusante da confluencia dos rios Lagoinha e Cachoeirinha
+10207;10;PLM 20;-14.78513513;-55.60102962;Reservatorio de Manso, na regiao do rio Palmeiras
+12081;12;Anonimo;-18.24116707;-48.78513718;
+10208;10;MAN 40 - Boia 1;-14.87221507;-55.76966643;Reservatorio de Manso, proximo a barragem
+10209;10;BÃ³ia 2;-14.87163629;-55.77130549;Reservatorio de Manso, proximo a boia do INPE
+10210;10;BÃ³ia 3;-14.87118196;-55.77424503;Reservatorio de Manso, proximo a boia do INPE
+12001;12;Canal do Pirapetinga;-18.35452843;-48.53541565;ITPFQ1
+12002;12;Grota do rio Pirapetinga;-18.32649994;-48.5265007;ITPFQ2
+12003;12;Corredeira do rio Araguari;-18.39652824;-48.60863876;ITPFQ3
+12004;12;Grota do rio Pirapetinga;-18.29280472;-48.86016846;ITPFQ4
+12005;12;Grota da Pousada Recanto de Itumbiara;-18.31458282;-48.0348053;ITPFQ5
+12006;12;Paranaiba;-18.35452843;-48.35208511;ITPFQ1A
+12007;12;Paranaiba;-18.34675026;-48.35699844;ITPFQ2A
+12008;12;Ponto no rio Piracanjuba;-18.14624977;-48.85997391;ITPFQ6
+12009;12;Ribeirao da Cachoeira;-18.43027687;-48.83569336;ITPFQ8
+12010;12;Rio Paranaiba;-18.31008339;-48.5905571;ITPFQ9
+12011;12;Rio Paranaiba;-18.31083298;-48.58672333;ITPFQ10
+12012;12;Rio Araguari, Mancha Crespa;-18.57916641;-48.53069305;ITPFQ11
+12013;12;Rio Araguari, Mancha Lisa;-18.57916641;-48.53069305;ITPFQ12
+12014;12;Rio das Antas;-18.24252701;-48.99813843;ITPFQ13
+12015;12;Rio Jordao;-18.4252224;-48.1202507;ITPFQ15
+12016;12;Rio Araguari;-18.64036179;-48.43733215;ITPFQ16
+12017;12;Proximo a pousada Tucunare;-18.3734169;-48.80016708;ITPFQ14
+12018;12;Rio Paranaiba - grota apos a ponte;-18.32652855;-48.52316666;ITFU01
+12019;12;Canal do Paranaiba;-18.35508347;-48.53552628;ITFU02
+12020;12;Corredeira do rio Araguari;-18.40183258;-48.61041641;ITFU04
+12021;12;Rio Corumba - sitio ilha da Gata;-18.29238892;-48.85961151;ITFU05
+12022;12;Rio Corumba - ilha do Tancredo;-18.29094505;-48.87522125;ITFU06
+12023;12;Grota da Pousada Recanto de Itumbiara;-18.31458282;-48.03475189;ITFU07
+12024;12;Grota da Pousada Recanto de Itumbiara;-18.30986023;-48.02866745;ITFU08
+12025;12;Barragem proximo ao IT-010 margem leste;-18.39075089;-49.07110977;ITFU09
+12026;12;Barragem proximo ao IT-010 margem oeste;-18.43530464;-49.06547165;ITFU10
+12027;12;Rio Corumba - ilha do Tancredo - margem leste;-18.30641747;-48.87758255;ITFU6A
+12028;12;Rio Corumba - ilha do Tancredo - margem oeste;-18.29958344;-48.87913895;ITFU5A
+12029;12;Rio Paranaiba - proximo ao IT-050 - margem oeste;-18.34497261;-48.54100037;ITFU01
+12030;12;Rio Paranaiba - proximo ao IT-050 - margem leste;-18.35499954;-48.53552628;ITFU02
+12031;12;Rio Araguari - leste;-18.39652824;-48.60863876;ITFU03
+12126;12;Jusante;-18.40475082;-48.10383224;ITCOD4C
+12032;12;Rio Araguari - oeste;-18.39652824;-48.60863876;ITFU04
+12033;12;Proximo a pousada Lago das Brisas;-18.25944519;-48.90555573;ITFU12
+12034;12;Ponte sobre o reservatorio de Itumbiara, na rodovia GO 139;-18.32827759;-48.56441498;
+12035;12;Montante de Itumbiara;-18.42308333;-48.06686111;Rio Parnaiba no cruzamento com BR050
+12036;12;Confluencia dos Rios Araguari, Uberabinha e Rio das Pedras;-18.59561157;-48.53091812;
+12037;12;BraÃ§o da Ponte;-18.32705498;-48.52338791;
+12038;12;BraÃ§o da Ponte;-18.33113861;-48.52524948;
+12039;12;BraÃ§o da Ponte;-18.33669472;-48.52883148;
+12040;12;BraÃ§o da Ponte;-18.34616661;-48.53722382;BraÃ§o da Ponte na vizinhanÃ§a do IT50
+12041;12;BraÃ§o do Araguari;-18.37958336;-48.6162796;BraÃ§o do Araguari na vizinhanÃ§a do IT40
+12042;12;Ilha do Carneiro;-18.30430603;-48.94874954;Ilha do Carneiro perto do IT30
+12043;12;Baia do rio das Antas;-18.33577728;-48.90139008;Baia do rio das Antas perto do IT30
+12044;12;Pousada Recanto de Itumbiara;-18.311306;-49.03297043;
+12045;12;Pousada Recanto de Itumbiara;-18.30905533;-49.0284462;
+12046;12;Pousada Recanto de Itumbiara;-18.31258392;-49.0340004;
+12047;12;BraÃ§o do Corumba;-18.14752769;-48.69836044;ITB35
+12048;12;Entrada do Rio Piracanjuba;-18.21013832;-48.80611038;
+12049;12;Barragem;-18.39302826;-49.07164001;IT10
+12050;12;Enseada do Bambu;-18.33072281;-49.05708313;
+12051;12;Riacho da Cachoeira;-18.45574951;-48.82602692;
+12052;12;Jusante da Usina Itumbiara;-18.4046669;-49.10438919;
+12053;12;Rio Paranaiba;-18.4197216;-49.19180679;Ponte da BR452
+12054;12;Jusante da represa de Cachoeira Dourada;-18.49180603;-49.51752853;Jusante de Itumbiara
+12055;12;ITB35;-18.14577866;-48.70333481;
+12056;12;Rio Piracanjuba;-18.19913864;-48.81475067;
+12057;12;Reservatorio a deriva;-18.3817215;-49.03872299;
+12058;12;Hotel Lagoa das Brisas;-18.26113892;-48.90688705;
+12059;12;Rio Paranaiba;-18.40488815;-49.10438919;Margem a jusante lado turbinado
+12060;12;Rio Paranaiba em Itumbiara - jusante;-18.4288063;-49.20466614;
+12061;12;Rio Paranaiba a jusante de Itumbiara;-18.4197216;-49.19189072;
+12062;12;Rio Paranaiba margem direita jusante de Itumbiara;-18.41844368;-49.18877792;
+12063;12;Rio Paranaiba;-18.29933357;-48.27822113;ITB70
+12064;12;Ponte da BR050 - montante;-18.42461205;-48.06622314;
+12065;12;Rio Verissimo - reservatorio;-18.32244492;-48.35477829;
+12066;12;Ilhas leito do rio Paranaiba - reservatorio;-18.34197235;-48.63850021;ITB40
+12067;12;Ponte no ITB50 - reservatorio;-18.35000038;-48.54841614;
+12068;12;Ponte no ITB50 - reservatorio;-18.34855461;-48.55130386;
+12069;12;BraÃ§o do Araguari - reservatorio;-18.53355598;-48.60716629;ITB45
+12070;12;BraÃ§o do Araguari;-18.57916641;-48.53069305;Linha de ForÃ§a - reservatorio
+12071;12;Jusante de Itumbiara;-18.40475082;-49.10438919;
+12072;12;Rio Paranaiba - jusante;-18.4054718;-49.10022354;
+12073;12;Rio Paranaiba - jusante;-18.44163895;-49.19335938;
+12074;12;Rio Paranaiba - jusante;-18.56349945;-49.30605698;
+12075;12;Cachoeira Dourada - jusante;-18.6281395;-49.41930389;
+12076;12;IT10 perto da barragem;-18.41324997;-49.0874176;
+12077;12;Primeira Enseada;-18.36222267;-49.06616592;
+12078;12;IT30;-18.31758308;-48.90161133;
+12079;12;Inicio braÃ§o Corumba;-18.12094498;-48.68635941;
+12080;12;ITB35;-18.1416111;-48.69638824;
+12082;12;Rio Piracanjuba;-18.20050049;-48.81694412;
+12083;12;Chiqueirao de Cima;-18.38666725;-48.73400116;
+12084;12;IT40;-18.3579731;-48.65769577;
+12085;12;Em frente a pousada Tucunare;-18.36597252;-48.79852676;
+12086;12;Ponte sobre o rio Paranaiba na BR050;-18.42466736;-48.06588745;
+12087;12;Ponte sobre o rio Uberabinha;-18.59544373;-48.53091812;
+12088;12;Chiqueirao de Cima;-18.38783264;-48.73197174;
+12089;12;ITB70;-18.33036041;-48.27619553;
+12090;12;Rio Verissimo;-18.30183411;-48.32389069;
+12091;12;IT50;-18.35149956;-48.54158401;
+12092;12;Em frente a pousada Guanabara;-18.36347198;-48.63199997;
+12093;12;Em frente a pousada Tucunare;-18.37152863;-48.79794312;
+12094;12;Chiqueirao de Cima;-18.38050079;-48.7258606;
+12095;12;Caminho para Araguari;-18.43224907;-48.53655624;VegetaÃ§Ã£o de cerradÃ£o, terra roxa Ãºmida.
+12096;12;Entrada do Riacho das Cachoeiras;-18.45511055;-48.82402802;
+12097;12;Recanto de Itumbiara;-18.31569481;-49.04069519;
+12098;12;Pasto com BraquiÃ¡ria a ~ 2 km a Oeste do hotel Lago das Brisas;-18.26275063;-48.92777634;
+12099;12;Ãrea de Cerrado a Oeste do hotel Lago das Brisas;-18.26638794;-48.92705536;
+12100;12;Pasto com BraquiÃ¡ria prÃ³ximo a  Pousada Guanabara;-18.36594391;-48.64064026;
+12101;12;Em frente ao hotel Lago das Brisas;-18.275;-48.925;
+12102;12;Rio Paranaiba - ponte MG433-GO139;-18.3172226;-48.57638931;ITCOD1
+12103;12;Rio Uberabinha - Montante da UHE Itumbiara;-18.59561111;-48.53091667;ITCOD5
+12104;12;Rio Verissimo;-18.31861115;-48.35499954;ITCOD6
+12105;12;Rio Pirapetinga - proximo a Anhanguera;-18.32749939;-48.27694321;ITCOD7
+12106;12;Rio Pirapetinga - proximo ao Rio Jordao;-18.4244442;-48.06555557;ITCOD8
+12107;12;Ribeirao da Cachoeira;-18.45800018;-48.82508469;ITCOD9
+12108;12;Rio Piracanjuba;-18.12372208;-48.87913895;ITCOD10
+12109;12;Jusante apos a UHE Itumbiara - ~1 km;-18.40472221;-48.10438919;ITCOD11
+12110;12;Rio Paranaiba - proximo a Cachoeira Dourada;-18.49180603;-48.51752853;ITCOD12
+12111;12;Rio Paranaiba - proximo a ponte MG433-GO139;-18.3172226;-48.60291672;ITCOD1
+12112;12;Rio Corumba - proximo a Ponte/Jusante da UHE Itumbiara;-18.06616592;-48.60536194;ITCOD2
+12113;12;Rio Paranaiba - BR 050;-18.42463875;-48.06624985;ITCOD4
+12114;12;Rio Paranaiba - proximo a cidade de Itumbiara;-18.42874908;-49.20463943;ITCOD4A
+12115;12;Rio Paranaiba;-18.33244514;-48.27774811;ITCOD7 - ITB70
+12116;12;Ribeirao das Araras;-18.41083336;-48.33655548;ITCOD8
+12117;12;Ribeirao da Cachoeira;-18.46488953;-48.81991577;ITCOD9A
+12118;12;Rio Piracanjuba;-18.09638977;-48.87611008;ITCOD10A
+12119;12;Rio Paranaiba - ponte Ferroviaria;-18.42591667;-49.11925125;ITCOD11
+12120;12;Rio Uberabinha;-18.61427689;-48.53108215;ITCOD12
+12121;12;Riacho Corumbaiba;-18.25958252;-48.57444382;ITCOD13
+12122;12;Rio Araguari;-18.59702682;-48.52375031;ITCOD14
+12123;12;Rio Piracanjuba;-18.10080528;-48.87672043;ITCOD10B
+12124;12;Rio das Antas;-18.24252701;-48.99816513;ITCOD14
+12127;12;Rio Jordao;-18.42874908;-48.20463943;ITCOD4A
+12128;12;Rio Pirapetinga;-18.33052826;-48.19219589;ITCOD15
+12129;12;Ribeirao das Araras;-18.41011047;-48.3354454;ITCOD8A
+12130;12;Rio Verissimo;-18.24424934;-48.29774857;ITCOD6A
+12131;12;Rio Uberabinha;-18.62227821;-48.53077698;ITCOD17
+12132;12;Grota da Pousada Recanto de Itumbiara;-18.30341721;-48.03888702;
+12133;12;Grota dos Amarelinhos;-18.25413895;-48.92366791;
+12134;12;Grota do Sete;-18.37755585;-48.79780579;
+12135;12;ITB 05;-18.43529932;-49.12968172;
+12136;12;ITB 10;-18.41266404;-49.08661798;
+12137;12;ITB 30;-18.31748789;-48.90096465;
+12138;12;ITB 35;-18.13980226;-48.7027793;
+12139;12;ITB 40;-18.35706966;-48.65682508;
+12140;12;ITB 45;-18.51860321;-48.60238117;
+12141;12;ITB 60;-18.3009966;-48.33068274;
+12142;12;ITB 70;-18.33289842;-48.28068359;
+12143;12;ITB 80;-18.41760135;-48.0795807;
+12144;12;BraÃ§o do Corumba;-18.14752778;-48.69836111;ITB35
+12145;12;Entrada Piracanjuba;-18.21013889;-48.80611111;
+12146;12;Boia do INPE;-18.28308333;-48.90555556;TIVD1
+12147;12;Barragem - proximo ao IT-10;-18.4065;-49.07986111;ITVD2
+12148;12;ITB 50;-18.35087841;-48.54114793;
+12149;12;Rio Verissimo;-18.32361111;-48.37638889;ITCOD6
+12150;12;ITB 05;-18.39998964;-49.09969414;Jusante da barragem
+12151;12;IT 10;-18.41341228;-49.08687417;Proximo a barragem
+12152;12;IT 30;-18.31809067;-48.90112683;Encontro c/o braÃ§o Corumba
+12153;12;ITB 35;-18.13852102;-48.69722096;Meio do BraÃ§o Corumba
+12154;12;IT 40;-18.3562252;-48.65679754;Jusante da foz do braÃ§o
+12155;12;ITB 45;-18.51697303;-48.60518623;Meio do braÃ§o rio da Pedras
+12156;12;IT 50;-18.35122;-48.54134047;Montante da ponte da GO-139
+12157;12;ITB 60;-18.31864523;-48.35519234;BraÃ§o Rio Verissimo
+12158;12;ITB 70;-18.32747194;-48.27721175;Jusante do municipio de Anhanguera
+12159;12;ITB 80;-18.42457895;-48.06567909;Sob a ponte da BR-050
+12160;12;ITB 05;-18.41960711;-49.19171345;Jusante da barragem
+12161;12;IT 10;-18.41342608;-49.08734723;Proximo a barragem
+12162;12;IT 30;-18.31822315;-48.90167381;Encontro com o braÃ§o Corumba
+12163;12;ITB 35;-18.13862126;-48.69729523;Meio do braÃ§o Corumba
+12164;12;IT 40;-18.35627973;-48.65682519;Jusante da foz do braÃ§o
+12165;12;ITB 45;-18.51714544;-48.6052501;Meio do braÃ§o rio das Pedras
+12166;12;IT 50;-18.35109114;-48.54185303;Montante da ponte da GO-139
+12167;12;ITB 60;-18.31929411;-48.35509738;BraÃ§o rio Verissimo
+12168;12;ITB 70;-18.32740888;-48.27722219;Jusante do munic.de Anhanguera
+12169;12;IT 10;-18.41236462;-49.08690468;Proximo a barragem
+12170;12;IT 30;-18.31803108;-48.90145859;Encontro com o braÃ§o Corumba
+12171;12;IT Boia 01;-18.28297073;-48.905427;Boia do INPE, proximo ao ponto IT 30
+12172;12;ITB 35;-18.13864802;-48.69726654;Meio do braÃ§o Corumba
+12173;12;IT 40;-18.35640481;-48.65744779;Jusante da foz do braÃ§o
+12174;12;ITB 45;-18.51716458;-48.60533505;Meio do braÃ§o rio das Pedras
+12175;12;IT 50;-18.35206076;-48.54210413;Montante da ponte da GO-139
+12176;12;ITB 60;-18.3182086;-48.35561501;BraÃ§o rio Verissimo
+12177;12;ITB 70;-18.32849089;-48.27711069;Jusante do municipio de Anhanguera
+12178;12;ITB 80;-18.42455391;-48.06581194;Sob a ponte da BR-050
+12179;12;IT Boia 02;-18.28346512;-48.90520356;Boia do INPE, proximo ao ponto IT 30
+12180;12;IT Boia 03;-18.28322643;-48.90567924;Boia do INPE, proximo ao ponto IT 31
+13001;13;Barra do Pirapetinga;-17.75883293;-48.55883408;COPFQ1
+13002;13;Cachoeirinha;-17.83388901;-48.54083252;COPFQ2
+13003;13;Rio Corumba;-17.98305511;-48.52111053;COPFQ3
+13004;13;Barra da Liboria;-17.94247246;-48.50722122;COPFQ4
+13005;13;Proximo ao corrego do rio Balsamo;-17.91561127;-48.50836182;COPFQ5
+13006;13;Barra do Pirapetinga;-17.73819351;-48.55486298;COPFQ1A
+13007;13;Rio Corumba;-17.98055649;-48.52111053;COPFQ3
+13008;13;Barra da Liboria;-17.91419411;-48.51189041;COPFQ4
+13009;13;Proximo ao corrego do rio Balsamo;-17.92986107;-48.48277664;COPFQ4A
+13010;13;Pousoda Veronica;-17.76594353;-48.56752777;COPFQ6
+13011;13;Rio Santo Antonio;-17.84472275;-48.45483398;COPFQ7
+13012;13;Direita do ancoradouro - Dos Amigos;-17.79083252;-48.58238983;COFU01
+13013;13;Esquerda do ancoradouro - Dos Amigos;-17.78666687;-48.5961113;COFU02
+13014;13;Barra do Pirapetinga - margem oeste;-17.75883293;-48.56402588;COFU03
+13015;13;Barra do Pirapetinga - margem leste;-17.7559166;-48.55927658;COFU04
+13016;13;Proximo ao corrego do rio Balsamo - margem leste;-17.91386032;-48.51119614;COFU05
+13017;13;Proximo ao corrego do rio Balsamo - margem oeste;-17.91588889;-48.50875;COFU06
+13018;13;COFU12;-17.7743611111111;-48.5505277777778;Boia do Inpe - proximo ao Clube Nautico - margem leste
+13019;13;COFU09;-17.7710555555556;-48.5713888888889;Pousada Veronica - margem oeste
+13020;13;COFU07A;-17.91313934;-48.50569534;Proximo ao corrego do rio Balsamo - margem leste
+13021;13;COFU8;-17.91386032;-48.5111666666667;Proximo ao corrego do rio Balsamo - margem oeste
+13022;13;COFU10;-17.7654444444444;-48.5666666666667;Pousada Veronica - margem leste
+13023;13;COFU11;-17.7846111111111;-48.5604444444444;Boia do Inpe - proximo ao Clube Nautico - margem oeste
+13024;13;Proximo a pousada Veronica;-17.76605606;-48.56947327;COFU12
+13025;13;Guarda Barcos Dos Amigos;-17.78769493;-48.59116745;
+13026;13;Paliteiro;-17.79133415;-48.58277893;
+13027;13;Reservatorio;-17.78194427;-48.57244492;
+13028;13;Baia Oeste;-17.78711128;-48.5965004;
+13029;13;Meio do Primeiro Transsect;-17.7883606;-48.59272385;
+13030;13;Guarda Barcos Dos Amigos;-17.78786087;-48.59158325;
+13031;13;Baia da casa do prefeito;-17.8140564;-48.55494308;
+13032;13;Baia da casa do prefeito;-17.82480621;-48.56297302;
+13033;13;Ribeirao Santo Antonio - montante;-17.84977722;-48.45744324;
+13034;13;CRB25;-17.87755585;-48.51239014;
+13035;13;Jusante da Barragem Corumba;-17.98988914;-48.53263855;
+13036;13;Desembocadura do Rio Peixe - montante;-17.59980583;-48.46802902;
+13037;13;Rio Corumba - montante;-17.59858322;-48.46474838;
+13038;13;Rio Corumba;-17.71408272;-48.49638748;Ponte sobre o Rio CorumbÃ¡, ponto CRB10
+13039;13;CRB17;-17.76483345;-48.52177811;
+13040;13;Rio Pirapetinga - montante;-17.73897171;-48.56063843;PRP10
+13041;13;BraÃ§o do Pirapitinga;-17.76863861;-48.5557518;PRP15
+13042;13;CRB20;-17.80886078;-48.54519272;
+13043;13;Guarda Barcos Dos Amigos;-17.78816605;-48.5909996;
+13044;13;Rio Corumba;-18.06575012;-48.60291672;Prainha no Rio Corumba, no cruzamento com rodovia GO-139, proximo da ponte de 420 m (jusante)
+13045;13;Pousada Veronica;-17.76511192;-48.56855392;
+13046;13;Pousada Veronica;-17.76763916;-48.56769562;
+13047;13;Pousada Veronica;-17.77036095;-48.57311249;
+13048;13;PRP15;-17.80200005;-48.54269409;
+13049;13;CRB15;-17.85572243;-48.51408386;
+13050;13;CRB25;-17.94291687;-48.51830673;
+13051;13;Barragem - ponto CRB40;-17.98491669;-48.5241394;
+13052;13;CRB27;-17.92236137;-48.52161026;
+13053;13;Balsa;-17.8678894;-48.48913956;STA10 Balsa
+13054;13;Pousada Veronica;-17.7661953;-48.56927872;
+13055;13;Ilha do Jose;-17.76522255;-48.52266693;CRB17
+13056;13;Ponte Pameri;-17.71469498;-48.4972496;CRB10
+13057;13;CRB05;-17.66341591;-48.46897125;
+13058;13;Rio do Peixe - montante;-17.60191727;-48.46563721;PXE10
+13059;13;Pousada Veronica;-17.76486206;-48.56863785;
+13060;13;Boia do INPE;-17.77916718;-48.55924988;
+13061;13;Jusante das turbinas - jusante;-17.98991585;-48.56602859;
+13062;13;600 m jusante do vertedouro;-17.99102783;-48.5399704;
+13063;13;Ponte Velha GO139 - jusante;-18.06616592;-48.6028595;
+13064;13;Corredeira do rio Corumba;-17.66388893;-48.46894455;
+13065;13;Ponte estrada GO;-17.71422195;-48.49713898;
+13066;13;Ilha do Ze Araujo;-17.76458359;-48.52199936;
+13067;13;Anonimo;-17.7994442;-48.54455566;
+13068;13;Em Frente ao Clube Nautico;-17.78286171;-48.56552887;
+13069;13;Em frente a pousada Veronica;-17.7693615;-48.56886292;
+13070;13;Barragem;-17.98552704;-48.52363968;
+13071;13;Anonimo;-17.92236137;-48.52197266;
+13072;13;Rio Santo Antonio;-17.86763954;-48.48944473;
+13073;13;Anonimo;-17.80599976;-48.54416656;
+13074;13;Saida das turbinas de Corumba;-17.99236107;-48.53269577;
+13075;13;Anonimo;-17.99116707;-48.5399437;
+13076;13;Ponte velha sobre o Corumba;-18.06641579;-48.60063934;
+14010;14;Rancho do Jr.;-20.21677778;-47.25511111;
+14011;14;Montante;-20.27733333;-47.08147222;
+13077;13;Guarda Barcos Dos Amigos;-17.78516579;-48.59116745;VegetaÃ§Ã£o de cerradÃ£o. Solo arenoso, Ãºmido e com gramÃ­neas ~ 3 cm de altura.
+13078;13;50 m da beira do Rio Corumba;-18.06497192;-48.60263824;Ãrea de cerradÃ£o, solo argiloso Ãºmido.
+13079;13;Pousada Veronica;-17.76433372;-48.56783295;
+13080;13;Jusante da barragem;-17.98983383;-48.53255463;COCOD2
+13081;13;Rio do Peixe;-17.59975052;-48.46786118;COCOD3
+13082;13;Cachoeira da Transmissao;-17.83455467;-48.53385925;COCOD5
+13083;13;Corrego do Balsamo;-17.93177795;-48.48855591;COCOD6
+13084;13;Ribeirao Santo Antonio;-17.83849907;-48.45158386;COCOD1A
+13085;13;Jusante da Barragem ~80 m;-17.98991585;-48.53269577;COCOD2
+13086;13;Rio do Peixe;-17.60186195;-48.46563721;COCOD3
+13087;13;Rio Corumba;-17.60041618;-48.46777725;COCOD4
+13088;13;Corrego do Balsamo;-17.93022156;-48.932724;COCOD6A
+13089;13;Rio Pirapetinga;-17.73558426;-48.55075073;COCOD7A
+13090;13;Riacho da Cachoeira;-17.85480499;-48.5411377;COCOD8
+13091;13;Jusante da barragem ~600 m;-17.99105644;-48.5399437;COCOD9
+13092;13;Rio Pirapetinga;-17.7527771;-48.56111145;COCOD13
+13093;13;Rio Corumba + Peixe;-17.67111206;-48.46500015;COCOD14
+13094;13;Ribeirao Santo Antonio;-17.85527802;-48.46972275;COCOD15
+13095;13;Corrego do Balsamo;-17.94972229;-48.50138855;COCOD16
+13096;13;Riacho da Cachoeira;-17.85666656;-48.52861023;COCOD17
+13097;13;Ancoradouro dos Amigos - lado esquerdo;-17.78675079;-48.5945816;
+13098;13;Barra do Pirapetinga;-17.75797272;-48.56430435;
+13099;13;CRB 10;-17.7128434;-48.49596191;
+13100;13;CRB 20;-17.80587371;-48.54247901;
+13101;13;CRB 25;-17.87860774;-48.51257874;
+13102;13;CRB 27;-17.91751864;-48.51628158;
+13103;13;CRB 30;-17.98401021;-48.5184011;
+13104;13;CRB 40;-17.99032116;-48.5380487;
+13105;13;CRC 10;-17.72767108;-48.56756204;
+13106;13;PRP 05;-17.7422081;-48.55845858;
+13107;13;PRP 10;-17.75188457;-48.56088177;
+13108;13;PRP 15;-17.76675641;-48.55114959;
+13109;13;PXE 10;-17.59914992;-48.46686135;
+13110;13;STA 10;-17.86724971;-48.4889405;
+13111;13;CRB20;-17.80886111;-48.54519444;
+13112;13;Guarda Barcos Dos Amigos;-17.78816667;-48.591;
+13113;13;CRB27;-17.92236111;-48.52161111;
+13114;13;Barragem - CODORN;-17.98591667;-48.52461111;
+13115;13;CRB 05;-17.65580605;-48.47110952;
+13116;13;CRB 17;-17.76247919;-48.5213071;
+13117;13;Anonimo;-17.8525;-48.51111111;
+13118;13;Pousada Veronica;-17.76555556;-48.56833333;
+13119;13;CRB 40;-17.99093253;-48.53179995;Jusante da barragem - Rio Corumba
+13120;13;CRB 30;-17.984828;-48.51914332;Proximo da barragem - UHE Corumba
+13121;13;CRB 27;-17.91824626;-48.51633605;Proximo ao corrego Balsamo - UHE Corumba
+13122;13;CRB 25;-17.88060325;-48.51220049;Foz do rio Santo Antonio - UHE Corumba
+13123;13;STA 10;-17.86887331;-48.48634132;Entrada do rio no reservatorio - BraÃ§o Santo Antonio
+13124;13;CRB 20;-17.80559282;-48.54350916;Jusante do braÃ§o Pirapetinga - UHE Corumba
+13125;13;PRP 15;-17.76776091;-48.55241652;BraÃ§o do rio Pirapetinga - BraÃ§o Pirapetinga
+13126;13;CRB 17;-17.76367561;-48.5220244;A jusante da ilha do prefeito - UHE Corumba
+13127;13;CRB 10;-17.71473663;-48.498912;Ponte Sao Bento - UHE Corumba
+13128;13;CRB 05;-17.66336456;-48.47001311;2 km a jusante, ribeirao das Moitas - UHE Corumba
+13129;13;PXE 10;-17.59847641;-48.4654471;Montante da foz do rio do Peixe - Rio Corumba
+13130;13;CRB 40;-17.99093253;-48.53179995;Jusante da barragem
+13131;13;CRB 30;-17.98535053;-48.51904163;Proximo da barragem
+13132;13;CRB 27;-17.91840447;-48.51670179;Proximo ao corrego Balsamo
+13133;13;CRB 25;-17.88094568;-48.51213912;Foz do rio Santo Antonio
+13134;13;STA 10;-17.8696054;-48.48498227;Entrada do rio no reservatorio
+13135;13;CRB 20;-17.80572864;-48.54353559;Jusante do braÃ§o Pirapetinga
+13136;13;PRP 15;-17.76785145;-48.55243414;BraÃ§o do rio Pirapetinga
+13137;13;CRB Boia 01;-17.7789946;-48.55874961;Boia INPE proximo ao ponto PRP 15
+13138;13;CRB Boia 02;-17.77895989;-48.55886321;Boia INPE proximo ao ponto PRP 15
+13139;13;CRB Boia 03;-17.77883381;-48.55889321;Boia INPE proximo ao ponto PRP 15
+13140;13;CRB 17;-17.76367776;-48.52219404;A jusante da ilha do prefeito
+13141;13;CRB 10;-17.71493358;-48.49948412;Ponte Sao Bento
+13142;13;CRB 05;-17.66424635;-48.46975583;2 km a jusante, ribeirao das Moitas
+13143;13;PXE 10;-17.59739144;-48.46465234;Montante da foz do rio do Peixe
+13144;13;CRB 30;-17.98524341;-48.51984538;Proximo da barragem
+13145;13;CRB 27;-17.91835667;-48.5164949;Proximo ao corrego Balsamo
+13146;13;CRB 25;-17.88003483;-48.51224614;Foz do rio Santo Antonio
+13147;13;STA 10;-17.86902879;-48.48579209;Entrada do rio no reservatorio
+13148;13;CRB 20;-17.80638333;-48.54388492;Jusante do braÃ§o Pirapetinga
+13149;13;PRP 15;-17.76875151;-48.55362853;BraÃ§o do rio Pirapetinga
+13150;13;CRB Boia 01;-17.77889726;-48.5589112;Boia do INPE, proximo ao ponto PRP 15
+13151;13;CRB 17;-17.76403292;-48.52242481;A jusante da ilha do prefeito
+13152;13;CRB 10;-17.71469799;-48.49871464;Ponte Sao Bento
+13153;13;CRB 05;-17.66553305;-48.46937983;2 km a jusante, ribeirao das Moitas
+13154;13;PXE 10b;-17.64194461;-48.45973409;Montante da foz do rio do Peixe (distante 4.6 km do ponto PXE 10)
+14001;14;Barragem LCB50;-20.15563889;-47.27822222;
+14002;14;BraÃ§o do explosivo;-20.17011111;-47.27008333;
+14003;14;LCB40;-20.118;-47.24847222;
+14004;14;300 m a jusante;-20.15225;-47.28458333;
+14005;14;2 km a jusante;-20.14338889;-47.2995;
+14006;14;LCB20;-20.21930556;-47.2075;Garganta
+14007;14;LCB18;-20.21788889;-47.19247222;Cachoeira do Lobo
+14008;14;LCB10;-20.28680556;-47.12447222;Aquaminas
+14009;14;Ribeirao do Ouro;-20.24825;-47.22372222;
+14012;14;LCBSOL;-20.17011111;-47.27008333;15 m da represa, 1 km da barragem
+14013;14;LCBFU1;-20.11141667;-47.26097222;Mineiros
+14014;14;LCBFU2;-20.12230556;-47.26697222;Mineiros
+14015;14;LCBFU3;-20.16741667;-47.2685;Area do Explosivo
+14016;14;LCBFU4;-20.16783333;-47.27005556;Area do Explosivo
+14017;14;LCBHS1;-20.15122222;-47.27802778;Proximo a Montante da Barragem de Estreito
+14018;14;LCBHS2;-20.16180556;-47.28577778;Jusante da Barragem de Estreito
+14019;14;LCBHS3;-20.14275;-47.29905556;1,5 km a Jusante da Barragem de Estreito
+14020;14;LCBCOD1;-20.15488889;-47.27825;Proximo a barragem do Estreito
+14021;14;LCBCOD2;-20.28416667;-47.06866667;Jusante do Peixoto
+14022;14;LCBCOD3;-20.20766667;-47.18636111;Cachoeira LCB20
+14023;14;LCBCOD4;-20.25083333;-47.244;Ribeirao Canoas
+14024;14;LCBCOD5;-20.26386111;-47.15744444;Ribeirao do Ouro
+14025;14;LCBCOD6;-20.22808333;-47.15744444;Cachoeira
+14026;14;LCBCOD7;-20.2275;-47.2775;Ribeirao Parreira
+14027;14;LCBCOD8;-20.1325;-47.21361111;Cachoeira do Amanteigado
+14028;14;LCBCOD9;-20.10786111;-47.25222222;Corrego S/N
+14029;14;LCBCOD10;-20.12080556;-47.22738889;Corrego do Buracao
+14030;14;LCBCOD11;-20.14275;-47.29275;Jusante de Estreito
+14031;14;LCBSED1;-20.16183333;-47.28577778;Area do Explosivo
+14032;14;LCBPFQ4;-20.16813889;-47.26986111;Area do Explosivo
+14033;14;LCBFU2;-20.12816667;-47.26861111;Mineiros
+14034;14;LCBFU4;-20.15122222;-47.27119444;Area do Explosivo
+14035;14;LCBSOL;-20.16666667;-47.76666667;Proximo ao Pier
+14036;14;LCBPFQ5;-20.16186111;-47.25908333;Boia do INPE
+14037;14;LCBPFQ2;-20.15430556;-47.26686111;Mineiros
+14038;14;LCBPFQ1;-20.15122222;-47.26691667;Proximo a barragem, ~300 m a montante
+14039;14;Entrada do B;-20.16377778;-47.26955556;Reservatorio
+14040;14;Boia do INPE;-20.16222222;-47.25955556;
+14041;14;Mineiros;-20.12119444;-47.26694444;
+14042;14;Jusante da Barragem;-20.14975;-47.28758333;
+14043;14;1,5 km a jusante da Barragem;-20.14411111;-47.2985;
+14044;14;LCB20;-20.22013889;-47.21555556;
+14045;14;LCB18;-20.1995;-47.20413889;
+14046;14;Ribeirao do Ouro;-20.23841667;-47.22588889;
+14047;14;Braco proximo ao LCB60;-20.21780556;-47.25363889;
+14048;14;Area do Explosivo;-20.16930556;-47.26938889;
+14049;14;Cachoeira - LCBCOD1;-20.22916667;-47.15305556;
+14050;14;Cachoeira LCB - LCBCOD2;-20.20666667;-47.18527778;
+14051;14;Corrego da Minhoca - LCBCOD3;-20.24613889;-47.17144444;
+14052;14;Ribeirao do Ouro - LCBCOD4;-20.26583333;-47.19194444;
+14053;14;Rio S/N - LCBCOD5;-20.24833333;-47.241;
+14054;14;Ribeirao Parreira - LCBCOD6;-20.22505556;-47.27730556;
+14055;14;LCBCOD7;-20.133;-47.21419444;Corrego da Cachoeira do Amanteigado
+14056;14;Corrego do Buracao - LCBCOD8;-20.12197222;-47.21213889;
+14057;14;Corrego S/N - LCBCOD9;-20.10777778;-47.26861111;
+14058;14;Area do Explosivo - LCBCOD11;-20.16936111;-47.26925;
+14059;14;LCBCOD12;-20.15166667;-47.29222222;Jusante de Estreito (~1,5 km)
+14060;14;LCBHS2;-20.15125;-47.28577778;Jusante da Barragem de Estreito (~600 m)
+14061;14;Area do Explosivo;-20.16772222;-47.26908333;
+14062;14;LCB20;-20.21861111;-47.20852778;
+14063;14;Area do Explosivo;-20.16783333;-47.26902778;
+14064;14;Jusante da Barragem;-20.15016667;-47.288;
+14065;14;2 km a jusante da Barragem;-20.14494444;-47.29875;
+14066;14;Area de solo de cerrado;-20.16083333;-47.28666667;
+14067;14;LCBFU6;-20.12702778;-47.26316667;BraÃ§o do Rio Grande
+14068;14;LCBFU7;-20.12555556;-47.24322222;BraÃ§o do Rio Grande
+14069;14;LCBHS1;-20.15063889;-47.27752778;Proximo a Montante da Barragem de Estreito (~100 m)
+14070;14;Cachoeira - LCBCOD1;-20.20808333;-47.18569444;
+14071;14;Cachoeira ~LCB20 - LCBCOD2;-20.22038889;-47.21188889;
+14072;14;Corrego do Buracao - LCBCOD8;-20.12080556;-47.22655556;
+14073;14;Corrego s/n - LCBCOD9;-20.10752778;-47.25222222;
+14074;14;LCB 40 - LCBCOD13;-20.11838889;-47.24969444;
+14075;14;LCB 50 - LCBCOD14;-20.14938889;-47.26144444;
+14076;14;LCB 10;-20.28733577;-47.12515557;
+14077;14;LCB 12;-20.1897718;-47.09541733;
+14078;14;LCB 18;-20.19572814;-47.17751049;
+14079;14;LCB 20;-20.21833275;-47.20724535;
+14080;14;LCB 25;-20.33730008;-47.12872963;
+14081;14;LCB 35;-20.40434551;-47.28797115;
+14082;14;LCB 40;-20.11601465;-47.24532238;
+14083;14;LCB 50;-20.15051299;-47.26792533;
+14084;14;LCB 60;-20.14813157;-47.28934046;
+14085;14;LCB 60;-20.15065493;-47.29075999;Jusante da barragem
+14086;14;LCB 50;-20.15174029;-47.26971787;Proximo a barragem
+14087;14;LCB 40;-20.12442531;-47.25109898;BraÃ§o a direita da barragem
+14088;14;LCB 20;-20.21966222;-47.20743226;PorÃ§ao media do reservatorio
+14089;14;LCB 10;-20.28513718;-47.1288066;PorÃ§ao media do canyon
+14090;14;LCB 60;-20.15099381;-47.29109008;Jusante da barragem
+14091;14;LCB 50;-20.15173049;-47.269077;Proximo a barragem
+14092;14;LCB Boia 01;-20.16187984;-47.25937303;Boia do INPE
+14093;14;LCB 40;-20.12495659;-47.25122133;BraÃ§o a direita da barragem
+14094;14;LCB 10;-20.28520954;-47.12879801;PorÃ§ao media do canyon
+14095;14;LCB 60;-20.15105384;-47.29064149;Jusante da barragem
+14096;14;LCB 50;-20.15145576;-47.26867138;Proximo a barragem
+14097;14;LCB 40;-20.12487654;-47.25112457;BraÃ§o a direita da barragem
+14098;14;LCB 20;-20.21971652;-47.20742346;PorÃ§ao media do reservatorio
+14099;14;LCB 10;-20.2854992;-47.12874454;PorÃ§ao media do canyon
+14100;14;LCB Boia 02;-20.16218217;-47.25974081;Boia do INPE
+14101;14;LCB Boia 03;-20.16247431;-47.25949635;Boia do INPE
+14102;14;LCB Baia Expl.;-20.16530657;-47.26889075;Coleta conjunta com a COPPE
+14103;14;LCB 20 ME;-20.22479024;-47.20685403;Transecto - margem esquerda
+14104;14;LCB 20 ME-CE;-20.22310254;-47.208916;Transecto - entre a margem esquerda e o centro
+14105;14;LCB 20 CE;-20.22022917;-47.21046364;PorÃ§ao media do reservatorio
+14106;14;LCB 20 MD-CE;-20.21718784;-47.2124394;Transecto - entre o centro e a margem direta
+14107;14;LCB 20 MD;-20.21446252;-47.21441955;Transecto - margem direita
+15001;15;Ponte BR-050 (Jusante);-20.68511111;-46.36238889;
+15002;15;FUR50;-21.16772222;-45.95022222;Barranco Alto
+15003;15;FUR70;-21.06477778;-45.82844444;Ilha do Salibra
+15004;15;Anonimo;-20.67088889;-46.31366667;
+15005;15;FUR90;-20.88202778;-46.05594444;Caipora
+15006;15;FUR10;-21.40491667;-45.82969444;Fama MG
+15007;15;FUR30;-21.29188889;-45.91286111;Fazenda Conquista
+15008;15;FUR100;-20.75736111;-45.92591667;Pousada Interlagos
+15009;15;Anonimo;-20.70247222;-45.65463889;
+15010;15;Anonimo;-20.83225;-45.62261111;
+15011;15;FUR40;-20.97319444;-45.52297222;Ponte Boa EsperanÃ§a
+15012;15;FUR20;-21.06002778;-45.3665;
+15013;15;Arauna porto da balsa;-20.72538889;-45.92163889;
+15014;15;Pier hotel Interlagos;-20.75966667;-45.92408333;
+15015;15;Jusante;-20.66227778;-46.53402778;
+15016;15;FURSOL;-21.03586111;-46.14202778;Rodovia para Alfenas
+15017;15;FURFU1;-20.88069444;-46.04869444;Rio Sapucai
+15018;15;FURFU2;-21.05680556;-45.94591667;Entrada do Rio Verde
+15019;15;FURFU3;-21.03930556;-46.08816667;Ribeirao Santa Quiteria
+15020;15;FURFU4;-20.71961111;-45.70752778;Rio Lambari
+15021;15;FURFU5;-20.65675;-45.82016667;Rio Capetinga
+15022;15;FURHS1;-20.66866667;-46.30941667;0,5 km a Montante da Barragem de Furnas
+15023;15;FUR77 - FURCOD2;-20.94083333;-45.85555556;Ribeirao Itaci
+15024;15;Rio S/N - FURCOD3;-21.09708333;-46.09830556;
+15025;15;Rio S/N - FURCOD4;-21.05252778;-45.79683333;
+15026;15;FURCOD5;-21.01580556;-46.16755556;Ribeirao Santa Quiteria
+15027;15;FUR03 - FURCOD6;-21.5925;-45.51166667;Tributario do Rio Verde
+15028;15;FURCOD7;-21.27936111;-46.4865;Rio Mozambo
+15029;15;FUR33 - FURCOD8;-21.44077778;-46.56997222;Rio do Peixe
+15030;15;FURCOD9;-21.47091667;-46.00438889;Corrego da Bruaca
+15031;15;FURCOD10;-21.66472222;-45.89283333;Rio Machado
+15032;15;FURCOD11;-21.58108333;-45.67863889;Rio Sapucai
+15033;15;FURCOD12;-21.60597222;-45.5085;Rio Verde
+15034;15;FURCOD13;-21.45694444;-45.51558333;Riberiao da Espera
+15035;15;FUR07 - FURCOD14;-21.35597222;-45.52152778;Proximo a Ilicinea
+15036;15;FURCOD15;-20.68533333;-45.48666667;Rio Santana
+15037;15;FURCOD16;-20.55808333;-45.56386111;Rio Formiga
+15038;15;FURCOD17;-20.63680556;-45.96041667;Escarpas do Lago
+15039;15;FURCOD18;-20.63555556;-46.10933333;Corrego da Mata
+15040;15;FURCOD19;-20.796;-45.85022222;Ribeirao Bom Jardim
+15041;15;FURCOD20;-21.24377778;-45.50872222;Rio Santana
+15042;15;FURCOD21;-21.167;-45.12588889;Rio Grande
+15043;15;FURCOD22;-21.00033333;-45.19713889;Rio Jacare
+15044;15;FUR22 - FURCOD23;-20.8665;-45.26780556;
+15045;15;FURCOD24;-20.75961111;-45.92513889;Mini-PoÃ§o (proximo ao Interlagos)
+15046;15;FURSED1;-21.03836111;-46.09252778;Ribeirao Santa Quiteria
+15047;15;FURSED2;-20.75816667;-45.92436111;BraÃ§o do Interlagos Hotel (~300 m)
+15048;15;FURPFQ1;-20.66908333;-46.31311111;Proximo a Barragem
+15049;15;FURFU1;-20.88461111;-46.05113889;Rio Sapucai
+15050;15;FURFU7;-21.05672222;-45.94622222;Agua Verde
+15051;15;FURFU8;-21.00916667;-46.12425;Ribeirao Santa Quiteria, proximo a Pousada Futrica
+15052;15;FURFU9;-20.65861111;-45.30361111;Barragem a montante (~2 km), proximo a Boia do INPE
+15053;15;FURFU9a;-20.66425;-45.29997222;Barragem a montante (~2 km), proximo a Boia do INPE
+15054;15;FURFU10;-20.75380556;-45.93352778;BraÃ§o da Pousada Interlagos
+15055;15;FURFU11;-20.75380556;-45.92686111;BraÃ§o da Pousada Interlagos
+15056;15;FURSOL;-21.01055556;-46.12388889;Em frente a Pousada Futrika
+15057;15;FURSOL;-21.01083333;-46.12305556;Ao lado da Pousada Futrika
+15058;15;FURSOL;-20.75997222;-45.92447222;Pier do Hotel Interlagos (Cupinzeiro)
+15059;15;MSMPFQ7;-20.65991667;-46.24713889;Rio Grande (FUR115)
+15060;15;FURPFQ8;-20.71436111;-46.14266667;Boca do rio Sapucai
+15061;15;FURPFQ6;-20.1445;-47.29833333;BraÃ§o do Hotel Interlagos
+15062;15;Aterro Santa Quiteria;-20.02925;-46.09047222;
+15063;15;Pousada Futrika;-21.01388889;-46.12363889;
+15064;15;Povoado Itaci (Rio Grande);-21.03508333;-46.03111111;
+15065;15;Povoado Itaci (Rio Grande);-21.03472222;-46.03383333;
+15066;15;FUR50 - Sarampo;-21.17102778;-45.90955556;
+15067;15;Agua Verde;-21.05813889;-45.8725;
+15068;15;FUR30;-21.32205556;-45.99855556;Balsa entre Areado e Alfenas
+15069;15;Proximo do FUR10;-21.30647222;-45.84438889;Ponte Alfenas
+15070;15;FUR20;-20.66036111;-46.24733333;Entrada do canal da barragem
+15071;15;Boia do INPE;-20.66075;-46.30288889;
+15072;15;Clube Campestre;-20.74816667;-45.92919444;
+15073;15;Clube Nautico;-20.74719444;-45.92825;
+15074;15;FUR80;-20.69677778;-45.64563889;
+15075;15;FUR20;-21.06005556;-45.36602778;
+15076;15;FURCOD26;-21.30647222;-45.843;Ponte Alfenas - Campos Gerais
+15077;15;Rio Formiga - FURCOD28;-20.55391667;-45.56541667;
+15078;15;Rio S/N - FURCOD29;-20.61294444;-45.63644444;
+15079;15;Rio S/N - FURCOD30;-20.56738889;-45.85977778;
+15080;15;Rio S/N - FURCOD32;-20.63158333;-46.22978333;
+15081;15;Rio S/N - FURCOD33;-20.63188889;-45.96305556;
+15082;15;Ribeirao Santana - FURCOD20;-21.24441667;-45.50755556;
+15083;15;Ribeirao Menezes - FURCOD34;-21.22936111;-45.25094444;
+15084;15;Rio Cervo - FURCOD35;-21.23344444;-45.17427778;
+15085;15;Rio Jacare - FURCOD22;-21.00316667;-45.19719444;
+15086;15;Rio S/N - FURCOD12;-21.00961111;-45.18172222;
+15087;15;Rio S/N - FURCOD2;-21.09916667;-45.09494444;
+15088;15;Rio S/N - FURCOD1;-21.05069444;-45.79866667;
+15089;15;FUR 17 - FURCOD6;-21.44680556;-46.0045;
+15090;15;Rio S/N - FURCOD5;-21.43961111;-46.05361111;
+15091;15;Rio S/N - FURCOD24;-21.24558333;-45.88925;
+15092;15;Rio S/N - FURCOD23;-21.18975;-46.02558333;
+15093;15;Rio Sapucai - FURCOD18;-21.08138889;-45.64080556;
+15094;15;Rio Muzambo - FURCOD9;-21.29194444;-46.14694444;
+15095;15;Rio S/N - FURCOD8;-21.43602778;-46.07786111;
+15096;15;Rio S/N - FURCOD7;-21.19788889;-45.86497222;
+15097;15;Rio Sapucai - FURCOD17;-21.24736111;-45.67902778;
+15098;15;Rio Muzambo - FURCOD10;-21.42330556;-46.14216667;
+15099;15;Rio Machado - FURCOD11;-21.48316667;-45.86130556;
+15100;15;Clube Nautico;-20.7485;-45.93061111;
+15101;15;Ponte Boa Esperanca - FUR40;-20.97319444;-45.52219444;
+15102;15;Proximo do FUR10 - Ponte Alfenas;-21.30663889;-45.84488889;
+15103;15;Barragem - FUR20;-20.66055556;-46.30205556;
+15104;15;Entrada do Canal da Barragem;-20.66422222;-46.25780556;
+15105;15;FUR80;-20.68947222;-45.64302778;
+15106;15;FUR80;-20.68572222;-45.64088889;
+15107;15;FUR100;-20.73675;-45.93461111;
+15108;15;FUR100;-20.73827778;-45.94191667;
+15109;15;Carmo do Rio Claro;-20.95838889;-46.05127778;
+15110;15;Carmo do Rio Claro;-20.95805556;-46.054;
+15111;15;FUR90 - Ponte Torta;-20.88161111;-46.05444444;
+15112;15;FUR90 - Ponte Torta;-20.87686111;-46.05272222;
+15113;15;Carmo do Rio Claro;-20.95538889;-46.05844444;
+15114;15;Agua Verde - FUR70;-21.04358333;-45.84138889;
+15115;15;Reservatorio de Furnas;-20.95683333;-46.05336111;
+15116;15;FUR30 - Fazenda Conquista;-21.31869444;-46.02663889;
+15117;15;BraÃ§o do Nelson Paulino;-21.43761111;-46.03455556;
+15118;15;Ponte a Jusante proximo a Barragem;-20.68508333;-46.36211111;
+15119;15;Area de Solo de Cerrado;-20.74102778;-45.93491667;
+15120;15;Rio Santana - FURFU4A;-20.71972222;-45.70916667;
+15121;15;Entrada do rio Pimenta - FURFU5;-20.65627778;-45.82122222;
+15122;15;Entrada do rio Pimenta - FURFU5A;-20.65738889;-45.82816667;
+15123;15;BraÃ§o da Pousada Interlagos - FURFU10;-20.75861111;-45.93352778;
+15124;15;BraÃ§o da Pousada Interlagos - FURFU11;-20.75019444;-45.92686111;
+15125;15;Agua Verde - FURFU2A;-21.06266667;-45.93638889;
+15126;15;BraÃ§o do rio Sapucai;-20.87958333;-46.04977778;Proximo ao FUR90 - FURFU1A
+15127;15;Rio Sapucai;-20.94266667;-46.06055556;Proximo a Estancia Bela Vida - FURFU13
+15128;15;Rio Sapucai;-20.95727778;-46.06091667;Poximo a Estacia Bela Vida - FURFU12
+15129;15;FURHS2;-20.66013889;-46.30161111;1 km a Montante da Barragem de Furnas
+15130;15;FURHS3;-20.66372222;-46.25741667;FUR110 a 6 km a Montante da Barragem de Furnas
+15131;15;FURHS4;-20.71155556;-46.14427778;Confluencia dos Rios Grande/Sapucai a ~20 km a Montante da Barragem
+15132;15;FURHS6;-20.91230556;-46.07711111;Rio Sapucai (Ponte Torta)
+15133;15;FURHS5;-20.95111111;-46.06372222;Rio Sapucai - Em frente a Estancia Bela Vida
+15134;15;Rio Santana - FURCOD36;-20.68572222;-45.49;
+15135;15;Rio Formiga - FURCOD28;-20.55855556;-45.56458333;
+15136;15;Rio S/N - FURCOD30;-20.56913889;-45.53558333;
+15137;15;Rio S/N - FURCOD37;-20.66819444;-46.15152778;
+15138;15;Ponte no Rio Grande - FURCOD38;-20.97580556;-45.52641667;
+15139;15;Rio S/N - FURCOD24;-21.24816667;-45.43872222;
+15140;15;Ribeirao Menezes - FURCOD34;-21.22908333;-45.25055556;
+15141;15;Rio Jacare - FURCOD22;-21.00386111;-45.19697222;
+15142;15;Rio Claro - FURCOD39;-21.09730556;-46.08377778;
+15143;15;Ribeirao Santa Quiteria - FURCOD12;-21.01491667;-46.18202778;
+15144;15;Rio S/N - FURCOD7;-21.18688889;-46.02438889;
+15145;15;Rio Sapucai - FURCOD17;-21.16691667;-45.93261111;
+15146;15;Rio Sarampao - FURCOD23;-21.19847222;-45.87086111;
+15147;15;Rio Itaci, Caipora - FURCOD40;-20.93097222;-45.96561111;
+15148;15;Cachoeira do Marmore - FURCOD41;-20.86033333;-46.04172222;
+15149;15;Rio Sapucai, FUR90 - FURCOD45;-20.87977778;-46.05283333;
+15150;15;Rio S/N - FURCOD46;-20.915;-46.17475;
+15151;15;Rio S/N - FURCOD47;-20.97647222;-46.16625;
+15152;15;Rio Sapucai - FUR50 - FURCOD18;-21.15880556;-45.93988889;
+15153;15;Cachoeira II - FURCOD44;-20.87630556;-46.04094444;
+15154;15;Corrego da Bruaca - FURCOD6;-21.44655556;-46.00313889;
+15155;15;Rio Verde - FURCOD48;-21.60563889;-45.50763889;
+15156;15;Ribeirao da Espera - FURCOD5;-21.45738889;-45.51547222;
+15157;15;Rio Sapucai - FURCOD49;-21.58930556;-45.68186111;
+15158;15;Rio Machado - FURCOD11;-21.66588889;-45.89230556;
+15159;15;FURPFQ8;-20.71386111;-46.14269444;Rios Grande/Sapucai (~20km da barragem)
+15160;15;FURPFQ13;-20.9515;-46.06402778;Rio Sapucai em frente a Estancia Bela Vida
+15161;15;FUR 03;-21.59209042;-45.51132895;
+15162;15;FUR 07;-21.36539509;-45.53249099;
+15163;15;FUR 10;-21.40400836;-45.82343877;
+15164;15;FUR 17;-21.43870822;-46.02355108;
+15165;15;FUR 20;-21.05499387;-45.27935144;
+15166;15;FUR 22;-20.94053582;-45.28242804;
+15167;15;FUR 30;-21.35408767;-46.01727258;
+15168;15;FUR 33;-21.49657455;-46.37867052;
+15169;15;FUR 40;-20.98804331;-45.5236861;
+15170;15;FUR 50;-21.16740664;-45.94992779;
+15171;15;FUR 60;-20.8364156;-45.6198095;
+15172;15;FUR 70;-21.05712062;-45.84223793;
+15173;15;FUR 77;-20.94044275;-45.85525957;
+15174;15;FUR 80;-20.69541564;-45.63762298;
+15175;15;FUR 82;-20.56701658;-45.38878029;
+15176;15;FUR 88;-20.4986079;-45.81358137;
+15177;15;FUR 90;-20.88121745;-46.05600581;
+15178;15;FUR 100;-20.73372933;-45.91859418;
+15179;15;FUR 110;-20.66931828;-46.25425058;
+15180;15;FUR 02;-21.20777557;-45.05961963;
+15181;15;FUR Boia 01;-20.66018038;-46.30299767;Boia do INPE
+15182;15;FUR 110;-20.67074676;-46.25351734;Proximo a barragem
+15183;15;FUR 100;-20.73398649;-45.9187142;BraÃ§o Grande - jusante
+15184;15;FUR 90;-20.87915749;-46.05830195;BraÃ§o Sapucai - jusante
+15185;15;FUR 80;-20.69608075;-45.63740766;
+15186;15;FUR 70;-21.06147465;-45.8596869;
+15187;15;FUR 60;-20.8325447;-45.6246979;BraÃ§o Grande - meio
+15188;15;FUR 50;-21.16751575;-45.95078892;BraÃ§o Sapucai - meio
+15189;15;FUR 40;-20.98842718;-45.52394974;
+15190;15;FUR 30;-21.34849173;-46.00233822;
+15191;15;FUR 20;-21.05349144;-45.27861926;BraÃ§o Grande - montante
+15192;15;FUR 10;-21.3960422;-45.82784436;BraÃ§o Sapucai - montante
+15193;15;FUR Boia 03;-20.66034799;-46.3023368;Boia do INPE
+15194;15;FUR 110;-20.67066012;-46.25300787;Proximo a barragem
+15195;15;FUR 115b;-20.66382449;-46.25751127;Coleta conjunta com a COPPE
+15196;15;FUR 90;-20.87919565;-46.05797537;BraÃ§o Sapucai - jusante
+15197;15;FUR 80;-20.69561081;-45.6374345;
+15198;15;FUR 70;-21.06403366;-45.85925884;
+15199;15;FUR 60;-20.83211261;-45.62425402;BraÃ§o Grande - meio
+15200;15;FUR 40;-20.98836337;-45.52413232;
+15201;15;FUR 30;-21.34872673;-46.00232053;
+15202;15;FUR 20;-21.05408781;-45.27860112;BraÃ§o Grande - montante
+15203;15;FUR 10;-21.39606916;-45.82787345;BraÃ§o Sapucai - montante
+15204;15;FUR 110;-20.67083134;-46.25306687;Proximo a barragem
+15205;15;FUR 100;-20.73409506;-45.91868604;BraÃ§o Grande - jusante
+15206;15;FUR 90;-20.88203203;-46.05805291;BraÃ§o Sapucai - jusante
+15207;15;FUR 80;-20.69578177;-45.63762726;
+15208;15;FUR 70;-21.06154741;-45.85959106;
+15209;15;FUR 60;-20.83224839;-45.6241873;BraÃ§o Grande - meio
+15210;15;FUR 50;-21.16781436;-45.95070414;BraÃ§o Sapucai - meio
+15211;15;FUR 40;-20.98834589;-45.52393984;
+15212;15;FUR 30;-21.3484835;-46.00220316;
+15213;15;FUR 20;-21.05441164;-45.27948725;BraÃ§o Grande - montante
+15214;15;FUR 10;-21.39610587;-45.82775789;BraÃ§o Sapucai - montante
+15215;15;FUR Boia 02;-20.66007618;-46.30244007;Boia do INPE
+15216;15;FUR Boia 01;-20.65969317;-46.30171692;Boia do INPE
+15217;15;FUR Boia 02;-20.66032712;-46.30151115;Boia do INPE
+15218;15;FUR 100 ME;-20.73609865;-45.90889221;Transecto - margem esquerda
+15219;15;FUR 100 ME-CE;-20.73252027;-45.91069561;Transecto - entre a margem esquerda e o centro
+15220;15;FUR 100 CE;-20.73051281;-45.91271963;BraÃ§o Grande - jusante - transecto centro
+15221;15;FUR 100 MD-CE;-20.72810023;-45.91446265;Transecto - entre o centro e a margem direta
+15222;15;FUR 100 MD;-20.72529798;-45.91472433;Transecto - margem direita
+15223;15;FUR 50 ME;-21.16008727;-45.96075797;Transecto - margem esquerda
+15224;15;FUR 50 ME-CE;-21.15901939;-45.95789063;Transecto - entre a margem esquerda e o centro
+15225;15;FUR 50 CE;-21.15771727;-45.95489661;BraÃ§o Sapucai - meio
+15226;15;FUR 50 MD-CE;-21.1560976;-45.95213176;Transecto - entre o centro e a margem direta
+15227;15;FUR 50 MD;-21.15438554;-45.94972273;Transecto - margem direita
+16001;16;Barragem MSM60;-20.28208333;-47.05808333;
+16002;16;Barragem MSM60;-20.27941667;-47.05658333;
+16003;16;MSM50;-20.29527778;-46.88483333;Rio Santo Antonio
+16004;16;MSM40;-20.41391667;-47.84883333;Porto Cassia-Delf.
+16005;16;MSM30;-20.46927778;-47.72888889;Praia Bela
+16006;16;Itambe;-20.39086111;-46.96008333;
+16007;16;Itambe;-20.38975;-46.96308333;
+16008;16;Pousada Beira do Lago;-20.41708333;-46.97011111;
+16009;16;Saida das turbinas;-20.28786111;-47.06608333;
+16010;16;2,07 km da saida da Turbina;-20.27733333;-47.08147222;Rio Grande a 2,07 km da saida da Turbina de Peixoto
+16011;16;MSM20;-20.54547222;-46.64075;Usina aÃ§ucareira
+16012;16;Montante;-20.66227778;-46.53402778;
+16013;16;MSMSOL;-20.41638889;-46.96888889;Area de Solo
+16014;16;MSMSOL;-20.41777778;-46.97027778;Mata ciliar na Beira do Lago
+16015;16;MSMFU1;-20.29575;-46.89419444;Rio Santo Antonio
+16016;16;MSMFU2;-20.29897222;-46.89166667;Rio Santo Antonio
+16017;16;MSMFU3;-20.46461111;-46.85;Rio Sao Joao
+16018;16;MSMFU4;-20.46119444;-46.85033333;Rio Sao Joao
+16019;16;MSMFU5;-20.41238889;-46.96536111;Entrada do BraÃ§o Beira do Lago
+16020;16;MSMHS1;-20.28630556;-47.06169444;~300 m a Montante da Barragem de Peixoto
+16021;16;MSMCOD1;-20.28661111;-47.06222222;Proximo a Barragem de Peixoto
+16022;16;MSMCOD2;-20.28361111;-46.87802778;Rio Santo Antonio
+16023;16;MSMCOD3;-20.33833333;-47.02583333;Rio S/N
+16024;16;MSMCOD4;-20.41955556;-46.99591667;Corrego Itambe
+16025;16;MSMCOD6;-20.68480556;-46.39913889;Ribeirao da Conquista
+16026;16;MSMCOD7;-20.65861111;-46.4865;Esmeril
+16027;16;MSMCOD8;-20.56080556;-46.56997222;Corrego S/N
+16028;16;MSMCOD9;-20.56791667;-46.61908333;Rio S/N
+16029;16;MSMCOD11;-20.60813889;-46.83577778;Rio S/N
+16030;16;MSMCOD12;-20.60505556;-46.846;Rio Sao Pedro
+16031;16;MSMCOD13;-20.4165;-46.97155556;Agua Subterranea de Mini-PoÃ§o
+16032;16;MSMSED1;-20.41688889;-46.96988889;Enseada em frente do Beira do Lago
+16033;16;MSMPFQ1;-20.28630556;-47.06169444;Proximo a Barragem
+16034;16;MSMPFQ3;-20.46333333;-46.85013889;Rio Sao Joao
+16035;16;MSMFU1;-20.33338889;-46.95144444;Rio Santo Antonio
+16036;16;MSMFU2;-20.33319444;-46.95225;Rio Santo Antonio
+16037;16;MSMFU8;-20.38883333;-46.98616667;Corrego do Itambe
+16038;16;MSMFU9;-20.3905;-46.98569444;Corrego do Itambe
+16039;16;MSMFU10;-20.41230556;-46.96694444;BraÃ§o Beira do Lago
+16040;16;MSMFU11;-20.41202778;-46.96833333;BraÃ§o Beira do Lago
+16041;16;MSMSOL;-20.41666667;-46.97111111;Proximo ao Pier da Pousada Beira do Lago
+16042;16;MSMSOL;-20.4175;-46.9725;Mata ciliar na Margem de Peixoto
+16043;16;MSMPFQ1a;-20.29291667;-47.05813889;~300 m da barragem (montante)
+16044;16;Barragem MSM60;-20.27605556;-47.06091667;
+16045;16;Rio Santo Antonio MSM50;-20.29369444;-46.88961111;
+16046;16;MSM40;-20.40883333;-47.843;Porto Cassia-Delf.
+16047;16;MSM40;-20.41391667;-47.84883333;Porto Cassia-Delf.
+16048;16;Porto -  MSM40;-20.41433333;-47.84958333;
+16049;16;Praia Bela MSM30;-20.46769444;-45.86233333;
+16050;16;Itambe;-20.38613889;-46.952;
+16051;16;Saida das turbinas;-20.28661111;-47.06586111;
+16052;16;3 km a jusante;-20.27613889;-47.08163889;
+16053;16;Usina aÃ§ucareira MSM20;-20.54744444;-46.64466667;
+16054;16;Corrego Sem Nome - MSMCOD14;-20.42416667;-46.93888889;
+16055;16;Porto/MSM40 - MSMCOD16;-20.40883333;-46.843;
+16056;16;Corrego Sem Nome - MSMCOD17;-20.331;-46.84444444;
+16057;16;Corrego Sem Nome - MSMCOD18;-20.39347222;-46.78861111;
+16058;16;MSMCOD19;-20.29016667;-47.05805556;Montante de Peixoto (Barragem)
+16059;16;MSMCOD11;-20.61113889;-46.84002778;Rio Sao Joao + Santana
+16060;16;Rio Sao Pedro - MSMCOD12;-20.60591667;-46.84655556;
+16061;16;Represa - MSMCOD20;-20.47272222;-46.80186111;
+16062;16;MSMSED1;-20.41608333;-46.97088889;Enseada em frente do Beira do Lago
+16063;16;Ponte a Montante de Peixoto;-20.68508333;-46.36216667;Jusante de Furnas
+16064;16;Rio Santo Antonio MSM50;-20.29597222;-46.88558333;
+16065;16;BraÃ§o da Pousada Beira do Lago;-20.38997222;-46.96108333;
+16066;16;Barragem MSM60;-20.28102778;-47.06030556;
+16067;16;Boia do INPE;-20.35644444;-46.98091667;
+16068;16;Lajeado - Praia Bela MSM30;-20.46758333;-46.8615;
+16069;16;Rio Grande;-20.46966667;-46.81666667;
+16070;16;Pousada Beira do Lago;-20.37166667;-46.93661111;
+16071;16;Proximo a Pousada Beira do Lago;-20.38805556;-46.96169444;Rio Grande
+16072;16;Area de Solo de Pastagem;-20.41638889;-46.97083333;
+16073;16;Entrada do Rio Santo Antonio - MSMFU8;-20.32005556;-46.93738889;
+16074;16;Entrada do Rio Santo Antonio - MSMFU9;-20.32644444;-46.93072222;
+16075;16;MSMHS2;-20.29555556;-47.88586111;Rio Santo Antonio
+16076;16;MSMHS1;-20.28055556;-47.05994444;~500 m a Montante da Barragem de Peixoto
+16077;16;MSMHS3;-20.31275;-47.02591667;Rio Grande a ~5 km a Montante da Barragem
+16078;16;MSMHS4;-20.35594444;-46.9805;Rio Grande a ~12 km a Montante da Barragem
+16079;16;MSMHS6;-20.37116667;-46.93622222;~16 km a Montante da Barragem de Peixoto
+16080;16;Rio Santo Antonio/MSM50 - MSMCOD2;-20.28291667;-46.878;
+16081;16;Corrego Itambe - MSMCOD4;-20.42597222;-46.94025;
+16082;16;Corrego no Rio Grande - MSMCOD14;-20.42269444;-46.99744444;
+16083;16;Ribeirao da Bocaina - MSMCOD24;-20.579;-46.62341667;
+16084;16;Ribeirao do Jau - MSMCOD22;-20.54888889;-46.59647222;
+16085;16;Ribeirao Grande - MSMCOD21;-20.54969444;-46.54913889;
+16086;16;MSM20 - MSMCOD23;-20.53252778;-46.65052778;
+16087;16;Rio Sao Joao - MSMCOD20;-20.47038889;-46.67530556;
+16088;16;Porto/MSM40 - MSMCOD16;-20.41544444;-46.84822222;
+16089;16;Rio Santo Antonio - MSMPFQ4;-20.29552778;-46.88519444;
+16090;16;MSM 05;-20.7168793;-46.39567561;
+16091;16;MSM 10;-20.69362726;-46.44699681;
+16092;16;MSM 20;-20.54186263;-46.64413102;
+16093;16;MSM 30;-20.46861886;-46.86110122;
+16094;16;MSM 35;-20.61819429;-46.87300544;
+16095;16;MSM 40;-20.41341529;-46.84975376;
+16096;16;MSM 45;-20.25934519;-46.83335331;
+16097;16;MSM 50;-20.29576416;-46.88534631;
+16098;16;MSM 60;-20.28257068;-47.05139546;
+16099;16;MSM 15;-20.69023265;-46.59515967;
+16100;16;MSM 60;-20.27535637;-47.07534038;Jusante da barragem, montante do reservatorio da UHE Estreito
+16101;16;MSM 70;-20.31405475;-47.02786065;Proximo a barragem
+16102;16;MSM 50;-20.294649;-46.88864067;
+16103;16;MSM 40;-20.41379497;-46.84929366;PorÃ§ao media do reservatorio
+16104;16;MSM 30;-20.46904311;-46.86155206;
+16105;16;MSM 20;-20.5419676;-46.64498052;
+16106;16;MSM 10;-20.65768735;-46.4704247;Montante do reservatorio
+16107;16;MSM 60;-20.27554204;-47.07567786;Jusante da barragem, montante do reservatorio da UHE Estreito
+16108;16;MSM 70;-20.31437108;-47.02862114;Proximo a barragem
+16109;16;MSM Boia 02;-20.3563577;-46.98091068;Boia do INPE
+16110;16;MSM 50;-20.29628952;-46.88560651;
+16111;16;MSM 30;-20.46895701;-46.86115806;
+16112;16;MSM 20;-20.54241931;-46.64497576;
+16113;16;MSM 10;-20.65690283;-46.46601177;Montante do reservatorio
+16114;16;MSM 60;-20.27553369;-47.07562032;Jusante da barragem, montante do reservatorio da UHE Estreito
+16115;16;MSM 50;-20.29482008;-46.88869061;
+16116;16;MSM 40;-20.41394243;-46.84901756;PorÃ§ao media do reservatorio
+16117;16;MSM 30;-20.46907195;-46.86138947;
+16118;16;MSM 20;-20.54223372;-46.64454222;
+16119;16;MSM 10;-20.65800718;-46.46999587;Montante do reservatorio
+16120;16;MSM Boia 01;-20.35621679;-46.98059284;Boia do INPE
+16121;16;MSM Boia 03;-20.35595185;-46.98085761;Boia do INPE
+16122;16;MSM 40 ME;-20.41911875;-46.84384787;Transecto - margem esquerda
+16123;16;MSM 40 ME-CE;-20.41609177;-46.84565143;Transecto - entre a margem esquerda e o centro
+16124;16;MSM 40 CE;-20.41334353;-46.84757323;PorÃ§ao media do reservatorio
+16125;16;MSM 40 MD-CE;-20.41057752;-46.84946601;Transecto - entre o centro e a margem direta
+16126;16;MSM 40 MD;-20.40876672;-46.85071864;Transecto - margem direita

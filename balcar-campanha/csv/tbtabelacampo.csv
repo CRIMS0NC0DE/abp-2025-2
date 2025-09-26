@@ -1,0 +1,24 @@
+idtabelacampo;nome;rotulo;unidade;descricao;ordem
+1;dataMedida;Data;\N;\N;1
+2;ch4;CH4;mg/m2/dia;Fluxo de Metano;2
+3;batimetria;Batimetria;m;\N;3
+4;tempAr;Temp. ar;oC;Temperatura do ar;4
+5;tempCupula;Temp. na cúpula;oC;Temperatura na cúpula de coleta;5
+6;tempAguaSubsuperficie;Temp. da água na subsuper.;oC;\N;6
+7;tempAguaMeio;Temp. da água no meio;oC;\N;7
+8;tempAguaFundo;Temp. da água no fundo;oC;\N;8
+9;phSubsuperficie;pH na subsuper.;\N;\N;9
+10;phMeio;pH no meio;\N;\N;10
+11;phFundo;pH no fundo;\N;\N;11
+12;orpSubsuperficie;ORP na subsuper.;mV;Potencial de Redução da Oxidação;12
+13;orpMeio;ORP no meio;mV;Potencial de Redução da Oxidação;13
+14;orpFundo;ORP no fundo;mV;Potencial de Redução da Oxidação;14
+15;condutividadeSubsuperficie;Cond. na subsuper.;µS/cm;Condutividade;15
+16;condutividadeMeio;Cond. no meio;µS/cm;Condutividade;16
+17;condutividadeFundo;Cond. no fundo;µS/cm;Condutividade;17
+18;odSubsuperficie;OD na subsuper.;mg/L;Oxigênio dissolvido;18
+19;odMeio;OD no meio;mg/L;Oxigênio dissolvido;19
+20;odFundo;OD no fundo;mg/L;Oxigênio dissolvido;20
+21;tsdSubsuperficie;TSD na subsuper.;g/L;Total de Sólidos Dissolvidos;21
+22;tsdMeio;TSD no meio;g/L;Total de Sólidos Dissolvidos;22
+23;tsdFundo;TSD no fundo;g/L;Total de Sólidos Dissolvidos;23
