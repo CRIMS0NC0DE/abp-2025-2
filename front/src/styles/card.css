@@ -1,7 +1,7 @@
 .card-container {
   width: 250px;
   height: 200px;
-  background-color: #e2e8f0; /* Um cinza claro similar à imagem */
+  background-color: #e2e8f0; 
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -18,15 +18,15 @@
 }
 
 .card-icon {
-  width: 60px; /* Ajuste o tamanho conforme seus ícones */
+  width: 60px; 
   height: 60px;
   margin-bottom: 1rem;
 }
 
 .card-label {
   margin: 0;
-  font-family: 'Poppins', sans-serif; /* Usando a mesma fonte da outra página */
+  font-family: 'Poppins', sans-serif; 
   font-weight: 600;
   font-size: 1.2rem;
-  color: #2d3748;
+  color: #2D6AB1;
 }

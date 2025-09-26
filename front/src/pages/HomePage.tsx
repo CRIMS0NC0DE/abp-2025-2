@@ -6,7 +6,7 @@ import '../styles/HomePage.css'
 import mapIcon from '../assets/map-icon.png';
 import tableIcon from '../assets/table-icon.png';
 import simaIcon from '../assets/sima-icon.png';
-import downloadIcon from '../assets/download-logo.png';
+import downloadIcon from '../assets/download-logo_card.png';
 
 const HomePage: React.FC = () => {
   const cardData = [

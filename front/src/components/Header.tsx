@@ -50,8 +50,6 @@ const Header: React.FC = () => {
   );
 };
 
-// ... (seus estilos aqui)
-
 const styles: { [key: string]: React.CSSProperties } = {
   nav: {
     display: "flex",
