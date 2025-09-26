@@ -1,0 +1,28 @@
+.homepage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #fff; /* Fundo branco para a área dos cards */
+  flex-grow: 1; /* Faz a main ocupar o espaço disponível */
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas */
+  gap: 2rem; /* Espaçamento entre os cards */
+  justify-items: center;
+}
+
+/* Para telas menores (tablets e celulares) */
+@media (max-width: 1100px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr; /* 1 coluna */
+  }
+}

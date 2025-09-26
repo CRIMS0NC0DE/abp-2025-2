@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/footer.css'; // <--- ADICIONE ESTA LINHA
 
 const Footer: React.FC = () => {
   return (

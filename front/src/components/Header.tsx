@@ -1,3 +1,5 @@
+// >>>>>>> 82bad15 (feat: initialize front-end project with React, Vite, and TypeScript)
+=======
 import React from 'react';
 import govLogo from "../../../assets/govLogo.png";
 import inpeLogo from "../../../assets/LogoInpe.png";
@@ -126,5 +128,5 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: 16,
   },
 };
-
+  
 export default Header;
