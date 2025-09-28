@@ -1,0 +1,32 @@
+/* Estilo da HomePage baseado no seu código antigo */
+.homepageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  flex-grow: 1;
+}
+
+.cardsGrid {
+  display: grid;
+  /* Cria 4 colunas em telas grandes */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem; /* Aumentei o espaçamento para um visual mais limpo */
+  justify-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Media query para tablets - 2 colunas */
+@media (max-width: 1100px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query para celulares - 1 coluna */
+@media (max-width: 600px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

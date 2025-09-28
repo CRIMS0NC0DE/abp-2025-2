@@ -1,16 +1,8 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
-body {
-  margin: 0;
-  background-color: #f0f2f5;
-  font-family: "Poppins", sans-serif;
-}
-
-.page-container {
+/* Estilos da página de ExportCSV, baseados no seu código antigo */
+.pageContainer {
   display: flex;
-  min-height: 100vh;
   width: 100%;
+  flex-grow: 1;
 }
 
 .sidebar {
@@ -19,13 +11,14 @@ body {
   flex-shrink: 0;
 }
 
-.content-container {
+.contentContainer {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  background-color: #f0f2f5;
 }
 
 .title {
@@ -36,12 +29,12 @@ body {
   text-align: center;
 }
 
-.title-highlight {
+.titleHighlight {
   color: #4299e1;
-  font-weight: 600;
 }
 
-.export-box {
+/* O botão de exportação agora é um <button> para semântica correta */
+.exportBox {
   width: 280px;
   height: 280px;
   border-radius: 50%;
@@ -55,23 +48,23 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.export-box:hover {
+.exportBox:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.download-icon {
+.downloadIcon {
   width: 100px;
   height: auto;
   opacity: 0.8;
   transition: opacity 0.3s ease-in-out;
 }
 
-.export-box:hover .download-icon {
+.exportBox:hover .downloadIcon {
   opacity: 1;
 }
 
-.instruction-text {
+.instructionText {
   margin-top: 2rem;
   font-size: 1rem;
   color: #718096;
