@@ -75,7 +75,7 @@ services:
     depends_on:
       - postgres-furnas-campanha
       - postgres-sima
-      - postgres-balcar
+      - postgres-balcar-campanha
 
   server-app:
     build:
@@ -123,6 +123,7 @@ volumes:
   furnas_campanha_data:
   sima_data:
   balcar_campanha_data:
+  pgadmin_data:
 
 networks:
   abp-network:
