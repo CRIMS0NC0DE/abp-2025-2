@@ -1,0 +1,115 @@
+/* Estilos para o componente Header, separados em seções para clareza */
+
+.header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 1. Barra de Navegação Superior (Branca) --- */
+
+.topNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 50px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.govLogo {
+  width: 90px; /* Ajuste sutil de tamanho */
+  height: auto;
+}
+
+.topNavLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Espaçamento entre os links */
+  margin: 0;
+  padding: 0;
+}
+
+.topLink {
+  color: #0072bc;
+  text-decoration: none;
+  font-size: 0.875rem; /* 14px */
+  font-weight: bold;
+  transition: text-decoration 0.2s;
+}
+
+.topLink:hover {
+  text-decoration: underline;
+}
+
+
+/* --- 2. Barra de Navegação Inferior (Azul) --- */
+
+.subNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d6ab1;
+  padding: 0.6rem 1.5rem; /* 10px 24px */
+  color: #fff;
+}
+
+.leftContent {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* Espaçamento entre logo e texto */
+}
+
+/* Garante que o logo do INPE seja clicável para voltar à home */
+.leftContent a {
+  display: flex;
+  align-items: center;
+}
+
+.inpeLogo {
+  width: 35px;
+  height: auto;
+}
+
+.inpeText {
+  font-size: 1.125rem; /* 18px */
+  font-weight: bold;
+  color: #fff;
+}
+
+
+/* --- 3. Navegação Principal (dentro da barra azul) --- */
+
+.mainNav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.mainNav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: opacity 0.2s;
+  opacity: 0.85;
+}
+
+.mainNav a:hover {
+  opacity: 1;
+}
+
+/* Estilo para o link da página ativa */
+.mainNav a.active {
+  opacity: 1;
+  border-bottom-color: #fff;
+}

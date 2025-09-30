@@ -1,0 +1,38 @@
+/* Estilo unificado do card, baseado no seu código antigo */
+.cardLink {
+  text-decoration: none; /* Remove sublinhado do link */
+}
+
+.cardContainer {
+  width: 250px;
+  height: 200px;
+  background-color: #ffffff; /* Fundo branco para melhor contraste */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.cardContainer:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(45, 106, 177, 0.15);
+}
+
+.cardIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.cardLabel {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #2D6AB1;
+}

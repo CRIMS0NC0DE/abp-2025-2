@@ -1,0 +1,22 @@
+/* Importa a fonte Poppins do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* Resets básicos e definição da fonte principal */
+body {
+  margin: 0;
+  background-color: #f0f2f5; /* Cor de fundo padrão do app */
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Garante que o app ocupe a altura total */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1; /* Permite que o conteúdo principal cresça e ocupe o espaço */
+}
