@@ -59,6 +59,24 @@ services:
     networks:
       - abp-network
 
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-service
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@exemplo.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - abp-network
+    depends_on:
+      - postgres-furnas-campanha
+      - postgres-sima
+      - postgres-balcar
+
   server-app:
     build:
       context: ./server
