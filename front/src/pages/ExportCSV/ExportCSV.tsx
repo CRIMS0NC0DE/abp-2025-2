@@ -1,68 +1,86 @@
 import React from "react";
+import JSZip from "jszip";
 import styles from "./ExportCSV.module.css";
 import downloadIcon from "../../assets/download-logo.png";
 
-// --- DADOS MOCADOS (Exemplo) ---
-// Em uma aplicação real, esses dados viriam de uma API.
-const mockData = [
-  {
-    id: 1,
-    reservatorio: "Furnas",
-    data: "2024-01-15",
-    parametro: "pH",
-    valor: 7.2,
-  },
-  {
-    id: 2,
-    reservatorio: "Furnas",
-    data: "2024-01-15",
-    parametro: "Turbidez",
-    valor: 3.5,
-  },
-  {
-    id: 3,
-    reservatorio: "Marimbondo",
-    data: "2024-01-16",
-    parametro: "pH",
-    valor: 7.0,
-  },
-  {
-    id: 4,
-    reservatorio: "Marimbondo",
-    data: "2024-01-16",
-    parametro: "Oxigênio",
-    valor: 6.8,
-  },
+const csvFiles = [
+  "tbabioticocoluna.csv", //furnas-campanha
+  "tbabioticosuperficie.csv",
+  "tbaguamateriaorganicasedimento.csv",
+  "tbbioticocoluna.csv",
+  "tbbioticosuperficie.csv",
+  "tbbolhas.csv",
+  "tbcamarasolo.csv",
+  "tbcampanha.csv",
+  "tbcampanhaportabela.csv",
+  "tbcampoportabela.csv",
+  "tbcarbono.csv",
+  "tbconcentracaogasagua.csv",
+  "tbconcentracaogassedimento.csv",
+  "tbdadosprecipitacao.csv",
+  "tbdadosrepresa.csv",
+  "tbdifusao.csv",
+  "tbdupladessorcaoagua.csv",
+  "tbfluxobolhasinpe.csv",
+  "tbfluxocarbono.csv",
+  "tbfluxodifusivo.csv",
+  "tbfluxodifusivoinpe.csv",
+  "tbgasesembolhas.csv",
+  "tbhoriba.csv",
+  "tbinstituicao.csv",
+  "tbionsnaaguaintersticialdosedimento.csv",
+  "tbmedidacampocoluna.csv",
+  "tbmedidacamposuperficie.csv",
+  "tbnutrientessedimento.csv",
+  "tbparametrosbiologicosfisicosagua.csv",
+  "tbpfq.csv",
+  "tbreservatorio.csv",
+  "tbsitio.csv",
+  "tbtabela.csv",
+  "tbtc.csv",
+  "tbvariaveisfisicasquimicasdaagua.csv",
+  
+  "tbcampanhabalcar.csv", //balcar-campanha
+  "tbfluxoinpe.csv",
+  "tbintituiçãobalcar.csv",
+  "tbreservatoriobalcar.csv",
+  "tbsitiobalcar.csv",
+  
+  "tbtabelacampo.csv", //sima
+  "tbcampotabela.csv",
+  "tbestacao.csv",
+  "tbsensor.csv",
+  "tbsima.csv",
+  "tbsimaoffline.csv",
 ];
+
+
 
 // Página para exportação de dados em formato CSV.
 const ExportCSVPage: React.FC = () => {
   // Função para lidar com a exportação dos dados para um arquivo CSV.
-  const handleExportCSV = () => {
-    if (mockData.length === 0) {
-      alert("Não há dados para exportar!");
-      return;
-    }
+  const handleExportAllAsZip = async () => {
+    const zip = new JSZip();
 
-    // Cria o cabeçalho do CSV a partir das chaves do primeiro objeto.
-    const headers = Object.keys(mockData[0]).join(",");
-    // Mapeia cada objeto para uma string de valores separados por vírgula.
-    const rows = mockData.map((row) => Object.values(row).join(","));
-    // Combina cabeçalho e linhas.
-    const csvContent = [headers, ...rows].join("\n");
+    // Busca todos os arquivos CSV e adiciona ao zip
+    await Promise.all(
+      csvFiles.map(async (filename) => {
+        const response = await fetch(`/furnas-campanha/csv/${filename}`);
+        if (response.ok) {
+          const text = await response.text();
+          zip.file(filename, text);
+        }
+      })
+    );
 
-    // Cria um Blob com o conteúdo CSV.
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-
-    // Cria um link temporário para iniciar o download.
+    // Gera o ZIP e inicia o download
+    const content = await zip.generateAsync({ type: "blob" });
+    const url = URL.createObjectURL(content);
     const link = document.createElement("a");
-    link.setAttribute("href", url);
-    link.setAttribute("download", "dados_limnologicos.csv");
+    link.href = url;
+    link.setAttribute("download", "furnas-csv.zip");
     document.body.appendChild(link);
     link.click();
-
-    // Remove o link após o download.
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
@@ -75,7 +93,7 @@ const ExportCSVPage: React.FC = () => {
           Exportar Dados <span className={styles.titleHighlight}>CSV</span>
         </h1>
 
-        <button className={styles.exportBox} onClick={handleExportCSV}>
+        <button className={styles.exportBox} onClick={handleExportAllAsZip}>
           <img
             src={downloadIcon}
             className={styles.downloadIcon}
@@ -84,7 +102,7 @@ const ExportCSVPage: React.FC = () => {
         </button>
 
         <p className={styles.instructionText}>
-          Clique no círculo para iniciar o download
+          Clique no círculo para baixar todos os CSVs em um ZIP
         </p>
       </div>
       <aside className={styles.sidebar}></aside>
