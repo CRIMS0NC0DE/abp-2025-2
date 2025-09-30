@@ -78,7 +78,7 @@ const ExportCSVPage: React.FC = () => {
     const url = URL.createObjectURL(content);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "furnas-csv.zip");
+    link.setAttribute("download", "data-csv.zip");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
