@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
@@ -5,9 +6,9 @@ import styles from './Header.module.css';
 import govLogo from '../../assets/govLogo.png';
 import inpeLogo from '../../assets/LogoInpe.png';
 
-// Header refatorado com layout de duas barras e navegação principal integrada.
 export default function Header() {
-  // Links para a barra superior (links externos/institucionais)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const topNavLinks = [
     { label: 'Simplifique!', href: '#' },
     { label: 'Comunica BR', href: '#' },
@@ -17,7 +18,6 @@ export default function Header() {
     { label: 'Canais', href: '#' },
   ];
 
-  // Links para a navegação principal da aplicação
   const mainNavLinks = [
     { label: 'Home', to: '/' },
     { label: 'Mapa', to: '/mapa' },
@@ -26,14 +26,15 @@ export default function Header() {
     { label: 'Download', to: '/exportar-csv' },
   ];
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={styles.header}>
-      {/* Barra de navegação superior (branca) */}
       <nav className={styles.topNav}>
         <div className={styles.logoContainer}>
-          <a href="#">
-            <img src={govLogo} alt="gov.br logo" className={styles.govLogo} />
-          </a>
+          <a href="#"><img src={govLogo} alt="gov.br logo" className={styles.govLogo} /></a>
         </div>
         <ul className={styles.topNavLinks}>
           {topNavLinks.map(link => (
@@ -42,23 +43,33 @@ export default function Header() {
         </ul>
       </nav>
 
-      {/* Barra de navegação inferior (azul) - Principal */}
       <div className={styles.subNav}>
         <div className={styles.leftContent}>
-          <Link to="/">
+          <Link to="/" onClick={handleLinkClick}>
             <img src={inpeLogo} alt="INPE logo" className={styles.inpeLogo} />
           </Link>
           <span className={styles.inpeText}>INPE</span>
         </div>
 
-        {/* Navegação principal da aplicação */}
-        <nav className={styles.mainNav}>
+        {/* Botão com classe condicional para animar o ícone */}
+        <button 
+          className={`${styles.hamburgerButton} ${isMenuOpen ? styles.open : ''}`} 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Abrir menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav className={`${styles.mainNav} ${isMenuOpen ? styles.menuOpen : ''}`}>
           <ul>
             {mainNavLinks.map(link => (
               <li key={link.label}>
                 <NavLink 
                   to={link.to} 
                   className={({ isActive }) => isActive ? styles.active : ''}
+                  onClick={handleLinkClick}
                 >
                   {link.label}
                 </NavLink>
