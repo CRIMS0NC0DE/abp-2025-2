@@ -1,0 +1,31 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 25px; /* Bordas arredondadas */
+  overflow: hidden;
+  width: 100%; /* Ocupa a largura do container pai */
+  max-width: 380px; /* Largura máxima */
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  padding: 0.6rem 1rem; /* 8px 12px */
+  outline: none;
+  font-size: 0.9rem; /* 14px */
+  font-family: 'Poppins', sans-serif;
+}
+
+.searchButton {
+  border: none;
+  background-color: transparent;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 1rem; /* 16px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

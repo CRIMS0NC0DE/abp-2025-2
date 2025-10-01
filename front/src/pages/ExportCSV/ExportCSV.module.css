@@ -1,0 +1,71 @@
+/* Estilos da página de ExportCSV, baseados no seu código antigo */
+.pageContainer {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.sidebar {
+  flex-basis: 60px;
+  background-color: #2d6ab1;
+  flex-shrink: 0;
+}
+
+.contentContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f0f2f5;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.titleHighlight {
+  color: #4299e1;
+}
+
+/* O botão de exportação agora é um <button> para semântica correta */
+.exportBox {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.exportBox:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.downloadIcon {
+  width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.exportBox:hover .downloadIcon {
+  opacity: 1;
+}
+
+.instructionText {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #718096;
+}

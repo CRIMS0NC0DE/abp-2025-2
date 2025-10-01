@@ -1,89 +1,72 @@
-import React, { useState } from "react";
-import "./styles.css";
-import downloadIcon from "../../../../assets/download-logo.png";
+import React from 'react';
+import styles from './ExportCSV.module.css';
+import downloadIcon from '../../assets/download-logo.png';
 
-// --- DADOS MOCADOS
+// --- DADOS MOCADOS (Exemplo) ---
+// Em uma aplicação real, esses dados viriam de uma API.
 const mockData = [
-  {
-    id: 1,
-    reservatorio: "Furnas",
-    data: "2024-01-15",
-    parametro: "pH",
-    valor: 7.2,
-  },
-  {
-    id: 2,
-    reservatorio: "Furnas",
-    data: "2024-01-15",
-    parametro: "Turbidez",
-    valor: 3.5,
-  },
-  {
-    id: 3,
-    reservatorio: "Marimbondo",
-    data: "2024-01-16",
-    parametro: "pH",
-    valor: 7.0,
-  },
-  {
-    id: 4,
-    reservatorio: "Marimbondo",
-    data: "2024-01-16",
-    parametro: "Oxigênio",
-    valor: 6.8,
-  },
+  { id: 1, reservatorio: "Furnas", data: "2024-01-15", parametro: "pH", valor: 7.2 },
+  { id: 2, reservatorio: "Furnas", data: "2024-01-15", parametro: "Turbidez", valor: 3.5 },
+  { id: 3, reservatorio: "Marimbondo", data: "2024-01-16", parametro: "pH", valor: 7.0 },
+  { id: 4, reservatorio: "Marimbondo", data: "2024-01-16", parametro: "Oxigênio", valor: 6.8 },
 ];
 
-interface LimnologicalData {
-  id: number;
-  reservatorio: string;
-  data: string;
-  parametro: string;
-  valor: number;
-}
+// Página para exportação de dados em formato CSV.
+const ExportCSVPage: React.FC = () => {
 
-export const ExportCSV: React.FC = () => {
-  const [data] = useState<LimnologicalData[]>(mockData);
-
+  // Função para lidar com a exportação dos dados para um arquivo CSV.
   const handleExportCSV = () => {
-    if (data.length === 0) {
+    if (mockData.length === 0) {
       alert("Não há dados para exportar!");
       return;
     }
-    const headers = Object.keys(data[0]).join(",");
-    const rows = data.map((row) => Object.values(row).join(","));
-    const csvContent = [headers, ...rows].join("\n");
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+
+    // Cria o cabeçalho do CSV a partir das chaves do primeiro objeto.
+    const headers = Object.keys(mockData[0]).join(',');
+    // Mapeia cada objeto para uma string de valores separados por vírgula.
+    const rows = mockData.map(row => Object.values(row).join(','));
+    // Combina cabeçalho e linhas.
+    const csvContent = [headers, ...rows].join('\n');
+
+    // Cria um Blob com o conteúdo CSV.
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.setAttribute("href", url);
-    link.setAttribute("download", "dados_limnologicos.csv");
+
+    // Cria um link temporário para iniciar o download.
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'dados_limnologicos.csv');
     document.body.appendChild(link);
     link.click();
+
+    // Remove o link após o download.
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   return (
-    <div className="page-container">
-      <div className="sidebar left"></div>
-      <div className="content-container">
-        <h1 className="title">
-          Exportar Dados <span className="title-highlight">CSV</span>
+    <div className={styles.pageContainer}>
+      <aside className={styles.sidebar}></aside>
+      <div className={styles.contentContainer}>
+        <h1 className={styles.title}>
+          Exportar Dados <span className={styles.titleHighlight}>CSV</span>
         </h1>
 
-        <div className="export-box" onClick={handleExportCSV}>
+        <button className={styles.exportBox} onClick={handleExportCSV}>
           <img
             src={downloadIcon}
-            className="download-icon"
+            className={styles.downloadIcon}
             alt="Ícone de download"
           />
-        </div>
+        </button>
 
-        <p className="instruction-text">
+        <p className={styles.instructionText}>
           Clique no círculo para iniciar o download
         </p>
       </div>
-      <div className="sidebar right"></div>
+      <aside className={styles.sidebar}></aside>
     </div>
   );
 };
+
+export default ExportCSVPage;
