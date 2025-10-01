@@ -65,7 +65,7 @@ const ExportCSVPage: React.FC = () => {
     // Busca todos os arquivos CSV e adiciona ao zip
     await Promise.all(
       csvFiles.map(async (filename) => {
-        const response = await fetch(`/furnas-campanha/csv/${filename}`);
+        const response = await fetch(`/csv/${filename}`);
         if (response.ok) {
           const text = await response.text();
           zip.file(filename, text);
