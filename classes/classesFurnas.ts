@@ -33,3 +33,22 @@ class Carbono extends Entidade {
     return this.idcarbono;
   }
 }
+
+class CampanhaPorTabela extends Entidade {
+  idcampanhaportabela!: number;
+  idtabela!: number;
+
+  getId(): number {
+    return this.idcampanhaportabela;
+  }
+}
+
+class AbioticoColuna extends Entidade {
+  idabioticocoluna!: number;
+  idcampanha!: number;
+  idsitio!: number;
+
+  getId(): number {
+    return this.idabioticocoluna;
+  }
+}
