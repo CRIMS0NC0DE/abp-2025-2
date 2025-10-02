@@ -39,13 +39,13 @@ const csvFiles = [
   "tbtabela.csv",
   "tbtc.csv",
   "tbvariaveisfisicasquimicasdaagua.csv",
-  
+
   "tbcampanhabalcar.csv", //balcar-campanha
   "tbfluxoinpe.csv",
   "tbintituiçãobalcar.csv",
   "tbreservatoriobalcar.csv",
   "tbsitiobalcar.csv",
-  
+
   "tbtabelacampo.csv", //sima
   "tbcampotabela.csv",
   "tbestacao.csv",
@@ -53,8 +53,6 @@ const csvFiles = [
   "tbsima.csv",
   "tbsimaoffline.csv",
 ];
-
-
 
 // Página para exportação de dados em formato CSV.
 const ExportCSVPage: React.FC = () => {
