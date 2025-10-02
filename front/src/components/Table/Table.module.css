@@ -1,0 +1,36 @@
+/* front/src/components/Table/Table.module.css */
+
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.tableWrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tableWrap thead th {
+  background-color: #f7fafc;
+  font-weight: bold;
+}
+
+.tableWrap tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.noData {
+  text-align: center;
+  padding: 16px;
+  color: #666;
+}

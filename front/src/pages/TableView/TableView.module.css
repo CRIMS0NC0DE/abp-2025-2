@@ -1,0 +1,45 @@
+/* front/src/pages/TableView/TableView.module.css */
+
+.page {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 16px;
+}
+
+.page h1 {
+  margin: 0 0 4px 0;
+}
+
+.page p {
+  margin: 0 0 16px 0;
+  color: #666;
+}
+
+.error {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  border: 1px solid #fc8181;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.exportSection {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.exportButton {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #2f855a;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.exportButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
