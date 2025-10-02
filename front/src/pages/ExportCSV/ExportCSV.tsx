@@ -42,7 +42,7 @@ const csvFiles = [
 
   "tbcampanhabalcar.csv", //balcar-campanha
   "tbfluxoinpe.csv",
-  "tbintituiçãobalcar.csv",
+  "tbinstituicaobalcar.csv",
   "tbreservatoriobalcar.csv",
   "tbsitiobalcar.csv",
   "tbtabelacampo.csv", 
