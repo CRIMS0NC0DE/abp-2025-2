@@ -45,9 +45,9 @@ const csvFiles = [
   "tbintituiçãobalcar.csv",
   "tbreservatoriobalcar.csv",
   "tbsitiobalcar.csv",
-
-  "tbtabelacampo.csv", //sima
-  "tbcampotabela.csv",
+  "tbtabelacampo.csv", 
+  
+  "tbcampotabela.csv", //sima
   "tbestacao.csv",
   "tbsensor.csv",
   "tbsima.csv",
