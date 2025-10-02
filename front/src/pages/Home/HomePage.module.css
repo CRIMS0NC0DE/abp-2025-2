@@ -1,4 +1,4 @@
-/* Estilo da HomePage baseado no seu código antigo */
+
 .homepageContainer {
   display: flex;
   justify-content: center;
@@ -9,9 +9,8 @@
 
 .cardsGrid {
   display: grid;
-  /* Cria 4 colunas em telas grandes */
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem; /* Aumentei o espaçamento para um visual mais limpo */
+  gap: 2.5rem; 
   justify-items: center;
   max-width: 1200px;
   width: 100%;
