@@ -52,3 +52,20 @@ class AbioticoColuna extends Entidade {
     return this.idabioticocoluna;
   }
 }
+
+class BioticoSuperficie extends Entidade {
+  idbioticosuperficie!: number;
+
+    getId(): number {
+    return this.idbioticosuperficie;
+    }
+}
+
+
+class AguaMateriaOrganicaSedimento extends Entidade {
+  idag!: number;
+  
+    getId(): number {
+    return this.idag;
+  }
+}
