@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
-// Importação dos logos
+// --- asset imports
 import govLogo from '../../assets/govLogo.png';
 import inpeLogo from '../../assets/LogoInpe.png';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // --- nav link data
   const topNavLinks = [
     { label: 'Simplifique!', href: '#' },
     { label: 'Comunica BR', href: '#' },
@@ -26,12 +27,18 @@ export default function Header() {
     { label: 'Download', to: '/exportar-csv' },
   ];
 
+  // --- event handlers
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
   return (
     <header className={styles.header}>
+      {/* Top bar for desktop */}
       <nav className={styles.topNav}>
         <div className={styles.logoContainer}>
           <a href="#"><img src={govLogo} alt="gov.br logo" className={styles.govLogo} /></a>
@@ -43,6 +50,7 @@ export default function Header() {
         </ul>
       </nav>
 
+      {/* Main navigation bar (blue) */}
       <div className={styles.subNav}>
         <div className={styles.leftContent}>
           <Link to="/" onClick={handleLinkClick}>
@@ -51,28 +59,38 @@ export default function Header() {
           <span className={styles.inpeText}>INPE</span>
         </div>
 
-        {/* Botão com classe condicional para animar o ícone */}
-        <button 
-          className={`${styles.hamburgerButton} ${isMenuOpen ? styles.open : ''}`} 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Abrir menu"
+        <button
+          className={`${styles.hamburgerButton} ${isMenuOpen ? styles.open : ''}`}
+          onClick={toggleMenu}
+          aria-label="Menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </button>
 
+        {/* Navigation container */}
         <nav className={`${styles.mainNav} ${isMenuOpen ? styles.menuOpen : ''}`}>
           <ul>
+            {/* Internal app navigation */}
             {mainNavLinks.map(link => (
               <li key={link.label}>
-                <NavLink 
-                  to={link.to} 
+                <NavLink
+                  to={link.to}
                   className={({ isActive }) => isActive ? styles.active : ''}
                   onClick={handleLinkClick}
                 >
                   {link.label}
                 </NavLink>
+              </li>
+            ))}
+
+            
+            
+            {/* External links for mobile */}
+            {topNavLinks.map(link => (
+              <li key={link.label} className={styles.externalLinkItem}>
+                <a href={link.href} onClick={handleLinkClick}>{link.label}</a>
               </li>
             ))}
           </ul>

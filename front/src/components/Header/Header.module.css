@@ -14,8 +14,8 @@
   background-color: #2d6ab1;
   padding: 0.6rem 1rem;
   color: #fff;
-  position: relative; /* Contexto para o menu */
-  z-index: 101; /* Fica acima do menu dropdown */
+  position: relative;
+  z-index: 101;
 }
 
 .leftContent { display: flex; align-items: center; gap: 0.8rem; }
@@ -23,7 +23,6 @@
 .inpeLogo { width: 35px; height: auto; }
 .inpeText { font-size: 1.125rem; font-weight: bold; color: #fff; }
 
-/* Barra superior (será controlada no final) */
 .topNav {
   display: flex;
   justify-content: space-between;
@@ -39,10 +38,8 @@
 .topLink { color: #0072bc; text-decoration: none; font-size: 0.875rem; font-weight: bold; }
 
 /* ==========================================================================
-   Botão Hambúrguer e Menu de Navegação (Lógica Unificada)
+   Botão Hambúrguer e Menu de Navegação
    ========================================================================== */
-
-/* --- Botão Hambúrguer --- */
 .hamburgerButton {
   display: flex;
   flex-direction: column;
@@ -53,7 +50,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 102; /* Acima de tudo */
+  z-index: 102;
 }
 .hamburgerButton span {
   width: 2rem;
@@ -67,9 +64,7 @@
 .hamburgerButton.open span:nth-child(2) { opacity: 0; transform: translateX(20px); }
 .hamburgerButton.open span:nth-child(3) { transform: rotate(-45deg); }
 
-/* --- Menu de Navegação --- */
 .mainNav {
-  /* Propriedades de transição sempre ativas */
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 .mainNav ul {
@@ -84,87 +79,79 @@
   font-weight: 600;
 }
 
-/* ==========================================================================
-   Media Query (A Mágica Acontece Aqui)
-   ========================================================================== */
+.externalLinkItem {
+  display: none;
+}
 
-/* --- Estilos Mobile (< 640px) --- */
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
 @media (max-width: 640px) {
-  .topNav,
-  .topNavLinks {
-    display: none; /* A barra superior não é essencial no mobile */
+  .topNav {
+    display: none;
   }
   
   .mainNav {
-    /* Layout do menu dropdown */
     background-color: rgba(45, 106, 177, 0.9);
     backdrop-filter: blur(5px);
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    padding: 1rem 0;
+    padding-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
-    /* Estado escondido */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
   }
 
   .mainNav.menuOpen {
-    /* Estado visível */
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
 
-  .mainNav ul {
-    flex-direction: column;
-    width: 100%;
-  }
+  .mainNav ul { flex-direction: column; width: 100%; }
+  .mainNav li { text-align: center; }
+  .mainNav a { display: block; padding: 1rem 0; }
+  .mainNav a:hover { background-color: rgba(66, 153, 225, 0.5); }
 
-  .mainNav li {
-    text-align: center;
-    position: relative;
-  }
-  
   .mainNav li:not(:last-child)::after {
     content: '';
     display: block;
     width: 80%;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.3);
     margin: 0 auto;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
   }
 
-  .mainNav a {
+  .externalLinkItem {
     display: block;
-    padding: 1rem 0;
   }
-
-  .mainNav a:hover {
-    background-color: rgba(66, 153, 225, 0.5);
+  .externalLinkItem::after {
+    display: none; /* remove separator line from last section */
+  }
+  .externalLinkItem a {
+    font-size: 0.875rem;
+    font-weight: normal;
+    opacity: 0.9;
+    padding: 0.75rem 0;
   }
 }
 
-/* --- Estilos Desktop (> 640px) --- */
 @media (min-width: 641px) {
-  /* Escondemos o botão hambúrguer sem usar 'display: none' */
   .hamburgerButton {
-    /* Em vez de display:none, tornamo-lo invisível e não-interativo */
     opacity: 0;
     visibility: hidden;
-    pointer-events: none; /* Impede cliques */
-    position: absolute; /* Remove-o do fluxo do layout */
+    pointer-events: none;
+    position: absolute;
   }
 
   .mainNav {
-    /* Forçamos o menu a estar sempre visível */
     opacity: 1;
     visibility: visible;
-    transform: none; /* Reseta qualquer transformação */
-    position: static; /* Volta ao fluxo normal do layout */
+    transform: none;
+    position: static;
     background-color: transparent;
     padding: 0;
     box-shadow: none;
@@ -182,11 +169,6 @@
     opacity: 0.85;
   }
 
-  .mainNav a:hover {
-    opacity: 1;
-  }
-  .mainNav a.active {
-    opacity: 1;
-    border-bottom-color: #fff;
-  }
+  .mainNav a:hover { opacity: 1; }
+  .mainNav a.active { opacity: 1; border-bottom-color: #fff; }
 }
