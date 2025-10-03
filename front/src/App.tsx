@@ -1,27 +1,32 @@
+// front/src/App.tsx
+
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
+// 1. Importando as páginas REAIS do projeto
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/Home/HomePage';
-import ExportCSVPage from './pages/ExportCSV/ExportCSV';
 import MapPage from './pages/Map/MapPage';
-import TablePage from './pages/Table/TablePage';
 import SimaPage from './pages/Sima/SimaPage';
+import ExportCSV from './pages/ExportCSV/ExportCSV';
+import TableView from './pages/TableView/TableView'; // A sua página que criamos
+import './styles/global.css';
 
-// Componente principal que organiza o layout e as rotas da aplicação.
+// 2. As páginas de exemplo foram removidas
+
 export default function App() {
   return (
     <>
       <Header />
       <main>
+        {/* 3. Conectando as rotas às páginas corretas */}
         <Routes>
-          {/* Rota principal para a HomePage */}
           <Route path="/" element={<HomePage />} />
-
-          {/* Rotas para as demais páginas */}
           <Route path="/mapa" element={<MapPage />} />
-          <Route path="/tabelas" element={<TablePage />} />
+          <Route path="/tabelas" element={<TableView />} />
           <Route path="/sima" element={<SimaPage />} />
-          <Route path="/exportar-csv" element={<ExportCSVPage />} />
+          <Route path="/exportar-csv" element={<ExportCSV />} />
         </Routes>
       </main>
       <Footer />
