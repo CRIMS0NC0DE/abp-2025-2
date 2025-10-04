@@ -69,3 +69,93 @@
   font-size: 1rem;
   color: #718096;
 }
+
+.tabsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 2rem 0 1rem 0;
+}
+
+.tabButton {
+  background: #f7fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px 6px 0 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2d3748;
+  transition: background 0.2s;
+}
+
+.tabButton:hover {
+  background: #e2e8f0;
+}
+
+.activeTab {
+  background: #4299e1;
+  color: #fff;
+  border-bottom: 2px solid #4299e1;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  max-height: 400px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+}
+
+.dataTable {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+}
+
+.dataTable th {
+  background: #4299e1;
+  color: #fff;
+  padding: 8px;
+  position: sticky;
+  top: 0;
+}
+
+.dataTable td {
+  padding: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dataTable tr:nth-child(even) {
+  background: #f7fafc;
+}
+
+.tabWithTooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tabWithTooltip .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 12px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 110%;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.tabWithTooltip:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
