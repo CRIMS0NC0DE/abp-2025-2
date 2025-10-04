@@ -85,7 +85,6 @@ const ExportCSVPage: React.FC = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <aside className={styles.sidebar}></aside>
       <div className={styles.contentContainer}>
         <h1 className={styles.title}>
           Exportar Dados <span className={styles.titleHighlight}>CSV</span>
@@ -103,7 +102,6 @@ const ExportCSVPage: React.FC = () => {
           Clique no círculo para baixar todos os CSVs em um ZIP
         </p>
       </div>
-      <aside className={styles.sidebar}></aside>
     </div>
   );
 };
