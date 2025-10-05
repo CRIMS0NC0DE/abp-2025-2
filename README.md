@@ -152,11 +152,15 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 
 <h3>RETROSPECTIVA DE SPRINT 🗣️</h3>
 
-<p><strong>O QUE DEU CERTO?</strong> 
+<p><strong>O QUE DEU CERTO?</strong></p>
 
-<p><strong>O QUE DEU ERRADO?</strong> 
+O fluxo de trabalho se manteve estável e concreto, onde tivemos as reuniões facilitando o gerenciamento. Trabalho em equipe.
 
-<p><strong>O QUE PODEMOS MELHORAR?
+<p><strong>O QUE DEU ERRADO?</strong></p>
+
+Inicialmente trabalhar com ambiente docker se mostrou um pouco confuso e certo receio em relação a utilização do banco em containers
+
+<p><strong>O QUE PODEMOS MELHORAR?</strong></p>
 
 ## TECNOLOGIAS UTILIZADAS
 
