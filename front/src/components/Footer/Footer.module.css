@@ -22,7 +22,7 @@
   margin: 0;
 }
 
-.footerContainer a {
+.footerContainer a {  
   color: white;
   font-weight: bold;
   text-decoration: underline;
@@ -32,4 +32,9 @@
 
 .footerContainer a:hover {
   opacity: 0.8;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
 }
