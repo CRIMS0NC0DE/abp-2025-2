@@ -121,7 +121,20 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 
 ## HISTÓRIAS DE USUÁRIOS
 
-## SPRINT BACKLOG - SP1
+| US01 | Como usuário, quero consultar e exportar dados em formato .CSV, para que eu possa baixar e analisar os dados externamente. | O sistema deve permitir exportação em .CSV;<br>O arquivo deve conter os parâmetros selecionados;<br>Deve ser possível escolher o período e o reservatório. |
+| US02 | Como usuário, quero consultar os dados em formato de tabelas, para que eu possa visualizá-los de forma organizada. | As tabelas devem permitir filtros e rolagem;<br>Os cabeçalhos devem identificar claramente os parâmetros exibidos. |
+| US03 | Como usuário, quero exibir os dados de séries temporais em gráficos (dados do SIMA), para que eu possa analisar a variação dos parâmetros ao longo do tempo. | Deve ser possível selecionar o parâmetro, o reservatório e o período;<br>O gráfico deve atualizar dinamicamente. |
+| US04 | Como usuário, quero adicionar filtros espaciais nas consultas de tabelas, para que eu possa visualizar dados de regiões específicas. | O filtro deve permitir seleção por área ou reservatório;<br>As tabelas devem ser atualizadas automaticamente. |
+| US05 | Como usuário, quero consultar e analisar os dados em um mapa interativo, para que eu possa ver a distribuição espacial das coletas. | O mapa deve exibir marcadores representando os pontos de coleta;<br>Ao clicar em um marcador, devem aparecer os dados associados. |
+| US06 | Como analista do sistema, quero prototipar a aplicação no Figma, para que a equipe defina a interface e experiência do usuário. | O protótipo deve incluir telas principais (home, dashboard, gráficos, tabelas e mapa). |
+| US07 | Como desenvolvedor, quero elaborar o diagrama de caso de uso, para que as interações entre usuário e sistema fiquem bem definidas. | O diagrama deve representar todos os casos de uso e atores envolvidos. |
+| US08 | Como desenvolvedor, quero elaborar o diagrama de classes, para que a estrutura do sistema e suas entidades fiquem claras. | O diagrama deve representar as principais classes, atributos e relacionamentos. |
+| US09 | Como desenvolvedor, quero elaborar o diagrama de sequência, para que as interações entre objetos durante os processos sejam compreendidas. | O diagrama deve representar pelo menos um fluxo principal do sistema. |
+| US10 | Como desenvolvedor, quero desenvolver o front-end, para que os usuários possam interagir com o sistema através de uma interface funcional e intuitiva. | A aplicação deve ser responsiva;<br>As telas devem seguir o design definido no Figma;<br>Deve se comunicar corretamente com o backend. |
+
+## SPRINT 1 🔁
+
+<h3>SPRINT BACKLOG 📜</h3>
 
 | Item | Descrição                        | Tipo de Requisito | Justificativa                                                                 |
 |------|----------------------------------|-------------------|-------------------------------------------------------------------------------|
@@ -129,19 +142,36 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 |  RF-EGS14    | Elaborar Diagrama de Caso de Uso | Não Funcional     | Documento que define os fluxos de interação entre usuários e sistema         |
 | RF-DWII08    | Desenvolver Front-End            | Funcional          | Entrega funcional do sistema — implementação real da interface para o usuário |
 
+<h3>BURNDOWN 🔥</h3>
+
+<div>
+ <img src=assets/burndownSP1.png > 
+</div>
+
+<h3>RETROSPECTIVA DE SPRINT 🗣️</h3>
+
+<p><strong>O QUE DEU CERTO?</strong> 
+
+<p><strong>O QUE DEU ERRADO?</strong> 
+
+<p><strong>O QUE PODEMOS MELHORAR?
+
 ## TECNOLOGIAS UTILIZADAS
 
 #### Backend
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+<div style="display: inline_block"><br>
+  <img align="center" alt="Ts" height="30" widht="40" src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg"/>
+  <img align="center" alt="POSTGRESQL" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-plain.svg">
+  <img align="center" alt="Docker" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-plain.svg">
+<br>
 
 #### Frontend
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+
+<div style="display: inline_block"><br>
+  <img align="center" alt="Ts" height="30" widht="40" src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg"/>
+  <img align="center" alt="REACT" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg">
+  <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+<br>
 
 ## EQUIPE💻
 
