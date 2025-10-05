@@ -11,7 +11,10 @@ import MapPage from './pages/Map/MapPage';
 import SimaPage from './pages/Sima/SimaPage';
 import ExportCSV from './pages/ExportCSV/ExportCSV';
 import TableView from './pages/TableView/TableView'; // A sua página que criamos
+import MapaInterativo from './components/MapaInterativo';
+import "leaflet/dist/leaflet.css";
 import './styles/global.css';
+
 
 // 2. As páginas de exemplo foram removidas
 
@@ -27,6 +30,7 @@ export default function App() {
           <Route path="/tabelas" element={<TableView />} />
           <Route path="/sima" element={<SimaPage />} />
           <Route path="/exportar-csv" element={<ExportCSV />} />
+          <Route path="/Mapa-Interativo" element={<MapaInterativo />} />
         </Routes>
       </main>
       <Footer />
