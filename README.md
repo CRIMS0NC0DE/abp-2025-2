@@ -6,7 +6,7 @@
 # CRIMSONCODE. 🟥
 
 <div align=center>
- <img src=assets/Logo.jpeg height=320px alt="Logo CrimsonCode.">
+ <img src=front/src/assets/Logo.jpeg height=320px alt="Logo CrimsonCode.">
 </div>
 
 
@@ -121,6 +121,8 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 
 ## HISTÓRIAS DE USUÁRIOS
 
+| ID  | História de Usuário                                                                                 | Critérios de Aceitação                                                                                         |
+|-----|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | US01 | Como usuário, quero consultar e exportar dados em formato .CSV, para que eu possa baixar e analisar os dados externamente. | O sistema deve permitir exportação em .CSV;<br>O arquivo deve conter os parâmetros selecionados;<br>Deve ser possível escolher o período e o reservatório. |
 | US02 | Como usuário, quero consultar os dados em formato de tabelas, para que eu possa visualizá-los de forma organizada. | As tabelas devem permitir filtros e rolagem;<br>Os cabeçalhos devem identificar claramente os parâmetros exibidos. |
 | US03 | Como usuário, quero exibir os dados de séries temporais em gráficos (dados do SIMA), para que eu possa analisar a variação dos parâmetros ao longo do tempo. | Deve ser possível selecionar o parâmetro, o reservatório e o período;<br>O gráfico deve atualizar dinamicamente. |
@@ -145,7 +147,7 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 <h3>BURNDOWN 🔥</h3>
 
 <div>
- <img src=assets/burndownSP1.png > 
+ <img src=front/src/assets/burndownSP1.png > 
 </div>
 
 <h3>RETROSPECTIVA DE SPRINT 🗣️</h3>
