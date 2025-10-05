@@ -162,6 +162,8 @@ Inicialmente trabalhar com ambiente docker se mostrou um pouco confuso e certo r
 
 <p><strong>O QUE PODEMOS MELHORAR?</strong></p>
 
+Utilização do ambiente docker e tratamento de tasks.
+
 ## TECNOLOGIAS UTILIZADAS
 
 #### Backend
