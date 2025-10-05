@@ -26,11 +26,10 @@ export default function App() {
         {/* 3. Conectando as rotas às páginas corretas */}
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/mapa" element={<MapPage />} />
+          <Route path="/mapa" element={<MapaInterativo />} />
           <Route path="/tabelas" element={<TableView />} />
           <Route path="/sima" element={<SimaPage />} />
           <Route path="/exportar-csv" element={<ExportCSV />} />
-          <Route path="/Mapa-Interativo" element={<MapaInterativo />} />
         </Routes>
       </main>
       <Footer />

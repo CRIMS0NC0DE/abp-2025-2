@@ -1,8 +1,6 @@
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import { useEffect, useState } from "react";
 
-// GeoJSON simplificado dos estados do Brasil
-// (você pode baixar um mais detalhado depois)
 import brasilGeoJson from "../data/brasil-states.json";
 
 const MapaInterativo: React.FC = () => {
