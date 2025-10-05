@@ -147,7 +147,7 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 <h3>BURNDOWN 🔥</h3>
 
 <div>
- <img src=front/src/assets/burndownSP1.png > 
+ <img src=front/src/assets/burndownSP1.jpg> 
 </div>
 
 <h3>RETROSPECTIVA DE SPRINT 🗣️</h3>
