@@ -1,13 +1,15 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
-// Importação dos logos
+// --- asset imports
 import govLogo from '../../assets/govLogo.png';
 import inpeLogo from '../../assets/LogoInpe.png';
 
-// Header refatorado com layout de duas barras e navegação principal integrada.
 export default function Header() {
-  // Links para a barra superior (links externos/institucionais)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // --- nav link data
   const topNavLinks = [
     { label: 'Simplifique!', href: '#' },
     { label: 'Comunica BR', href: '#' },
@@ -17,7 +19,6 @@ export default function Header() {
     { label: 'Canais', href: '#' },
   ];
 
-  // Links para a navegação principal da aplicação
   const mainNavLinks = [
     { label: 'Home', to: '/' },
     { label: 'Mapa', to: '/mapa' },
@@ -26,14 +27,21 @@ export default function Header() {
     { label: 'Download', to: '/exportar-csv' },
   ];
 
+  // --- event handlers
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
   return (
     <header className={styles.header}>
-      {/* Barra de navegação superior (branca) */}
+      {/* Top bar for desktop */}
       <nav className={styles.topNav}>
         <div className={styles.logoContainer}>
-          <a href="#">
-            <img src={govLogo} alt="gov.br logo" className={styles.govLogo} />
-          </a>
+          <a href="#"><img src={govLogo} alt="gov.br logo" className={styles.govLogo} /></a>
         </div>
         <ul className={styles.topNavLinks}>
           {topNavLinks.map(link => (
@@ -42,26 +50,47 @@ export default function Header() {
         </ul>
       </nav>
 
-      {/* Barra de navegação inferior (azul) - Principal */}
+      {/* Main navigation bar (blue) */}
       <div className={styles.subNav}>
         <div className={styles.leftContent}>
-          <Link to="/">
+          <Link to="/" onClick={handleLinkClick}>
             <img src={inpeLogo} alt="INPE logo" className={styles.inpeLogo} />
           </Link>
           <span className={styles.inpeText}>INPE</span>
         </div>
 
-        {/* Navegação principal da aplicação */}
-        <nav className={styles.mainNav}>
+        <button
+          className={`${styles.hamburgerButton} ${isMenuOpen ? styles.open : ''}`}
+          onClick={toggleMenu}
+          aria-label="Menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        {/* Navigation container */}
+        <nav className={`${styles.mainNav} ${isMenuOpen ? styles.menuOpen : ''}`}>
           <ul>
+            {/* Internal app navigation */}
             {mainNavLinks.map(link => (
               <li key={link.label}>
-                <NavLink 
-                  to={link.to} 
+                <NavLink
+                  to={link.to}
                   className={({ isActive }) => isActive ? styles.active : ''}
+                  onClick={handleLinkClick}
                 >
                   {link.label}
                 </NavLink>
+              </li>
+            ))}
+
+            
+            
+            {/* External links for mobile */}
+            {topNavLinks.map(link => (
+              <li key={link.label} className={styles.externalLinkItem}>
+                <a href={link.href} onClick={handleLinkClick}>{link.label}</a>
               </li>
             ))}
           </ul>

@@ -1,0 +1,42 @@
+/* front/src/components/Filters/Filters.module.css */
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 16px;
+}
+
+.filters input[type="text"],
+.filters input[type="date"] {
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  min-width: 150px;
+}
+
+.filterActions {
+  display: flex;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: #0b72ff;
+  color: white;
+  border-color: #0b72ff;
+}
