@@ -4,9 +4,35 @@ import styles from './Footer.module.css';
 export default function Footer() {
     return (
         <footer className={styles.footerContainer}>
-            <p>
-                © 2025 LimnoVis. Desenvolvido por <a href="https://github.com" target="_blank" rel="noopener noreferrer">CrimsonCode</a>.
-            </p>
+            <div className='inpe__container'>
+                <h3>INPE</h3>
+                <ul>
+                    <li>
+                        <a href="">Site</a>
+                    </li>
+                    <li>
+                        <a href="">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+            <div className='furnas__container'>
+                <h3>Furnas</h3>
+                <ul>
+                    <li>
+                        <a href="">Site</a>
+                    </li>
+                </ul>
+            </div>
+            <div className='crimsoncode__container'>
+                <h3>Crimson Code</h3>
+                <ul>
+                    <li>
+                        <a href="">GitHub</a>
+                        <a href="">Fale Conosco</a>
+                        <a href="">Instagram</a>
+                    </li>
+                </ul>
+            </div>
         </footer>
     );
 }
