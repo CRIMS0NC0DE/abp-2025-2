@@ -89,16 +89,19 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
    <li>
   RNF-BDR13: Melhorar a performance da aplicação utilizando índices nos campos mais consultados e procedures para operações complexas.
  </li>
-   RF-EGS14: Elaborar Diagrama de Caso de Uso;
+   RNF-EGS14: Elaborar Diagrama de Caso de Uso;
  </li>
    <li>
-  RF-EGS15: Elaborar Diagrama de Classes;
+  RNF-EGS15: Elaborar Diagrama de Classes;
  </li>
    <li>
-  RF-EGS16: Elaborar Diagrama de Sequência;
+  RNF-EGS16: Elaborar Diagrama de Sequência;
  </li>
    <li>
-  RF-EGS17: Elaborar Documentação Caso de Teste;
+  RNF-EGS17: Elaborar Documentação Caso de Teste;
+ </li>
+   <li>
+  RNF-DWII18: Elaborar Documentação Caso de Teste;
  </li>
 </ul>
 
@@ -138,11 +141,11 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 
 <h3>SPRINT BACKLOG 📜</h3>
 
-| Item | Descrição                        | Tipo de Requisito | Justificativa                                                                 |
-|------|----------------------------------|-------------------|-------------------------------------------------------------------------------|
-| RF-DWII07    | Prototipar aplicação no FIGMA    | Não Funcional     | Protótipo de interface, auxilia na definição de usabilidade e design         |
-|  RF-EGS14    | Elaborar Diagrama de Caso de Uso | Não Funcional     | Documento que define os fluxos de interação entre usuários e sistema         |
-| RF-DWII08    | Desenvolver Front-End            | Funcional          | Entrega funcional do sistema — implementação real da interface para o usuário |
+| Histórias de Usuário             | Tipo de Requisito | Justificativa                                                                 |
+|----------------------------------|-------------------|-------------------------------------------------------------------------------|
+| Prototipar aplicação no FIGMA    | Não Funcional     | Protótipo de interface, auxilia na definição de usabilidade e design         |
+| Elaborar Diagrama de Caso de Uso | Não Funcional     | Documento que define os fluxos de interação entre usuários e sistema         |
+| Desenvolver Front-End            | Funcional          | Entrega funcional do sistema — implementação real da interface para o usuário |
 
 <h3>BURNDOWN 🔥</h3>
 
@@ -163,6 +166,22 @@ Inicialmente trabalhar com ambiente docker se mostrou um pouco confuso e certo r
 <p><strong>O QUE PODEMOS MELHORAR?</strong></p>
 
 Utilização do ambiente docker e tratamento de tasks.
+
+## SPRINT 2 🔁
+
+<h3>SPRINT BACKLOG 📜</h3>
+
+| Histórias de Usuário             | Tipo de Requisito | Justificativa                                                                 |
+|----------------------------------|-------------------|-------------------------------------------------------------------------------|
+| Consultar e Analisar os Dados do Mapa Interativo | Funcional     | Requisito do cliente para consulta de dados        |
+| Consultar e Visualizar os Dados no formato de Tabelas   | Funcional     | Requisito do cliente para exibição de dados         |
+| Exportar Dados em formato CSV   | Funcional     | Requisito do cliente para exportar dados         |
+| Consultar e Visualizar dados e formato de Gráfico   | Funcional     | Requisito do cliente para exibição dos dados em formato de gráfico         |
+| Elaborar Diagrama de Classe   | Não Funcional     | Documento que define as classes e relacionamentos do sistema         |
+| Revisão do Front End          | Não Funcional          | Revisão do Front End para que ele esteja de acordo com as expectativas do cliente |
+
+
+<h3>BURNDOWN 🔥</h3>
 
 ## TECNOLOGIAS UTILIZADAS
 
