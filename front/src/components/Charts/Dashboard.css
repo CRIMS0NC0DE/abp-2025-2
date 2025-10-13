@@ -28,7 +28,7 @@
     color: #555;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .charts-grid {
     grid-template-columns: 1fr;
   }
