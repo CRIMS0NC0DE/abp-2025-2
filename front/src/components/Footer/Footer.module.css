@@ -34,3 +34,13 @@
 .footerContainer a:hover {
   opacity: 0.8;
 }
+
+.inpe__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.furnas__container__links {
+  text-decoration: none;
+}

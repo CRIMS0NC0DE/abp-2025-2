@@ -19,7 +19,7 @@ export default function Footer() {
                 <h3>Furnas</h3>
                 <ul>
                     <li>
-                        <a href="">Site</a>
+                        <a href="" className='furnas__container__links'>Site</a>
                     </li>
                 </ul>
             </div>
