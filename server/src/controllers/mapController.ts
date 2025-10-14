@@ -40,6 +40,9 @@ function formatQueryToGeoJSON(rows: any[], tipo: string): GeoJSONFeature[] {
 
 export const getGeographicPoints = async (req: Request, res: Response, next: NextFunction) => {
   try {
+
+    console.log("-> [mapController] Buscando pontos geográficos...");
+
     let allFeatures: GeoJSONFeature[] = [];
 
    const [resFurnas, resSima, resBalcar] = await Promise.all([
@@ -60,6 +63,7 @@ export const getGeographicPoints = async (req: Request, res: Response, next: Nex
     return res.status(200).json(geoJSONResponse);
   } catch (error) {
     
+    console.error("!!! [mapController] ERRO GRAVE CAPTURADO:", error);
     next(error);
   }
 };
