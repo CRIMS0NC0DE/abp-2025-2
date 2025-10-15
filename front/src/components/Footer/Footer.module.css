@@ -1,46 +1,29 @@
-/* Estilo do footer baseado no seu código antigo */
-:root {
-  --azul-base: #2864AD;
-}
-
-.footerContainer {
-  background-color: var(--azul-base);
-  color: white;
-  padding: 1.25rem 1rem;
-  width: 100%;
-  box-sizing: border-box;
+footer {
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  gap: 20px;
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-  flex-shrink: 0; /* Impede que o footer encolha */
+  gap: 60px;
+  background-color: #2d6ab1;
 }
 
-.footerContainer p {
-  margin: 0;
-}
-
-.footerContainer a {
-  color: white;
-  font-weight: bold;
-  text-decoration: underline;
-  padding: 0 0.3rem;
-  transition: opacity 0.2s;
-}
-
-.footerContainer a:hover {
-  opacity: 0.8;
-}
-
-.inpe__container {
+.inpe__container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.furnas__container__links {
-  text-decoration: none;
+.furnas__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.crimson__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
