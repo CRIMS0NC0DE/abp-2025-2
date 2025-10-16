@@ -1,35 +1,78 @@
-/* Estilo do footer baseado no seu código antigo */
-:root {
-  --azul-base: #2864AD;
+:root{
+  --footer-bg: #2d6ab1;
+  --footer-contrast: #ffffff;
+  --footer-muted: rgba(255,255,255,0.85);
+  --footer-link: #fde047; /* amarelo suave para links */
 }
 
-.footerContainer {
-  background-color: var(--azul-base);
-  color: white;
-  padding: 1.25rem 1rem;
+.footer{
   width: 100%;
-  box-sizing: border-box;
+  background-color: var(--footer-bg);
+  color: var(--footer-contrast);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 16px 20px;
   display: flex;
+  gap: 40px;
   justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.brandCol{
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   align-items: center;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-  flex-shrink: 0; /* Impede que o footer encolha */
 }
 
-.footerContainer p {
+.title{
   margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  font-weight: 700;
 }
 
-.footerContainer a {
-  color: white;
-  font-weight: bold;
-  text-decoration: underline;
-  padding: 0 0.3rem;
-  transition: opacity 0.2s;
+.links{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
 }
 
-.footerContainer a:hover {
-  opacity: 0.8;
+.links a{
+  color: var(--footer-muted);
+  text-decoration: underline dotted rgba(255,255,255,0.12);
+  font-size: 13px;
+}
+
+.links a:hover{
+  color: var(--footer-link);
+  text-decoration: none;
+}
+
+.bottomBar{
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  padding: 10px 0 18px 0;
+  font-size: 12px;
+  color: rgba(255,255,255,0.95);
+}
+
+@media (max-width: 640px){
+  .container{
+    gap: 20px;
+    padding: 20px 12px;
+  }
+  .brandCol{
+    min-width: 120px;
+  }
+  .title{
+    font-size: 13px;
+  }
 }
