@@ -1,29 +1,78 @@
-footer {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  background-color: #2d6ab1;
+:root{
+  --footer-bg: #2d6ab1;
+  --footer-contrast: #ffffff;
+  --footer-muted: rgba(255,255,255,0.85);
+  --footer-link: #fde047; /* amarelo suave para links */
 }
 
-.inpe__container{
+.footer{
+  width: 100%;
+  background-color: var(--footer-bg);
+  color: var(--footer-contrast);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 16px 20px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.brandCol{
+  min-width: 160px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 8px;
   align-items: center;
 }
 
-.furnas__container {
+.title{
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+}
+
+.links{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 6px;
   align-items: center;
 }
 
-.crimson__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.links a{
+  color: var(--footer-muted);
+  text-decoration: underline dotted rgba(255,255,255,0.12);
+  font-size: 13px;
+}
+
+.links a:hover{
+  color: var(--footer-link);
+  text-decoration: none;
+}
+
+.bottomBar{
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  padding: 10px 0 18px 0;
+  font-size: 12px;
+  color: rgba(255,255,255,0.95);
+}
+
+@media (max-width: 640px){
+  .container{
+    gap: 20px;
+    padding: 20px 12px;
+  }
+  .brandCol{
+    min-width: 120px;
+  }
+  .title{
+    font-size: 13px;
+  }
 }
