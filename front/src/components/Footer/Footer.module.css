@@ -33,15 +33,15 @@
 
 .title{
   margin: 0;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 0.6px;
   font-weight: 700;
 }
 
 .links{
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: row;
+  gap: 7px;
   align-items: center;
 }
 
@@ -51,10 +51,15 @@
   font-size: 13px;
 }
 
-.links a:hover{
-  color: var(--footer-link);
-  text-decoration: none;
+.links a img {
+  height: 30px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.links a img:hover {
+  transform: translateY(-5px);
+}
+
 
 .bottomBar{
   border-top: 1px solid rgba(255,255,255,0.08);
