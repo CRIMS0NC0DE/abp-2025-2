@@ -1,4 +1,3 @@
-import React from 'react';
 
 import {ChartBarEvents} from '../../components/Charts/ChartBarEvents';
 import {ChartLineTemporal} from '../../components/Charts/ChartLineTemporal';

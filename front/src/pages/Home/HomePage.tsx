@@ -1,34 +1,93 @@
-import Card from '../../components/Card/Card';
+import { useState, useEffect } from 'react'; 
+import ProjectCard from '../../components/ProjectCard/ProjectCard'; 
 import styles from './HomePage.module.css';
 
-// Importação dos ícones
-import mapIcon from '../../assets/map-icon.png';
-import tableIcon from '../../assets/table-icon.png';
-import simaIcon from '../../assets/sima-icon.png';
-import downloadIcon from '../../assets/download-logo_card.png';
+import logoSima from '../../assets/LogoSIMA.png';
+import logoFurnas from '../../assets/LogoFurnas.png';
+import logoBalcar from '../../assets/LogoBalcar.png'; 
 
-// Definição dos dados para os cards, facilitando a manutenção.
-const cardData = [
-  { icon: mapIcon, label: 'MAPA', to: '/mapa' },
-  { icon: tableIcon, label: 'TABELA', to: '/tabelas' },
-  { icon: simaIcon, label: 'SIMA', to: '/sima' },
-  { icon: downloadIcon, label: 'DOWNLOAD', to: '/exportar-csv' }
+
+const projectData = [ 
+  {
+    logoSrc: logoSima,
+    logoAlt: 'Logo SIMA',
+    description: 'SIMA significa Sistema Integrado de Monitoramento Ambiental, é a plataforma tecnológica utilizada para coletar, integrar e transmitir os dados dos reservatórios.',
+    to: '/sima'
+  },
+  {
+    logoSrc: logoFurnas, 
+    logoAlt: 'Logo BALCAR - Projeto Carbono Furnas',
+    description: 'BALCAR é a sigla para Balanço de Carbono e foi um projeto focado nas emissões de gases de efeito estufa (GEE) em reservatórios de usinas hidrelétricas.',
+    to: '/furnas' 
+  },
+  {
+    logoSrc: logoBalcar, 
+    logoAlt: 'Logo BALCAR - Projeto Furnas Aquicultura',
+    description: 'O Projeto Furnas é a iniciativa principal para desenvolver e aplicar um sistema de monitoramento ambiental na aquicultura dos reservatórios de Furnas.',
+    to: '/furnas' 
+  }
 ];
 
-// Página inicial que exibe a grade de cards de navegação.
+const carouselData = [
+  {
+    title: 'Inovação',
+    description: 'Esses projetos representam uma abordagem inovadora para monitorar o balanço de carbono e os impactos da agricultura em reservatórios do Brasil.'
+  },
+  {
+    title: 'Tecnologia Nacional',
+    description: 'O INPE desenvolveu e implementou a tecnologia do SIMA (boias com sensores e transmissão via satélite) para coletar dados em tempo real, um avanço significativo para a pesquisa ambiental no país.'
+  },
+  {
+    title: 'Cooperação',
+    description: 'A parceria com a Furnas Centrais Elétricas S.A. e a Embrapa demonstra a capacidade do INPE de colaborar com outras instituições para aplicar a pesquisa científica a problemas práticos.'
+  }
+];
+
 export default function HomePage() {
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide(prevSlide => (prevSlide + 1) % carouselData.length);
+    }, 4000); 
+
+    
+    return () => {
+      clearInterval(slideInterval);
+    };
+  }, []); 
+
+  const activeSlide = carouselData[currentSlide];
+
   return (
     <div className={styles.homepageContainer}>
+      
+      <h1 className={styles.mainTitle}>
+        Acesse os Dados dos Projetos
+      </h1>
+
       <div className={styles.cardsGrid}>
-        {cardData.map((card) => (
-          <Card
-            key={card.label}
-            iconSrc={card.icon}
-            label={card.label}
-            to={card.to}
+        {projectData.map((project) => ( 
+          <ProjectCard
+            key={project.logoAlt} 
+            logoSrc={project.logoSrc}
+            logoAlt={project.logoAlt}
+            description={project.description}
+            to={project.to}
           />
         ))}
       </div>
+
+      <section className={styles.innovationSection}>
+        
+        <div key={currentSlide} className={styles.slideContent}>
+          <h2 className={styles.innovationTitle}>{activeSlide.title}</h2>
+          <p>{activeSlide.description}</p>
+        </div>
+
+      </section>
+
     </div>
   );
 }

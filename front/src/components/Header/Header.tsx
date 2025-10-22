@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 // --- asset imports
@@ -19,13 +19,6 @@ export default function Header() {
     { label: 'Canais', href: '#' },
   ];
 
-  const mainNavLinks = [
-    { label: 'Home', to: '/' },
-    { label: 'Mapa', to: '/mapa' },
-    { label: 'Tabela', to: '/tabelas' },
-    { label: 'SIMA', to: '/sima' },
-    { label: 'Download', to: '/exportar-csv' },
-  ];
 
   // --- event handlers
   const handleLinkClick = () => {
@@ -38,7 +31,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      {/* Top bar for desktop */}
+      {/* Top bar for desktop (Esta parte já estava correta) */}
       <nav className={styles.topNav}>
         <div className={styles.logoContainer}>
           <a href="#"><img src={govLogo} alt="gov.br logo" className={styles.govLogo} /></a>
@@ -50,15 +43,22 @@ export default function Header() {
         </ul>
       </nav>
 
-      {/* Main navigation bar (blue) */}
+      {/* Main navigation bar (blue) - ATUALIZADA */}
       <div className={styles.subNav}>
         <div className={styles.leftContent}>
+          
+          {/* LOGO INPE */}
           <Link to="/" onClick={handleLinkClick}>
             <img src={inpeLogo} alt="INPE logo" className={styles.inpeLogo} />
           </Link>
-          <span className={styles.inpeText}>INPE</span>
+
+          {/* TÍTULO DO PORTAL ATUALIZADO */}
+          <span className={styles.portalTitle}>
+            Portal para Visualização e Disseminação de Dados Limnológicos
+          </span>
         </div>
 
+        {/* Botão Hambúrguer (Mantido) */}
         <button
           className={`${styles.hamburgerButton} ${isMenuOpen ? styles.open : ''}`}
           onClick={toggleMenu}
@@ -69,24 +69,9 @@ export default function Header() {
           <span />
         </button>
 
-        {/* Navigation container */}
+        {/* Navigation container (Mantido) */}
         <nav className={`${styles.mainNav} ${isMenuOpen ? styles.menuOpen : ''}`}>
           <ul>
-            {/* Internal app navigation */}
-            {mainNavLinks.map(link => (
-              <li key={link.label}>
-                <NavLink
-                  to={link.to}
-                  className={({ isActive }) => isActive ? styles.active : ''}
-                  onClick={handleLinkClick}
-                >
-                  {link.label}
-                </NavLink>
-              </li>
-            ))}
-
-            
-            
             {/* External links for mobile */}
             {topNavLinks.map(link => (
               <li key={link.label} className={styles.externalLinkItem}>

@@ -22,6 +22,30 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.brandCol}>
+                    <h3 className={styles.title}>SIMA</h3>
+                    <nav aria-label="SIMA links" className={styles.links}>
+                        <a href="https://www.instagram.com/eletrobrasoficial/">
+                            <img src={instagramIcon} alt="" />
+                        </a>
+                        <a href="https://www.furnas.com.br">
+                            <img src={siteIcon} alt="Site" />
+                        </a>
+                    </nav>
+                </div>
+
+                <div className={styles.brandCol}>
+                    <h3 className={styles.title}>BALCAR</h3>
+                    <nav aria-label="BALCAR links" className={styles.links}>
+                        <a href="https://www.instagram.com/eletrobrasoficial/">
+                            <img src={instagramIcon} alt="" />
+                        </a>
+                        <a href="https://www.furnas.com.br">
+                            <img src={siteIcon} alt="Site" />
+                        </a>
+                    </nav>
+                </div>
+
+                <div className={styles.brandCol}>
                     <h3 className={styles.title}>FURNAS</h3>
                     <nav aria-label="FURNAS links" className={styles.links}>
                         <a href="https://www.instagram.com/eletrobrasoficial/">
