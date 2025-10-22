@@ -1,0 +1,123 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  /* Animação de Fade (In e Out) */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Estado aberto do overlay */
+.modalOverlay.isOpen {
+  opacity: 1;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px 40px; /* Mais padding horizontal */
+  border-radius: 8px;
+  max-width: 80vw;
+  max-height: 80vh; /* Aumentado de 60vh para 80vh */
+  overflow-y: auto;
+  position: relative;
+
+  /* Animação sutil de 'zoom' e 'fade' */
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+/* Estado aberto do conteúdo */
+.modalContent.isOpen {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px; /* Ajustado */
+  background: none;
+  border: none;
+  font-size: 2rem; /* Aumentado */
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: #000;
+}
+
+.scrollTopButton {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+/* --- Estilos para Conteúdo Interno do Modal --- */
+
+/* Estilos para listas (bullets) */
+.modalContent ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modalContent li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Estilos para links */
+.modalContent a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.modalContent a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para parágrafos */
+.modalContent p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Estilos para títulos h2 (título do modal) */
+.modalContent h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+/* Estilos para subtítulos (ex: Colaboradores) */
+.modalContent h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+  font-size: 1.1rem;
+}

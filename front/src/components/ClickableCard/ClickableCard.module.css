@@ -1,0 +1,35 @@
+.cardContainer {
+  display: flex;
+  flex-direction: row; /* Horizontal */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: flex-start; /* Começa da esquerda */
+  padding: 1rem;
+  background-color: #ffffff; /* Fundo branco/claro */
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  width: 100%; /* Ocupa todo o espaço do grid */
+  min-height: 80px; /* Altura mínima */
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cardContainer:hover {
+  transform: translateY(-5px); /* Efeito de levantar */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+  width: 40px; /* Ícone menor */
+  height: 40px;
+  margin-right: 15px; /* Espaço entre ícone e texto */
+  flex-shrink: 0; /* Impede que o ícone encolha */
+}
+
+.cardTitle {
+  font-size: 1.1rem; /* Fonte um pouco maior */
+  font-weight: 600; /* Mais peso */
+  color: #333;
+}
