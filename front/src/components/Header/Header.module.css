@@ -11,17 +11,50 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2d6ab1;
+  background-color: #071D41; /* Cor azul da imagem */
   padding: 0.6rem 1rem;
   color: #fff;
   position: relative;
   z-index: 101;
+  min-height: 50px; /* Altura mínima */
 }
 
-.leftContent { display: flex; align-items: center; gap: 0.8rem; }
+.portalTitle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Impede que o texto quebre linha */
+  white-space: nowrap;
+}
+
+/* --- Novos estilos para logos e título na barra azul --- */
+.subGovLink {
+  display: flex;
+  align-items: center;
+  padding-right: 0.8rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.subGovLogo {
+  width: 70px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
+.inpeLogo { 
+  width: 60px; 
+  height: auto; 
+}
+.portalTitle { 
+  font-size: 1.7rem; 
+  font-weight: bold; 
+  color: #fff;
+  white-space: nowrap; /* Impede que o título quebre linha */
+}
+/* --- Fim dos novos estilos --- */
+
+
 .leftContent a { display: flex; align-items: center; }
-.inpeLogo { width: 35px; height: auto; }
-.inpeText { font-size: 1.125rem; font-weight: bold; color: #fff; }
+
 
 .topNav {
   display: flex;
@@ -51,6 +84,8 @@
   cursor: pointer;
   padding: 0;
   z-index: 102;
+  /* Garante que o botão não seja empurrado */
+  flex-shrink: 0;
 }
 .hamburgerButton span {
   width: 2rem;
@@ -86,8 +121,16 @@
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-@media (max-width: 640px) {
+
+/* --- Mobile (Até 768px) --- */
+@media (max-width: 768px) {
   .topNav {
+    display: none; /* Esconde a barra branca superior */
+  }
+  
+  /* ESCONDE O TÍTULO LONGO E O LOGO GOV DA BARRA AZUL */
+  .portalTitle,
+  .subGovLink {
     display: none;
   }
   
@@ -126,7 +169,7 @@
   }
 
   .externalLinkItem {
-    display: block;
+    display: block; /* Mostra links (Simplifique, etc) no menu mobile */
   }
   .externalLinkItem::after {
     display: none; /* remove separator line from last section */
@@ -139,12 +182,10 @@
   }
 }
 
-@media (min-width: 641px) {
+/* --- Desktop (Maior que 768px) --- */
+@media (min-width: 769px) {
   .hamburgerButton {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    position: absolute;
+    display: none; /* Esconde o botão hambúrguer no desktop */
   }
 
   .mainNav {
@@ -167,6 +208,7 @@
     padding-bottom: 5px;
     border-bottom: 2px solid transparent;
     opacity: 0.85;
+    white-space: nowrap; /* Garante que links não quebrem linha */
   }
 
   .mainNav a:hover { opacity: 1; }
