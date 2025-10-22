@@ -3,6 +3,6 @@ import { getAll } from "../../controllers/furnas/campanha.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/", getAll);
 
 export default router;

@@ -80,11 +80,12 @@ services:
     ports:
       - "3001:3000"
 
+  # SUBSTITUA O SEU 'front-app' POR ESTE BLOCO INTEIRO
+
   front-app:
-    build:
-      context: ./front
-      dockerfile: Dockerfile
+    image: node:22-alpine          # <-- USA UMA IMAGEM PRONTA EM VEZ DE 'build'
     container_name: front-app
+    working_dir: /usr/src/app      # <-- Define o diretório de trabalho
     restart: always
     networks:
       - abp-network
@@ -93,18 +94,39 @@ services:
     depends_on:
       - server-app
     environment:
-      CHOKIDAR_USEPOLLING: "true"   # garante hot reload dentro do container
+      CHOKIDAR_USEPOLLING: "true"
     volumes:
-      - ./front:/usr/src/app        # código local
-      - /usr/src/app/node_modules   # mantém dependências no container
-    command: npm run dev -- --host
+      - ./front:/usr/src/app
+      - /usr/src/app/node_modules
+    command: sh -c "npm install && npm run dev -- --host" # <-- Comando ajustado
     ports:
       - "3002:5173"
+
+# O RESTO DO ARQUIVO CONTINUA IGUAL...
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - abp-network
+    depends_on:
+      - postgres-furnas-campanha
+      - postgres-sima
+      - postgres-balcar-campanha
 
 volumes:
   furnas_campanha_data:
   sima_data:
   balcar_campanha_data:
+  pgadmin_data:
 
 networks:
   abp-network:

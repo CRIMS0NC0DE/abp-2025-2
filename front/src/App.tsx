@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
+
+// CORREÇÃO 3: Adicionar todas as importações que estavam faltando
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/Home/HomePage';
 import ExportCSVPage from './pages/ExportCSV/ExportCSV';

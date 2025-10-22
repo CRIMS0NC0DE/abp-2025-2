@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Rotas principais
-app.use("/", router);
+app.use("/api", router);
 
 // Middleware para rotas não encontradas
 app.use((_req: Request, res: Response) => {
