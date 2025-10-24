@@ -1,31 +1,75 @@
 
 .homepageContainer {
+  width: 100%;
+  max-width: 1200px; /* Limita a largura */
+  margin: 0 auto;    /* Centraliza */
+  padding: 40px 20px;
+  box-sizing: border-box;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem;
-  flex-grow: 1;
+  flex-direction: column;
+  align-items: center; /* Centraliza tudo */
+}
+
+.mainTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Arial';
+  color: #071D41; 
+  margin-bottom: 40px;
 }
 
 .cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem; 
-  justify-items: center;
-  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
+  margin-bottom: 60px;
+  width: 100%; 
+}
+
+
+.innovationSection {
+  text-align: center;
+  max-width: 800px;
   width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative; 
+  min-height: 250px; 
 }
 
-/* Media query para tablets - 2 colunas */
-@media (max-width: 1100px) {
-  .cardsGrid {
-    grid-template-columns: repeat(2, 1fr);
+.slideContent {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.innovationTitle {
+  font-family: 'Arial';
+  font-size: 2.2rem;
+  color: #071D41;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.innovationSection p {
+  font-family: 'Arial';
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.6;
+  /* Altura mínima para o parágrafo */
+  min-height: 100px; 
+  padding: 0 10px; /* Evita que o texto cole nas bordas */
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); 
   }
-}
-
-/* Media query para celulares - 1 coluna */
-@media (max-width: 600px) {
-  .cardsGrid {
-    grid-template-columns: 1fr;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
