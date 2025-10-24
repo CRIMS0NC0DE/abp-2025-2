@@ -4,7 +4,9 @@
 }
 
 .simaPageContainer {
+  position: relative; /* Adicionado para ancorar o QuickNav */
   padding: 2rem;
+  padding-top: 6rem; /* Aumentado para dar espaço ao QuickNav e ao título */
   min-height: calc(
     100vh - 120px
   ); /* Ajuste com base na altura do Header e Footer */
@@ -21,11 +23,20 @@
   font-size: 5rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem; /* Margem diminuída */
   font-family:
     Arial,
     Helvetica,
     sans-serif;
+}
+
+/* Estilo para o NOVO subtítulo */
+.simaSubtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 2.5rem;
 }
 
 /* Container (azul escuro) para os cards */
@@ -62,7 +73,7 @@
 /* Grid para os 8 cards principais */
 .eightCardGrid {
   /* 2 colunas em telas médias */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 /* Grid específico para os 4 cards da equipe */
@@ -72,48 +83,13 @@
   gap: 1.5rem;
   justify-items: center;
   /* 2 colunas em telas médias */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   width: 100%;
 }
 
-/* Container para os Botões de Navegação */
-.navButtonContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border: 3px solid var(--sima-dark-blue); /* Borda azul escura */
-  border-radius: 15px;
-}
-
-.navButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #333;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition:
-    background-color 0.2s,
-    box-shadow 0.2s;
-}
-
-.navButton:hover {
-  background-color: #e9e9e9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navButton svg {
-  stroke: var(--sima-dark-blue);
-}
+/* Estilos para .navButtonContainer e .navButton REMOVIDOS,
+   pois o componente foi substituído pelo QuickNav.
+*/
 
 /* Seção Inferior (Equipe + Logo) */
 .bottomSection {
@@ -143,7 +119,8 @@
 /* Telas médias (tablets) */
 @media (min-width: 768px) {
   .simaPageContainer {
-    padding: 2rem 4rem; /* Mais padding lateral */
+    padding: 2rem 4rem;
+    padding-top: 6rem; /* Garante espaço no topo */
   }
 
   /* Grid de 8: 2 colunas */
@@ -154,14 +131,6 @@
   /* Grid da Equipe: 2 colunas */
   .teamCardGrid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Botões de navegação lado a lado */
-  .navButtonContainer {
-    flex-direction: row;
-  }
-  .navButton {
-    width: 100%;
   }
 
   /* Seção inferior: Equipe e Logo lado a lado */
@@ -198,6 +167,7 @@
   }
   .simaPageContainer {
     padding: 1rem;
+    padding-top: 6rem; /* Garante espaço */
   }
   .cardContainer {
     padding: 1.5rem 1rem;
