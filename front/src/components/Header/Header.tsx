@@ -25,9 +25,6 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  }
 
   return (
     <header className={styles.header}>
@@ -57,17 +54,6 @@ export default function Header() {
             Portal para Visualização e Disseminação de Dados Limnológicos
           </span>
         </div>
-
-        {/* Botão Hambúrguer (Mantido) */}
-        <button
-          className={`${styles.hamburgerButton} ${isMenuOpen ? styles.open : ''}`}
-          onClick={toggleMenu}
-          aria-label="Menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
 
         {/* Navigation container (Mantido) */}
         <nav className={`${styles.mainNav} ${isMenuOpen ? styles.menuOpen : ''}`}>

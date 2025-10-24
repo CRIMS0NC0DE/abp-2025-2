@@ -3,6 +3,7 @@
    ========================================================================== */
 .header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: auto;
   position: relative;
   z-index: 100;
 }
@@ -90,7 +91,7 @@
 .hamburgerButton span {
   width: 2rem;
   height: 0.25rem;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   transform-origin: 1px;
