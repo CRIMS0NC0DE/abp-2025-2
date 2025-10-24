@@ -1,9 +1,4 @@
-// front/src/App.tsx
-
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-
-
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/Home/HomePage';
@@ -14,7 +9,6 @@ import TableView from './pages/TableView/TableView';
 import Balcar from './pages/Balcar/Balcar';
 import "leaflet/dist/leaflet.css";
 import './styles/global.css';
-
 
 export default function App() {
   return (
