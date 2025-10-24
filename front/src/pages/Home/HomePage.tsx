@@ -16,15 +16,15 @@ const projectData = [
   },
   {
     logoSrc: logoFurnas, 
-    logoAlt: 'Logo BALCAR - Projeto Carbono Furnas',
-    description: 'BALCAR é a sigla para Balanço de Carbono e foi um projeto focado nas emissões de gases de efeito estufa (GEE) em reservatórios de usinas hidrelétricas.',
+    logoAlt: 'Logo FURNAS - Projeto Carbono Furnas',
+    description: 'O Projeto Furnas é a iniciativa principal para desenvolver e aplicar um sistema de monitoramento ambiental na aquicultura dos reservatórios de Furnas.',
     to: '/furnas' 
   },
   {
     logoSrc: logoBalcar, 
     logoAlt: 'Logo BALCAR - Projeto Furnas Aquicultura',
-    description: 'O Projeto Furnas é a iniciativa principal para desenvolver e aplicar um sistema de monitoramento ambiental na aquicultura dos reservatórios de Furnas.',
-    to: '/furnas' 
+    description: 'BALCAR é a sigla para Balanço de Carbono e foi um projeto focado nas emissões de gases de efeito estufa (GEE) em reservatórios de usinas hidrelétricas.',
+    to: '/balcar' 
   }
 ];
 
