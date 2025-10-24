@@ -5,69 +5,112 @@ import axios from "axios";
 import styles from "./ExportCSV.module.css";
 import downloadIcon from "../../assets/download-logo.png";
 
-// Interface para a configuração das tabelas
-interface TableConfig {
-  apiUrl: string;
+// --- ESTRUTURA DE DADOS ATUALIZADA ---
+interface TableInfo { apiUrl: string; }
+interface DatabaseConfig {
   group: string;
   color: string;
+  tables: { [tableName: string]: TableInfo; };
 }
 
-// Mapeamento das tabelas para seus endpoints e grupos na API
-const tableEndpoints: { [key: string]: TableConfig } = {
-  // Grupo Furnas
-  "Campanha (Furnas)": { apiUrl: "/furnas/campanha", group: "furnas-campanha", color: "#3182ce" },
-  "Abiótico Coluna": { apiUrl: "/furnas/abioticocoluna", group: "furnas-campanha", color: "#3182ce" },
-  // Adicione outras tabelas de Furnas aqui...
-
-  // Grupo Balcar
-  "Fluxo INPE (Balcar)": { apiUrl: "/balcar/fluxoinpe", group: "balcar-campanha", color: "#38a169" },
-  // Adicione outras tabelas de Balcar aqui...
-
-  // Grupo SIMA
-  "Dados SIMA": { apiUrl: "/sima/sima", group: "sima", color: "#d69e2e" },
-  "Dados SIMA Offline": { apiUrl: "/sima/simaoffline", group: "sima", color: "#d69e2e" },
-  // Adicione outras tabelas de SIMA aqui...
+const databaseConfig: { [dbName: string]: DatabaseConfig } = {
+  "Furnas Campanha": {
+    group: "furnas-campanha",
+    color: "#3182ce",
+    tables: {
+      "Campanhas": { apiUrl: "/furnas/campanha" },
+      "Abiótico Coluna": { apiUrl: "/furnas/abioticocoluna" },
+      "Abiótico Superfície": { apiUrl: "/furnas/abioticosuperficie" },
+      "Água e Matéria Orgânica": { apiUrl: "/furnas/aguamateriaorganicasedimento" },
+      "Biótico Coluna": { apiUrl: "/furnas/bioticocoluna" },
+      "Biótico Superfície": { apiUrl: "/furnas/bioticosuperficie" },
+      "Bolhas": { apiUrl: "/furnas/bolhas" },
+      "Câmara de Solo": { apiUrl: "/furnas/camarasolo" },
+      "Carbono": { apiUrl: "/furnas/carbono" },
+      "Gás na Água": { apiUrl: "/furnas/concentracaogasagua" },
+      "Gás no Sedimento": { apiUrl: "/furnas/concentracaogassedimento" },
+      "Dados de Precipitação": { apiUrl: "/furnas/dadosprecipitacao" },
+      "Dados da Represa": { apiUrl: "/furnas/dadosrepresa" },
+      "Difusão": { apiUrl: "/furnas/difusao" },
+      "Dupla Dessorção": { apiUrl: "/furnas/dupladessorcaoagua" },
+      "Fluxo de Bolhas (INPE)": { apiUrl: "/furnas/fluxobolhasinpe" },
+      "Fluxo de Carbono": { apiUrl: "/furnas/fluxocarbono" },
+      "Fluxo Difusivo": { apiUrl: "/furnas/fluxodifusivo" },
+      "Fluxo Difusivo (INPE)": { apiUrl: "/furnas/fluxodifusivoinpe" },
+      "Gases em Bolhas": { apiUrl: "/furnas/gasesembolhas" },
+      "Horiba": { apiUrl: "/furnas/horiba" },
+      "Íons na Água": { apiUrl: "/furnas/ionsnaaguaintersticialdosedimento" },
+      "Medida de Campo (Coluna)": { apiUrl: "/furnas/medidacampocoluna" },
+      "Medida de Campo (Superfície)": { apiUrl: "/furnas/medidacamposuperficie" },
+      "Nutrientes no Sedimento": { apiUrl: "/furnas/nutrientessedimento" },
+      "Parâmetros Biológicos": { apiUrl: "/furnas/parametrosbiologicosfisicosagua" },
+      "PFQ": { apiUrl: "/furnas/pfq" },
+      "TC": { apiUrl: "/furnas/tc" },
+      "Variáveis Físico-Químicas": { apiUrl: "/furnas/variaveisfisicasquimicasdaagua" },
+    },
+  },
+  "Balcar Campanha": {
+    group: "balcar-campanha",
+    color: "#38a169",
+    tables: {
+      // Adicionaremos as tabelas de Balcar aqui quando tiver o SQL
+    },
+  },
+  "SIMA": {
+    group: "sima",
+    color: "#d69e2e",
+    tables: {
+      // Adicionaremos as tabelas de SIMA aqui
+    },
+  },
 };
+
+// ... (O restante do arquivo continua o mesmo que a versão anterior que te enviei)
+// A função renderTableContent agora usará o 'default' para as novas tabelas
+// pois ainda não definimos um layout customizado para cada uma.
 
 const API_BASE_URL = "http://localhost:3001/api";
 
 const ExportCSVPage: React.FC = () => {
-  type TableRow = Record<string, any>;
-  const [tables, setTables] = useState<{ [key: string]: TableRow[] }>({});
-  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [selectedDb, setSelectedDb] = useState<string | null>(null);
+  const [activeTable, setActiveTable] = useState<string | null>(null);
+  const [tableData, setTableData] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Busca os dados da API ao clicar em uma aba
-  const handleTabClick = async (tableName: string) => {
-    setActiveTab(tableName);
-    if (!tables[tableName]) {
-      setLoading(true);
-      try {
-        const endpoint = tableEndpoints[tableName].apiUrl;
-        const response = await axios.get(`${API_BASE_URL}${endpoint}`);
-        if (response.data && response.data.data) {
-          setTables((prev) => ({ ...prev, [tableName]: response.data.data }));
-        }
-      } catch (error) {
-        console.error(`Erro ao buscar dados para ${tableName}:`, error);
-      } finally {
-        setLoading(false);
+  const handleDbSelect = (dbName: string) => {
+    setSelectedDb(dbName);
+    setActiveTable(null);
+    setTableData([]);
+  };
+
+  const handleTableSelect = async (tableName: string) => {
+    if (!selectedDb) return;
+    setActiveTable(tableName);
+    setLoading(true);
+    try {
+      const endpoint = databaseConfig[selectedDb].tables[tableName].apiUrl;
+      const response = await axios.get(`${API_BASE_URL}${endpoint}`);
+      if (response.data && response.data.data) {
+        setTableData(response.data.data);
       }
+    } catch (error) {
+      console.error(`Erro ao buscar dados para ${tableName}:`, error);
+      setTableData([]);
+    } finally {
+      setLoading(false);
     }
   };
 
-  // Exporta todos os dados para um arquivo .zip
   const handleExportAllAsZip = async () => {
     const zip = new JSZip();
     setLoading(true);
 
-    await Promise.all(
-      Object.entries(tableEndpoints).map(async ([tableName, config]) => {
+    for (const dbName in databaseConfig) {
+      for (const tableName in databaseConfig[dbName].tables) {
         try {
+          const config = databaseConfig[dbName].tables[tableName];
           const response = await axios.get(`${API_BASE_URL}${config.apiUrl}`);
-          // CORREÇÃO: Acessa response.data.data e verifica se há dados
           if (response.data && response.data.data && response.data.data.length > 0) {
-            // Aplaina os dados para um CSV limpo
             const flattenedData = response.data.data.map((row: any) => {
               const flatRow: Record<string, any> = {};
               for (const key in row) {
@@ -81,21 +124,21 @@ const ExportCSVPage: React.FC = () => {
               }
               return flatRow;
             });
-
             const csvString = Papa.unparse(flattenedData);
-            zip.file(`${tableName.replace(/[\s()]/g, '_')}.csv`, csvString);
+            const fileName = `${dbName}_${tableName}`.replace(/[\s()]/g, '_') + '.csv';
+            zip.file(fileName, csvString);
           }
         } catch (error) {
-          console.error(`Falha ao exportar ${tableName}:`, error);
+          console.error(`Falha ao exportar ${tableName} do banco ${dbName}:`, error);
         }
-      })
-    );
+      }
+    }
 
     const content = await zip.generateAsync({ type: "blob" });
     const url = URL.createObjectURL(content);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "dados_completos.zip");
+    link.setAttribute("download", "backup_completo_dados.zip");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -103,181 +146,107 @@ const ExportCSVPage: React.FC = () => {
     setLoading(false);
   };
 
-  // Função para renderizar o conteúdo da tabela correta
-  const renderTableContent = (tableName: string, data: any[]) => {
-    switch (tableName) {
-      case "Campanha (Furnas)":
-        return (
-          <>
-            <thead>
-              <tr>
-                <th>ID Campanha</th>
-                <th>Instituição</th>
-                <th>Reservatório</th>
-                <th>Nº Campanha</th>
-                <th>Data Início</th>
-                <th>Data Fim</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((row) => (
-                <tr key={row.idcampanha}>
-                  <td>{row.idcampanha}</td>
-                  <td>{row.instituicao?.nome}</td>
-                  <td>{row.reservatorio?.nome}</td>
-                  <td>{row.nrocampanha}</td>
-                  <td>{new Date(row.datainicio).toLocaleDateString()}</td>
-                  <td>{new Date(row.datafim).toLocaleDateString()}</td>
-                </tr>
-              ))}
-            </tbody>
-          </>
-        );
+  // Substitua a função inteira no seu ExportCSV.tsx
+// Substitua a função inteira no seu ExportCSV.tsx por esta versão corrigida
 
-      case "Abiótico Coluna":
-        return (
-          <>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Parâmetro</th>
-                <th>Valor</th>
-                <th>Unidade</th>
-                <th>Profundidade (m)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((row) => (
-                <tr key={row.idabioticocoluna}>
-                  <td>{row.idabioticocoluna}</td>
-                  <td>{row.parametro}</td>
-                  <td>{row.valor}</td>
-                  <td>{row.unidade}</td>
-                  <td>{row.profundidade}</td>
-                </tr>
-              ))}
-            </tbody>
-          </>
-        );
+// Substitua esta função inteira no seu ExportCSV.tsx
 
-      case "Fluxo INPE (Balcar)":
-        return (
-          <>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Fluxo CH4</th>
-                <th>Fluxo CO2</th>
-                <th>Temperatura Ar</th>
-                <th>Data</th>
+const renderTableContent = (tableName: string, data: any[]) => {
+    // Caso especial para "Campanhas", que tem uma estrutura única
+    if (tableName === "Campanhas") {
+      return (
+        <>
+          <thead>
+            <tr>
+              <th>ID Campanha</th><th>Instituição</th><th>Reservatório</th>
+              <th>Nº Campanha</th><th>Data Início</th><th>Data Fim</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row) => (
+              <tr key={row.idcampanha}>
+                <td>{row.idcampanha}</td><td>{row.instituicao?.nome}</td><td>{row.reservatorio?.nome}</td>
+                <td>{row.nrocampanha}</td><td>{new Date(row.datainicio).toLocaleDateString()}</td><td>{new Date(row.datafim).toLocaleDateString()}</td>
               </tr>
-            </thead>
-            <tbody>
-              {data.map((row) => (
-                <tr key={row.idfluxoinpe}>
-                  <td>{row.idfluxoinpe}</td>
-                  <td>{row.fluxo_ch4}</td>
-                  <td>{row.fluxo_co2}</td>
-                  <td>{row.temperatura_ar}</td>
-                  <td>{new Date(row.data_amostragem).toLocaleString()}</td>
-                </tr>
-              ))}
-            </tbody>
-          </>
-        );
-
-      case "Dados SIMA":
-      case "Dados SIMA Offline":
-        return (
-          <>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Estação</th>
-                <th>Sensor</th>
-                <th>Valor</th>
-                <th>Data/Hora</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((row) => (
-                <tr key={row.idsima || row.idsimaoffline}>
-                  <td>{row.idsima || row.idsimaoffline}</td>
-                  <td>{row.estacao?.nome}</td>
-                  <td>{row.sensor?.tipo}</td>
-                  <td>{row.valor}</td>
-                  <td>{new Date(row.data_hora_sonda).toLocaleString()}</td>
-                </tr>
-              ))}
-            </tbody>
-          </>
-        );
-
-      // Renderização padrão para qualquer outra tabela não especificada
-      default:
-        return (
-          <>
-            <thead>
-              <tr>
-                {Object.keys(data[0] || {}).map((col) => <th key={col}>{col}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((row, i) => (
-                <tr key={i}>
-                  {Object.values(row).map((cell, j) => (
-                    <td key={j}>{String(cell)}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </>
-        );
+            ))}
+          </tbody>
+        </>
+      );
     }
+  
+    // --- RENDERIZAÇÃO GENÉRICA E INTELIGENTE PARA TODAS AS OUTRAS TABELAS ---
+    // Pega os cabeçalhos do primeiro objeto, excluindo os objetos aninhados (campanha, sitio)
+    const headers = Object.keys(data[0] || {}).filter(
+      (key) => typeof data[0][key] !== 'object' || data[0][key] === null
+    );
+
+    return (
+      <>
+        <thead>
+          <tr>
+            {/* Adiciona as colunas dos dados aninhados no início, se existirem */}
+            {data[0]?.campanha && <th>Nº Campanha</th>}
+            {data[0]?.sitio && <th>Sítio</th>}
+            {/* Mapeia o resto dos cabeçalhos */}
+            {headers.map(header => <th key={header}>{header}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, index) => (
+            <tr key={row[headers[0]] || index}>
+              {/* Exibe os dados aninhados, se existirem */}
+              {row.campanha && <td>{row.campanha.nrocampanha}</td>}
+              {row.sitio && <td>{row.sitio.nome}</td>}
+              {/* Mapeia o resto das células */}
+              {headers.map(header => {
+                const cellData = row[header];
+                // Formata datas para serem mais legíveis
+                if (typeof cellData === 'string' && cellData.match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/)) {
+                  return <td key={header}>{new Date(cellData).toLocaleDateString()}</td>;
+                }
+                // Converte valores nulos para uma string vazia
+                return <td key={header}>{cellData === null ? '' : String(cellData)}</td>;
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </>
+    );
   };
 
   return (
     <div className={styles.pageContainer}>
       <div className={styles.contentContainer}>
-        <h1 className={styles.title}>
-          Visualizar e Exportar Dados <span className={styles.titleHighlight}>.CSV</span>
-        </h1>
-
-        <button className={styles.exportBox} onClick={handleExportAllAsZip} disabled={loading}>
-          <img src={downloadIcon} className={styles.downloadIcon} alt="Ícone de download" />
-        </button>
-
-        <p className={styles.instructionText}>
-          {loading ? "Processando..." : "Clique no círculo para baixar todos os dados em um ZIP"}
-        </p>
-
-        <div className={styles.tabsContainer}>
-          {Object.entries(tableEndpoints).map(([tableName, config]) => (
-            <div key={tableName} className={styles.tabWithTooltip}>
-              <button
-                onClick={() => handleTabClick(tableName)}
-                className={`${styles.tabButton} ${activeTab === tableName ? styles.activeTab : ""}`}
-                style={{ borderTop: `4px solid ${config.color || "#ccc"}` }}
-              >
-                {tableName}
-              </button>
-              <span className={styles.tooltip} style={{ background: config.color || "#333" }}>
-                {config.group}
-              </span>
-            </div>
+        <h1 className={styles.title}>Visualizar e Exportar Dados <span className={styles.titleHighlight}>.CSV</span></h1>
+        <p className={styles.instructionText}>Primeiro, selecione um banco de dados. Em seguida, escolha uma tabela para visualizar.</p>
+        <div className={styles.dbSelectorContainer}>
+          {Object.entries(databaseConfig).map(([dbName, config]) => (
+            <button key={dbName} onClick={() => handleDbSelect(dbName)} className={`${styles.dbButton} ${selectedDb === dbName ? styles.activeDbButton : ""}`} style={{ '--active-color': config.color } as React.CSSProperties}>
+              {dbName}
+            </button>
           ))}
         </div>
-
+        {selectedDb && (
+          <div className={styles.tabsContainer}>
+            {Object.keys(databaseConfig[selectedDb].tables).map((tableName) => (
+              <button key={tableName} onClick={() => handleTableSelect(tableName)} className={`${styles.tabButton} ${activeTable === tableName ? styles.activeTab : ""}`} style={{ '--active-color': databaseConfig[selectedDb].color } as React.CSSProperties}>
+                {tableName}
+              </button>
+            ))}
+          </div>
+        )}
         <div className={styles.tableWrapper}>
-          {loading && !tables[activeTab || ""] ? (
-            <p>Carregando tabela...</p>
-          ) : activeTab && tables[activeTab] && tables[activeTab].length > 0 ? (
-            <table className={styles.dataTable}>
-              {renderTableContent(activeTab, tables[activeTab])}
-            </table>
+          {loading ? (<p>Carregando tabela...</p>) : activeTable && tableData.length > 0 ? (
+            <table className={styles.dataTable}>{renderTableContent(activeTable, tableData)}</table>
           ) : (
-            <p>{activeTab ? `Não há dados para exibir para ${activeTab}.` : "Selecione uma tabela para visualizar."}</p>
+            <p>{!selectedDb ? "Selecione um banco de dados para começar." : !activeTable ? "Selecione uma tabela para visualizar os dados." : "Não há dados para exibir para a tabela selecionada."}</p>
           )}
+        </div>
+        <div className={styles.exportSection}>
+          <button className={styles.exportBox} onClick={handleExportAllAsZip} disabled={loading}>
+            <img src={downloadIcon} className={styles.downloadIcon} alt="Ícone de download" />
+          </button>
+          <p className={styles.instructionText}>{loading ? "Processando..." : "Clique no círculo para baixar TODAS as tabelas de TODOS os bancos em um arquivo ZIP."}</p>
         </div>
       </div>
     </div>

@@ -1,42 +1,166 @@
-/* Estilos da página de ExportCSV, baseados no seu código antigo */
+/* --- LAYOUT GERAL --- */
 .pageContainer {
   display: flex;
   width: 100%;
   flex-grow: 1;
 }
 
-.sidebar {
-  flex-basis: 60px;
-  background-color: #2d6ab1;
-  flex-shrink: 0;
-}
-
 .contentContainer {
-  flex-grow: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 2rem;
   background-color: #f0f2f5;
 }
 
 .title {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: #2d3748;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
 .titleHighlight {
-  color: #4299e1;
+  color: #2d6ab1;
 }
 
-/* O botão de exportação agora é um <button> para semântica correta */
+.instructionText {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #718096;
+  text-align: center;
+  max-width: 600px; /* Evita que o texto fique muito largo */
+}
+
+/* --- SELEÇÃO DE BANCO DE DADOS --- */
+.dbSelectorContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dbButton {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: #ffffff;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.dbButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07);
+}
+
+.activeDbButton {
+  background-color: var(--active-color);
+  color: #ffffff;
+  border-color: var(--active-color);
+}
+
+/* --- ABAS DE TABELAS --- */
+.tabsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.tabButton {
+  background: #f7fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2d3748;
+  transition: all 0.2s;
+}
+
+.tabButton:hover {
+  background: #e2e8f0;
+}
+
+.activeTab {
+  background: var(--active-color);
+  color: #fff;
+  border-color: var(--active-color);
+  font-weight: 600;
+}
+
+/* --- ÁREA DE VISUALIZAÇÃO DA TABELA --- */
+.tableWrapper {
+  width: 100%;
+  max-width: 1200px;
+  overflow-x: auto; /* Permite rolar a tabela horizontalmente */
+  min-height: 300px; /* Aumenta a altura mínima */
+  max-height: 50vh;  /* Usa a altura da tela como referência */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  /* IMPORTANTE: Sem 'display: flex' aqui */
+}
+
+/* Regra separada para centralizar as mensagens de texto DENTRO do wrapper */
+.tableWrapper p {
+  color: #a0aec0;
+  font-size: 1.2rem;
+  text-align: center;
+  /* Posicionamento para centralizar verticalmente sem flex */
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.dataTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dataTable th,
+.dataTable td {
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dataTable th {
+  background: #edf2f7;
+  color: #4a5568;
+  font-weight: 600;
+  position: sticky;
+  top: -1rem; /* Ajusta para colar no topo do wrapper */
+  z-index: 1;
+}
+
+.dataTable tbody tr:hover {
+  background-color: #f7fafc;
+}
+
+/* --- SEÇÃO DE EXPORTAÇÃO --- */
+.exportSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .exportBox {
-  width: 280px;
-  height: 280px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: none;
   display: flex;
@@ -49,113 +173,17 @@
 }
 
 .exportBox:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
+.exportBox:disabled {
+  cursor: not-allowed;
+  background-color: #e2e8f0;
+}
+
 .downloadIcon {
-  width: 100px;
+  width: 50px;
   height: auto;
   opacity: 0.8;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.exportBox:hover .downloadIcon {
-  opacity: 1;
-}
-
-.instructionText {
-  margin-top: 2rem;
-  font-size: 1rem;
-  color: #718096;
-}
-
-.tabsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 2rem 0 1rem 0;
-}
-
-.tabButton {
-  background: #f7fafc;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px 6px 0 0;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-weight: 500;
-  color: #2d3748;
-  transition: background 0.2s;
-}
-
-.tabButton:hover {
-  background: #e2e8f0;
-}
-
-.activeTab {
-  background: #4299e1;
-  color: #fff;
-  border-bottom: 2px solid #4299e1;
-}
-
-.tableWrapper {
-  overflow-x: auto;
-  max-height: 400px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  padding: 1rem;
-}
-
-.dataTable {
-  border-collapse: collapse;
-  width: 100%;
-  min-width: 600px;
-}
-
-.dataTable th {
-  background: #4299e1;
-  color: #fff;
-  padding: 8px;
-  position: sticky;
-  top: 0;
-}
-
-.dataTable td {
-  padding: 8px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.dataTable tr:nth-child(even) {
-  background: #f7fafc;
-}
-
-.tabWithTooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tabWithTooltip .tooltip {
-  visibility: hidden;
-  opacity: 0;
-  width: max-content;
-  background: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 4px 12px;
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 110%;
-  font-size: 0.95rem;
-  transition: opacity 0.2s;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.tabWithTooltip:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
 }
