@@ -1,44 +1,72 @@
-/* Estilo para o componente de navegação rápida (QuickNav) */
-.quickNavContainer {
+.navContainer {
   position: absolute;
-  /* Posiciona no canto superior direito, abaixo do Header (ajuste 'top' conforme necessário) */
-  top: 1rem; 
-  right: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%; /* O container externo ocupa 100% */
+  z-index: 100;
   display: flex;
-  gap: 0.75rem;
-  padding: 0.5rem;
-  background-color: #ffffff;
+  justify-content: center; /* Centraliza o .navWrapper */
+  padding: 1rem 0; /* Espaçamento vertical */
+}
+
+/* Este wrapper alinha os botões com o layout da SimaPage,
+  respeitando o max-width e os paddings laterais.
+*/
+.navWrapper {
+  width: 100%;
+  max-width: 1200px; /* Mesma largura máxima do SimaPage */
+  display: flex;
+  gap: 1rem;
+  
+  /* Padding inicial para desktop (igual ao SimaPage @media (min-width: 768px)) */
+  padding: 0 4rem;
+}
+
+.navButton {
+  background-color: #003366; /* Azul SIMA */
+  color: white;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10; /* Garante que fique acima de outros elementos da página */
-}
-
-.navLink {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-decoration: none;
-  color: #333;
-  font-size: 0.75rem; /* Fonte pequena */
-  font-weight: 500;
-  transition: transform 0.2s ease, color 0.2s ease;
-  width: 80px; /* Largura fixa para melhor alinhamento */
-  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navLink:hover {
-  transform: scale(1.05);
-  color: #003366; /* Azul do SIMA */
+.navButton:hover {
+  background-color: #004a8c;
+  transform: translateY(-2px);
 }
 
-.navIcon {
-  width: 32px;  /* Tamanho pequeno para o ícone */
-  height: 32px;
-  object-fit: contain;
-  margin-bottom: 0.25rem;
+/* --- Media Queries para Responsividade --- */
+
+/* Telas de tablet */
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 0.5rem 0;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .navWrapper {
+    padding: 0 4rem; /* SimaPage usa 4rem em 768px */
+    gap: 0.5rem;
+  }
+
+  .navButton {
+    flex-grow: 1; 
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
 }
 
-.navLabel {
-  /* Garante que o texto não quebre de forma estranha */
-  white-space: nowrap;
+/* Telas de celular */
+@media (max-width: 480px) {
+  .navWrapper {
+    padding: 0 1rem; /* SimaPage usa 1rem em 480px */
+  }
 }

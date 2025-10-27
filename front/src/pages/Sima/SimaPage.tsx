@@ -1,15 +1,30 @@
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './SimaPage.module.css';
 import ClickableCard from '../../components/ClickableCard/ClickableCard';
-import QuickNav from '../../components/QuickNav/QuickNav'; // Importa o novo componente
+import cardStyles from '../../components/ClickableCard/ClickableCard.module.css';
+import QuickNav from '../../components/QuickNav/QuickNav'; // RE-ADICIONADO
 
-// Importando ícones
-import simaIcon from '../../assets/sima-icon.png';
-import mapIcon from '../../assets/map-icon.png';
-import tableIcon from '../../assets/table-icon.png';
-// import downloadIcon from '../../assets/download-logo_card.png'; // Descomente se for usar
-import logoInpe from '../../assets/LogoInpe.png';
+// ASSETS DOS CARDS
+import sobreSima from '../../assets/sobre_o_sima.png';
+import motivacao from '../../assets/motivacao.png';
+import estrutura from '../../assets/estrutura.png';
+import funcionamento from '../../assets/funcionamento.png';
+import dados_coletados from '../../assets/dados_coletados.png';
+import historia from '../../assets/historia.png';
+import problemas from '../../assets/problemas.png';
+import mapainterativo from '../../assets/mapa_interativo.png';
+import coordenacao from '../../assets/coordenacao.png';
+import colaboradores from '../../assets/colaboradores.png';
+import mais_info from '../../assets/mais_informacoes.png';
+import apoio from '../../assets/apoio.png';
+import img_boia from '../../assets/boia_metocean.png';
 
-// --- Estilos para o conteúdo dos Modais ---
+// ASSETS DO NOVO HEADER
+import logoSIMA from '../../assets/LogoSIMA.png';
+import logoBalcar from '../../assets/LogoBalcar.png';
+import logoFurnas from '../../assets/LogoFurnas.png';
+
 const modalStyles = {
   h2: {
     marginBottom: '1rem',
@@ -40,8 +55,7 @@ const modalStyles = {
   },
 };
 
-// --- Conteúdo Falso para os Modais ---
-
+// ... (Todo o conteúdo dos Modais - ModalSobre, ModalMotivacao, etc. - permanece inalterado) ...
 const ModalSobre = (
   <div>
     <h2 style={modalStyles.h2}>Sobre o SIMA</h2>
@@ -91,7 +105,6 @@ const ModalEstrutura = (
       compartimento abriga a eletrônica do sistema, baterias e transmissor de
       satélite. Os sensores submersos são conectados a eletrônica por cabos.
     </p>
-    {/* TODO: Adicionar as fotos mencionadas quando disponíveis */}
   </div>
 );
 
@@ -136,7 +149,6 @@ const ModalFuncionamento = (
   </div>
 );
 
-// NOVO MODAL (Placeholder)
 const ModalDadosColetados = (
   <div>
     <h2 style={modalStyles.h2}>Dados Coletados</h2>
@@ -183,22 +195,6 @@ const ModalProblemas = (
         necessária para completar todas as transmissões.
       </li>
     </ul>
-    {/* TODO: Adicionar foto mencionada */}
-  </div>
-);
-
-// NOVO MODAL (Placeholder)
-const ModalMapaInterativo = (
-  <div>
-    <h2 style={modalStyles.h2}>Mapa Interativo</h2>
-    <p style={modalStyles.p}>
-      Esta seção apresenta o mapa interativo com a localização das boias e
-      acesso aos dados.
-    </p>
-    <p style={modalStyles.p}>
-      Você também pode acessar o mapa diretamente clicando no ícone "Mapa
-      Interativo" no canto superior direito da página.
-    </p>
   </div>
 );
 
@@ -253,7 +249,7 @@ const ModalApoio = (
       </li>
       <li style={modalStyles.li}>
         <a
-          href="https://fapesp.br/"
+          href="httpsfapesp.br/"
           target="_blank"
           rel="noopener noreferrer"
           style={modalStyles.a}
@@ -263,7 +259,7 @@ const ModalApoio = (
       </li>
       <li style={modalStyles.li}>
         <a
-          href="https://www.furnas.com.br/"
+          href="httpsf:www.furnas.com.br/"
           target="_blank"
           rel="noopener noreferrer"
           style={modalStyles.a}
@@ -326,7 +322,6 @@ const ModalColaboradores = (
           André Carlos Prates Cimbleris
         </a>
       </li>
-      {/* ... (restante dos colaboradores) ... */}
       <li style={modalStyles.li}>
         <a
           href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4795537Y9"
@@ -337,111 +332,174 @@ const ModalColaboradores = (
           Arcilan Trevenzoli Assireu
         </a>
       </li>
-      {/* ... (etc) ... */}
     </ul>
-    {/* ... (restante do modal colaboradores) ... */}
   </div>
 );
 
-// --- Componente da Página ---
-
 function SimaPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const mainNavLinks = [
+    { label: 'Home', to: '/' },
+    { label: 'Início', to: '/sima' },
+    { label: 'Banco de Dados', to: '/' },
+    { label: 'Publicações', to: '/' },
+    { label: 'BALCAR', to: '/balcar' },
+    { label: 'FURNAS', to: '#' },
+  ];
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    // Adicionado position: relative para ancorar o QuickNav
-    <div className={styles.simaPageContainer}> 
-      {/* QuickNav adicionado aqui. O CSS o posicionará. */}
+    <div className={styles.simaPageContainer}>
+      {/* Item 1: QuickNav (simplifica, etc.) volta ao topo */}
       <QuickNav />
 
-      <h1 className={styles.simaTitle}>SIMA</h1>
-      {/* Subtítulo adicionado conforme solicitado */}
-      <h2 className={styles.simaSubtitle}>
-        Sistema Integrado de Monitoramento Ambiental
-      </h2>
+      {/* Item 1: Navegação da Balcar (Home, Início, etc.) */}
+      <div className={styles.subHead}>
+        <button
+          className={`${styles.hamburgerButton} ${
+            isMenuOpen ? styles.open : ''
+          }`}
+          onClick={toggleMenu}
+          aria-label="Menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav
+          className={`${styles.mainNav} ${isMenuOpen ? styles.menuOpen : ''}`}
+        >
+          <ul>
+            {mainNavLinks.map((link) => (
+              <li key={link.label}>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) => (isActive ? styles.active : '')}
+                  onClick={handleLinkClick}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
 
-      {/* Container dos 8 cards principais - ORDEM CORRIGIDA */}
+      {/* Item 2 e 3: Cabeçalho com título e logos movidos/aumentados */}
+      <header className={styles.pageHeader}>
+        {/* Logos movidos para DEPOIS do título e classe renomeada */}
+        <div className={styles.titleContainer}>
+          <img
+            src={logoSIMA}
+            alt="Logo SIMA"
+            className={styles.simaTitleImage}
+          />
+          <h2 className={styles.simaSubtitle}>
+            Sistema Integrado de Monitoramento Ambiental
+          </h2>
+        </div>
+
+        <div className={styles.headerLogoRight}>
+          <Link to="/balcar" aria-label="Ir para a página BALCAR">
+            <img
+              src={logoBalcar}
+              alt="Logo Balcar"
+              className={styles.sideLogo}
+            />
+          </Link>
+          <Link to="#" aria-label="Ir para a página FURNAS">
+            <img
+              src={logoFurnas}
+              alt="Logo Furnas"
+              className={styles.sideLogo}
+            />
+          </Link>
+        </div>
+      </header>
+
       <div className={`${styles.cardContainer} ${styles.eightCardGrid}`}>
-        {/* Linha 1 */}
         <ClickableCard
           title="Sobre o SIMA"
-          iconSrc={simaIcon}
+          iconSrc={sobreSima}
           modalContent={ModalSobre}
         />
         <ClickableCard
           title="Motivação"
-          iconSrc={simaIcon} // Trocar ícone se desejar
+          iconSrc={motivacao}
           modalContent={ModalMotivacao}
         />
         <ClickableCard
           title="Estrutura"
-          iconSrc={simaIcon} // Trocar ícone se desejar
+          iconSrc={estrutura}
           modalContent={ModalEstrutura}
         />
         <ClickableCard
           title="Funcionamento"
-          iconSrc={simaIcon} // Trocar ícone se desejar
+          iconSrc={funcionamento}
           modalContent={ModalFuncionamento}
         />
-        {/* Linha 2 */}
         <ClickableCard
           title="Dados Coletados"
-          iconSrc={tableIcon} // Ícone de tabela
+          iconSrc={dados_coletados}
           modalContent={ModalDadosColetados}
         />
         <ClickableCard
           title="História"
-          iconSrc={simaIcon} // Trocar ícone se desejar
+          iconSrc={historia}
           modalContent={ModalHistoria}
         />
         <ClickableCard
           title="Problemas"
-          iconSrc={simaIcon} // Trocar ícone se desejar
+          iconSrc={problemas}
           modalContent={ModalProblemas}
         />
-        <ClickableCard
-          title="Mapa Interativo"
-          iconSrc={mapIcon} // Ícone de mapa
-          modalContent={ModalMapaInterativo}
-        />
+        <a
+          href="#/mapa"
+          className={`${cardStyles.card} ${styles.cardLink}`}
+        >
+          <img src={mapainterativo} alt="Mapa Interativo" className={cardStyles.icon} />
+          <h3 className={cardStyles.title}>Mapa Interativo</h3>
+        </a>
       </div>
 
-      {/* O container .navButtonContainer foi REMOVIDO מכאן */}
-
-      {/* Seção Inferior: Equipe + Logo */}
       <div className={styles.bottomSection}>
-        {/* Container da Equipe */}
         <div className={styles.cardContainer}>
           <h2 className={styles.containerTitle}>Equipe</h2>
-          {/* ORDEM CORRIGIDA: +Informações e Apoio movidos para cá */}
           <div className={styles.teamCardGrid}>
-            {/* Linha 1 */}
             <ClickableCard
               title="Coordenação"
-              iconSrc={simaIcon} // Trocar ícone
+              iconSrc={coordenacao}
               modalContent={ModalCoordenacao}
             />
             <ClickableCard
               title="Colaboradores"
-              iconSrc={simaIcon} // Trocar ícone
+              iconSrc={colaboradores}
               modalContent={ModalColaboradores}
             />
-            {/* Linha 2 */}
             <ClickableCard
               title="+ Informações"
-              iconSrc={simaIcon} // Trocar ícone
+              iconSrc={mais_info}
               modalContent={ModalMaisInformacoes}
             />
             <ClickableCard
               title="Apoio"
-              iconSrc={simaIcon} // Trocar ícone
+              iconSrc={apoio}
               modalContent={ModalApoio}
             />
           </div>
         </div>
 
-        {/* Container da Imagem */}
         <div className={styles.bottomImageContainer}>
           <img
-            src={logoInpe}
+            src={img_boia}
             alt="Logo Instituição"
             className={styles.bottomImage}
           />
