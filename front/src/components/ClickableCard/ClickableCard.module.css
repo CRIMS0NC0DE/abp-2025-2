@@ -1,8 +1,8 @@
 .cardContainer {
   display: flex;
-  flex-direction: column; /* Ícone em cima, título embaixo */
-  justify-content: center; /* Centraliza verticalmente */
-  align-items: center;     /* Centraliza horizontalmente */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -11,49 +11,39 @@
   background-color: #f9f9f9;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   
-  /* Formato retangular horizontal */
   width: 260px; 
   height: 140px; 
-  box-sizing: border-box; /* Garante que padding não afete o tamanho total */
-  text-align: center; /* Garante que o texto quebre centralizado */
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .cardContainer:hover {
-  transform: translateY(-5px); /* Efeito de levantar */
+  transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .cardIcon {
-  width: 80px; /* Ícone menor */
+  width: 80px;
   height: 80px;
-  margin-right: 15px; /* Espaço entre ícone e texto */
-  flex-shrink: 0; /* Impede que o ícone encolha */
+  margin-right: 15px;
+  flex-shrink: 0;
   object-fit: contain;
 }
 
 .cardTitle {
-  font-size: 1.1rem; /* Fonte um pouco maior */
-  font-weight: 600; /* Mais peso */
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #333;
   margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
 /* Estilo modificado para o ClickableCard (ícone em cima) */
 .card {
   display: flex;
-  flex-direction: column; /* Ícone em cima, título embaixo */
-  justify-content: center; /* Centraliza verticalmente */
-  align-items: center;     /* Centraliza horizontalmente */
-  gap: 0.75rem;            /* Espaço entre ícone e título */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
   
   padding: 1.25rem 1rem;
   background-color: #fff;
@@ -66,10 +56,11 @@
     transform 0.2s ease,
     box-shadow 0.2s ease;
   
-  /* Formato retangular horizontal */
-  width: 100%; /* Ocupa o espaço do grid */
-  min-width: 220px; /* Largura mínima */
-  height: 150px; /* Altura fixa para um retângulo horizontal */
+  width: 100%;
+  min-width: 120px;
+  
+  /* Item 5: Altura do card aumentada para acomodar o novo ícone */
+  height: 180px;
   
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -80,14 +71,15 @@
 }
 
 .icon {
-  width: 50px; /* Ícone com tamanho definido */
-  height: 50px;
+  /* Item 4: Tamanho do ícone aumentado */
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 
 .title {
-  font-size: 1.15rem; /* Tamanho do título */
+  font-size: 1.15rem;
   font-weight: 600;
-  color: #003366; /* Azul do SIMA */
+  color: #003366;
   margin: 0;
 }
