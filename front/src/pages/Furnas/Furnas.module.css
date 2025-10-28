@@ -18,7 +18,33 @@
 
   min-height: 50px;
 
-}.topNav {
+}.bigButton {
+  display: block;
+  text-decoration: none;
+  width: 100%; /* ocupa toda a largura disponível */
+}
+
+.cardButton {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden; /* garante que a imagem não vaze */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem; 
+  width: 520px;
+  height: 585px;
+}
+
+/* efeito ao passar o mouse */
+.cardButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+.topNav {
 
   display: flex;
 
@@ -54,6 +80,10 @@
 
 h2 {
   text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 5px;
+  padding-bottom: 5px;
 
 }
 
