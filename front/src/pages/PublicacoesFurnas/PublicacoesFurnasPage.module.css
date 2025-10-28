@@ -1,0 +1,278 @@
+
+/* Container principal do conteúdo */
+.mainContent {
+  width: 100%;
+  max-width: 1300px; /* Limita a largura máxima do conteúdo */
+  margin: 0 auto;    /* Centraliza o conteúdo na página */
+  padding: 2rem;
+  background-color: #071D41; /* <<< COR DE FUNDO ALTERADA PARA AZUL */
+  min-height: calc(100vh - 50px); /* Garante que o azul preencha a altura da tela (ajuste 50px se a altura do menu for diferente) */
+}
+
+/* Seção principal dentro do conteúdo */
+.section {
+  background: #ffffff; /* Fundo branco para a seção */
+  padding: 2rem;
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  /* Removemos a mudança de cor de texto daqui, pois o fundo da section continua branco */
+}
+
+/* Título principal da seção (ex: "Publicações") */
+.sectionTitle {
+  font-size: 2.2rem;
+  color: #071D41; /* Mantém azul escuro sobre fundo branco da section */
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Subtítulo da seção */
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #555; /* Mantém cinza escuro sobre fundo branco da section */
+  margin-bottom: 2.5rem;
+}
+
+/* Título de categoria (ex: "Matérias", "Publicações em Revistas...") */
+.categoryTitle {
+  font-size: 1.5rem;
+  color: #333; /* Mantém cinza bem escuro sobre fundo branco da section */
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Título de Congresso (ex: "ASLO - 2006") */
+.congressTitle {
+  font-size: 1.25rem;
+  color: #071D41; /* Mantém azul escuro sobre fundo branco da section */
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Subtítulo de Congresso (ex: nome completo do congresso) */
+.congressSubtitle {
+  font-size: 1.1rem;
+  color: #444; /* Mantém cinza escuro sobre fundo branco da section */
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Container de cada item de publicação */
+.publicationItem {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0; /* Linha divisória bem clara */
+}
+
+.publicationItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Título da publicação */
+.publicationTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  color: #111; /* Mantém cor escura sobre fundo branco da section */
+}
+
+.publicationTitle a {
+  color: #0056b3; /* Mantém cor azul para links */
+  text-decoration: none;
+}
+
+.publicationTitle a:hover {
+  text-decoration: underline;
+}
+
+/* Autores da publicação */
+.publicationAuthors {
+  font-size: 0.95rem;
+  color: #555; /* Mantém cinza escuro sobre fundo branco da section */
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Detalhes da publicação (revista, ano, etc.) */
+.publicationDetails {
+  font-size: 0.9rem;
+  color: #777; /* Mantém cinza claro sobre fundo branco da section */
+  line-height: 1.5;
+}
+
+
+/* ============================================== */
+/* === ESTILOS PARA O MENU (EXISTENTES) === */
+/* ============================================== */
+/* ... (Mantenha todos os seus estilos existentes do menu aqui) ... */
+.subHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #071D41;
+  padding: 0 1rem;
+  color: #fff;
+  position: relative; /* Mudado de sticky para relative, ajuste se necessário */
+  z-index: 101;
+  min-height: 50px; /* Ajuste se a altura do menu for diferente */
+}
+
+/* ... (Restante dos estilos do menu) ... */
+
+.hamburgerButton {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ width: 2rem;
+ height: 2rem;
+ background: transparent;
+ border: none;
+ cursor: pointer;
+ padding: 0;
+ z-index: 102;
+ flex-shrink: 0;
+}
+
+.hamburgerButton span {
+ width: 2rem;
+ height: 0.25rem;
+ background: #fff;
+ border-radius: 10px;
+ transition: all 0.3s ease-in-out;
+ transform-origin: 1px;
+}
+
+.hamburgerButton.open span:nth-child(1) {
+ transform: rotate(45deg);
+}
+.hamburgerButton.open span:nth-child(2) {
+ opacity: 0;
+ transform: translateX(20px);
+}
+.hamburgerButton.open span:nth-child(3) {
+ transform: rotate(-45deg);
+}
+
+.mainNav {
+ transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+ display: flex;
+ background-color: #071D41;
+ align-items: center;
+ justify-content: center;
+}
+
+.mainNav ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ display: flex;
+}
+
+.mainNav a {
+ text-decoration: none;
+ color: #ffffff;
+ font-weight: 600;
+ padding: 1rem 0;
+ display: block;
+}
+
+@media (max-width: 768px) {
+ .mainNav {
+  background-color: rgba(7, 29, 65, 0.9);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+ }
+
+ .mainNav.menuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+ }
+
+ .mainNav ul {
+  flex-direction: column;
+  width: 100%;
+ }
+ .mainNav li {
+  text-align: center;
+ }
+ .mainNav a {
+  display: block;
+  padding: 1rem 0;
+ }
+ .mainNav a:hover {
+  background-color: rgba(66, 153, 225, 0.5);
+ }
+
+ .mainNav li:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 1px;
+  margin: 0 auto;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+ }
+}
+
+@media (min-width: 769px) {
+ .subHead {
+  justify-content: center;
+ }
+
+ .hamburgerButton {
+  display: none;
+ }
+
+ .mainNav {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  position: static;
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+ }
+
+ .mainNav ul {
+  flex-direction: row;
+  gap: 1rem;
+ }
+
+ .mainNav a {
+  padding: 1rem 1.2rem;
+  border-bottom: 3px solid transparent;
+  opacity: 0.90;
+  color: white;
+  font-size: 1.2rem;
+  transition: opacity 0.2s, border-color 0.2s;
+ }
+
+ .mainNav a:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+ }
+
+ .mainNav a.active {
+  opacity: 1;
+  border-bottom-color: #fff;
+ }
+}
