@@ -7,6 +7,7 @@ import SimaPage from './pages/Sima/SimaPage';
 import ExportCSV from './pages/ExportCSV/ExportCSV';
 import TableView from './pages/TableView/TableView';
 import Furnas from './pages/Furnas/Furnas';
+import PublicacoesFurnas from './pages/PublicacoesFurnas/PublicacoesFurnasPage';
 import "leaflet/dist/leaflet.css";
 import './styles/global.css';
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/sima" element={<SimaPage />} />
           <Route path="/exportar-csv" element={<ExportCSV />} />
           <Route path="/furnas" element={<Furnas />} />
+          <Route path="/publicacoes" element={<PublicacoesFurnas />} />
         </Routes>
       </main>
       <Footer />
