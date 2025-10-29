@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 
-import styles from './furnas.module.css';
+import styles from './Furnas.module.css';
 
 import { useState } from 'react';
 
@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 import hidreletricasFurnas from '../../assets/hidreletricasFurnas.png';
 
-import logofurnas from '../../assets/Logofurnas.png';
+import logoBalcar from '../../assets/LogoBalcar.png';
 
 import logoFurnas from '../../assets/LogoFurnas.png';
 
@@ -60,11 +60,11 @@ export default function Furnas() {
 
     { label: 'Banco de Dados', to: '/' },
 
-    { label: 'Publicações', to: '/' },
+    { label: 'Publicações', to: '/publicacoes' },
 
-    { label: 'SIMA', to: '/' },
+    { label: 'SIMA', to: '/sima' },
 
-    { label: 'FURNAS', to: '/Furnas' },
+    { label: 'BALCAR', to: '/balcar' },
 
   ];
 
@@ -862,7 +862,7 @@ export default function Furnas() {
 
           <div className={styles.headerLogoLeft}>
 
-            <img src={logofurnas} alt="Logo Projeto furnas" />
+            <img src={logoFurnas} alt="Logo Projeto furnas" />
 
           </div>
 
@@ -878,7 +878,7 @@ export default function Furnas() {
 
             <Link to="/furnas" aria-label="Ir para a página FURNAS">
 
-              <img className={styles.headerLogoRight2} src={logoFurnas} alt='Logo Furnas' />
+              <img className={styles.headerLogoRight2} src={logoBalcar} alt='Logo Furnas' />
 
             </Link>
 
@@ -968,7 +968,7 @@ export default function Furnas() {
                 <div className={styles.teamCardGrid}>
                 
                 <Link 
-                to="/visualizar-dados" className={styles.bigButton}> 
+                to="/mapa" className={styles.bigButton}> 
                 <div className={styles.cardButton}>
                   <img 
                   src={logoBanco}
