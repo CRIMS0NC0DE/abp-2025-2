@@ -23,17 +23,17 @@
 }
 
 .cardIcon {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   margin-right: 15px;
   flex-shrink: 0;
   object-fit: contain;
 }
 
 .cardTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #000000;
   margin: 0;
 }
 

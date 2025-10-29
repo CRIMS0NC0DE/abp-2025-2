@@ -6,7 +6,8 @@ import MapPage from './pages/Map/MapPage';
 import SimaPage from './pages/Sima/SimaPage';
 import ExportCSV from './pages/ExportCSV/ExportCSV';
 import TableView from './pages/TableView/TableView';
-import Balcar from './pages/Balcar/Balcar';
+import Furnas from './pages/Furnas/Furnas';
+import PublicacoesFurnas from './pages/PublicacoesFurnas/PublicacoesFurnasPage';
 import "leaflet/dist/leaflet.css";
 import './styles/global.css';
 
@@ -21,7 +22,8 @@ export default function App() {
           <Route path="/tabelas" element={<TableView />} />
           <Route path="/sima" element={<SimaPage />} />
           <Route path="/exportar-csv" element={<ExportCSV />} />
-          <Route path="/balcar" element={<Balcar />} />
+          <Route path="/furnas" element={<Furnas />} />
+          <Route path="/publicacoes" element={<PublicacoesFurnas />} />
         </Routes>
       </main>
       <Footer />
