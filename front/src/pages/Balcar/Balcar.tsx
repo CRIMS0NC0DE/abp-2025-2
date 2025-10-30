@@ -16,7 +16,7 @@ export default function Balcar() {
   const mainNavLinks = [
     { label: 'Home', to: '/' },
     { label: 'Início', to: '/Balcar' },
-    { label: 'Banco de Dados', to: '/' },
+    { label: 'Banco de Dados', to: '/MapaInterativo' },
     { label: 'Publicações', to: '/' },
     { label: 'SIMA', to: '/' },
     { label: 'FURNAS', to: '/Furnas' },
