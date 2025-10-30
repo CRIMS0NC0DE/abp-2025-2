@@ -2,7 +2,12 @@ import express from "express";
 import balcar from "./balcar";
 import furnas from "./furnas";
 import sima from "./sima";
-import { getGeographicPoints } from '../controllers/mapController';
+
+import {
+  getBalcarPoints,
+  getFurnasPoints,
+  getSimaPoints
+} from '../controllers/mapController';
 
 const router = express.Router();
 
@@ -12,8 +17,10 @@ router.get("/teste", (req, res) => {
 });
 
 
+router.get('/api/mapa/balcar', getBalcarPoints);
+router.get('/api/mapa/furnas', getFurnasPoints);
+router.get('/api/mapa/sima', getSimaPoints);
 
-router.get('/api/pontos-geograficos', getGeographicPoints);
 router.use("/balcar", balcar);
 router.use("/furnas", furnas);
 router.use("/sima", sima);

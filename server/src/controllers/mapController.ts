@@ -1,8 +1,10 @@
-
+// src/controllers/mapController.ts
 
 import { Request, Response, NextFunction } from 'express';
+// Importa seus pools de conexão nomeados
 import { furnasPool, simaPool, balcarPool } from '../configs/db';
 
+// --- Tipos e Ícones (sem alterações) ---
 
 interface PointProperties {
   id: number | string;
@@ -19,51 +21,79 @@ interface GeoJSONFeature {
   properties: PointProperties;
 }
 
-//GeoJSON
+//GeoJSON Helper (sem alterações)
 function formatQueryToGeoJSON(rows: any[], tipo: string): GeoJSONFeature[] {
   return rows
-    .filter(row => row.lat != null && row.lng != null) // Garante que temos coordenadas
+    .filter(row => row.lat != null && row.lng != null)
     .map(row => ({
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [parseFloat(row.lng), parseFloat(row.lat)], // [longitude, latitude]
+        coordinates: [parseFloat(row.lng), parseFloat(row.lat)],
       },
       properties: {
-        id: row.id,     // A query deve retornar uma coluna 'id'
-        nome: row.nome, // A query deve retornar uma coluna 'nome'
+        id: row.id,
+        nome: row.nome,
         tipo: tipo,
       },
     }));
 }
 
+// --- NOVAS FUNÇÕES DO CONTROLLER ---
 
-export const getGeographicPoints = async (req: Request, res: Response, next: NextFunction) => {
+// 1. Função para buscar pontos do BALCAR
+export const getBalcarPoints = async (req: Request, res: Response, next: NextFunction) => {
   try {
-
-    console.log("-> [mapController] Buscando pontos geográficos...");
-
-    let allFeatures: GeoJSONFeature[] = [];
-
-   const [resFurnas, resSima, resBalcar] = await Promise.all([
-      furnasPool.query('SELECT idsitio as id, nome, lat, lng FROM TBSITIO'),
-      simaPool.query('SELECT idestacao as id, rotulo as nome, lat, lng FROM TBESTACAO'),
-      balcarPool.query('SELECT idsitio as id, nome, lat, lng FROM TBSITIO')
-    ]);
-
-    allFeatures.push(...formatQueryToGeoJSON(resBalcar.rows, 'sitio_balcar'));
-    allFeatures.push(...formatQueryToGeoJSON(resFurnas.rows, 'sitio_furnas'));
-    allFeatures.push(...formatQueryToGeoJSON(resSima.rows, 'estacao_sima'));
-
+    console.log("-> [mapController] Buscando pontos de BALCAR...");
+    const resBalcar = await balcarPool.query('SELECT idsitio as id, nome, lat, lng FROM TBSITIO');
+    
+    const features = formatQueryToGeoJSON(resBalcar.rows, 'sitio_balcar');
     const geoJSONResponse = {
       type: 'FeatureCollection',
-      features: allFeatures,
+      features: features,
     };
 
     return res.status(200).json(geoJSONResponse);
   } catch (error) {
-    
-    console.error("!!! [mapController] ERRO GRAVE CAPTURADO:", error);
+    console.error("!!! [mapController] ERRO GRAVE (Balcar):", error);
+    next(error);
+  }
+};
+
+// 2. Função para buscar pontos do FURNAS
+export const getFurnasPoints = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    console.log("-> [mapController] Buscando pontos de FURNAS...");
+    const resFurnas = await furnasPool.query('SELECT idsitio as id, nome, lat, lng FROM TBSITIO');
+
+    const features = formatQueryToGeoJSON(resFurnas.rows, 'sitio_furnas');
+    const geoJSONResponse = {
+      type: 'FeatureCollection',
+      features: features,
+    };
+
+    return res.status(200).json(geoJSONResponse);
+  } catch (error) {
+    console.error("!!! [mapController] ERRO GRAVE (Furnas):", error);
+    next(error);
+  }
+};
+
+// 3. Função para buscar pontos do SIMA
+export const getSimaPoints = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    console.log("-> [mapController] Buscando pontos do SIMA...");
+    const resSima = await simaPool.query('SELECT idestacao as id, rotulo as nome, lat, lng FROM TBESTACAO');
+
+    const features = formatQueryToGeoJSON(resSima.rows, 'estacao_sima');
+    const geoJSONResponse = {
+      type: 'FeatureCollection',
+      features: features,
+    };
+
+    return res.status(200).json(geoJSONResponse);
+  } catch (error) {
+    console.error("!!! [mapController] ERRO GRAVE (Sima):", error);
     next(error);
   }
 };
