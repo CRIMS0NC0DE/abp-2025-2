@@ -1,0 +1,13 @@
+SELECT 
+    tbreservatorio.nome AS reservatorio_nome,
+    tbsitio.nome AS sitio_nome,
+    tbdadosprecipitacao.dataMedida,
+    tbdadosprecipitacao.precipitacao_mm
+FROM 
+    tbreservatorio
+JOIN 
+    tbsitio ON tbreservatorio.idReservatorio = tbsitio.idReservatorio
+JOIN 
+    tbdadosprecipitacao ON tbsitio.idSitio = tbdadosprecipitacao.idSitio
+WHERE 
+    tbdadosprecipitacao.dataMedida BETWEEN '2023-01-01' AND '2023-12-31';

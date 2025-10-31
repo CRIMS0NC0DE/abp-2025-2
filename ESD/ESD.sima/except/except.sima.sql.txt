@@ -1,0 +1,5 @@
+SELECT idestacao, datahora
+FROM tbsima
+EXCEPT
+SELECT idestacao, datahora
+FROM tbsimaoffline;

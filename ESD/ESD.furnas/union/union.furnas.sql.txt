@@ -1,0 +1,19 @@
+SELECT 
+    tbsitio.idSitio, 
+    'Fluxo de Carbono' AS tipo_fluxo,
+    tbfluxocarbono.dataMedida, 
+    tbfluxocarbono.carbonoorganicoexcretado AS valor_fluxo
+FROM 
+    tbsitio
+JOIN 
+    tbfluxocarbono ON tbsitio.idSitio = tbfluxocarbono.idSitio
+UNION
+SELECT 
+    tbsitio.idSitio, 
+    'Fluxo de Bolhas' AS tipo_fluxo,
+    tbfluxobolhasinpe.dataMedida, 
+    tbfluxobolhasinpe.ch4 AS valor_fluxo
+FROM 
+    tbsitio
+JOIN 
+    tbfluxobolhasinpe ON tbsitio.idSitio = tbfluxobolhasinpe.idSitio;

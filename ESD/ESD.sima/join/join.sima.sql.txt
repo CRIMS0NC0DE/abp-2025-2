@@ -1,0 +1,3 @@
+SELECT c.idcampotabela, c.nomecampo, c.rotulo, c.unidademedida, s.nome AS nome_sensor, s.fabricante
+FROM tbcampotabela c
+JOIN tbsensor s ON c.idSensor = s.idSensor;
