@@ -4,8 +4,8 @@ import styles from './MapPage.module.css';
 
 // Componentes de visualização
 import MapaInterativo from '../../components/MapaInterativo';
-import VisualizacaoTabelas from '../../components/VisualizacaoTabela/VisualizacaoTabela.tsx';
 import VisualizacaoGraficos from '../../components/VisualizacaoGrafico/VisualizacaoGrafico.tsx';
+import TableView from '../../pages/TableView/TableView.tsx';
 
 // Define os tipos de visualização possíveis
 type ViewMode = 'map' | 'tables' | 'charts';
@@ -23,7 +23,7 @@ export default function MapPage() {
       case 'map':
         return <MapaInterativo source={'balcar'} />;
       case 'tables':
-        return <VisualizacaoTabelas />;
+        return <TableView />;
       case 'charts':
         return <VisualizacaoGraficos />;
       default:
