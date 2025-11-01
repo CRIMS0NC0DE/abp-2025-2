@@ -80,11 +80,11 @@ const MapaInterativo: React.FC<MapaProps> = ({ source }) => {
 
 
   return (
-    <div style={{ width: "100%", height: "600px", position: "relative" }}>
+    <div style={{ width: "90%", height: "600px", display: "flex", justifyContent: "center", alignItems: "center"}}>
       <MapContainer
         center={[-14.235, -51.9253]} // centro do Brasil
         zoom={4}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%", display: "flex", justifyContent: "center", alignItems:"center", marginLeft: "165px" }} 
       >
         <TileLayer
           attribution='&copy; OpenStreetMap'
