@@ -7,9 +7,14 @@ import SimaPage from './pages/Sima/SimaPage';
 import ExportCSV from './pages/ExportCSV/ExportCSV';
 import TableView from './pages/TableView/TableView';
 import Furnas from './pages/Furnas/Furnas';
+import Balcar from './pages/Balcar/Balcar';
 import PublicacoesFurnas from './pages/PublicacoesFurnas/PublicacoesFurnasPage';
+import PublicacoesBalcarPage from './pages/PublicacoesBalcarPage/PublicacoesBalcarPage';
+import PublicacoesSimaPage from './pages/PublicacoesSimaPage/PublicacoesSimaPage';
 import "leaflet/dist/leaflet.css";
 import './styles/global.css';
+
+
 
 export default function App() {
   return (
@@ -23,7 +28,10 @@ export default function App() {
           <Route path="/sima" element={<SimaPage />} />
           <Route path="/exportar-csv" element={<ExportCSV />} />
           <Route path="/furnas" element={<Furnas />} />
+          <Route path="/balcar" element={<Balcar />} />
           <Route path="/publicacoes" element={<PublicacoesFurnas />} />
+          <Route path="/publicacoesBalcar" element={<PublicacoesBalcarPage />} />
+          <Route path="/publicacoesSima" element={<PublicacoesSimaPage />} />
         </Routes>
       </main>
       <Footer />

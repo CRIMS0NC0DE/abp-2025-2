@@ -1,0 +1,50 @@
+-- Consulta 1: Parâmetros coletados em cada reservatório com a data da coleta
+-- Retorna o nome do reservatório, o parâmetro coletado e a data da coleta
+SELECT r.nome AS reservatorio,
+       p.nome_parametro,
+       c.data_coleta
+FROM campanha c
+INNER JOIN reservatorio r ON c.id_reservatorio = r.id_reservatorio
+INNER JOIN parametro p ON c.id_parametro = p.id_parametro;
+ 
+-- Consulta 2: Instituições responsáveis por cada campanha
+-- Retorna o nome da instituição, o nome do reservatório e a data da coleta
+SELECT i.nome AS instituicao,
+       r.nome AS reservatorio,
+       c.data_coleta
+FROM instituicao i
+INNER JOIN campanha c ON i.id_instituicao = c.id_instituicao
+INNER JOIN reservatorio r ON c.id_reservatorio = r.id_reservatorio;
+ 
+-- Consulta 3: Séries temporais (SIMA) associadas a pontos de coleta
+-- Retorna o reservatório, data e hora da medição, valor da série temporal e o parâmetro correspondente
+SELECT r.nome AS reservatorio,
+       s.data_hora,
+       s.valor,
+       p.nome_parametro
+FROM serie_temporal s
+INNER JOIN parametro p ON s.id_parametro = p.id_parametro
+INNER JOIN reservatorio r ON s.id_reservatorio = r.id_reservatorio;
+ 
+-- Consulta 4: Localizações de coleta e dados coletados
+-- Retorna o nome do reservatório, latitude e longitude do ponto de coleta, parâmetro e valor medido
+SELECT r.nome AS reservatorio,
+       p.nome_parametro,
+       l.latitude,
+       l.longitude,
+       s.valor
+FROM serie_temporal s
+INNER JOIN parametro p ON s.id_parametro = p.id_parametro
+INNER JOIN ponto_coleta l ON s.id_ponto_coleta = l.id_ponto_coleta
+INNER JOIN reservatorio r ON l.id_reservatorio = r.id_reservatorio;
+ 
+-- Consulta 5: Todos os parâmetros coletados por cada instituição
+-- Retorna o nome da instituição, nome do parâmetro e a quantidade de vezes que foi coletado
+SELECT i.nome AS instituicao,
+       p.nome_parametro,
+       COUNT(c.id_campanha) AS total_coletas
+FROM instituicao i
+INNER JOIN campanha c ON i.id_instituicao = c.id_instituicao
+INNER JOIN parametro p ON c.id_parametro = p.id_parametro
+GROUP BY i.nome, p.nome_parametro
+ORDER BY i.nome, p.nome_parametro;

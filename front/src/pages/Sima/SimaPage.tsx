@@ -406,8 +406,8 @@ function SimaPage() {
   const mainNavLinks = [
     { label: 'Home', to: '/' },
     { label: 'Início', to: '/sima' },
-    { label: 'Banco de Dados', to: '/' },
-    { label: 'Publicações', to: '/' },
+    { label: 'Banco de Dados', to: '/mapa' },
+    { label: 'Publicações', to: '/publicacoesSima' },
     { label: 'BALCAR', to: '/balcar' },
     { label: 'FURNAS', to: '/furnas' },
   ];

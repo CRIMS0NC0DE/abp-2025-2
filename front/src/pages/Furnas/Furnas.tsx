@@ -58,7 +58,7 @@ export default function Furnas() {
 
     { label: 'Início', to: '/Furnas' },
 
-    { label: 'Banco de Dados', to: '/' },
+    { label: 'Banco de Dados', to: '/mapa' },
 
     { label: 'Publicações', to: '/publicacoes' },
 

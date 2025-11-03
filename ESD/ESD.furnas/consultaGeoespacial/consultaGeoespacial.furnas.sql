@@ -1,0 +1,21 @@
+SELECT 
+    tbsitio.idSitio, 
+    tbsitio.nome, 
+    tbsitio.lat, 
+    tbsitio.lng,
+    tbreservatorio.nome AS reservatorio_nome,
+    tbreservatorio.lat AS reservatorio_lat,
+    tbreservatorio.lng AS reservatorio_lng,
+    ST_Distance(
+        ST_SetSRID(ST_MakePoint(tbsitio.lng, tbsitio.lat), 4326), 
+        ST_SetSRID(ST_MakePoint(tbreservatorio.lng, tbreservatorio.lat), 4326)
+    ) AS distancia_em_metros
+FROM 
+    tbsitio
+JOIN 
+    tbreservatorio ON tbsitio.idReservatorio = tbreservatorio.idReservatorio
+WHERE 
+    ST_Distance(
+        ST_SetSRID(ST_MakePoint(tbsitio.lng, tbsitio.lat), 4326), 
+        ST_SetSRID(ST_MakePoint(tbreservatorio.lng, tbreservatorio.lat), 4326)
+    ) < 5000;  -- Distância em metros, ex: 5km

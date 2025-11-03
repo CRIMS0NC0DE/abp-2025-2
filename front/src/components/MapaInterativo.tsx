@@ -1,9 +1,17 @@
-import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON, Pane } from "react-leaflet";
 import { useEffect, useState } from "react";
 import L, { type LatLngExpression } from 'leaflet';
 import brasilGeoJson from "../data/brasil-states.json";
 
-const API_URL = 'http://localhost:3001/api/pontos-geograficos';
+const API_URLS = {
+  balcar: 'http://localhost:3001/api/mapa/balcar',
+  furnas: 'http://localhost:3001/api/mapa/furnas',
+  sima: 'http://localhost:3001/api/mapa/sima',
+};
+
+interface MapaProps {
+  source: 'balcar' | 'furnas' | 'sima';
+}
 
 const createIcon = (color: string) => new L.Icon({
     iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
@@ -23,20 +31,22 @@ const icones = {
 
 
 
-const MapaInterativo: React.FC = () => {
+const MapaInterativo: React.FC<MapaProps> = ({ source }) => {
+  const [pontosData, setPontosData] = useState<any | null>(null);
   const [selectedState, setSelectedState] = useState<string | null>(null);
-
-  const [pontosData, setPontosData] = useState<any | null> (null);
-
+  
+  
   useEffect(() => {
-    fetch(API_URL)
+    // Escolhe a URL correta com base na prop
+    const url = API_URLS[source]; 
+    fetch(url) // Chama a API específica
       .then(response => response.json())
       .then(data => {
-        console.log("Dados da API recebidos:", data);
         setPontosData(data);
       })
-      .catch(error => console.error("Erro ao buscar dados da API:", error));
-  }, []); // O array vazio [] faz com que isso rode apenas uma vez
+      .catch(error => console.error(`Erro ao buscar dados de ${source}:`, error));
+  }, [source])
+
 
   const onEachState = (feature: any, layer: any) => {
     layer.on({
@@ -70,27 +80,24 @@ const MapaInterativo: React.FC = () => {
 
 
   return (
-    <div style={{ width: "100%", height: "600px" }}>
+    <div style={{ width: "90%", height: "600px", display: "flex", justifyContent: "center", alignItems: "center"}}>
       <MapContainer
         center={[-14.235, -51.9253]} // centro do Brasil
         zoom={4}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%", display: "flex", justifyContent: "center", alignItems:"center", marginLeft: "165px" }} 
       >
         <TileLayer
           attribution='&copy; OpenStreetMap'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <GeoJSON
-          data={brasilGeoJson as any}
-          onEachFeature={onEachState}
-          style={() => ({
-            color: "#555",
-            weight: 1,
-            fillColor: "#00A884",
-            fillOpacity: 0.4,
-          })}
-        />
 
+        <Pane name="estados" style={{ zIndex: 410 }}>
+          <GeoJSON
+            data={brasilGeoJson as any}
+            onEachFeature={onEachState}
+          />
+        </Pane>
+    <Pane name="pontos" style={{ zIndex: 420 }}>
       {pontosData && (
           <GeoJSON
             data={pontosData}
@@ -98,6 +105,7 @@ const MapaInterativo: React.FC = () => {
             pointToLayer={pointToLayer}
           />
         )}
+    </Pane>
       </MapContainer>
 
 

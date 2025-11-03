@@ -1,0 +1,37 @@
+/* src/components/Placeholder.module.css */
+.placeholderContainer {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  height: 100%;
+  box-sizing: border-box; /* Garante que o padding não estoure o layout */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #e0e0e0;
+}
+
+.chartBox {
+  width: 100%;
+  height: 250px;
+  background-color: #e9e9e9;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  color: #888;
+}
