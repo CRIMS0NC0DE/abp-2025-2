@@ -1,68 +1,53 @@
 :root {
-  --sima-dark-blue: #071d41;
+  --sima-dark-blue: #071D41;
 }
 
 .simaPageContainer {
   position: relative;
-  padding: 2rem;
+  padding: 0 2rem;
   min-height: calc(100vh - 120px);
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  box-sizing: border-box; /* Garante que padding não estoure a largura */
 }
 
-/* Item 1: Estilos de navegação (Home, Início...) */
 .subHead {
-  width: 100%;
-  background-color: #071d41;
-  padding: 0.5rem 1rem;
   display: flex;
-  justify-content: center;
-  position: fixed;
-  /* Ajustado para ficar abaixo do QuickNav (que tem 40px) */
-  top: 40px;
-  left: 0;
-  right: 0;
-  z-index: 900;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  /* justifica ao centro no desktop (ver media query) e space-between no mobile */
+  justify-content: space-between; 
+  background-color: #071D41;
+  padding: 0 1rem;
+  color: #fff;
+  position: relative;
+  z-index: 101;
+  min-height: 50px;
 }
 
 .mainNav {
-  width: 100%;
-  max-width: 1200px;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  background-color: #071D41;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainNav ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.mainNav li {
-  margin: 0 0.5rem;
 }
 
 .mainNav a {
   text-decoration: none;
   color: #ffffff;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.75rem 0.5rem;
-  border-bottom: 2px solid transparent;
-  transition:
-    border-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.mainNav a:hover,
-.mainNav a.active {
-  color: #aeddfd;
-  border-bottom-color: #aeddfd;
+  font-weight: 600; /* Espessura da fonte */
+  padding: 1rem 0;   /* Padding base (mobile) */
+  display: block;
 }
 
 .hamburgerButton {
@@ -82,37 +67,32 @@
   margin: 5px 0;
   transition: all 0.3s ease;
 }
-/* Fim dos estilos de navegação */
 
-/*
-  Item 2 e 3: Estilos para o cabeçalho, logos e título
-*/
 .pageHeader {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  /* Aumentado para limpar AMBAS as navs (40px + nav) */
-  margin-top: 7rem;
+  margin-top: 3rem;
   margin-bottom: 2.5rem;
   position: relative;
 }
 
-/* Renomeado de .headerLogoLeft para .headerLogoRight */
 .headerLogoRight {
   position: absolute;
-  /* Movido de left: 0 para right: 0 */
   right: 0;
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Aumentei o gap um pouco */
+  flex-direction: column; /* Alterado para vertical */
+  gap: 1rem; /* Gap ajustado */
+  border: 2px solid var(--sima-dark-blue); /* Borda adicionada */
+  padding: 0.5rem; /* Padding adicionado */
+  border-radius: 8px; /* Raio da borda adicionado */
 }
 
 .sideLogo {
-  /* Item 3: Tamanho aumentado */
-  height: 60px;
-  width: auto;
+  max-height: 80px;
   opacity: 0.9;
   transition: opacity 0.2s ease;
 }
@@ -124,8 +104,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Adicionado padding para não colidir com logos em telas médias */
-  padding: 0 160px;
+  padding: 0 160px; /* Mantém o padding para não colidir */
   box-sizing: border-box;
 }
 
@@ -143,7 +122,6 @@
   color: #555;
   margin-bottom: 0;
 }
-/* Fim dos estilos de cabeçalho */
 
 .cardContainer {
   background-color: var(--sima-dark-blue);
@@ -158,6 +136,7 @@
   gap: 1.5rem;
   justify-items: center;
   grid-template-columns: 1fr;
+  box-sizing: border-box;
 }
 
 .containerTitle {
@@ -188,6 +167,8 @@
   color: inherit;
   display: block;
   width: 100%;
+  max-width: 230px;
+  max-height: 100px;
 }
 
 .bottomSection {
@@ -202,79 +183,52 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  min-width: 565px;
+  margin-top: -30px;
+  /* Estilos adicionados para igualar ao cardContainer */
+  background-color: var(--sima-dark-blue);
+  border-radius: 15px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .bottomImage {
-  width: 200px;
+  width: auto;
+  max-width: 100%; /* Alterado de 550px para responsivo */
   height: auto;
   opacity: 0.8;
+  display: block;
+  margin: 0; /* Margin resetada */
+  border-radius: 15px;
 }
 
-/* Media Queries */
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
 
-@media (min-width: 768px) {
-  .simaPageContainer {
-    padding: 2rem 4rem;
-  }
-
-  .eightCardGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .teamCardGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .bottomSection {
-    grid-template-columns: 1fr 1fr;
-    align-items: flex-start;
-  }
-
-  .bottomImageContainer {
-    justify-content: center;
-    align-self: center;
-  }
-}
-
-@media (min-width: 1200px) {
-  .eightCardGrid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .teamCardGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 1024px) {
-  /* Ajuste para telas médias onde os logos podem sobrepor o título */
-  .titleContainer {
-    padding: 0 100px; /* Reduz o padding */
-  }
-  .headerLogoRight {
-    gap: 0.5rem; /* Diminui o espaço entre os logos */
-  }
-  .sideLogo {
-    height: 50px; /* Diminui um pouco os logos em telas médias */
-  }
-}
-
+/* --------------------------------------------------------------------------
+   Mobile (Telas até 767px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 767px) {
-  /* Estilos mobile para a navegação */
   .mainNav {
-    display: none;
-    position: fixed;
-    /* Ajustado para 40px (QuickNav) + 60px (Altura do .subHead) = 100px */
-    top: 100px;
+    background-color: rgba(7, 29, 65, 0.9);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
-    background-color: #071d41;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
   }
 
   .mainNav.menuOpen {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .mainNav ul {
@@ -315,29 +269,27 @@
   .hamburgerButton.open span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
   }
-  /* Fim dos estilos mobile da nav */
 
   .pageHeader {
     flex-direction: column;
-    /* Ajustado para limpar as duas barras (40px + 60px) */
-    margin-top: 7rem;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
   }
 
-  /* Em mobile, os logos vão para baixo do título */
   .headerLogoRight {
     position: static;
     margin-top: 1.5rem;
     justify-content: center;
     gap: 1.5rem;
+    flex-direction: row; /* Logos voltam a ser lado a lado no mobile */
   }
 
   .titleContainer {
-    padding: 0 1rem; /* Remove padding lateral em mobile */
+    padding: 0 1rem;
   }
 
   .simaPageContainer {
-    padding: 1rem;
+    padding: 0 1rem;
   }
   .cardContainer {
     padding: 1.5rem 1rem;
@@ -345,5 +297,82 @@
   .eightCardGrid,
   .teamCardGrid {
     grid-template-columns: 1fr;
+  }
+  .bottomImageContainer {
+    margin-bottom: 50px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet (Telas de 768px ou mais)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .subHead {
+    justify-content: center;
+  }
+
+  .mainNav {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .mainNav ul {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .mainNav a {
+    padding: 1rem 1.2rem;
+    border-bottom: 3px solid transparent;
+    opacity: 0.9;
+    color: white;
+    font-size: 1.2rem;
+    transition:
+      opacity 0.2s,
+      border-color 0.2s;
+  }
+
+  .mainNav a:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .mainNav a.active {
+    opacity: 1;
+    border-bottom-color: #fff;
+  }
+
+  .simaPageContainer {
+    padding: 2rem 4rem;
+  }
+
+  .bottomSection {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch; 
+  }
+
+  .bottomImageContainer {
+    justify-content: center;
+    align-self: center; /* Centraliza a imagem no container esticado */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop Médio (Ajuste de 768px a 1199px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .titleContainer {
+    padding: 0 100px;
+  }
+  .headerLogoRight {
+    gap: 0.5rem;
+  }
+  .sideLogo {
+    height: 50px;
+    width: auto; /* Permite que a largura se ajuste */
   }
 }
