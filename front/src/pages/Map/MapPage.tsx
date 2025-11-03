@@ -14,9 +14,9 @@ export interface TipoBoia {
 }
 
 const mockBoias: TipoBoia[] = [
-  { id: 'b-001', nome: 'Bóia Santos 01', latitude: -24.0084, longitude: -46.3082 },
-  { id: 'b-002', nome: 'Bóia Guarujá 03', latitude: -23.9875, longitude: -46.2520 },
-  { id: 'b-003', nome: 'Bóia Litoral Norte 02', latitude: -23.7951, longitude: -45.3929 },
+  { id: 'b-001', nome: 'Bóia 01', latitude: -24.0084, longitude: -46.3082 },
+  { id: 'b-002', nome: 'Bóia 03', latitude: -23.9875, longitude: -46.2520 },
+  { id: 'b-003', nome: 'Bóia 02', latitude: -23.7951, longitude: -45.3929 },
 ];
 
 
