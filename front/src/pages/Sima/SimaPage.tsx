@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import styles from './SimaPage.module.css';
 import ClickableCard from '../../components/ClickableCard/ClickableCard';
 import cardStyles from '../../components/ClickableCard/ClickableCard.module.css';
-import QuickNav from '../../components/QuickNav/QuickNav'; // RE-ADICIONADO
 
 // ASSETS DOS CARDS
 import sobreSima from '../../assets/sobre_o_sima.png';
@@ -55,7 +54,6 @@ const modalStyles = {
   },
 };
 
-// ... (Todo o conteúdo dos Modais - ModalSobre, ModalMotivacao, etc. - permanece inalterado) ...
 const ModalSobre = (
   <div>
     <h2 style={modalStyles.h2}>Sobre o SIMA</h2>
@@ -153,8 +151,7 @@ const ModalDadosColetados = (
   <div>
     <h2 style={modalStyles.h2}>Dados Coletados</h2>
     <p style={modalStyles.p}>
-      Informações sobre os tipos de dados coletados pelas boias do SIMA.
-      (Conteúdo a ser adicionado).
+      O SIMA coleta algumas variáveis ambientais a partir de sensores colocados acima da linha d´água (temperatura do ar, pressão atmosférica, direção e intensidade de ventos, radiação solar incidente e refletida) e abaixo da linha d´água (amônia, nitrato, clorofila, condutividade, direção e intensidade da corrente, oxigênio dissolvido, pH e temperatura em diferentes profundidades).
     </p>
   </div>
 );
@@ -209,7 +206,7 @@ const ModalApoio = (
     <ul style={modalStyles.ul}>
       <li style={modalStyles.li}>
         <a
-          href="https://www.cepel.br/"
+          href="https.www.cepel.br/"
           target="_blank"
           rel="noopener noreferrer"
           style={modalStyles.a}
@@ -229,7 +226,7 @@ const ModalApoio = (
       </li>
       <li style={modalStyles.li}>
         <a
-          href="https://www.gov.br/cnpq/pt-br"
+          href="https.www.gov.br/cnpq/pt-br"
           target="_blank"
           rel="noopener noreferrer"
           style={modalStyles.a}
@@ -286,7 +283,7 @@ const ModalCoordenacao = (
     <ul style={modalStyles.ul}>
       <li style={modalStyles.li}>
         <a
-          href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do;jsessionid=842A1992F42E2E4961C52F3F79EF3AE4.buscatextual_0"
+          href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4787880H6"
           target="_blank"
           rel="noopener noreferrer"
           style={modalStyles.a}
@@ -296,7 +293,7 @@ const ModalCoordenacao = (
       </li>
       <li style={modalStyles.li}>
         <a
-          href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do"
+          href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4772022Y1"
           target="_blank"
           rel="noopener noreferrer"
           style={modalStyles.a}
@@ -332,6 +329,73 @@ const ModalColaboradores = (
           Arcilan Trevenzoli Assireu
         </a>
       </li>
+      <li style={modalStyles.li}>
+        <a 
+          href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4721643Y6"
+        >
+          Artur Luiz da Costa da Silva
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4704147D6"
+        >
+          Augusto Cesar Fonseca Saraiva
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4707693Y5"
+        >
+          Cláudio Clemente Faria Barbosa
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4796947P1"
+        >
+          Donato Seiji Abe
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4787271Z9"
+        >
+          Evlyn Márcia Leão de Moraes Novo
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4784185Z0"
+        >
+          Fábio Roland
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4781542Z8"
+        >
+          João Antônio Lorenzzetti
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="Jorge Machado Damazio"
+        >
+          Jorge Machado Damazio
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4785602H9"
+        >
+          Marco Aurélio dos Santos
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4786780Y3"
+        >
+          Maria Elvira Piñeiro Maceira
+        </a>
+      </li>
+      <li style={modalStyles.li}>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4781646H4"
+        >
+          Nelson Luís da Costa Dias
+        </a>
+      </li>
     </ul>
   </div>
 );
@@ -345,7 +409,7 @@ function SimaPage() {
     { label: 'Banco de Dados', to: '/' },
     { label: 'Publicações', to: '/' },
     { label: 'BALCAR', to: '/balcar' },
-    { label: 'FURNAS', to: '#' },
+    { label: 'FURNAS', to: '/furnas' },
   ];
 
   const handleLinkClick = () => {
@@ -356,12 +420,8 @@ function SimaPage() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  return (
-    <div className={styles.simaPageContainer}>
-      {/* Item 1: QuickNav (simplifica, etc.) volta ao topo */}
-      <QuickNav />
-
-      {/* Item 1: Navegação da Balcar (Home, Início, etc.) */}
+return (
+    <>
       <div className={styles.subHead}>
         <button
           className={`${styles.hamburgerButton} ${
@@ -393,9 +453,9 @@ function SimaPage() {
         </nav>
       </div>
 
-      {/* Item 2 e 3: Cabeçalho com título e logos movidos/aumentados */}
+      <div className={styles.simaPageContainer}>
+        
       <header className={styles.pageHeader}>
-        {/* Logos movidos para DEPOIS do título e classe renomeada */}
         <div className={styles.titleContainer}>
           <img
             src={logoSIMA}
@@ -415,7 +475,7 @@ function SimaPage() {
               className={styles.sideLogo}
             />
           </Link>
-          <Link to="#" aria-label="Ir para a página FURNAS">
+          <Link to="/furnas" aria-label="Ir para a página FURNAS">
             <img
               src={logoFurnas}
               alt="Logo Furnas"
@@ -500,12 +560,13 @@ function SimaPage() {
         <div className={styles.bottomImageContainer}>
           <img
             src={img_boia}
-            alt="Logo Instituição"
+            alt="Bóia metocean"
             className={styles.bottomImage}
           />
         </div>
       </div>
     </div>
+    </> 
   );
 }
 
