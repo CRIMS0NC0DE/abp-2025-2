@@ -1,0 +1,53 @@
+/* src/components/ListaBoiasCard/ListaBoiasCard.module.css */
+
+.cardContainer {
+  /* Posicionamento Flutuante */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* Garante que fique acima do mapa */
+
+  /* Estilo do Card */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  max-height: 400px;
+  overflow-y: auto; /* Adiciona scroll se a lista for longa */
+}
+
+.title {
+  padding: 15px;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.listItem:hover {
+  background-color: #f9f9f9;
+}
+
+/* Estilo para o item selecionado */
+.selectedItem {
+  background-color: #e6f7ff; /* Um azul claro */
+  font-weight: 600;
+  color: #0056b3;
+}

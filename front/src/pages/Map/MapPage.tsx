@@ -1,41 +1,67 @@
-// src/pages/Map/MapPage.tsx
 import { useState } from 'react';
 import styles from './MapPage.module.css';
 
-// Componentes de visualização
 import MapaInterativo from '../../components/MapaInterativo';
-import VisualizacaoTabelas from '../../components/VisualizacaoTabela/VisualizacaoTabela.tsx';
-import VisualizacaoGraficos from '../../components/VisualizacaoGrafico/VisualizacaoGrafico.tsx';
+import VisualizacaoTabelas from '../../pages/TableView/TableView';
+import VisualizacaoGraficos from '../../components/VisualizacaoGrafico/VisualizacaoGrafico';
+import ListaBoiasCard from '../../components/ListaBoias/ListaSitiosFurnas'; // 1. Importar o novo Card
 
-// Define os tipos de visualização possíveis
+export interface TipoBoia {
+  id: string;
+  nome: string;
+  latitude: number;
+  longitude: number;
+}
+
+const mockBoias: TipoBoia[] = [
+  { id: 'b-001', nome: 'Bóia 01', latitude: -24.0084, longitude: -46.3082 },
+  { id: 'b-002', nome: 'Bóia 03', latitude: -23.9875, longitude: -46.2520 },
+  { id: 'b-003', nome: 'Bóia 02', latitude: -23.7951, longitude: -45.3929 },
+];
+
+
 type ViewMode = 'map' | 'tables' | 'charts';
 
 export default function MapPage() {
-  // Estado para controlar qual visualização está ativa.
   const [activeView, setActiveView] = useState<ViewMode>('map');
+  
+  const [selectedBuoyId, setSelectedBuoyId] = useState<string | null>(null);
 
-  /**
-   * Função para renderizar o componente de conteúdo principal
-   * com base no estado de 'activeView'.
-   */
+  const handleBuoySelect = (id: string) => {
+    if (selectedBuoyId === id) {
+      setSelectedBuoyId(null);
+    } else {
+      setSelectedBuoyId(id);
+    }
+  };
+
   const renderContent = () => {
     switch (activeView) {
       case 'map':
-        return <MapaInterativo source={'balcar'} />;
+        return (
+          <>
+            <MapaInterativo 
+              selectedBuoyId={selectedBuoyId} 
+              boias={mockBoias} 
+            />
+            <ListaBoiasCard 
+              boias={mockBoias}
+              selectedBuoyId={selectedBuoyId}
+              onBuoySelect={handleBuoySelect} 
+            />
+          </>
+        );
       case 'tables':
         return <VisualizacaoTabelas />;
       case 'charts':
         return <VisualizacaoGraficos />;
       default:
-        // Caso padrão, retorna o mapa
-        return <MapaInterativo source={'balcar'} />;
+        return <MapaInterativo selectedBuoyId={null} boias={mockBoias} />;
     }
   };
 
-  /**
-   * Função auxiliar para criar botões de navegação.
-   * Retorna 'styles.activeButton' se for a view ativa.
-   */
+  // ... (O restante do seu código de navegação) ...
+
   const getButtonClass = (view: ViewMode) => {
     return view === activeView 
       ? `${styles.navButton} ${styles.activeButton}` 

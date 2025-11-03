@@ -95,12 +95,6 @@ const MapaInterativo: React.FC<MapaProps> = ({ source }) => {
           <GeoJSON
             data={brasilGeoJson as any}
             onEachFeature={onEachState}
-            style={() => ({
-              color: "#555",
-              weight: 1,
-              fillColor: "#00A884",
-              fillOpacity: 0.4,
-            })}
           />
         </Pane>
     <Pane name="pontos" style={{ zIndex: 420 }}>
