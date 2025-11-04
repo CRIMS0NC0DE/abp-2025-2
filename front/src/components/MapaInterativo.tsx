@@ -39,7 +39,7 @@ const MapaInterativo: React.FC<MapaProps> = ({ source }) => {
   useEffect(() => {
     // Escolhe a URL correta com base na prop
     const url = API_URLS[source]; 
-    fetch(url) // Chama a API específica
+    fetch('http://localhost:3001/api/mapa/sima') // Chama a API específica
       .then(response => response.json())
       .then(data => {
         setPontosData(data);
