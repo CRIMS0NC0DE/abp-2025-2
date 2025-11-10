@@ -1,10 +1,10 @@
 // front/src/pages/TableView/TableView.tsx
 
 import React, { useEffect, useState } from "react";
-import Filters from "../../components/Filters/Filters";
 import Table from "../../components/Table/Table";
 import { getMeasurements, type Measurement } from "../../api/client";
-import styles from "./TableView.module.css";
+import styles from "./TableView.module.css"
+import { FilterMenu } from "../../components/MenuFilter/MenuFilterSima";
 
 export default function TableView() {
   const [filters, setFilters] = useState<Record<string, any>>({});
@@ -59,22 +59,31 @@ export default function TableView() {
 
   return (
     // 1. Adicionamos a classe 'styles.page' de volta para centralizar
-    <div className={styles.page}>
-      <h1>Consulta por Tabela</h1>
-      
-      {/* 2. A linha com a frase foi removida daqui */}
+  <div className={styles.page}>
+    <div className={styles.content}>
+      {/* Lado esquerdo: menu de filtros */}
+      <div className={styles.filterMenu}>
+        <FilterMenu onApplyFilters={setFilters} />
+      </div>
 
-      <Filters onChange={setFilters} />
+      {/* Lado direito: tabela e botão de exportação */}
+      <div className={styles.tableSection}>
+        {error && <p className={styles.error}>{error}</p>}
 
-      {error && <p className={styles.error}>{error}</p>}
-      
-      <Table data={data} loading={loading} />
+        <Table data={data} loading={loading} />
 
-      <div className={styles.exportSection}>
-        <button onClick={exportCSV} className={styles.exportButton} disabled={data.length === 0}>
-          Exportar para CSV
-        </button>
+        <div className={styles.exportSection}>
+          <button
+            onClick={exportCSV}
+            className={styles.exportButton}
+            disabled={data.length === 0}
+          >
+            Exportar para CSV
+          </button>
+        </div>
       </div>
     </div>
+  </div>
+
   );
 }

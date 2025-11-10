@@ -1,0 +1,96 @@
+/* FilterMenu.css */
+
+/* Container principal do menu */
+.filter-menu {
+    background-color: #071D41; /* Cor de fundo azul escura */
+    padding: 20px;
+    width: 280px; /* Largura fixa, ajuste conforme necessário */
+    height: 750px; /* Ocupa a altura total da tela */
+    color: white; /* Cor do texto padrão */
+    font-family: Arial, sans-serif;
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for maior */
+}
+
+/* Títulos das seções (Parâmetros, Gráficos) */
+.filter-menu h2 {
+    color: #FF9D00; /* Um tom de azul claro/ciano */
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #61dafb30; /* Linha sutil abaixo do título */
+    padding-bottom: 5px;
+}
+
+/* Seções do menu */
+.menu-section {
+    margin-bottom: 25px;
+}
+
+/* Grupos de formulário (label + input) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block; /* Faz o label ocupar uma linha */
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilização dos inputs e selects */
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    font-size: 0.9rem;
+    box-sizing: border-box; /* Garante que padding não afete a largura total */
+}
+
+/* Grupo para datas lado a lado */
+.date-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px; 
+    margin-bottom: 15px;
+}
+
+.date-group .form-group {
+    flex: 1; /* Faz cada input de data ocupar metade do espaço */
+    margin-bottom: 0; /* Remove a margem de baixo, pois já está no date-group */
+}
+
+/* Estilização base dos botões */
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Botão Aplicar Filtros (Laranja) */
+.btn-apply,
+.btn-generate {
+    background-color: #f5961d; /* Cor laranja da imagem */
+    color: #071D41;
+}
+
+/* Botão Mapa Interativo (Verde) */
+.btn-map {
+    background-color: #00FF00; /* Cor verde brilhante da imagem */
+    color: #071D41;
+}
