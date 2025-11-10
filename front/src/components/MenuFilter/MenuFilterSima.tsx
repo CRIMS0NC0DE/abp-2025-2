@@ -11,6 +11,9 @@ export const FilterMenu: React.FC<FilterMenuProps> = ({ onApplyFilters }) => {
   const [dataInicial, setDataInicial] = useState('2004-01-18');
   const [dataFinal, setDataFinal] = useState('2025-01-18');
   const [filtro, setFiltro] = useState('');
+  const [condicao, setCondicao] = useState('>=');
+  const [valor, setValor] = useState('');
+  const [ordem, setOrdem] = useState('asc');
 
   // === Estado para Gráficos ===
   const [sensor, setSensor] = useState('');
@@ -25,6 +28,9 @@ export const FilterMenu: React.FC<FilterMenuProps> = ({ onApplyFilters }) => {
       dataInicial,
       dataFinal,
       filtro,
+      condicao,
+      valor,
+      ordem,
     };
 
     console.log('Filtros aplicados:', appliedFilters);
@@ -111,8 +117,43 @@ export const FilterMenu: React.FC<FilterMenuProps> = ({ onApplyFilters }) => {
               <option value="filtroIntensidadeDoVento">Intensidade do Vento</option>
               <option value="filtroRadiacaoIncidente">Radiação Incidente</option>
               <option value="filtroRadiacaoRefletida">Radiação Refletida</option>
+              <option value="filtroCorrente1m">Corrente 1m</option>
+              <option value="filtroCorrente2m">Corrente 2m</option>
               <option value="filtroCondutividade">Condutividade</option>
               <option value="filtroPh">pH</option>
+            </select>
+          </div>
+          <div className="form-group filter-condition">
+            <label htmlFor="condicao">Condição:</label>
+            <select
+              id="condicao"
+              value={condicao}
+              onChange={(e) => setCondicao(e.target.value)}
+            >
+              <option value=">=">{'>='}</option>
+              <option value="<=">{'<='}</option>
+              <option value="=">{'='}</option>
+            </select>
+
+            <label htmlFor="valor">Valor:</label>
+            <input
+              type="number"
+              id="valor"
+              value={valor}
+              onChange={(e) => setValor(e.target.value)}
+              placeholder="git status"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="ordem">Ordem:</label>
+            <select
+              id="ordem"
+              value={ordem}
+              onChange={(e) => setOrdem(e.target.value)}
+            >
+              <option value="asc">Ascendente</option>
+              <option value="desc">Descendente</option>
             </select>
           </div>
 
