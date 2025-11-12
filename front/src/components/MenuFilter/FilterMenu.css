@@ -2,13 +2,15 @@
 
 /* Container principal do menu */
 .filter-menu {
-    background-color: #071D41; /* Cor de fundo azul escura */
-    padding: 20px;
-    width: 280px; /* Largura fixa, ajuste conforme necessário */
-    height: 750px; /* Ocupa a altura total da tela */
-    color: white; /* Cor do texto padrão */
+    background-color: #071D41;
+    padding: 5px;
+    width: 280px;
+    height: auto; 
+    max-height: 100vh; /* ← impede que ultrapasse a tela */
+    color: white;
     font-family: Arial, sans-serif;
-    overflow-y: auto; /* Adiciona scroll se o conteúdo for maior */
+    overflow: hidden; /* ← remove a barra de rolagem */
+    box-sizing: border-box;
 }
 
 /* Títulos das seções (Parâmetros, Gráficos) */
@@ -93,4 +95,24 @@
 .btn-map {
     background-color: #00FF00; /* Cor verde brilhante da imagem */
     color: #071D41;
+}
+
+.filter-condition {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-condition select {
+    width: 20px;
+    flex: 1;
+}
+.filter-condition input {
+  flex: 1;
+  width: 40px;
+  height: 30px;
+  border-radius: 4px;
+  text-align: center;     /* Centraliza horizontalmente o número */
+  display: flex;          /* Garante centralização vertical */
+  align-items: center; 
 }
