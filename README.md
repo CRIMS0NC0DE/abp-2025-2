@@ -183,6 +183,10 @@ Utilização do ambiente docker e tratamento de tasks.
 
 <h3>BURNDOWN 🔥</h3>
 
+<div>
+ <img src=front/src/assets/burndownSP2.jpg> 
+</div>
+
 ## SPRINT 3 🔁
 
 <h3>SPRINT BACKLOG 📜</h3>
