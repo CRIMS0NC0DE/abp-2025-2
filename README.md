@@ -184,7 +184,7 @@ Utilização do ambiente docker e tratamento de tasks.
 <h3>BURNDOWN 🔥</h3>
 
 <div>
- <img src=front/src/assets/burndownSP2.jpg> 
+ <img src=front/src/assets/burndownSP2.png> 
 </div>
 
 ## SPRINT 3 🔁
