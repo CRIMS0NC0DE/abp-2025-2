@@ -58,9 +58,9 @@ export default function Furnas() {
 
     { label: 'Início', to: '/Furnas' },
 
-    { label: 'Banco de Dados', to: '/mapa' },
+    { label: 'Banco de Dados', to: '/furnas-table' },
 
-    { label: 'Publicações', to: '/publicacoes' },
+    { label: 'Publicações', to: '/publicacoesFurnas' },
 
     { label: 'SIMA', to: '/sima' },
 
@@ -876,7 +876,7 @@ export default function Furnas() {
 
             </Link>
 
-            <Link to="/furnas" aria-label="Ir para a página FURNAS">
+            <Link to="/balcar" aria-label="Ir para a página BALCAR">
 
               <img className={styles.headerLogoRight2} src={logoBalcar} alt='Logo Furnas' />
 
@@ -968,7 +968,7 @@ export default function Furnas() {
                 <div className={styles.teamCardGrid}>
                 
                 <Link 
-                to="/mapa" className={styles.bigButton}> 
+                to="/furnas-table" className={styles.bigButton}> 
                 <div className={styles.cardButton}>
                   <img 
                   src={logoBanco}

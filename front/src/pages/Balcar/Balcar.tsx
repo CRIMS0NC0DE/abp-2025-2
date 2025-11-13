@@ -61,7 +61,7 @@ export default function Balcar() {
 
     { label: 'Início', to: '/balcar' },
 
-    { label: 'Banco de Dados', to: '/mapa' },
+    { label: 'Banco de Dados', to: '/balcar-table' },
 
     { label: 'Publicações', to: '/publicacoesBalcar' },
 
