@@ -183,6 +183,22 @@ Utilização do ambiente docker e tratamento de tasks.
 
 <h3>BURNDOWN 🔥</h3>
 
+## SPRINT 3 🔁
+
+<h3>SPRINT BACKLOG 📜</h3>
+
+| Histórias de Usuário             | Tipo de Requisito | Justificativa                                                                 |
+|----------------------------------|-------------------|-------------------------------------------------------------------------------|
+| Elaborar Diagrama de Sequência | Não Funcional     | Documento que define a sequência das ações no sistema        |
+| Testes Unitários para Validação de Funcionalidades  | Não Funcional     | Documento que define a sequência dos testes realizados no sistema         |
+| Adicionar os filtros espaciais nas consultas de Tabelas   | Funcional     | Requisito do cliente para exibição de dados         |
+| Consultar e Visualizar dados e formato de Gráfico no SIMA   | Funcional     | Requisito do cliente para exibição dos dados em formato de gráfico         |
+| Deploy Front-End e Back-end  | Funcional     | Requisito do cliente para acessar as informações do sistema         |
+
+
+<h3>BURNDOWN 🔥</h3>
+
+
 ## TECNOLOGIAS UTILIZADAS
 
 #### Backend
