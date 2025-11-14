@@ -14,6 +14,7 @@ import PublicacoesSimaPage from './pages/PublicacoesSimaPage/PublicacoesSimaPage
 import PageBalcarTable from './pages/Tables/PageBalcarTable';
 import FurnasTablePage from './pages/Tables/PageFurnasTable';
 import SimaTablePage from './pages/Tables/PageSimaTable';
+import BarraBrasil from "./components/BarraBrasil/BarraBrasil";
 import "leaflet/dist/leaflet.css";
 import './styles/global.css';
 import './index.css'
@@ -23,6 +24,7 @@ import './index.css'
 export default function App() {
   return (
     <>
+    <BarraBrasil />
       <Header />
       <main>
         <Routes>

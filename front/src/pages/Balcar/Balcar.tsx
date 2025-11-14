@@ -500,14 +500,15 @@ export default function Balcar() {
   {/* COLUNA DIREITA - painel grande "Visualizar Dados" */}
 <div className={styles.rightColumn}>
   <div className={styles.cardContainer2}>
+    <Link  to="/balcar-table">
     <button className={styles.cardButton} type="button">
       <img
         src={logoVisualizargraficos}
-        alt="Visualizar Gráficos"
+        alt="Visualizar Dados"
         style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
       />
     </button>
-
+    </Link>
     <p className={styles.visualizarGraficos}>Visualizar Gráficos</p>
   </div>
 </div>
