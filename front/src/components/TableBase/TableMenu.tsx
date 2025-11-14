@@ -64,13 +64,6 @@ export function Menu({ title, tabelas, tabelaAtiva, onSelectTabela, database }: 
           );
         })}
       </nav>
-
-      {/* Rodapé do Menu */}
-      <div className="menu-footer">
-        <p>
-          &copy; {new Date().getFullYear()} - Projeto {databaseDisplayName}
-        </p>
-      </div>
     </aside>
   );
 }

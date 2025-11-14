@@ -1,0 +1,339 @@
+/* --- Animação do Spinner --- */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* --- Modal Wrapper --- */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  transition-property: opacity;
+  transition-duration: 300ms;
+}
+
+.modalCard {
+  background-color: #071D41;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 32rem; /* max-w-lg */
+  margin: 1rem;
+  border: 10px #071D41;
+}
+
+/* --- Modal Header --- */
+.modalHeader {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.btnClose {
+  padding: 0.5rem;
+  color: white;
+  border-radius: 9999px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btnClose:hover {
+  background-color: white;
+  color: red;
+}
+
+.btnClose:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Modal Body --- */
+.modalBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --- Elementos do Formulário --- */
+.formLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.formLabel_mb1 {
+  margin-bottom: 0.25rem;
+}
+
+.helperText {
+  font-size: 0.75rem;
+  color: #071D41;
+  margin-top: 0.25rem;
+}
+
+/* --- Grupo de Botões (XLSX/CSV) --- */
+.btnGroup {
+  display: flex;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  overflow: hidden; /* Garante que o border-radius dos filhos funcione */
+}
+
+.btnGroupItem {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  transition: background-color 0.15s, color 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.btnGroupItem:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnGroupItemLeft {
+  /* rounded-l-md */
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.btnGroupItemRight {
+  /* rounded-r-md */
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  border-left: 1px solid #d1d5db;
+}
+
+.btnGroupItemActive {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.btnGroupItemInactive {
+  background-color: #fff;
+  color: #374151;
+}
+
+.btnGroupItemInactive:hover {
+  background-color: #f9fafb;
+}
+
+/* --- Caixa de Opções (CSV) --- */
+.optionsBox {
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.optionsTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #071D41
+}
+
+.grid2Cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* --- Inputs Select (Dropdown) --- */
+.selectWrapper {
+  position: relative;
+}
+
+.selectInput {
+  width: 100%;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem; /* py-2 pr-10 px-3 */
+  font-size: 0.875rem;
+  color: #111827;
+}
+
+.selectInput:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+}
+
+.selectInput:disabled {
+  cursor: not-allowed;
+  background-color: #f3f4f6;
+  opacity: 0.7;
+}
+
+.selectIcon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem; /* px-3 */
+  pointer-events: none;
+  color: #6b7280;
+}
+
+/* --- Checkbox --- */
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxInput {
+  height: 1rem;
+  width: 1rem;
+  color: #2563eb;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.checkboxInput:focus {
+  box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-blue-500 */
+}
+
+.checkboxLabel {
+  margin-left: 0.5rem;
+  display: block;
+  font-size: 0.875rem;
+  color: white;
+}
+
+/* --- Feedback de Erro --- */
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  color: #991b1b; /* text-red-800 */
+  background-color: #fee2e2; /* bg-red-100 */
+  border: 1px solid #fca5a5; /* border-red-300 */
+  border-radius: 0.375rem; /* rounded-md */
+}
+
+.errorText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --- Modal Footer --- */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #FF9D00;
+  border-top: 1px solid #e5e7eb;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* --- Botões Genéricos --- */
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Botão Primário (Exportar) */
+.btnPrimary {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  background-color: #2563eb; /* bg-blue-600 */
+  border: 1px solid transparent;
+}
+
+.btnPrimary:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+.btnPrimary:focus {
+  box-shadow: 0 0 0 2px #3b82f6, 0 0 0 2px #fff inset;
+}
+
+.btnPrimary:disabled {
+  background-color: #60a5fa; /* disabled:bg-blue-400 */
+}
+
+/* Botão Secundário (Cancelar) */
+.btnSecondary {
+  color: #374151; /* text-gray-700 */
+  background-color: #fff;
+  border: 1px solid #d1d5db; /* border-gray-300 */
+}
+
+.btnSecondary:hover {
+  background-color: #f9fafb; /* hover:bg-gray-50 */
+}
+
+.btnSecondary:focus {
+  box-shadow: 0 0 0 2px #9ca3af, 0 0 0 2px #fff inset;
+}
+
+.btnSecondary:disabled {
+  opacity: 0.5;
+}

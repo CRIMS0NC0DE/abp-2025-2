@@ -1,4 +1,5 @@
 // src/components/commons/Filters/FilterBar.tsx
+import styles from "./Filters.module.css"; // ✅ IMPORTADO
 import { useState } from "react";
 import {
   Plus,
@@ -12,12 +13,11 @@ import {
   Type as IconType,
   Info,
 } from "lucide-react";
-import type { FilterParams, ColumnInfo, ColumnType } from "../../types/types"; // Ajuste o caminho
+import type { FilterParams, ColumnInfo, ColumnType } from "../../types/types";
 
 // --- Interfaces ---
 
 interface FilterBarProps {
-  // ✅ NOVO: Prop para receber o nome da tabela
   tableName: string;
   onApplyFilters: (filters: FilterParams) => void;
   onClearFilters: () => void;
@@ -43,21 +43,17 @@ const useUniqueId = () => {
 const StyledInput: React.FC<
   React.InputHTMLAttributes<HTMLInputElement> & { icon?: React.ReactNode }
 > = ({ icon, className, ...props }) => (
-  <div className={`relative flex-1 ${className}`}>
-     {" "}
+  // ✅ Usa styles.inputWrapper e permite classes extras
+  <div className={`${styles.inputWrapper} ${className || ""}`}>
     {icon && (
-      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          {icon} {" "}
-      </div>
+      // ✅ Usa styles.inputIcon
+      <div className={styles.inputIcon}>{icon}</div>
     )}
-     {" "}
     <input
       {...props}
-      className={`form-input w-full px-3 py-2 text-sm border border-gray-300 rounded-lg shadow-sm 
-focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 
-${icon ? "pl-9" : ""} ${props.disabled ? "bg-gray-100 cursor-not-allowed" : ""}`}
+      // ✅ Usa styles.styledInput e a classe condicional
+      className={`${styles.styledInput} ${icon ? styles.inputWithIcon : ""}`}
     />
-     {" "}
   </div>
 );
 
@@ -83,86 +79,83 @@ function RenderValorInputs({ row, onChange }: RenderValorInputsProps) {
           value={value}
           onChange={handleChange}
           placeholder="Valor (ex: Ponto 1)"
-          icon={<IconType size={14} className="text-gray-400" />}
+          // ✅ Classe de ícone do Tailwind removida
+          icon={<IconType size={14} />}
         />
       );
     case "number":
       return (
         <>
-           {" "}
           <StyledInput
             type="number"
             name="value"
             value={value}
             onChange={handleChange}
             placeholder="Min"
-            icon={<Hash size={14} className="text-gray-400" />}
+            icon={<Hash size={14} />}
           />
-            <span className="text-gray-500 font-medium">-</span>
-           {" "}
+          {/* ✅ Usa styles.rangeSeparator */}
+          <span className={styles.rangeSeparator}>-</span>
           <StyledInput
             type="number"
             name="valueEnd"
             value={valueEnd ?? ""}
             onChange={handleChange}
             placeholder="Max"
-            icon={<Hash size={14} className="text-gray-400" />}
+            icon={<Hash size={14} />}
           />
-           {" "}
         </>
       );
     case "date":
       return (
         <>
-           {" "}
           <StyledInput
             type="date"
             name="value"
             value={value}
             onChange={handleChange}
             placeholder="Data Início"
-            icon={<Calendar size={14} className="text-gray-400" />}
+            icon={<Calendar size={14} />}
           />
-            <span className="text-gray-500 text-sm">até</span>
-           {" "}
+          {/* ✅ Usa styles.rangeSeparatorSmall */}
+          <span className={styles.rangeSeparatorSmall}>até</span>
           <StyledInput
             type="date"
             name="valueEnd"
             value={valueEnd ?? ""}
             onChange={handleChange}
             placeholder="Data Fim"
-            icon={<Calendar size={14} className="text-gray-400" />}
+            icon={<Calendar size={14} />}
           />
-           {" "}
         </>
       );
     case "time":
       return (
         <>
-           {" "}
           <StyledInput
             type="time"
             name="value"
             value={value}
             onChange={handleChange}
             placeholder="Hora Início"
-            icon={<Clock size={14} className="text-gray-400" />}
+            icon={<Clock size={14} />}
           />
-            <span className="text-gray-500 text-sm">até</span>
-           {" "}
+          {/* ✅ Usa styles.rangeSeparatorSmall */}
+          <span className={styles.rangeSeparatorSmall}>até</span>
           <StyledInput
             type="time"
             name="valueEnd"
             value={valueEnd ?? ""}
             onChange={handleChange}
             placeholder="Hora Fim"
-            icon={<Clock size={14} className="text-gray-400" />}
+            icon={<Clock size={14} />}
           />
-           {" "}
         </>
       );
     default:
-      return <StyledInput type="text" placeholder="Selecione uma coluna..." disabled />;
+      return (
+        <StyledInput type="text" placeholder="Selecione uma coluna..." disabled />
+      );
   }
 }
 
@@ -175,36 +168,40 @@ interface FilterBarHeaderProps {
   onAddFilterRow: () => void;
 }
 
-function FilterBarHeader({ tableName, onExportClick, onAddFilterRow }: FilterBarHeaderProps) {
-  // Formata o nome da tabela (ex: "abiotico-coluna" -> "Abiotico Coluna")
+function FilterBarHeader({
+  tableName,
+  onExportClick,
+  onAddFilterRow,
+}: FilterBarHeaderProps) {
   const friendlyTableName = tableName.replace(/-/g, " ");
 
   return (
-    <header className="flex justify-between items-center mb-4">
+    // ✅ Usa styles.header
+    <header className={styles.header}>
       {/* Título e Subtítulo */}
       <div>
-        <h3 className="text-xl font-semibold text-sky-900">Filtros</h3>
-        <p className="text-sm font-medium text-cyan-700 capitalize">{friendlyTableName}</p>
+        <h3 className={styles.headerTitle}>Filtros</h3>
+        <p className={styles.headerSubtitle}>{friendlyTableName}</p>
       </div>
 
       {/* Botões de Ação Principais */}
-      <div className="flex items-center gap-3">
+      {/* ✅ Usa styles.headerActions */}
+      <div className={styles.headerActions}>
         <button
           onClick={onExportClick}
-          className="flex items-center py-2 px-4 text-sm font-medium text-cyan-700 bg-white border border-cyan-600 rounded-lg shadow-sm 
-          transition-all transform hover:scale-105 hover:bg-cyan-50 
-          focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-opacity-50"
+          // ✅ Combina classes do módulo
+          className={`${styles.btn} ${styles.btnExport}`}
         >
-          <Download size={16} className="mr-1.5" />
+          {/* ✅ Usa styles.btnIcon */}
+          <Download size={16} className={styles.btnIcon} />
           Exportar Dados
         </button>
         <button
           onClick={onAddFilterRow}
-          className="flex items-center py-2 px-4 text-sm font-medium text-white bg-cyan-600 rounded-lg shadow-sm 
-          transition-all transform hover:scale-105 hover:bg-cyan-700 
-          focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-opacity-50"
+          className={`${styles.btn} ${styles.btnAdd}`}
         >
-          <Plus size={18} className="mr-1" />
+          {/* ✅ Usa styles.btnIconAdd */}
+          <Plus size={18} className={styles.btnIconAdd} />
           Adicionar Filtro
         </button>
       </div>
@@ -229,15 +226,16 @@ function FilterRowItem({
   onRemoveRow,
 }: FilterRowItemProps) {
   return (
-    <div className="flex items-center gap-2 p-3 bg-white border border-gray-200 rounded-lg shadow-sm">
+    // ✅ Usa styles.filterRow
+    <div className={styles.filterRow}>
       {/* Seletor de Coluna */}
       <select
         value={row.column}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           onColumnChange(row.id, e.target.value)
         }
-        className="form-select w-1/3 px-3 py-2 text-sm border border-gray-300 rounded-lg shadow-sm 
-        focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+        // ✅ Usa styles.filterSelect
+        className={styles.filterSelect}
       >
         <option value="" disabled>
           Selecione uma coluna...
@@ -255,8 +253,8 @@ function FilterRowItem({
       {/* Botão de Remover Linha */}
       <button
         onClick={() => onRemoveRow(row.id)}
-        className="p-2 text-red-500 rounded-full 
-        transition-all transform hover:scale-110 hover:bg-red-600 hover:text-white"
+        // ✅ Usa styles.btnRemove
+        className={styles.btnRemove}
         aria-label="Remover filtro"
       >
         <Trash size={18} />
@@ -273,23 +271,21 @@ interface FilterBarActionsProps {
 
 function FilterBarActions({ onApply, onClear }: FilterBarActionsProps) {
   return (
-    <div className="flex gap-3">
+    // ✅ Usa styles.footerActions
+    <div className={styles.footerActions}>
       <button
         onClick={onApply}
-        className="flex items-center py-2 px-4 text-sm font-medium text-white bg-green-600 rounded-lg shadow-md 
-        transition-all transform hover:scale-105 hover:bg-green-700 
-        focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+        // ✅ Combina classes
+        className={`${styles.btn} ${styles.btnApply}`}
       >
-        <Search size={16} className="mr-1.5" />
+        <Search size={16} className={styles.btnIcon} />
         Aplicar Filtros
       </button>
       <button
         onClick={onClear}
-        className="flex items-center py-2 px-4 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-md 
-        transition-all transform hover:scale-105 hover:bg-gray-50 
-        focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
+        className={`${styles.btn} ${styles.btnClear}`}
       >
-        <X size={16} className="mr-1.5" />
+        <X size={16} className={styles.btnIcon} />
         Limpar
       </button>
     </div>
@@ -299,14 +295,14 @@ function FilterBarActions({ onApply, onClear }: FilterBarActionsProps) {
 // --- Componente Principal (Agora muito mais limpo) ---
 
 export function FilterBar({
-  tableName, // ✅ Prop recebida
+  tableName,
   onApplyFilters,
   onClearFilters,
   onExportClick,
   colunasDisponiveis,
 }: FilterBarProps) {
   const [filterRows, setFilterRows] = useState<FilterRow[]>([]);
-  const getNextId = useUniqueId(); // --- Lógica de Handlers (Estado fica aqui) ---
+  const getNextId = useUniqueId();
 
   const addFilterRow = () => {
     setFilterRows([
@@ -326,14 +322,20 @@ export function FilterBar({
       filterRows.map((row) =>
         row.id === id
           ? { ...row, column: selectedColumn, type: newType, value: "", valueEnd: "" }
-          : row,
-      ),
+          : row
+      )
     );
   };
 
-  const handleValueChange = (id: number, field: "value" | "valueEnd", newValue: string) => {
+  const handleValueChange = (
+    id: number,
+    field: "value" | "valueEnd",
+    newValue: string
+  ) => {
     setFilterRows((currentRows) =>
-      currentRows.map((row) => (row.id === id ? { ...row, [field]: newValue } : row)),
+      currentRows.map((row) =>
+        row.id === id ? { ...row, [field]: newValue } : row
+      )
     );
   };
 
@@ -342,7 +344,11 @@ export function FilterBar({
       if (!row.column || row.type === "unknown") return acc;
       if (row.type === "string") {
         if (row.value) acc[row.column] = row.value;
-      } else if (row.type === "number" || row.type === "date" || row.type === "time") {
+      } else if (
+        row.type === "number" ||
+        row.type === "date" ||
+        row.type === "time"
+      ) {
         if (row.value) acc[`${row.column}_gte`] = row.value;
         if (row.valueEnd) acc[`${row.column}_lte`] = row.valueEnd;
       }
@@ -354,30 +360,33 @@ export function FilterBar({
   const handleClear = () => {
     setFilterRows([]);
     onClearFilters();
-  }; // --- Renderização Didática ---
+  };
 
   return (
-    <div className="p-5 bg-sky-50 border-b border-gray-200 shadow-lg font-sans">
+    // ✅ Usa styles.filterBar
+    <div className={styles.filterBar}>
       {/* 1. Renderiza o Cabeçalho */}
       <FilterBarHeader
         tableName={tableName}
         onExportClick={onExportClick}
         onAddFilterRow={addFilterRow}
       />
-      {/* 2. Renderiza a Lista de Filtros */} {" "}
-      <section className="space-y-3">
-         {" "}
-        {filterRows.length === 0 && ( // Placeholder de "Nenhum filtro"
-          <div className="text-center p-4 border border-dashed border-sky-300 rounded-lg bg-white">
-              <Info size={18} className="mx-auto text-sky-500 mb-2" /> {" "}
-            <p className="font-medium text-sky-800">Nenhum filtro aplicado</p> {" "}
-            <p className="text-sm text-sky-600">
-                Clique em "Adicionar Filtro" acima para começar a refinar seus dados.  {" "}
+      {/* 2. Renderiza a Lista de Filtros */}
+      {/* ✅ Usa styles.filterList */}
+      <section className={styles.filterList}>
+        {filterRows.length === 0 && (
+          // ✅ Usa styles.placeholder
+          <div className={styles.placeholder}>
+            {/* ✅ Usa styles.placeholderIcon */}
+            <Info size={18} className={styles.placeholderIcon} />
+            <p className={styles.placeholderTitle}>Nenhum filtro aplicado</p>
+            <p className={styles.placeholderText}>
+              Clique em "Adicionar Filtro" acima para começar a refinar seus
+              dados.
             </p>
-             {" "}
           </div>
         )}
-        {/* Mapeia cada linha de filtro para seu componente */} {" "}
+        {/* Mapeia cada linha de filtro para seu componente */}
         {filterRows.map((row) => (
           <FilterRowItem
             key={row.id}
@@ -388,15 +397,14 @@ export function FilterBar({
             onRemoveRow={removeFilterRow}
           />
         ))}
-         {" "}
       </section>
-      {/* 3. Renderiza as Ações (Aplicar/Limpar) se houver filtros */} {" "}
+      {/* 3. Renderiza as Ações (Aplicar/Limpar) se houver filtros */}
       {filterRows.length > 0 && (
-        <footer className="mt-4">
+        // ✅ Usa styles.footer
+        <footer className={styles.footer}>
           <FilterBarActions onApply={handleApply} onClear={handleClear} />
         </footer>
       )}
-       {" "}
     </div>
   );
 }
