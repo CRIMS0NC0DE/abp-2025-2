@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/furnas/reservatorio.controller";
+import { getAll, getById } from "../../controllers/furnas/reservatorio.controller";
 
 const router = Router();
 
 router.get("/all", getAll);
+router.get("/:idreservatorio", getById);
 
 export default router;

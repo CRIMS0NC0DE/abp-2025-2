@@ -2,7 +2,7 @@ import { CorsOptions } from "cors";
 
 // Lista de endereços permitidos (Whitelist)
 const allowedOrigins = [
-  "http://localhost:3002",
+  "http://localhost:3001",
   "http://localhost:5173",
   "http://127.0.0.1:5173",
   process.env.CORS_ORIGIN
@@ -16,6 +16,8 @@ export const corsOptions: CorsOptions = {
       callback(new Error("Not allowed by CORS")); // Bloqueia a requisição
     }
   },
-  methods: ["GET"],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ["Content-Type", "Authorization"],
+  // Permite que o frontend (fetch) leia este cabeçalho
+  exposedHeaders: ['Content-Disposition'],
 };

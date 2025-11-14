@@ -1,10 +1,9 @@
 import { Router } from "express";
-import { getAll, getByEstacao, getEstacoes } from "../../controllers/sima/sima.controller";
+import { getAll, getById } from "../../controllers/sima/sima.controller";
 
 const router = Router();
 
 router.get("/all", getAll);
-router.get("/porestacao", getByEstacao);
-router.get("/estacoes", getEstacoes);
+router.get("/:idsima", getById);
 
 export default router;
