@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const BarraBrasil = () => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://barra.brasil.gov.br/barra.js";
+    script.src = "https://barra.brasil.gov.br/barra.js?libras=false";
     script.defer = true;
     script.type = "text/javascript";
     document.body.appendChild(script);
