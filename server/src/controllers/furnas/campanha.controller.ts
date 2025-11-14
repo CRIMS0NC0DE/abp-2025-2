@@ -1,83 +1,170 @@
+//src/controllers/furnas/campanha.controller.ts
 import { Request, Response } from "express";
-import { furnasPool } from "../../configs/db";
 import { logger } from "../../configs/logger";
+// 1. Importa os Serviços (formatação e exportação)
+import { DataFormatterService } from "../../services/dataFormatterService";
+import { ExportService, ExportFileOptions } from "../../services/exportService";
+// 2. Importa o Model
+import { CampanhaModel } from "../../models/campanha.model";
 
 const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
 
+// --- ENDPOINTS ---
+
+/**
+ * Endpoint: getAll
+ */
 export const getAll = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const page = Number(req.query.page) || 1;
-    const limit = Number(req.query.limit) || PAGE_SIZE;
-    const offset = (page - 1) * limit;
+    try {
+        const page = parseInt(req.query.page as string) || 1;
+        const limit = parseInt(req.query.limit as string) || PAGE_SIZE;
 
-    // consulta com paginação
-    const result = await furnasPool.query(
-      `
-      SELECT 
-        a.idcampanha,
-        a.nrocampanha,
-        a.datainicio,
-        a.datafim,
-        b.idinstituicao,
-        b.nome AS instituicao_nome,
-        c.idreservatorio,
-        c.nome AS reservatorio_nome,
-        c.lat AS reservatorio_lat,
-        c.lng AS reservatorio_lng
-      FROM tbcampanha AS a
-      LEFT JOIN tbinstituicao AS b 
-        ON a.idinstituicao = b.idinstituicao
-      LEFT JOIN tbreservatorio AS c 
-        ON a.idreservatorio = c.idreservatorio
-      ORDER BY c.nome, a.nrocampanha
-      LIMIT $1 OFFSET $2
-      `,
-      [limit, offset],
-    );
+        // 1. Pede os dados paginados ao Model (agora com filtros)
+        const { data: rawData, total } = await CampanhaModel.findPaginated({
+            filters: req.query, // Passa todos os query params como filtros
+            page,
+            limit,
+        });
 
-    // consulta total de registros
-    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbcampanha");
-    const total = Number(countResult.rows[0].count);
+        // 2. Formata os dados "crus" usando o Service
+        //    (O mapRowToCampanha foi removido e substituído por isso)
+        const data = rawData.map(DataFormatterService.formatListRow);
 
-    // dados formatados
-    const data = result.rows.map((row: any) => ({
-      idcampanha: row.idcampanha,
-      instituicao: row.idinstituicao
-        ? {
-            idinstituicao: row.idinstituicao,
-            nome: row.instituicao_nome,
-          }
-        : undefined,
-      reservatorio: row.idreservatorio
-        ? {
-            idreservatorio: row.idreservatorio,
-            nome: row.reservatorio_nome,
-            lat: row.reservatorio_lat,
-            lng: row.reservatorio_lng,
-          }
-        : undefined,
-      nrocampanha: row.nrocampanha,
-      datainicio: row.datainicio,
-      datafim: row.datafim,
-    }));
+        // 3. Envia a resposta
+        res.status(200).json({
+            success: true,
+            page,
+            limit,
+            total,
+            totalPages: Math.ceil(total / limit),
+            data,
+        });
+    } catch (error: any) {
+        logger.error("Erro ao consultar tbcampanha", {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao realizar operação.",
+        });
+    }
+};
 
-    res.status(200).json({
-      success: true,
-      page,
-      limit,
-      total,
-      totalPages: Math.ceil(total / limit),
-      data,
-    });
-  } catch (error: any) {
-    logger.error("Erro ao consultar tbcampanha", {
-      message: error.message,
-      stack: error.stack,
-    });
+/**
+ * Endpoint: getById
+ */
+export const getById = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const idCampanha = Number(req.params.idcampanha);
 
-    res.status(500).json({
-      success: false,
-      error: "Erro ao realizar a operação.",
-    });
-  }
+        if (isNaN(idCampanha)) {
+            res.status(400).json({
+                success: false,
+                error: `ID ${req.params.idcampanha} inválido.`,
+            });
+            return;
+        }
+
+        // 1. Pede o dado ao Model
+        const rawData = await CampanhaModel.findById(idCampanha);
+
+        // 2. Verifica se foi encontrado
+        if (!rawData) {
+            res.status(404).json({
+                success: false,
+                error: `Registro de campanha não encontrado.`,
+            });
+            return;
+        }
+
+        // 3. Formata o dado "cru" (seguindo o padrão, não formatamos detalhes)
+        const data = rawData; // Retorna os dados crus do model
+
+        // 4. Envia a resposta
+        res.status(200).json({
+            success: true,
+            data,
+        });
+    } catch (error: any) {
+        logger.error(`Erro ao consultar tbcampanha por ID ${req.params.idcampanha}`, {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao realizar operação.",
+        });
+    }
+};
+
+/**
+ * Endpoint: exportData (NOVO)
+ */
+export const exportData = async (req: Request, res: Response): Promise<void> => {
+    try {
+        // 1. Extrai opções do body
+        const { format, range, includeHeaders, delimiter, encoding, filters, page, limit } =
+            req.body as ExportFileOptions & {
+                range: "page" | "all";
+                filters: any;
+                page?: number;
+                limit?: number;
+            };
+
+        const exportOptions: ExportFileOptions = {
+            format,
+            includeHeaders,
+            delimiter,
+            encoding,
+        };
+
+        let rawData: any[];
+
+        // 2. Busca os dados no Model com base no 'range'
+        if (range === "page") {
+            const { data } = await CampanhaModel.findPaginated({
+                filters: filters || {},
+                page: page || 1,
+                limit: limit || PAGE_SIZE,
+            });
+            rawData = data;
+        } else {
+            // range === 'all'
+            rawData = await CampanhaModel.findAll({
+                filters: filters || {},
+            });
+        }
+
+        // 3. Formata os dados para "lista"
+        const formattedData = rawData.map(DataFormatterService.formatListRow);
+
+        // 4. Gera o buffer do arquivo
+        const fileBuffer = await ExportService.generateExportFile(formattedData, exportOptions);
+
+        // 5. Define os headers da resposta
+        const fileName = `export_campanha_${new Date().toISOString().slice(0, 10)}.${format}`;
+
+        if (format === "xlsx") {
+            res.setHeader(
+                "Content-Type",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            );
+        } else {
+            res.setHeader("Content-Type", "text/csv; charset=" + (encoding || "utf-8"));
+        }
+        res.setHeader("Content-Disposition", `attachment; filename="${fileName}"`);
+
+        // 6. Envia o buffer como resposta
+        res.send(fileBuffer);
+    } catch (error: any) {
+        logger.error("Erro ao exportar dados de tbcampanha", {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao gerar exportação.",
+        });
+    }
 };
