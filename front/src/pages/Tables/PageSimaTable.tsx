@@ -17,6 +17,8 @@ import { ModalExport } from "../../components/Export/ModalExport";
 import { useTableData } from "../../hooks/useTableData";
 import type { FilterParams, ColumnInfo, ColumnType } from "../../types/types";
 import { NavLink } from "react-router-dom";
+import MapaInterativo from "../../components/MapaInterativo";
+import MapaInterativoSIMA from "../../components/Maps/MapaInterativoSIMA";
 
 // --- LISTA DE TABELAS ---
 const tabelasDisponiveis = [
@@ -186,6 +188,7 @@ export function SimaTablePage() {
           />
         )}
       </div>
+      <MapaInterativoSIMA/>
     </> // ADICIONADO: Fechamento do Fragment
   );
 }
