@@ -1,1 +1,30 @@
-@import "tailwindcss";
+/* Oculta o botão flutuante do VLibras */
+.vlibras,
+.vlibras-plugin,
+.vlibras-button,
+.vlibras-default {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Oculta o container que aparece no canto da tela */
+[vw],
+[vw-plugin-wrapper],
+[vw-access-button],
+[vw-plugin-container] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Oculta DIVs específicas criadas pelo script VLibras */
+#vw-view,
+#vw-plugin,
+#widget,
+#vlibras,
+#barra-brasil-vlibras {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
