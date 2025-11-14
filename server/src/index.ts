@@ -4,6 +4,7 @@ import router from "./routes";
 import { errorHandler } from "./middlewares/errorHandler";
 import cors from "cors";
 import { corsOptions } from "./configs/corsConfig";
+//import { corsOptions } from "./configs/corsConfig2";
 
 // Carrega as variáveis de ambiente definidas no arquivo .env
 dotenv.config();
@@ -24,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Rotas principais
-app.use("/", router);
+app.use("/api", router);
 
 // Middleware para rotas não encontradas
 app.use((_req: Request, res: Response) => {
@@ -39,5 +40,5 @@ app.use(errorHandler);
 
 // Inicializa o servidor na porta definida
 app.listen(PORT, function () {
-  console.log(`Servidor rodando em http://localhost:${process.env.PORT}`);
+  console.log(`Servidor rodando em http://localhost:${process.env.HOST_PORT}`);
 });
