@@ -1,0 +1,61 @@
+/* O container que permite a rolagem horizontal */
+.tabela-container {
+  width: 100%;
+  overflow-x: auto; /* A mágica da rolagem horizontal! */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 20px; /* Espaçamento do menu de filtro */
+}
+
+/* Estilos para os estados de 'vazio' ou 'carregando' */
+.tabela-container.empty,
+.tabela-container.loading {
+  padding: 40px;
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* A tabela em si */
+.tabela-sima {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaços entre as células */
+  /* Define uma largura mínima MUITO grande para forçar a rolagem,
+     já que sua tabela na imagem tem muitas colunas */
+  min-width: 2000px;
+}
+
+/* Cabeçalho da Tabela (baseado no seu FilterMenu.css) */
+.tabela-sima thead th {
+  background-color: #071D41; /* Mesmo azul do seu menu */
+  color: #FFFFFF;
+  padding: 12px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: left;
+  /* Impede que os títulos quebrem linha */
+  white-space: nowrap; 
+}
+
+/* Células do Corpo da Tabela */
+.tabela-sima tbody td {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap; /* Impede que os dados quebrem linha */
+}
+
+/* Efeito "Zebra" (linhas alternadas) da imagem */
+.tabela-sima tbody tr:nth-child(even) {
+  background-color: #f8fafd; /* Um azul bem clarinho */
+}
+.tabela-sima tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Efeito de hover para destacar a linha */
+.tabela-sima tbody tr:hover {
+  background-color: #e6f7ff; /* Destaque ao passar o mouse */
+}
