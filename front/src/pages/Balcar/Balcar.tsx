@@ -297,7 +297,7 @@ export default function Balcar() {
     <ul style={modalStyles.ul}>
       <li style={modalStyles.li}>Arcilan Trevenzoli Assireu (INPE)</li>
       <li style={modalStyles.li}>Bohdan Matvienko Sikar (UFRJ/COPPE)</li>
-      <li style_={modalStyles.li}>Corina Verónica Sidagis Galli (IIE)</li>
+      <li style={modalStyles.li}>Corina Verónica Sidagis Galli (IIE)</li>
       <li style={modalStyles.li}>Ednaldo Oliveira dos Santos (UFRJ/COPPE)</li>
       <li style={modalStyles.li}>Elizabeth Matvienko Sikar (UFRJ/COPPE)</li>
       <li style={modalStyles.li}>Felipe Siqueira Pacheco (UFJF)</li>
