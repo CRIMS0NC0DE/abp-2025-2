@@ -522,11 +522,11 @@ return (
           modalContent={ModalProblemas}
         />
         <a
-          href="#/mapa"
+          href="/sima/consulta"
           className={`${cardStyles.card} ${styles.cardLink}`}
         >
           <img src={mapainterativo} alt="Mapa Interativo" className={cardStyles.icon} />
-          <h3 className={cardStyles.title}>Mapa Interativo</h3>
+          <h3 className={cardStyles.title}>Consultar Dados</h3>
         </a>
       </div>
 
