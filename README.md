@@ -150,7 +150,7 @@ A aplicação organiza e apresenta os dados em uma interface limpa, permitindo q
 <h3>BURNDOWN 🔥</h3>
 
 <div>
- <img src=front/src/assets/burndownSP1.jpg> 
+ <img src=front/src/assets/burndownSP1.png> 
 </div>
 
 <h3>RETROSPECTIVA DE SPRINT 🗣️</h3>
@@ -184,7 +184,7 @@ Utilização do ambiente docker e tratamento de tasks.
 <h3>BURNDOWN 🔥</h3>
 
 <div>
- <img src=front/src/assets/burndownSP2.png> 
+ <img src=front/src/assets/burndownSP2.jpg> 
 </div>
 
 ## SPRINT 3 🔁
