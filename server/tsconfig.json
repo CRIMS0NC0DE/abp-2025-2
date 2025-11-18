@@ -6,9 +6,10 @@
     "rootDir": "./src",
     "strict": true,
     "moduleResolution": "node",
+    "jsx": "react",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "src/types/**/*.d.ts"]
+  "include": ["src/**/*.ts", "src/types/**/*.d.ts", "../../front/src/**/*.tsx"]
 }

@@ -13,6 +13,7 @@ import PublicacoesBalcarPage from './pages/PublicacoesBalcarPage/PublicacoesBalc
 import PublicacoesSimaPage from './pages/PublicacoesSimaPage/PublicacoesSimaPage';
 import "leaflet/dist/leaflet.css";
 import './styles/global.css';
+import ConsultaSIMA from './pages/ConsultaDados/ConsultaSIMA';
 
 
 
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/mapa" element={<MapPage />} />
           <Route path="/tabelas" element={<TableView />} />
           <Route path="/sima" element={<SimaPage />} />
+          <Route path="/sima/consulta" element={<ConsultaSIMA />} />
           <Route path="/exportar-csv" element={<ExportCSV />} />
           <Route path="/furnas" element={<Furnas />} />
           <Route path="/balcar" element={<Balcar />} />
