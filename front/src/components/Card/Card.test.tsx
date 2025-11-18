@@ -41,4 +41,19 @@ describe('Componente Card', () => {
     // Se alguém mudar o CSS ou HTML do Card no futuro, esse teste falha!
     expect(container).toMatchSnapshot(); 
   });
+
+  it('deve manter a estrutura visual inalterada (Snapshot)', () => {
+    const { container } = render(
+      <MemoryRouter>
+        <Card 
+          title="Snapshot Test" 
+          text="Verificando layout" 
+          imageSrc="img.png" 
+          linkTo="/test" 
+        />
+      </MemoryRouter>
+    );
+    // Cria um arquivo de "foto" do componente na pasta __snapshots__
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/SearchBar/SearchBar.module.css</title>
+    <title>Code coverage report for components/Charts/ChartBarEvents.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/SearchBar</a> SearchBar.module.css</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/Charts</a> ChartBarEvents.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -92,8 +92,16 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,47 +121,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">.searchContainer {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 25px; /* Bordas arredondadas */
-  overflow: hidden;
-  width: 100%; /* Ocupa a largura do container pai */
-  max-width: 380px; /* Largura máxima */
-  border: 1px solid #ccc;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+&nbsp;
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+&nbsp;
+interface ChartData {
+    data: any[]; //Tipar melhor depois !!!!!!!!!!!!!!!!!!! ATENÇÃO !!!!!!!!!!
 }
 &nbsp;
-.searchInput {
-  flex-grow: 1;
-  border: none;
-  padding: 0.6rem 1rem; /* 8px 12px */
-  outline: none;
-  font-size: 0.9rem; /* 14px */
-  font-family: 'Poppins', sans-serif;
+export function ChartBarEvents({ data }: ChartData) {
+    return (
+        &lt;ResponsiveContainer width='100%' height={300}&gt;
+            &lt;BarChart
+                data={data}
+                margin={{
+                    top: 5, right: 30, left: 20, bottom: 5,
+                }}
+            &gt;
+                &lt;CartesianGrid strokeDasharray='3 3' /&gt;
+                &lt;XAxis dataKey='name' /&gt;
+                &lt;YAxis /&gt;
+                &lt;Tooltip /&gt;
+                &lt;Legend /&gt;
+                &lt;Bar dataKey='uv' fill='#8884d8' /&gt;
+                &lt;Bar dataKey='pv' fill='#82ca9d' /&gt;
+            &lt;/BarChart&gt;
+        &lt;/ResponsiveContainer&gt;
+    )
 }
 &nbsp;
-.searchButton {
-  border: none;
-  background-color: transparent;
-  padding: 0.6rem 1rem;
-  cursor: pointer;
-  font-size: 1rem; /* 16px */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}</pre></td></tr></table></pre>
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

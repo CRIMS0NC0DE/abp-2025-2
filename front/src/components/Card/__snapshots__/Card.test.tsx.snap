@@ -1,5 +1,33 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Componente Card > deve manter a estrutura visual inalterada (Snapshot) 1`] = `
+<div>
+  <a
+    class="_cardLink_f66b11"
+    data-discover="true"
+    href="/test"
+  >
+    <div
+      class="_cardContainer_f66b11"
+    >
+      <img
+        alt="Ícone para Snapshot Test"
+        class="_cardIcon_f66b11"
+        src="img.png"
+      />
+      <h3
+        class="_cardLabel_f66b11"
+      >
+        Snapshot Test
+      </h3>
+      <p>
+        Verificando layout
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
 exports[`Componente Card > deve manter o layout visual inalterado (Snapshot) 1`] = `
 <div>
   <a

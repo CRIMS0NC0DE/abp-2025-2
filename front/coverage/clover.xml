@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1763507294549" clover="3.2.0">
-  <project timestamp="1763507294549" name="All files">
-    <metrics statements="40" coveredstatements="40" conditionals="15" coveredconditionals="13" methods="17" coveredmethods="17" elements="72" coveredelements="70" complexity="0" loc="40" ncloc="40" packages="8" files="15" classes="15"/>
+<coverage generated="1763508307702" clover="3.2.0">
+  <project timestamp="1763508307702" name="All files">
+    <metrics statements="52" coveredstatements="52" conditionals="15" coveredconditionals="13" methods="24" coveredmethods="24" elements="91" coveredelements="89" complexity="0" loc="52" ncloc="52" packages="10" files="21" classes="21"/>
     <package name="api">
       <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <file name="client.ts" path="C:\Users\LAB-48\abp-2025-2\front\src\api\client.ts">
@@ -22,7 +22,16 @@
     </package>
     <package name="assets">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="LogoBalcar.png" path="C:\Users\LAB-48\abp-2025-2\front\src\assets\LogoBalcar.png">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="LogoFurnas.png" path="C:\Users\LAB-48\abp-2025-2\front\src\assets\LogoFurnas.png">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
       <file name="LogoInpe.png" path="C:\Users\LAB-48\abp-2025-2\front\src\assets\LogoInpe.png">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="LogoSIMA.png" path="C:\Users\LAB-48\abp-2025-2\front\src\assets\LogoSIMA.png">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="govLogo.png" path="C:\Users\LAB-48\abp-2025-2\front\src\assets\govLogo.png">
@@ -36,7 +45,14 @@
       </file>
       <file name="Card.tsx" path="C:\Users\LAB-48\abp-2025-2\front\src\components\Card\Card.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Charts">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ChartBarEvents.tsx" path="C:\Users\LAB-48\abp-2025-2\front\src\components\Charts\ChartBarEvents.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.ClickableCard">
@@ -109,6 +125,26 @@
         <line num="14" count="1" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.Home">
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <file name="HomePage.module.css" path="C:\Users\LAB-48\abp-2025-2\front\src\pages\Home\HomePage.module.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="HomePage.tsx" path="C:\Users\LAB-48\abp-2025-2\front\src\pages\Home\HomePage.tsx">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="48" count="4" type="stmt"/>
+        <line num="50" count="4" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="72" count="12" type="stmt"/>
       </file>
     </package>
   </project>

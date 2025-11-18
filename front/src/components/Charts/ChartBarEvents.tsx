@@ -26,3 +26,4 @@ export function ChartBarEvents({ data }: ChartData) {
         </ResponsiveContainer>
     )
 }
+

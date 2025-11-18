@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/ProjectCard/ProjectCard.module.css</title>
+    <title>Code coverage report for pages/Home/HomePage.module.css</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/ProjectCard</a> ProjectCard.module.css</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">pages/Home</a> HomePage.module.css</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -124,7 +124,33 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,66 +212,79 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-.cardLink {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  height: 100%; 
-}
+.homepageContainer {
+  width: 100%;
+  max-width: 1200px; /* Limita a largura */
+  margin: 0 auto;    /* Centraliza */
+  padding: 40px 20px;
+  box-sizing: border-box;
 &nbsp;
-.cardContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centraliza tudo */
+}
+&nbsp;
+.mainTitle {
   text-align: center;
-  padding: 24px;
-  border-radius: 8px;
-  background-color: #FFF9F9;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 2px solid #A09797;
-  width: 320px; /* Mantém a largura consistente */
-  min-height: 440px;
-  height: 100%;
-  box-sizing: border-box;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-&nbsp;
-.cardLink:hover .cardContainer {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
-}
-&nbsp;
-.logo {
-  /* Tamanho máximo para o logo */
-  max-width: 180px; /* Aumentei um pouco para o SIMA ficar maior */
-  max-height: 100px; /* Garante que os logos não fiquem gigantes */
-  height: auto;
-  /* Espaço reservado, evita que cards com logos menores encolham */
-  min-height: 100px; /* Um pouco mais de altura mínima */
-  margin-bottom: 20px;
-  object-fit: contain; /* Ajusta a imagem dentro do espaço sem cortar ou distorcer */
-}
-&nbsp;
-.description {
-  font-family: 'Arial';
-  font-size: 1.20rem;
-  color: black;
-  margin-bottom: 24px;
-  flex-grow: 1; 
-  text-align: center; 
-  line-height: 1.5; 
-  min-height: 140px; 
-}
-&nbsp;
-.accessButton {
-  font-family: 'Arial';
+  font-size: 2.5rem;
   font-weight: bold;
+  font-family: 'Arial';
+  color: #071D41; 
+  margin-bottom: 40px;
+}
+&nbsp;
+.cardsGrid {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
+  margin-bottom: 60px;
+  width: 100%; 
+}
+&nbsp;
+&nbsp;
+.innovationSection {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative; 
+  min-height: 250px; 
+}
+&nbsp;
+.slideContent {
+  animation: fadeIn 0.5s ease-in-out;
+}
+&nbsp;
+.innovationTitle {
+  font-family: 'Arial';
+  font-size: 2.2rem;
   color: #071D41;
-  font-size: 1.45rem;  
-  padding: 10px 20px;   
-  border-radius: 4px;
-  /* Garante que o botão não seja afetado pelo flex-grow do description */
-  flex-shrink: 0; 
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+&nbsp;
+.innovationSection p {
+  font-family: 'Arial';
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.6;
+  /* Altura mínima para o parágrafo */
+  min-height: 100px; 
+  padding: 0 10px; /* Evita que o texto cole nas bordas */
+}
+&nbsp;
+&nbsp;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
