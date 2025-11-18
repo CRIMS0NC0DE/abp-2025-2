@@ -10,25 +10,42 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
     const limit = Number(req.query.limit) || PAGE_SIZE;
     const offset = (page - 1) * limit;
 
-    // consulta com paginação
+    // consulta na tabela tbcampoportabela com paginação
     const result = await furnasPool.query(
       `
-      SELECT 
-        idinstituicao,
+      SELECT
+        idcampoportabela,
+        idtabela,
         nome,
-        sigla,
-        email,
-        responsavel
-      FROM tbinstituicao
-      ORDER BY nome
+        rotulo,
+        unidade,
+        descricao,
+        principal,
+        ordem,
+        tipo
+      FROM tbcampoportabela
+      ORDER BY ordem NULLS LAST, idcampoportabela
       LIMIT $1 OFFSET $2
       `,
       [limit, offset],
     );
 
     // consulta total de registros
-    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbinstituicao");
+    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbcampoportabela");
     const total = Number(countResult.rows[0].count);
+
+    // dados formatados
+    const data = result.rows.map((row: any) => ({
+      idCampoPorTabela: row.idcampoportabela,
+      idTabela: row.idtabela,
+      nome: row.nome,
+      rotulo: row.rotulo,
+      unidade: row.unidade,
+      descricao: row.descricao,
+      principal: row.principal,
+      ordem: row.ordem,
+      tipo: row.tipo,
+    }));
 
     res.status(200).json({
       success: true,
@@ -36,10 +53,10 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
       limit,
       total,
       totalPages: Math.ceil(total / limit),
-      data: result.rows,
+      data,
     });
   } catch (error: any) {
-    logger.error("Erro ao consultar tbinstituicao", {
+    logger.error("Erro ao consultar tbcampoportabela", {
       message: error.message,
       stack: error.stack,
     });
