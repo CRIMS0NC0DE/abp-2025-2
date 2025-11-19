@@ -1,59 +1,55 @@
 import React from 'react';
-import './TableSima.css';
+import styles from './TableSima.module.css';
 
-// Define uma interface genérica para os dados da linha
-// 'Record<string, any>' significa "um objeto com chaves string e valores de qualquer tipo"
 interface RowData {
   [key: string]: any;
 }
 
 interface TabelaSimaProps {
   data: RowData[];
-  isLoading?: boolean; // Opcional: para mostrar um feedback de carregamento
+  isLoading?: boolean;
 }
 
 export const TabelaSima: React.FC<TabelaSimaProps> = ({ data, isLoading }) => {
-  // Se estiver carregando, mostre uma mensagem
   if (isLoading) {
-    return (
-      <div className="tabela-container loading">
-        <p>Buscando dados...</p>
-      </div>
-    );
+    return <div className={styles.noData}>Carregando...</div>;
   }
 
-  // Se não houver dados (array vazio), mostre uma mensagem amigável
   if (!data || data.length === 0) {
-    return (
-      <div className="tabela-container empty">
-        <p>Nenhum dado encontrado. Tente aplicar filtros diferentes.</p>
-      </div>
-    );
+    return <div className={styles.noData}>Nenhum dado encontrado.</div>;
   }
 
-  // Pega os cabeçalhos dinamicamente do PRIMEIRO item dos dados
-  // Isso torna a tabela reutilizável para qualquer tipo de dado
   const headers = Object.keys(data[0]);
 
+  const headerLabels: Record<string, string> = {
+    id: "ID",
+    station: "Estação",
+    parameter: "Parâmetro",
+    measured_at: "Data de Medição",
+    value: "Valor",
+    unit: "Unidade",
+  };
+
   return (
-    // Este 'div' container é crucial para a barra de rolagem horizontal
-    <div className="tabela-container">
-      <table className="tabela-sima">
+    <div className={styles.tableWrap}>
+      <table>
         <thead>
           <tr>
-            {/* Mapeia os nomes das colunas para o cabeçalho */}
             {headers.map((header) => (
-              <th key={header}>{header.toUpperCase()}</th>
+              <th key={header}>
+                {headerLabels[header] ?? header.toUpperCase()}
+              </th>
             ))}
           </tr>
         </thead>
+
         <tbody>
-          {/* Mapeia cada item do array de dados para uma linha <tr> */}
           {data.map((row, rowIndex) => (
             <tr key={rowIndex}>
-              {/* Mapeia cada valor da linha para uma célula <td> */}
               {headers.map((header) => (
-                <td key={`${rowIndex}-${header}`}>{row[header]}</td>
+                <td key={`${rowIndex}-${header}`}>
+                  {row[header]}
+                </td>
               ))}
             </tr>
           ))}
