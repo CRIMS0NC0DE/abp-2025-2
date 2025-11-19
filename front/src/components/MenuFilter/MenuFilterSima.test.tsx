@@ -3,6 +3,15 @@ import { FilterMenu } from './MenuFilterSima';
 import { describe, it, expect, vi } from 'vitest';
 
 describe('Componente FilterMenu', () => {
+  // Teste 1: Garante que tudo (incluindo a parte de gráficos) foi renderizado
+  it('deve renderizar todas as seções (Parâmetros, Gráficos, Mapa)', () => {
+    render(<FilterMenu />);
+    expect(screen.getByText('Parâmetros Básicos')).toBeInTheDocument();
+    expect(screen.getByText('Gráficos')).toBeInTheDocument();
+    expect(screen.getByText('Mapa Interativo')).toBeInTheDocument();
+  });
+
+  // Teste 2: Testa a primeira aba (Filtros Básicos)
   it('deve permitir selecionar opções e aplicar filtros básicos', () => {
     const handleApply = vi.fn();
     render(<FilterMenu onApplyFilters={handleApply} />);
@@ -15,27 +24,25 @@ describe('Componente FilterMenu', () => {
     }));
   });
 
-  it('deve permitir preencher e submeter o formulário de gráficos', () => {
-    // Espiona o console.log pois a função original apenas imprime no console
+  // Teste 3: Testa a segunda aba (Gráficos) - AQUI ESTAVA O BURACO
+  it('deve processar o formulário de gráficos', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
     render(<FilterMenu />);
 
-    // Seleciona sensor e período
     fireEvent.change(screen.getByLabelText(/Sensor de/i), { target: { value: 'ph' } });
     fireEvent.change(screen.getByLabelText(/Período/i), { target: { value: 'mensal' } });
-
-    // Clica em gerar gráfico
+    
     fireEvent.click(screen.getByText('Gerar Gráfico'));
 
-    // Verifica se a lógica foi executada
     expect(consoleSpy).toHaveBeenCalledWith('Gerar gráfico com:', expect.objectContaining({
       sensor: 'ph',
       periodo: 'mensal'
     }));
-
+    
     consoleSpy.mockRestore();
   });
 
+  // Teste 4: Testa o botão isolado do Mapa
   it('deve acionar a lógica do mapa interativo', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
     render(<FilterMenu />);
@@ -43,7 +50,6 @@ describe('Componente FilterMenu', () => {
     fireEvent.click(screen.getByText('Mapa Interativo'));
 
     expect(consoleSpy).toHaveBeenCalledWith('Abrir mapa interativo');
-    
     consoleSpy.mockRestore();
   });
 });
