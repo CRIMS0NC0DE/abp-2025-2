@@ -1,61 +1,35 @@
-/* O container que permite a rolagem horizontal */
-.tabela-container {
+.tableWrap {
   width: 100%;
-  overflow-x: auto; /* A mágica da rolagem horizontal! */
-  background-color: #ffffff;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-top: 20px; /* Espaçamento do menu de filtro */
+  background: #ffffff;
 }
 
-/* Estilos para os estados de 'vazio' ou 'carregando' */
-.tabela-container.empty,
-.tabela-container.loading {
-  padding: 40px;
-  text-align: center;
-  color: #555;
-  font-size: 1.1rem;
-}
-
-/* A tabela em si */
-.tabela-sima {
+.tableWrap table {
   width: 100%;
-  border-collapse: collapse; /* Remove espaços entre as células */
-  /* Define uma largura mínima MUITO grande para forçar a rolagem,
-     já que sua tabela na imagem tem muitas colunas */
-  min-width: 2000px;
+  border-collapse: collapse;
 }
 
-/* Cabeçalho da Tabela (baseado no seu FilterMenu.css) */
-.tabela-sima thead th {
-  background-color: #071D41; /* Mesmo azul do seu menu */
-  color: #FFFFFF;
-  padding: 12px 15px;
-  font-size: 0.9rem;
-  font-weight: bold;
+.tableWrap th,
+.tableWrap td {
+  padding: 12px 16px;
   text-align: left;
-  /* Impede que os títulos quebrem linha */
-  white-space: nowrap; 
+  border-bottom: 1px solid #cac2c2;
 }
 
-/* Células do Corpo da Tabela */
-.tabela-sima tbody td {
-  padding: 10px 15px;
-  font-size: 0.9rem;
-  color: #333;
-  border-bottom: 1px solid #e0e0e0;
-  white-space: nowrap; /* Impede que os dados quebrem linha */
+.tableWrap thead th {
+  background-color: #071D41;
+  font-weight: bold;
+  color: #ffffff;
 }
 
-/* Efeito "Zebra" (linhas alternadas) da imagem */
-.tabela-sima tbody tr:nth-child(even) {
-  background-color: #f8fafd; /* Um azul bem clarinho */
-}
-.tabela-sima tbody tr:nth-child(odd) {
-  background-color: #ffffff;
+.tableWrap tbody tr:last-child td {
+  border-bottom: none;
 }
 
-/* Efeito de hover para destacar a linha */
-.tabela-sima tbody tr:hover {
-  background-color: #e6f7ff; /* Destaque ao passar o mouse */
+.noData {
+  text-align: center;
+  padding: 16px;
+  color: #000000;
 }
