@@ -1,5 +1,5 @@
 import React from 'react';
-import './TableSima.css';
+import './TableSima.module.css';
 
 // Define uma interface genérica para os dados da linha
 // 'Record<string, any>' significa "um objeto com chaves string e valores de qualquer tipo"
