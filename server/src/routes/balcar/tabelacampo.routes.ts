@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/balcar/tabelacampo.controller";
+import { getTabelaCampo } from "../../controllers/balcar/tabelacampo.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getTabelaCampo);
 
 export default router;

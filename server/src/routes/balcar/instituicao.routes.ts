@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/balcar/instituicao.controller";
+import { getInstituicaoBalcar } from "../../controllers/balcar/instituicao.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getInstituicaoBalcar);
 
 export default router;

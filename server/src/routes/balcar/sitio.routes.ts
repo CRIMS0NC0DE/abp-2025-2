@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/balcar/sitio.controller";
+import { getSitioBalcar } from "../../controllers/balcar/sitio.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getSitioBalcar);
 
 export default router;

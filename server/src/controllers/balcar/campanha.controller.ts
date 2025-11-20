@@ -4,7 +4,7 @@ import { logger } from "../../configs/logger";
 
 const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
 
-export const getAll = async (req: Request, res: Response): Promise<void> => {
+export const getCampanhaBalcar = async (req: Request, res: Response): Promise<void> => {
   try {
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || PAGE_SIZE;

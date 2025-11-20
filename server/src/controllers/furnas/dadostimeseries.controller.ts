@@ -7,7 +7,7 @@ const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
 /**
  * Controller para listar dados de precipitação com paginação e join em tbreservatorio
  */
-export const getAll = async (req: Request, res: Response): Promise<void> => {
+export const getDadosTimeSeries = async (req: Request, res: Response): Promise<void> => {
   try {
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || PAGE_SIZE;

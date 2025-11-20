@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/balcar/campanha.controller";
+import { getCampanhaBalcar } from "../../controllers/balcar/campanha.controller";
+
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getCampanhaBalcar);
 
 export default router;
