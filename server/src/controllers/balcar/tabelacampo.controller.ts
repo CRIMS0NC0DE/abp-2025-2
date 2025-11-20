@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { furnasPool } from "../../configs/db";
+import { balcarPool } from "../../configs/db";
 import { logger } from "../../configs/logger";
 
 const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
@@ -10,25 +10,36 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
     const limit = Number(req.query.limit) || PAGE_SIZE;
     const offset = (page - 1) * limit;
 
-    // consulta com paginação
-    const result = await furnasPool.query(
+    // consulta na tabela tbtabelacampo
+    const result = await balcarPool.query(
       `
       SELECT 
-        idinstituicao,
+        idtabelacampo,
         nome,
-        sigla,
-        email,
-        responsavel
-      FROM tbinstituicao
-      ORDER BY nome
+        rotulo,
+        unidade,
+        descricao,
+        ordem
+      FROM tbtabelacampo
+      ORDER BY idtabelacampo ASC
       LIMIT $1 OFFSET $2
       `,
       [limit, offset],
     );
 
-    // consulta total de registros
-    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbinstituicao");
+    // total de registros
+    const countResult = await balcarPool.query("SELECT COUNT(*) FROM tbtabelacampo");
     const total = Number(countResult.rows[0].count);
+
+    // resposta formatada
+    const data = result.rows.map((row: any) => ({
+      idtabelacampo: row.idtabelacampo,
+      nome: row.nome,
+      rotulo: row.rotulo,
+      unidade: row.unidade,
+      descricao: row.descricao,
+      ordem: row.ordem,
+    }));
 
     res.status(200).json({
       success: true,
@@ -36,10 +47,10 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
       limit,
       total,
       totalPages: Math.ceil(total / limit),
-      data: result.rows,
+      data,
     });
   } catch (error: any) {
-    logger.error("Erro ao consultar tbinstituicao", {
+    logger.error("Erro ao consultar tbtabelacampo", {
       message: error.message,
       stack: error.stack,
     });

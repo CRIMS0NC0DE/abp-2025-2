@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { furnasPool } from "../../configs/db";
+import { balcarPool } from "../../configs/db";
 import { logger } from "../../configs/logger";
 
 const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
@@ -10,25 +10,36 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
     const limit = Number(req.query.limit) || PAGE_SIZE;
     const offset = (page - 1) * limit;
 
-    // consulta com paginação
-    const result = await furnasPool.query(
+    // consulta natabela tb campanha
+    const result = await balcarPool.query(
       `
       SELECT 
+        idcampanha,
+        idreservatorio,
         idinstituicao,
-        nome,
-        sigla,
-        email,
-        responsavel
-      FROM tbinstituicao
-      ORDER BY nome
+        nrocampanha,
+        datainicio,
+        datafim
+      FROM tbcampanha
+      ORDER BY idcampanha ASC
       LIMIT $1 OFFSET $2
       `,
       [limit, offset],
     );
 
-    // consulta total de registros
-    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbinstituicao");
+    // total de registros
+    const countResult = await balcarPool.query("SELECT COUNT(*) FROM tbcampanha");
     const total = Number(countResult.rows[0].count);
+
+    // resposta formatada
+    const data = result.rows.map((row: any) => ({
+      idcampanha: row.idcampanha,
+      idreservatorio: row.idreservatorio,
+      idinstituicao: row.idinstituicao,
+      nrocampanha: row.nrocampanha,
+      datainicio: row.datainicio,
+      datafim: row.datafim,
+    }));
 
     res.status(200).json({
       success: true,
@@ -36,10 +47,10 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
       limit,
       total,
       totalPages: Math.ceil(total / limit),
-      data: result.rows,
+      data,
     });
   } catch (error: any) {
-    logger.error("Erro ao consultar tbinstituicao", {
+    logger.error("Erro ao consultar tbcampanha", {
       message: error.message,
       stack: error.stack,
     });

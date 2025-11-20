@@ -14,23 +14,24 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
     const result = await furnasPool.query(
       `
       SELECT 
-        a.idabioticocoluna,
+        a.idbolhas,
         a.datamedida,
         a.horamedida,
         a.profundidade,
-        a.temperatura,
-        a.ph,
-        a.condutividade,
-        a.oxigeniodissolvido,
-        a.turbidez,
-        a.solidostotaisdissolvidos,
+        a.nrodefunis,
+        a.volumecoletado,
+        a.co2,
+        a.o2,
+        a.n2,
+        a.ch4,
+        a.n2o,
         b.idcampanha,
         b.nrocampanha,
         c.idsitio,
         c.nome AS sitio_nome,
         c.lat AS sitio_lat,
         c.lng AS sitio_lng
-      FROM tbabioticocoluna AS a
+      FROM tbbolhas AS a
       LEFT JOIN tbcampanha AS b
         ON a.idcampanha = b.idcampanha
       LEFT JOIN tbsitio AS c
@@ -42,12 +43,12 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
     );
 
     // consulta total de registros
-    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbabioticocoluna");
+    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbbolhas");
     const total = Number(countResult.rows[0].count);
 
     // dados formatados
     const data = result.rows.map((row: any) => ({
-      idabioticocoluna: row.idabioticocoluna,
+      idbolhas: row.idbolhas,
       campanha: row.idcampanha
         ? {
             idcampanha: row.idcampanha,
@@ -65,11 +66,13 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
       datamedida: row.datamedida,
       horamedida: row.horamedida,
       profundidade: row.profundidade,
-      dic: row.dic,
-      nt: row.nt,
-      pt: row.pt,
-      delta13c: row.delta13c,
-      delta15n: row.delta15n,
+      nrodefunis: row.nrodefunis,
+      volumecoletado: row.volumecoletado,
+      co2: row.co2,
+      o2: row.o2,
+      n2: row.n2,
+      ch4: row.ch4,
+      n2o: row.n2o,
     }));
 
     res.status(200).json({
@@ -81,7 +84,7 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
       data,
     });
   } catch (error: any) {
-    logger.error("Erro ao consultar tbabioticocoluna", {
+    logger.error("Erro ao consultar tbbolhas", {
       message: error.message,
       stack: error.stack,
     });

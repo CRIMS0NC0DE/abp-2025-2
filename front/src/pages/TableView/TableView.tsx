@@ -5,6 +5,13 @@ import Table from "../../components/Table/Table";
 import { getMeasurements, type Measurement } from "../../api/client";
 import styles from "./TableView.module.css"
 import { FilterMenu } from "../../components/MenuFilter/MenuFilterSima";
+import { TabelaSima } from "../../components/TableSima/TableSima";
+
+const mockData = [
+  { nome: "João", idade: 25, cidade: "São Paulo" },
+  { nome: "Maria", idade: 32, cidade: "Rio de Janeiro" },
+  { nome: "Lucas", idade: 19, cidade: "Curitiba" }
+];
 
 export default function TableView() {
   const [filters, setFilters] = useState<Record<string, any>>({});
@@ -70,7 +77,7 @@ export default function TableView() {
       <div className={styles.tableSection}>
         {error && <p className={styles.error}>{error}</p>}
 
-        <Table data={data} loading={loading} />
+        <TabelaSima data={data} isLoading={loading} />
 
         <div className={styles.exportSection}>
           <button

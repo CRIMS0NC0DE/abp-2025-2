@@ -14,62 +14,69 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
     const result = await furnasPool.query(
       `
       SELECT 
-        a.idabioticocoluna,
-        a.datamedida,
-        a.horamedida,
-        a.profundidade,
-        a.temperatura,
-        a.ph,
-        a.condutividade,
-        a.oxigeniodissolvido,
-        a.turbidez,
-        a.solidostotaisdissolvidos,
-        b.idcampanha,
+        a.idBioticoSuperficie,
+        a.dataMedida,
+        a.horaMedida,
+        a.doc,
+        a.toc,
+        a.poc,
+        a.densidadeBacteria,
+        a.biomassaBacteria,
+        a.clorofilaA,
+        a.biomassaCarbonoTotalFito,
+        a.densidadeTotalFito,
+        a.biomassaZoo,
+        a.densidadeTotalZoo,
+        b.idCampanha,
         b.nrocampanha,
-        c.idsitio,
+        c.idSitio,
         c.nome AS sitio_nome,
         c.lat AS sitio_lat,
         c.lng AS sitio_lng
-      FROM tbabioticocoluna AS a
+      FROM tbbioticosuperficie AS a
       LEFT JOIN tbcampanha AS b
-        ON a.idcampanha = b.idcampanha
+        ON a.idCampanha = b.idCampanha
       LEFT JOIN tbsitio AS c
-        ON a.idsitio = c.idsitio
-      ORDER BY a.datamedida DESC, a.horamedida DESC
+        ON a.idSitio = c.idSitio
+      ORDER BY a.dataMedida DESC, a.horaMedida DESC
       LIMIT $1 OFFSET $2
       `,
       [limit, offset],
     );
 
     // consulta total de registros
-    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbabioticocoluna");
+    const countResult = await furnasPool.query("SELECT COUNT(*) FROM tbbioticosuperficie");
     const total = Number(countResult.rows[0].count);
 
     // dados formatados
     const data = result.rows.map((row: any) => ({
-      idabioticocoluna: row.idabioticocoluna,
+      idBioticoSuperficie: row.idbioticosuperficie,
       campanha: row.idcampanha
         ? {
-            idcampanha: row.idcampanha,
+            idCampanha: row.idcampanha,
             nrocampanha: row.nrocampanha,
           }
         : undefined,
       sitio: row.idsitio
         ? {
-            idsitio: row.idsitio,
+            idSitio: row.idsitio,
             nome: row.sitio_nome,
             lat: row.sitio_lat,
             lng: row.sitio_lng,
           }
         : undefined,
-      datamedida: row.datamedida,
-      horamedida: row.horamedida,
-      profundidade: row.profundidade,
-      dic: row.dic,
-      nt: row.nt,
-      pt: row.pt,
-      delta13c: row.delta13c,
-      delta15n: row.delta15n,
+      dataMedida: row.datamedida,
+      horaMedida: row.horamedida,
+      doc: row.doc,
+      toc: row.toc,
+      poc: row.poc,
+      densidadeBacteria: row.densidadebacteria,
+      biomassaBacteria: row.biomassabacteria,
+      clorofilaA: row.clorofilaa,
+      biomassaCarbonoTotalFito: row.biomassacarbonototalfito,
+      densidadeTotalFito: row.densidadetotalfito,
+      biomassaZoo: row.biomassazoo,
+      densidadeTotalZoo: row.densidadetotalzoo,
     }));
 
     res.status(200).json({
@@ -81,7 +88,7 @@ export const getAll = async (req: Request, res: Response): Promise<void> => {
       data,
     });
   } catch (error: any) {
-    logger.error("Erro ao consultar tbabioticocoluna", {
+    logger.error("Erro ao consultar tbbioticosuperficie", {
       message: error.message,
       stack: error.stack,
     });
