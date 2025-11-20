@@ -376,3 +376,37 @@
     width: auto; /* Permite que a largura se ajuste */
   }
 }
+
+/* ==========================================================================
+   Estilos Migrados do Modal (Refatoração)
+   ========================================================================== */
+
+.modalTitle {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modalText {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.modalList {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modalListItem {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.modalLink {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.modalLink:hover {
+  text-decoration: underline;
+}
