@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/furnas/campanhaportabela.controller";
+import { getCampanhaporTabela } from "../../controllers/furnas/campanhaportabela.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getCampanhaporTabela);
 
 export default router;

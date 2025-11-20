@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/balcar/reservatorio.controller";
+import { getReservatorioBalcar } from "../../controllers/balcar/reservatorio.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getReservatorioBalcar);
 
 export default router;

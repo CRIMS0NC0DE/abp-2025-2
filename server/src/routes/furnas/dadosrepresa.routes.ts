@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/furnas/dadosrepresa.controller";
+import { getDadosRepresa } from "../../controllers/furnas/dadosrepresa.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getDadosRepresa);
 
 export default router;

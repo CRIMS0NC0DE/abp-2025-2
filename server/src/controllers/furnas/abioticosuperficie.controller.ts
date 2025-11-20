@@ -5,7 +5,7 @@ import { logger } from "../../configs/logger";
 const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
 const MAX_PAGE_SIZE = Number(process.env.MAX_PAGE_SIZE) || 100;
 
-export const getAll = async (req: Request, res: Response): Promise<void> => {
+export const getAbioticoSuperficie = async (req: Request, res: Response): Promise<void> => {
   try {
     const pageRaw = req.query.page as string | undefined;
     const limitRaw = req.query.limit as string | undefined;

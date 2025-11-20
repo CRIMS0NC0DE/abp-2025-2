@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/furnas/bioticocoluna.controller";
+import { getBioticoColuna } from "../../controllers/furnas/bioticocoluna.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getBioticoColuna);
 
 export default router;

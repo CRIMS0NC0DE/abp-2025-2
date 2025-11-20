@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/furnas/sitio.controller";
+import { getSitioFurnas } from "../../controllers/furnas/sitio.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getSitioFurnas);
 
 export default router;

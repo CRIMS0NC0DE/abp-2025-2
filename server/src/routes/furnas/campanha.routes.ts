@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/furnas/campanha.controller";
+import { getCampanhaFurnas } from "../../controllers/furnas/campanha.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getCampanhaFurnas);
 
 export default router;

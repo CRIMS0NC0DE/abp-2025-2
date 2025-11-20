@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/furnas/carbono.controller";
+import { getCarbono } from "../../controllers/furnas/carbono.controller";
 
 const router = Router();
 
-router.get("/all", getAll);
+router.get("/all", getCarbono);
 
 export default router;

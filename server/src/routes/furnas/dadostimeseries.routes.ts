@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getAll } from "../../controllers/furnas/dadostimeseries.controller";
+import { getDadosTimeSeries } from "../../controllers/furnas/dadostimeseries.controller";
 
 const router = Router();
 
-router.get("/", getAll);
+router.get("/", getDadosTimeSeries);
 
 export default router;
