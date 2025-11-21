@@ -1,7 +1,7 @@
 // front/src/components/Table/Table.tsx
 
 import React from "react";
-import { type Measurement } from "../../api/client";
+import { type Measurement } from "../../api/api";
 import styles from "./Table.module.css"; // Estilos específicos da tabela
 
 type Props = {

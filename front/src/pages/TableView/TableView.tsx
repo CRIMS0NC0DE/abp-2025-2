@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Table from "../../components/Table/Table";
-import { getMeasurements, type Measurement } from "../../api/client";
+import { getMeasurements, type Measurement } from "../../api/api";
 import styles from "./TableView.module.css"
 import { FilterMenu } from "../../components/MenuFilter/MenuFilterSima";
 import { TabelaSima } from "../../components/TableSima/TableSima";

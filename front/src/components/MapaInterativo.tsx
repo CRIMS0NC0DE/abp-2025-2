@@ -2,17 +2,14 @@ import { MapContainer, TileLayer, GeoJSON, Pane } from "react-leaflet";
 import { useEffect, useState } from "react";
 import L, { type LatLngExpression } from 'leaflet';
 import brasilGeoJson from "../data/brasil-states.json";
+import { fetchMapData } from "../api/api";
 
-const API_URLS = {
-  balcar: 'http://localhost:3001/api/mapa/balcar',
-  furnas: 'http://localhost:3001/api/mapa/furnas',
-  sima: 'http://localhost:3001/api/mapa/sima',
-};
-
+// 1. Definição da Interface
 interface MapaProps {
   source: 'balcar' | 'furnas' | 'sima';
 }
 
+// 2. Helpers para ícones (fora do componente para não recriar a cada render)
 const createIcon = (color: string) => new L.Icon({
     iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -26,26 +23,22 @@ const icones = {
     sitio_balcar: createIcon('blue'),
     sitio_furnas: createIcon('green'),
     estacao_sima: createIcon('red'),
-    default: createIcon('grey') // Ícone padrão para tipos não mapeados
+    default: createIcon('grey')
 };
 
-
-
+// 3. Componente Único e Limpo
 const MapaInterativo: React.FC<MapaProps> = ({ source }) => {
   const [pontosData, setPontosData] = useState<any | null>(null);
   const [selectedState, setSelectedState] = useState<string | null>(null);
   
-  
   useEffect(() => {
-    // Escolhe a URL correta com base na prop
-    const url = API_URLS[source]; 
-    fetch('http://localhost:3001/api/mapa/sima') // Chama a API específica
-      .then(response => response.json())
+    // Chama a nova função centralizada da API (sem URL hardcoded)
+    fetchMapData(source)
       .then(data => {
         setPontosData(data);
       })
       .catch(error => console.error(`Erro ao buscar dados de ${source}:`, error));
-  }, [source])
+  }, [source]);
 
 
   const onEachState = (feature: any, layer: any) => {
@@ -71,13 +64,11 @@ const MapaInterativo: React.FC<MapaProps> = ({ source }) => {
     }
   };
 
-  
   const pointToLayer = (feature: any, latlng: LatLngExpression) => {
     const tipo = feature.properties.tipo as keyof typeof icones;
     const icon = icones[tipo] || icones.default;
     return L.marker(latlng, { icon });
   };
-
 
   return (
     <div style={{ width: "90%", height: "600px", display: "flex", justifyContent: "center", alignItems: "center"}}>
@@ -97,19 +88,17 @@ const MapaInterativo: React.FC<MapaProps> = ({ source }) => {
             onEachFeature={onEachState}
           />
         </Pane>
-    <Pane name="pontos" style={{ zIndex: 420 }}>
-      {pontosData && (
-          <GeoJSON
-            data={pontosData}
-            onEachFeature={onEachPoint}
-            pointToLayer={pointToLayer}
-          />
-        )}
-    </Pane>
+        
+        <Pane name="pontos" style={{ zIndex: 420 }}>
+          {pontosData && (
+              <GeoJSON
+                data={pontosData}
+                onEachFeature={onEachPoint}
+                pointToLayer={pointToLayer}
+              />
+            )}
+        </Pane>
       </MapContainer>
-
-
-      
 
       {selectedState && (
         <div
