@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './MapPage.module.css';
 
-import MapaInterativo from '../../components/MapaInterativo';
+import MapaInterativo from '../../components/MapaInterativoSIMA';
 
 export interface TipoBoia {
   id: string;

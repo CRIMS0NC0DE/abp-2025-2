@@ -968,7 +968,7 @@ export default function Furnas() {
                 <div className={styles.teamCardGrid}>
                 
                 <Link 
-                to="/mapa" className={styles.bigButton}> 
+                to="/furnas/consulta" className={styles.bigButton}> 
                 <div className={styles.cardButton}>
                   <img 
                   src={logoBanco}

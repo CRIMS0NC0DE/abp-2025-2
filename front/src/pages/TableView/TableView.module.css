@@ -1,9 +1,14 @@
+
+
 .content {
   display: flex;
   flex-direction: row;
   grid-template-columns: 260px 1fr;
   gap: 5px;
   align-items: start;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 60px;
 }
 
 .filterMenu {
