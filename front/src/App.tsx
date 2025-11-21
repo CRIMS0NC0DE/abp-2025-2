@@ -5,7 +5,7 @@ import HomePage from './pages/Home/HomePage';
 import MapPage from './pages/Map/MapPage'; 
 import SimaPage from './pages/Sima/SimaPage';
 import ExportCSV from './pages/ExportCSV/ExportCSV';
-import TableView from './pages/TableView/TableView';
+import TableView from './pages/TableView/TableViewSIMA';
 import Furnas from './pages/Furnas/Furnas';
 import Balcar from './pages/Balcar/Balcar';
 import PublicacoesFurnas from './pages/PublicacoesFurnas/PublicacoesFurnasPage';

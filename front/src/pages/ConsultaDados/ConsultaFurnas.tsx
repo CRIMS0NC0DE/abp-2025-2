@@ -1,11 +1,11 @@
 import MapaInterativoFurnas from "../../components/MapaInterativoFurnas";
-import TableView from "../TableView/TableView";
+import TableViewFurnas from "../TableView/TableViewFurnas";
 
 export default function ConsultaSIMA (){
 
     return (
         <>
-        <TableView/>
+        <TableViewFurnas/>
         <MapaInterativoFurnas source={"furnas"}/>
         </>
     )
