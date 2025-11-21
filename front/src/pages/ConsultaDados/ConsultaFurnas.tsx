@@ -1,4 +1,4 @@
-import MapaInterativo from "../../components/MapaInterativoSIMA";
+import MapaInterativoFurnas from "../../components/MapaInterativoFurnas";
 import TableView from "../TableView/TableView";
 
 export default function ConsultaSIMA (){
@@ -6,7 +6,7 @@ export default function ConsultaSIMA (){
     return (
         <>
         <TableView/>
-        <MapaInterativo source={"furnas"}/>
+        <MapaInterativoFurnas source={"furnas"}/>
         </>
     )
 }
