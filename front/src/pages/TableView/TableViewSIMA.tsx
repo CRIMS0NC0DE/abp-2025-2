@@ -1,30 +1,28 @@
-// front/src/pages/TableView/TableView.tsx
-
 import React, { useEffect, useState } from "react";
-import Table from "../../components/Table/Table";
+// Removi o import do FilterMenu, pois ele está no pai agora!
 import { getMeasurements, type Measurement } from "../../api/client";
-import styles from "./TableView.module.css"
-import { FilterMenu } from "../../components/MenuFilter/MenuFilterSima";
+import styles from "./TableView.module.css";
 import { TabelaSima } from "../../components/TableSima/TableSima";
 
-const mockData = [
-  { nome: "João", idade: 25, cidade: "São Paulo" },
-  { nome: "Maria", idade: 32, cidade: "Rio de Janeiro" },
-  { nome: "Lucas", idade: 19, cidade: "Curitiba" }
-];
+// Agora o TableView recebe os filtros prontos do componente Pai
+interface Props {
+  currentFilters: Record<string, any>;
+}
 
-export default function TableView() {
-  const [filters, setFilters] = useState<Record<string, any>>({});
+export default function TableView({ currentFilters }: Props) {
+  // O estado 'filters' local sumiu. Usamos o 'currentFilters' da prop.
   const [data, setData] = useState<Measurement[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Busca dados toda vez que o pai mandar filtros novos
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
       setError(null);
       try {
-        const result = await getMeasurements(filters);
+        // Usa os filtros que vieram via prop
+        const result = await getMeasurements(currentFilters);
         setData(result);
       } catch (err) {
         setError("Não foi possível carregar os dados.");
@@ -35,10 +33,9 @@ export default function TableView() {
     };
 
     loadData();
-  }, [filters]);
+  }, [currentFilters]); // <--- A dependência agora é a prop
 
   const exportCSV = () => {
-    // ... (sua função de exportar continua igual)
     if (data.length === 0) {
       alert("Não há dados para exportar.");
       return;
@@ -65,32 +62,28 @@ export default function TableView() {
   };
 
   return (
-    // 1. Adicionamos a classe 'styles.page' de volta para centralizar
-  <div className={styles.page}>
-    <div className={styles.content}>
-      {/* Lado esquerdo: menu de filtros */}
-      <div className={styles.filterMenu}>
-        <FilterMenu onApplyFilters={setFilters} />
-      </div>
+    <div className={styles.page}>
+      <div className={styles.content}>
+        
+        {/* REMOVI O MENU LATERAL DAQUI */}
 
-      {/* Lado direito: tabela e botão de exportação */}
-      <div className={styles.tableSection}>
-        {error && <p className={styles.error}>{error}</p>}
+        {/* Agora só renderiza a tabela e o botão, ocupando 100% do espaço desse container */}
+        <div className={styles.tableSection} style={{ width: '100%' }}>
+          {error && <p className={styles.error}>{error}</p>}
 
-        <TabelaSima data={data} isLoading={loading} />
+          <TabelaSima data={data} isLoading={loading} />
 
-        <div className={styles.exportSection}>
-          <button
-            onClick={exportCSV}
-            className={styles.exportButton}
-            disabled={data.length === 0}
-          >
-            Exportar para CSV
-          </button>
+          <div className={styles.exportSection}>
+            <button
+              onClick={exportCSV}
+              className={styles.exportButton}
+              disabled={data.length === 0}
+            >
+              Exportar para CSV
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
   );
 }
