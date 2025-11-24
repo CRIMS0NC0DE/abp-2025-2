@@ -28,7 +28,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/mapa" element={<MapPage />} />
-          <Route path="/tabelas" element={<TableView />} />
+          <Route path="/tabelas" element={<TableView currentFilters={{}} />} />
           <Route path="/sima" element={<SimaPage />} />
           <Route path="/sima/consulta" element={<ConsultaSIMA />} />
           <Route path="/exportar-csv" element={<ExportCSV />} />

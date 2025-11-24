@@ -1,9 +1,7 @@
-import TableView from "../TableView/TableViewSIMA";
-import { GraficoSIMA } from "../../components/Graficos/GraficoSIMA";
-import MapaInterativoSIMA from "../../components/MapaInterativoSIMA";
 import { FilterMenu } from "../../components/MenuFilter/MenuFilterSima"; 
 import MapaInterativo from "../../components/MapaInterativoSIMA";
 import TableViewSIMA from "../TableView/TableViewSIMA"; // Certifique-se que o TableView exportado é o que editamos no passo anterior
+import { useState } from "react";
 
 export default function ConsultaSIMA() {
     // Estado 1: Controla se vemos Tabela (false) ou Mapa (true)
@@ -20,14 +18,11 @@ export default function ConsultaSIMA() {
     };
 
     return (
-        <>
-        <TableView/>
-        <MapaInterativoSIMA source={"sima"}/>
-        <GraficoSIMA/>
-        </>
-    )
         // Layout Flex: Sidebar na esquerda, Conteúdo na direita
-        <div style={{ display: 'flex', height: '100vh', width: '100%', overflow: 'hidden' }}>
+        <div style={{ 
+            display: 'flex', 
+            height: '120vh', width: '100%', overflow: 'hidden' 
+            }}>
             
             {/* --- LADO ESQUERDO: MENU LATERAL --- */}
             <div style={{ width: '300px', flexShrink: 0, borderRight: '1px solid #ddd' }}>
@@ -69,7 +64,9 @@ export default function ConsultaSIMA() {
                     ) : (
                         // === MODO TABELA ===
                         // Passamos os filtrosAtuais para a tabela buscar os dados na API
-                        <TableViewSIMA currentFilters={filtrosAtuais} />
+                        <>
+                            <TableViewSIMA currentFilters={filtrosAtuais} />
+                        </>
                     )}
                 </div>
             </div>
