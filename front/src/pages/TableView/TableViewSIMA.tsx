@@ -1,20 +1,15 @@
-// front/src/pages/TableView/TableView.tsx
-
 import React, { useEffect, useState } from "react";
-import Table from "../../components/Table/Table";
+// Removi o import do FilterMenu, pois ele está no pai agora!
 import { getMeasurements, type Measurement } from "../../api/client";
-import styles from "./TableView.module.css"
-import { FilterMenu } from "../../components/MenuFilter/MenuFilterSima";
-import { TabelaSima } from "../../components/TableSima/TableSima";
+import Table from "../../components/Table/Table"; 
+import styles from "./TableView.module.css";
 
-const mockData = [
-  { nome: "João", idade: 25, cidade: "São Paulo" },
-  { nome: "Maria", idade: 32, cidade: "Rio de Janeiro" },
-  { nome: "Lucas", idade: 19, cidade: "Curitiba" }
-];
+// Agora o TableView recebe os filtros prontos do componente Pai
+interface Props {
+  currentFilters: Record<string, any>;
+}
 
-export default function TableView() {
-  const [filters, setFilters] = useState<Record<string, any>>({});
+export default function TableViewSIMA({ currentFilters = {} }: Props) {
   const [data, setData] = useState<Measurement[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +19,9 @@ export default function TableView() {
       setLoading(true);
       setError(null);
       try {
-        const result = await getMeasurements(filters);
+        console.log("TableView buscando com filtros:", currentFilters);
+        // Chama a função do client.ts passando os filtros atuais
+        const result = await getMeasurements(currentFilters);
         setData(result);
       } catch (err) {
         setError("Não foi possível carregar os dados.");
@@ -35,10 +32,9 @@ export default function TableView() {
     };
 
     loadData();
-  }, [filters]);
+  }, [currentFilters]); // <--- A dependência agora é a prop
 
   const exportCSV = () => {
-    // ... (sua função de exportar continua igual)
     if (data.length === 0) {
       alert("Não há dados para exportar.");
       return;
@@ -57,40 +53,32 @@ export default function TableView() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "dados_limnologicos.csv";
+    a.download = "dados_sima.csv";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
+    
 
   return (
-    // 1. Adicionamos a classe 'styles.page' de volta para centralizar
-  <div className={styles.page}>
-    <div className={styles.content}>
-      {/* Lado esquerdo: menu de filtros */}
-      <div className={styles.filterMenu}>
-        <FilterMenu onApplyFilters={setFilters} />
-      </div>
-
-      {/* Lado direito: tabela e botão de exportação */}
-      <div className={styles.tableSection}>
-        {error && <p className={styles.error}>{error}</p>}
-
-        <TabelaSima data={data} isLoading={loading} />
-
-        <div className={styles.exportSection}>
-          <button
-            onClick={exportCSV}
-            className={styles.exportButton}
-            disabled={data.length === 0}
-          >
-            Exportar para CSV
-          </button>
+    <div className={styles.page}>
+      <div className={styles.content}>
+        <div className={styles.tableSection} style={{ width: '100%' }}>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <Table data={data} loading={loading} />
+          <div className={styles.exportSection}>
+            <button
+              onClick={exportCSV}
+              className={styles.exportButton || 'btn-export'} 
+              disabled={data.length === 0}
+              style={{ marginTop: '10px', padding: '10px', cursor: 'pointer' }}
+            >
+              Exportar para CSV
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
   );
 }

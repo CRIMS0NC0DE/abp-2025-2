@@ -3,9 +3,10 @@ import './FilterMenu.css';
 
 interface FilterMenuProps {
   onApplyFilters?: (filters: Record<string, any>) => void;
+  onOpenMap?: () => void;
 }
-
-export const FilterMenu: React.FC<FilterMenuProps> = ({ onApplyFilters }) => {
+export const FilterMenu: React.FC<FilterMenuProps> = ({ onApplyFilters, onOpenMap }) => {
+  
   // === Estado para Parâmetros Básicos ===
   const [estacao, setEstacao] = useState('');
   const [dataInicial, setDataInicial] = useState('2004-01-18');
@@ -34,7 +35,7 @@ export const FilterMenu: React.FC<FilterMenuProps> = ({ onApplyFilters }) => {
     }
   };
 
-  const handleGenerateGraph = (e: FormEvent) => {
+const handleGenerateGraph = (e: FormEvent) => {
     e.preventDefault();
     console.log('Gerar gráfico com:', {
       sensor,
@@ -44,8 +45,10 @@ export const FilterMenu: React.FC<FilterMenuProps> = ({ onApplyFilters }) => {
   };
 
   const handleInteractiveMap = () => {
-    console.log('Abrir mapa interativo');
-    // Lógica para o mapa
+    console.log('Abrir mapa interativo')  
+    if (onOpenMap) {
+        onOpenMap();
+    }
   };
 
   return (

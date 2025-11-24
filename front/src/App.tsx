@@ -15,12 +15,14 @@ import "leaflet/dist/leaflet.css";
 import './styles/global.css';
 import ConsultaSIMA from './pages/ConsultaDados/ConsultaSIMA';
 import ConsultaFurnas from './pages/ConsultaDados/ConsultaFurnas';
+import BarraBrasil from './components/BarraBrasil/BarraBrasil';
 
 
 
 export default function App() {
   return (
     <>
+    <BarraBrasil />
       <Header />
       <main>
         <Routes>
