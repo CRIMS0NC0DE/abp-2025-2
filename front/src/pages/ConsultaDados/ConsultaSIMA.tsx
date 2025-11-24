@@ -1,6 +1,6 @@
-import { useState } from "react";
-
-// 1. Imports dos componentes
+import TableView from "../TableView/TableViewSIMA";
+import { GraficoSIMA } from "../../components/Graficos/GraficoSIMA";
+import MapaInterativoSIMA from "../../components/MapaInterativoSIMA";
 import { FilterMenu } from "../../components/MenuFilter/MenuFilterSima"; 
 import MapaInterativo from "../../components/MapaInterativoSIMA";
 import TableViewSIMA from "../TableView/TableViewSIMA"; // Certifique-se que o TableView exportado é o que editamos no passo anterior
@@ -20,6 +20,12 @@ export default function ConsultaSIMA() {
     };
 
     return (
+        <>
+        <TableView/>
+        <MapaInterativoSIMA source={"sima"}/>
+        <GraficoSIMA/>
+        </>
+    )
         // Layout Flex: Sidebar na esquerda, Conteúdo na direita
         <div style={{ display: 'flex', height: '100vh', width: '100%', overflow: 'hidden' }}>
             
