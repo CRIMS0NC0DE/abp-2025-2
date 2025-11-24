@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from "react";
 // Removi o import do FilterMenu, pois ele está no pai agora!
 import { getMeasurements, type Measurement } from "../../api/client";
+import Table from "../../components/Table/Table"; 
 import styles from "./TableView.module.css";
-import { TabelaSima } from "../../components/TableSima/TableSima";
 
 // Agora o TableView recebe os filtros prontos do componente Pai
 interface Props {
   currentFilters: Record<string, any>;
 }
 
-export default function TableView({ currentFilters }: Props) {
-  // O estado 'filters' local sumiu. Usamos o 'currentFilters' da prop.
+export default function TableViewSIMA({ currentFilters = {} }: Props) {
   const [data, setData] = useState<Measurement[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Busca dados toda vez que o pai mandar filtros novos
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
       setError(null);
       try {
-        // Usa os filtros que vieram via prop
+        console.log("TableView buscando com filtros:", currentFilters);
+        // Chama a função do client.ts passando os filtros atuais
         const result = await getMeasurements(currentFilters);
         setData(result);
       } catch (err) {
@@ -54,30 +53,26 @@ export default function TableView({ currentFilters }: Props) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "dados_limnologicos.csv";
+    a.download = "dados_sima.csv";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
+    
 
   return (
     <div className={styles.page}>
       <div className={styles.content}>
-        
-        {/* REMOVI O MENU LATERAL DAQUI */}
-
-        {/* Agora só renderiza a tabela e o botão, ocupando 100% do espaço desse container */}
         <div className={styles.tableSection} style={{ width: '100%' }}>
-          {error && <p className={styles.error}>{error}</p>}
-
-          <TabelaSima data={data} isLoading={loading} />
-
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <Table data={data} loading={loading} />
           <div className={styles.exportSection}>
             <button
               onClick={exportCSV}
-              className={styles.exportButton}
+              className={styles.exportButton || 'btn-export'} 
               disabled={data.length === 0}
+              style={{ marginTop: '10px', padding: '10px', cursor: 'pointer' }}
             >
               Exportar para CSV
             </button>

@@ -1,55 +1,65 @@
+// src/api/client.ts
+
 export type Measurement = {
-    id: number;
-    station: string;
-    parameter: string;
-    measured_at: string;
-    value: number;
-    unit: string;
+  id: number;
+  station: string;
+  parameter: string;
+  measured_at: string;
+  value: number;
+  unit: string;
 };
-/**
-* getMeasurements - tenta buscar da API; se falhar, retorna dados mock.
-* Filters: { institution, reservoir, station, parameter, from, to }
-*/
+
+const BASE_URL = "http://localhost:3001"; // URL do seu Backend
+
 export async function getMeasurements(filters: Record<string, any>): Promise<Measurement[]> {
-    const params = Object.entries(filters)
-    .filter(([_, v]) => v !== "" && v != null)
-    .map(([k, v]) => [k, String(v)] as [string, string]);
-    const qs = new URLSearchParams(params).toString();
-    try {
-        const res = await fetch(`/api/manual-measurements?${qs}`);
-        if (!res.ok) throw new Error("API retornou erro");
-        const json = await res.json();
-        // espera que a API retorne um array compatível
-        return json as Measurement[];
-    } catch (err) {
-    // Fallback: mock data para você visualizar a tabela sem backend
-    console.warn("Falha ao buscar API — usando dados mock:", err);
+  try {
+    // 1. Traduzir filtros do Front (estacao, dataInicial) para o Back
+    const params = new URLSearchParams();
+    
+    // Se o backend espera 'station', 'start_date', etc., mapeie aqui:
+    if (filters.estacao) params.append('station', filters.estacao); // ou 'id'
+    if (filters.dataInicial) params.append('start_date', filters.dataInicial);
+    if (filters.dataFinal) params.append('end_date', filters.dataFinal);
+    if (filters.sensor) params.append('parameter', filters.sensor);
+
+    // 2. Monta a URL (Ajuste '/api/mapa/sima' se tiver uma rota especifica para tabela)
+    const url = `${BASE_URL}/api/mapa/sima?${params.toString()}`;
+    
+    console.log("Fetching:", url); // Para debug no console
+
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Erro na API: ${res.status}`);
+
+    const json = await res.json();
+
+    // 3. TRATAMENTO DE DADOS (IMPORTANTE!)
+    // Se o backend retorna GeoJSON ({ type: 'FeatureCollection', features: [...] })
+    // precisamos extrair as 'properties' de dentro das features.
+    if (json.features && Array.isArray(json.features)) {
+      return json.features.map((f: any) => ({
+        id: f.properties.id,
+        station: f.properties.nome_estacao || f.properties.nome, // Tenta os dois nomes
+        parameter: f.properties.parametro || "N/A",
+        measured_at: f.properties.data_coleta || new Date().toISOString(),
+        value: f.properties.valor,
+        unit: f.properties.unidade || ""
+      }));
+    }
+
+    // Se o backend já retorna um array simples, retorna direto
+    if (Array.isArray(json)) {
+      return json as Measurement[];
+    }
+
+    return []; // Se não entender o formato, retorna vazio
+
+  } catch (err) {
+    console.warn("Falha ao buscar API, usando Mock:", err);
+    // Se falhar, retorna o Mock para não quebrar a tela
     const now = new Date();
     return [
-            {   
-            id: 1,
-            station: "Estação A",
-            parameter: "Temperatura",
-            measured_at: new Date(now.getTime() - 1000 * 60 * 60).toISOString(),
-            value: 25.3,
-            unit: "°C",
-            },
-            {
-            id: 2,
-            station: "Estação B",
-            parameter: "pH",
-            measured_at: new Date(now.getTime() - 1000 * 60 * 30).toISOString(),
-            value: 7.15,
-            unit: "",
-            },
-            {
-            id: 3,
-            station: "Estação A",
-            parameter: "O ₂  Dissolvido",
-            measured_at: now.toISOString(),
-            value: 6.8,
-            unit: "mg/L",
-            },
-        ];
-    }
+      { id: 1, station: "Estação Mock A", parameter: "Temp", measured_at: now.toISOString(), value: 25.3, unit: "°C" },
+      { id: 2, station: "Estação Mock B", parameter: "pH", measured_at: now.toISOString(), value: 7.1, unit: "" },
+    ];
+  }
 }
