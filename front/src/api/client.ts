@@ -1,4 +1,4 @@
-// src/api/client.ts
+import axios from 'axios';
 
 export type Measurement = {
   id: number;
@@ -8,58 +8,82 @@ export type Measurement = {
   value: number;
   unit: string;
 };
+const BASE_URL = "http://localhost:3001";
 
-const BASE_URL = "http://localhost:3001"; // URL do seu Backend
+const SENSOR_TO_DB_COLUMN: Record<string, string> = {
+  'temperaturaDaAgua': 'tempag1', // Assumindo tempag1 como principal
+  'temperaturaDaAgua1m': 'tempag1',
+  'temperaturaDaAgua2m': 'tempag2',
+  'temperaturaDaAgua3m': 'tempag3',
+  'temperaturaDaAgua4m': 'tempag4',
+  'temperaturaDoAr': 'tempar',
+  'umidadeRelativa': 'ur',
+  'pressaoAtmosferica': 'pressatm',
+  'radiacaoIncidente': 'radincid',
+  'radiacaoRefletida': 'radrefl',
+  'condutividade': 'sonda_cond',
+  'ph': 'sonda_pH',
+  'oxigenioDissolvido': 'sonda_DO',
+  'turbidez': 'sonda_turb',
+  'clorofila': 'sonda_chl',
+  'direcaoDoVento': 'dirvt',
+  'intensidadeDoVento': 'intensvt',
+};
+
+// Unidades de medida para exibir na tabela
+const UNIT_MAP: Record<string, string> = {
+  'temperaturaDaAgua': '°C',
+  'temperaturaDoAr': '°C',
+  'ph': '',
+  'umidadeRelativa': '%',
+  'pressaoAtmosferica': 'hPa',
+  'condutividade': 'µS/cm',
+  'oxigenioDissolvido': 'mg/L',
+
+};
+
+
 
 export async function getMeasurements(filters: Record<string, any>): Promise<Measurement[]> {
   try {
-    // 1. Traduzir filtros do Front (estacao, dataInicial) para o Back
     const params = new URLSearchParams();
-    
-    // Se o backend espera 'station', 'start_date', etc., mapeie aqui:
-    if (filters.estacao) params.append('station', filters.estacao); // ou 'id'
-    if (filters.dataInicial) params.append('start_date', filters.dataInicial);
-    if (filters.dataFinal) params.append('end_date', filters.dataFinal);
-    if (filters.sensor) params.append('parameter', filters.sensor);
 
-    // 2. Monta a URL (Ajuste '/api/mapa/sima' se tiver uma rota especifica para tabela)
-    const url = `${BASE_URL}/api/mapa/sima?${params.toString()}`;
-    
-    console.log("Fetching:", url); // Para debug no console
+    if (filters.estacao) params.append('idestacao', filters.estacao);
+    if (filters.dataInicial) params.append('inicio', filters.dataInicial);
+    if (filters.dataFinal) params.append('fim', filters.dataFinal);
 
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Erro na API: ${res.status}`);
+    params.append('limit', '50'); 
+    const url = `${BASE_URL}/sima/porestacao?${params.toString()}`;
 
-    const json = await res.json();
+    console.log("Buscando API:", url);
 
-    // 3. TRATAMENTO DE DADOS (IMPORTANTE!)
-    // Se o backend retorna GeoJSON ({ type: 'FeatureCollection', features: [...] })
-    // precisamos extrair as 'properties' de dentro das features.
-    if (json.features && Array.isArray(json.features)) {
-      return json.features.map((f: any) => ({
-        id: f.properties.id,
-        station: f.properties.nome_estacao || f.properties.nome, // Tenta os dois nomes
-        parameter: f.properties.parametro || "N/A",
-        measured_at: f.properties.data_coleta || new Date().toISOString(),
-        value: f.properties.valor,
-        unit: f.properties.unidade || ""
-      }));
+    const response = await axios.get(url);
+    const json = response.data;
+
+    if (!json.success || !Array.isArray(json.data)) {
+      console.warn("⚠️ API retornou formato inesperado:", json);
+      return [];
     }
 
-    // Se o backend já retorna um array simples, retorna direto
-    if (Array.isArray(json)) {
-      return json as Measurement[];
-    }
+    const rawData = json.data;
 
-    return []; // Se não entender o formato, retorna vazio
+    const sensorSelecionadoKey = filters.sensor || 'temperaturaDaAgua'; 
+    const colunaBanco = SENSOR_TO_DB_COLUMN[sensorSelecionadoKey] || 'tempag1';
+    const unidade = UNIT_MAP[sensorSelecionadoKey] || '';
+
+    return rawData.map((row: any) => ({
+      id: row.idsima,
+      station: `Estação ${row.idestacao}`, 
+      parameter: sensorSelecionadoKey,       
+      measured_at: row.datahora,          
+      value: row[colunaBanco] !== null ? Number(row[colunaBanco]) : 0, 
+      unit: unidade
+    }));
 
   } catch (err) {
-    console.warn("Falha ao buscar API, usando Mock:", err);
-    // Se falhar, retorna o Mock para não quebrar a tela
-    const now = new Date();
+    console.warn("Falha na API, usando Mock:", err);
     return [
-      { id: 1, station: "Estação Mock A", parameter: "Temp", measured_at: now.toISOString(), value: 25.3, unit: "°C" },
-      { id: 2, station: "Estação Mock B", parameter: "pH", measured_at: now.toISOString(), value: 7.1, unit: "" },
+      { id: 1, station: "Erro API", parameter: "Verifique Console", measured_at: new Date().toISOString(), value: 0, unit: "!" }
     ];
   }
 }
