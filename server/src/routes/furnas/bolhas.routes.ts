@@ -1,8 +1,11 @@
 import { Router } from "express";
-import { getBolhas } from "../../controllers/furnas/bolhas.controller";
+import { getAll, getById, exportData } from "../../controllers/furnas/bolhas.controller";
 
 const router = Router();
 
-router.get("/all", getBolhas);
+router.get("/all", getAll);
+router.get("/:id", getById);
+router.post("/export", exportData);
+
 
 export default router;

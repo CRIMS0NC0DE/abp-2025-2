@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import styles from './MapPage.module.css';
 
-import MapaInterativo from '../../components/MapaInterativoSIMA';
+import MapaInterativo from '../../components/MapaInterativo';
+import VisualizacaoTabelas from '../../pages/TableView/TableView';
+import VisualizacaoGraficos from '../../components/VisualizacaoGrafico/VisualizacaoGrafico';
+import ListaBoiasCard from '../../components/ListaBoias/ListaSitiosFurnas'; // 1. Importar o novo Card
 
 export interface TipoBoia {
   id: string;
@@ -9,6 +12,12 @@ export interface TipoBoia {
   latitude: number;
   longitude: number;
 }
+
+const mockBoias: TipoBoia[] = [
+  { id: 'b-001', nome: 'Bóia 01', latitude: -24.0084, longitude: -46.3082 },
+  { id: 'b-002', nome: 'Bóia 03', latitude: -23.9875, longitude: -46.2520 },
+  { id: 'b-003', nome: 'Bóia 02', latitude: -23.7951, longitude: -45.3929 },
+];
 
 
 type ViewMode = 'map' | 'tables' | 'charts';
@@ -33,13 +42,21 @@ export default function MapPage() {
           <>
             <MapaInterativo 
               selectedBuoyId={selectedBuoyId} 
+              boias={mockBoias} 
             />
             <ListaBoiasCard 
+              boias={mockBoias}
               selectedBuoyId={selectedBuoyId}
               onBuoySelect={handleBuoySelect} 
             />
           </>
         );
+      case 'tables':
+        return <VisualizacaoTabelas />;
+      case 'charts':
+        return <VisualizacaoGraficos />;
+      default:
+        return <MapaInterativo selectedBuoyId={null} boias={mockBoias} />;
     }
   };
 

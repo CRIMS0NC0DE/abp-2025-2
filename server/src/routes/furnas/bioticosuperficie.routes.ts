@@ -1,8 +1,12 @@
 import { Router } from "express";
-import { getBioticoSuperficie } from "../../controllers/furnas/bioticosuperficie.controller";
+import { getAll, getById, exportData } from "../../controllers/furnas/bioticoSuperficie.controller";
 
 const router = Router();
 
-router.get("/all", getBioticoSuperficie);
+
+router.get("/all", getAll);
+router.get("/:id", getById);
+router.post("/export", exportData);
+
 
 export default router;

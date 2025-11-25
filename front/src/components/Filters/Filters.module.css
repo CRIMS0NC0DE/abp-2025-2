@@ -1,42 +1,300 @@
-/* front/src/components/Filters/Filters.module.css */
+/*
+ * Arquivo: FilterBar.module.css
+ */
 
-.filters {
+/* --- Variáveis Globais (para :focus) --- */
+:root {
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(6 182 212 / 0.5); /* Padrão ciano 500 com 50% opacidade */
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-color: 0 0 #0000;
+}
+
+/* --- Componente Principal --- */
+.filterBar {
+  padding: 1.25rem; /* p-5 */
+  background-color: #f0f9ff; /* bg-sky-50 */
+  border-bottom: 1px solid #e5e7eb; /* border-b border-gray-200 */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* font-sans */
+}
+
+/* --- 1. Cabeçalho (FilterBarHeader) --- */
+.header {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  background: #ffffff;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem; /* mb-4 */
 }
 
-.filters input[type="text"],
-.filters input[type="date"] {
-  padding: 8px 10px;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  min-width: 150px;
+.headerTitle {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #0c4a6e; /* text-sky-900 */
 }
 
-.filterActions {
+.headerSubtitle {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  color: #0e7490; /* text-cyan-700 */
+  text-transform: capitalize;
+}
+
+.headerActions {
   display: flex;
-  gap: 8px;
-  margin-left: 8px;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
 }
 
-.btn {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: white;
+/* --- 2. Lista de Filtros (Placeholder) --- */
+.filterList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Isso substitui o "space-y-3" do Tailwind */
+}
+
+.placeholder {
+  text-align: center;
+  padding: 1rem; /* p-4 */
+  border: 1px dashed #7dd3fc; /* border-dashed border-sky-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  background-color: #ffffff; /* bg-white */
+}
+
+.placeholderIcon {
+  margin-left: auto;
+  margin-right: auto;
+  color: #0ea5e9; /* text-sky-500 */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.placeholderTitle {
+  font-weight: 500; /* font-medium */
+  color: #075985; /* text-sky-800 */
+}
+
+.placeholderText {
+  font-size: 0.875rem; /* text-sm */
+  color: #0284c7; /* text-sky-600 */
+}
+
+/* --- 3. Linha de Filtro (FilterRowItem) --- */
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  padding: 0.75rem; /* p-3 */
+  background-color: #ffffff; /* bg-white */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.filterSelect {
+  width: 33.333333%; /* w-1/3 */
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  font-size: 0.875rem; /* text-sm */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  /* Estilização form-select */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.filterSelect:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-color: #06b6d4; /* focus:ring-cyan-500 */
+  border-color: #06b6d4; /* focus:border-cyan-500 */
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
+}
+
+.btnRemove {
+  padding: 0.5rem; /* p-2 */
+  color: #ef4444; /* text-red-500 */
+  border-radius: 9999px; /* rounded-full */
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transform: scale(1);
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  font-weight: bold;
 }
 
-.btn.primary {
-  background: #0b72ff;
-  color: white;
-  border-color: #0b72ff;
+.btnRemove:hover {
+  transform: scale(1.1); /* hover:scale-110 */
+  background-color: #dc2626; /* hover:bg-red-600 */
+  color: #ffffff; /* hover:text-white */
+}
+
+/* --- 4. Inputs (StyledInput / RenderValorInputs) --- */
+.inputWrapper {
+  position: relative;
+  flex: 1 1 0%; /* flex-1 */
+}
+
+.inputIcon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-left: 0.75rem; /* pl-3 */
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.styledInput {
+  width: 100%; /* w-full */
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  font-size: 0.875rem; /* text-sm */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.styledInput:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-color: #06b6d4; /* focus:ring-cyan-500 */
+  border-color: #06b6d4; /* focus:border-cyan-500 */
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
+}
+
+.inputWithIcon {
+  padding-left: 2.25rem; /* pl-9 */
+}
+
+.styledInput:disabled {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  cursor: not-allowed;
+}
+
+.rangeSeparator {
+  color: #6b7280; /* text-gray-500 */
+  font-weight: 500; /* font-medium */
+  align-self: center;
+}
+
+.rangeSeparatorSmall {
+  color: #6b7280; /* text-gray-500 */
+  font-size: 0.875rem; /* text-sm */
+  align-self: center;
+}
+
+/* --- 5. Ações (FilterBarActions) --- */
+.footer {
+  margin-top: 1rem; /* mt-4 */
+}
+
+.footerActions {
+  display: flex;
+  gap: 0.75rem; /* gap-3 */
+}
+
+/* --- Classes de Botões Genéricos --- */
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transform: scale(1);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  transform: scale(1.05); /* hover:scale-105 */
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-offset-width, 0)
+    var(--tw-ring-offset-color);
+  --tw-ring-shadow: 0 0 0 var(--tw-ring-thickness, 2px) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
+}
+
+/* Ícones dentro dos botões */
+.btnIcon {
+  margin-right: 0.375rem; /* mr-1.5 */
+}
+.btnIconAdd {
+  margin-right: 0.25rem; /* mr-1 */
+}
+
+/* Variações de Botões */
+.btnExport {
+  color: #071D41; /* text-cyan-700 */
+  background-color: #00FF00; /* bg-white */
+  border-color: #071D41; /* border-cyan-600 */
+}
+.btnExport:hover {
+  background-color: red; /* hover:bg-cyan-50 */
+}
+.btnExport:focus {
+  --tw-ring-color: rgb(6 182 212 / 0.5); /* focus:ring-cyan-500 focus:ring-opacity-50 */
+}
+
+.btnAdd {
+  color: #071D41; /* text-white */
+  background-color: #f5961d; /* bg-cyan-600 */
+   border-color: #071D41;
+}
+.btnAdd:hover {
+  background-color: red; /* hover:bg-cyan-700 */
+}
+.btnAdd:focus {
+  --tw-ring-color: rgb(6 182 212 / 0.5); /* focus:ring-cyan-500 focus:ring-opacity-50 */
+}
+
+.btnApply {
+  color: #ffffff; /* text-white */
+  background-color: #16a34a; /* bg-green-600 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+.btnApply:hover {
+  background-color: #15803d; /* hover:bg-green-700 */
+}
+.btnApply:focus {
+  --tw-ring-color: rgb(34 197 94 / 0.5); /* focus:ring-green-500 focus:ring-opacity-50 */
+}
+
+.btnClear {
+  color: #374151; /* text-gray-700 */
+  background-color: #ffffff; /* bg-white */
+  border-color: #d1d5db; /* border-gray-300 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+.btnClear:hover {
+  background-color: #f9fafb; /* hover:bg-gray-50 */
+}
+.btnClear:focus {
+  --tw-ring-color: rgb(156 163 175 / 0.5); /* focus:ring-gray-400 focus:ring-opacity-50 */
 }

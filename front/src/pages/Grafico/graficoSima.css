@@ -1,0 +1,184 @@
+/* Estilos para o GraficoSima
+   Tema: Claro (Light) - Consistente com GraficoBalcar e GraficoFurnas
+*/
+
+.sima-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0; /* Slate 200 */
+  padding: 24px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b; /* Slate 800 */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* --- Cabeçalho --- */
+.sima-header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #f1f5f9; /* Slate 100 */
+  padding-bottom: 16px;
+}
+
+.sima-title-group h2 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: #0f172a; /* Slate 900 */
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sima-title-group p {
+  color: #64748b; /* Slate 500 */
+  font-size: 0.875rem; /* 14px */
+  margin: 6px 0 0 0;
+}
+
+/* --- Toolbar de Filtros --- */
+.sima-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  background-color: #f8fafc; /* Slate 50 */
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+@media (min-width: 1024px) {
+  .sima-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.sima-control-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+    width: 100%;
+}
+
+/* Wrapper para label + input */
+.sima-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sima-input-wrapper.grow {
+    flex-grow: 1;
+}
+
+.sima-input-wrapper label {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b; /* Slate 500 */
+}
+
+/* --- Inputs e Selects --- */
+.sima-select,
+.sima-input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1; /* Slate 300 */
+  background-color: #ffffff;
+  color: #334155; /* Slate 700 */
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.2s;
+  height: 38px; /* Altura fixa para alinhamento */
+}
+
+.sima-select:hover,
+.sima-input:hover {
+  border-color: #94a3b8; /* Slate 400 */
+}
+
+.sima-select:focus,
+.sima-input:focus {
+  border-color: #f97316; /* Orange 500 (Identidade Visual SIMA/Temp) */
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.sima-select.highlight {
+    border-color: #fdba74; /* Orange 300 */
+    font-weight: 600;
+}
+
+/* --- Área do Conteúdo/Gráfico --- */
+.sima-content {
+  position: relative;
+  min-height: 400px;
+  width: 100%;
+}
+
+.sima-chart-wrapper {
+  height: 400px;
+  width: 100%;
+}
+
+/* --- Estados de Loading/Erro/Vazio --- */
+.sima-state-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+  font-weight: 500;
+  text-align: center;
+  padding: 20px;
+}
+
+.sima-state-message.error {
+  color: #ef4444;
+  background-color: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.sima-state-message.empty {
+  font-style: italic;
+}
+
+/* Spinner */
+.sima-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #f97316; /* Orange 500 */
+  border-radius: 50%;
+  animation: sima-spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes sima-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Rodapé --- */
+.sima-footer {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.sima-footer-item strong {
+  color: #334155;
+  font-weight: 600;
+}

@@ -1,203 +1,247 @@
 import { Request, Response } from "express";
-import { simaPool } from "../../configs/db";
 import { logger } from "../../configs/logger";
+
+// 1. Importa os Serviços
+import { DataFormatterService } from "../../services/dataFormatterService";
+import { ExportService, ExportFileOptions } from "../../services/exportService";
+
+// 2. Importa o Model
+import { SimaModel } from "../../models/sima/sima.model";
 
 const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
 
+// --- ENDPOINTS ---
+
+/**
+ * Endpoint: getAll
+ * Busca dados paginados e filtrados.
+ */
 export const getAll = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const page = Number(req.query.page) || 1;
-    const limit = Number(req.query.limit) || PAGE_SIZE;
-    const offset = (page - 1) * limit;
+    try {
+        const page = parseInt(req.query.page as string) || 1;
+        const limit = parseInt(req.query.limit as string) || PAGE_SIZE;
 
-    // consulta com paginação
-    const result = await simaPool.query(
-      `
-      SELECT 
-        idsima,
-        idestacao,
-        datahora,
-        regno,
-        nofsamples,
-        proamag,
-        dirvt,
-        intensvt,
-        u_vel,
-        v_vel,
-        tempag1,
-        tempag2,
-        tempag3,
-        tempag4,
-        tempar,
-        ur,
-        tempar_r,
-        pressatm,
-        radincid,
-        radrefl,
-        bateria,
-        sonda_temp,
-        sonda_cond,
-        sonda_DOsat,
-        sonda_DO,
-        sonda_pH,
-        sonda_NH4,
-        sonda_NO3,
-        sonda_turb,
-        sonda_chl,
-        sonda_bateria,
-        corr_norte,
-        corr_leste,
-        co2_low,
-        co2_high,
-        precipitacao
-      FROM tbsima
-      ORDER BY datahora DESC
-      LIMIT $1 OFFSET $2
-      `,
-      [limit, offset],
-    );
+        // 1. Pede os dados paginados ao Model, passando os filtros
+        const { data: rawData, total } = await SimaModel.findPaginated({
+            filters: req.query, // O FilterService é aplicado dentro do Model
+            page,
+            limit,
+        });
 
-    // total de registros
-    const countResult = await simaPool.query("SELECT COUNT(*) FROM tbsima");
-    const total = Number(countResult.rows[0].count);
+        // 2. Formata os dados "crus" usando o Service
+        //    (O map manual 'mapRowToSima' foi removido)
+        const data = rawData.map(DataFormatterService.formatListRow);
 
-    res.status(200).json({
-      success: true,
-      page,
-      limit,
-      total,
-      totalPages: Math.ceil(total / limit),
-      data: result.rows,
-    });
-  } catch (error: any) {
-    logger.error("Erro ao consultar tbsima", {
-      message: error.message,
-      stack: error.stack,
-    });
-
-    res.status(500).json({
-      success: false,
-      error: "Erro ao realizar a operação.",
-    });
-  }
+        // 3. Envia a resposta
+        res.status(200).json({
+            success: true,
+            page,
+            limit,
+            total,
+            totalPages: Math.ceil(total / limit),
+            data,
+        });
+    } catch (error: any) {
+        logger.error("Erro ao consultar tbsima", {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao realizar operação.",
+        });
+    }
 };
 
-export const getEstacoes = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const result = await simaPool.query(
-      `
-      SELECT 
-        idestacao,
-        rotulo,
-        lat,
-        lng,
-        inicio,
-        fim
-      FROM tbestacao
-      ORDER BY rotulo
-      `,
-    );
+/**
+ * Endpoint: getById
+ * Busca um único registro por ID.
+ */
+export const getById = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const idsima = Number(req.params.idsima);
+        if (isNaN(idsima)) {
+            res.status(400).json({ success: false, error: `ID ${req.params.idsima} inválido.` });
+            return;
+        }
 
-    res.status(200).json({
-      success: true,
-      data: result.rows,
-    });
-  } catch (error: any) {
-    logger.error("Erro ao consultar tbsima", {
-      message: error.message,
-      stack: error.stack,
-    });
+        // 1. Pede o dado ao Model
+        const rawData = await SimaModel.findById(idsima);
 
-    res.status(500).json({
-      success: false,
-      error: "Erro ao realizar a operação.",
-    });
-  }
+        // 2. Verifica se foi encontrado
+        if (!rawData) {
+            res.status(404).json({ success: false, error: "Registro de dados SIMA não encontrado." });
+            return;
+        }
+
+        // 3. Retorna os dados crus (conforme exemplo)
+        //    (O 'mapRowToSima' foi removido, seguindo o padrão)
+        const data = rawData;
+
+        // 4. Envia a resposta
+        res.status(200).json({
+            success: true,
+            data,
+        });
+    } catch (error: any) {
+        logger.error(`Erro ao consultar registro por ID na tabela tbsima: ${req.params.idsima}`, {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao realizar operação.",
+        });
+    }
 };
 
-export const getByEstacao = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const idestacao = Number(req.query.idestacao) || "32445";
-    const inicio = req.query.inicio || "2000-01-01";
-    const fim = req.query.fim || "2020-01-01";
-    const page = Number(req.query.page) || 1;
-    const limit = Number(req.query.limit) || PAGE_SIZE;
-    const offset = (page - 1) * limit;
+/**
+ * Endpoint: exportData
+ * Exporta dados para CSV ou XLSX, com base nos filtros.
+ * (Adicionado com base no exemplo)
+ */
+export const exportData = async (req: Request, res: Response): Promise<void> => {
+    try {
+        // 1. Extrai opções do body
+        const { format, range, includeHeaders, delimiter, encoding, filters, page, limit } =
+            req.body as ExportFileOptions & {
+                range: "page" | "all";
+                filters: any;
+                page?: number;
+                limit?: number;
+            };
 
-    // consulta com paginação
-    const result = await simaPool.query(
-      `
-      SELECT 
-        idsima,
-        idestacao,
-        datahora,
-        regno,
-        nofsamples,
-        proamag,
-        dirvt,
-        intensvt,
-        u_vel,
-        v_vel,
-        tempag1,
-        tempag2,
-        tempag3,
-        tempag4,
-        tempar,
-        ur,
-        tempar_r,
-        pressatm,
-        radincid,
-        radrefl,
-        bateria,
-        sonda_temp,
-        sonda_cond,
-        sonda_DOsat,
-        sonda_DO,
-        sonda_pH,
-        sonda_NH4,
-        sonda_NO3,
-        sonda_turb,
-        sonda_chl,
-        sonda_bateria,
-        corr_norte,
-        corr_leste,
-        co2_low,
-        co2_high,
-        precipitacao
-      FROM tbsima
-      WHERE idestacao = $1 AND datahora >= $2 AND datahora <= $3
-      ORDER BY datahora DESC
-      LIMIT $4 OFFSET $5
-      `,
-      [idestacao, inicio, fim, limit, offset],
-    );
+        // Opções para o ExportService
+        const exportOptions: ExportFileOptions = {
+            format,
+            includeHeaders,
+            delimiter,
+            encoding,
+        };
 
-    // total de registros
-    const countResult = await simaPool.query(
-      "SELECT COUNT(*) FROM tbsima WHERE idestacao = $1 AND datahora >= $2 AND datahora <= $3",
-      [idestacao, inicio, fim],
-    );
-    const total = Number(countResult.rows[0].count);
+        let rawData: any[];
 
-    res.status(200).json({
-      success: true,
-      page,
-      limit,
-      total,
-      inicio,
-      fim,
-      totalPages: Math.ceil(total / limit),
-      data: result.rows,
-    });
-  } catch (error: any) {
-    logger.error("Erro ao consultar tbsima", {
-      message: error.message,
-      stack: error.stack,
-    });
+        // 2. Busca os dados no Model com base no 'range'
+        if (range === "page") {
+            const { data } = await SimaModel.findPaginated({
+                filters: filters || {},
+                page: page || 1,
+                limit: limit || PAGE_SIZE,
+            });
+            rawData = data;
+        } else {
+            // range === 'all'
+            rawData = await SimaModel.findAll({
+                filters: filters || {},
+            });
+        }
 
-    res.status(500).json({
-      success: false,
-      error: "Erro ao realizar a operação.",
-    });
-  }
+        // 3. Formata os dados para "lista"
+        const formattedData = rawData.map(DataFormatterService.formatListRow);
+
+        // 4. Gera o buffer do arquivo
+        const fileBuffer = await ExportService.generateExportFile(formattedData, exportOptions);
+
+        // 5. Define os headers da resposta
+        const fileName = `export_sima_${new Date().toISOString().slice(0, 10)}.${format}`;
+
+        if (format === "xlsx") {
+            res.setHeader(
+                "Content-Type",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            );
+        } else {
+            res.setHeader("Content-Type", "text/csv; charset=" + (encoding || "utf-8"));
+        }
+        res.setHeader("Content-Disposition", `attachment; filename="${fileName}"`);
+
+        // 6. Envia o buffer como resposta
+        res.send(fileBuffer);
+    } catch (error: any) {
+        logger.error("Erro ao exportar dados de tbsima", {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao gerar exportação.",
+        });
+    }
+};
+
+/**
+ * Endpoint: getStationsList
+ * Retorna lista simples de estações para preencher o <select>
+ */
+export const getStationsList = async (req: Request, res: Response): Promise<void> => {
+    try {
+        // 1. Chama o model
+        const stations = await SimaModel.findAllStations();
+
+        // 2. Retorna sucesso
+        res.status(200).json({
+            success: true,
+            total: stations.length,
+            data: stations
+        });
+    } catch (error: any) {
+        logger.error("Erro ao listar estações", {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao buscar estações.",
+        });
+    }
+};
+
+
+/**
+ * Endpoint: getAnalytics
+ * Retorna dados agregados para gráficos (Time Series).
+ * Query Params: stationId, start, end, granularity
+ */
+export const getAnalytics = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const { stationId, start, end, granularity } = req.query;
+
+        // 1. Validações Básicas
+        if (!stationId) {
+            res.status(400).json({ success: false, error: "Parâmetro 'stationId' é obrigatório." });
+            return;
+        }
+
+        if (!start || !end) {
+             res.status(400).json({ success: false, error: "Parâmetros 'start' e 'end' (datas) são obrigatórios." });
+             return;
+        }
+
+        // 2. Chama o Model de Agregação
+        const data = await SimaModel.getAnalyticsData({
+            stationId: stationId as string,
+            startDate: start as string,
+            endDate: end as string,
+            granularity: (granularity as 'hour' | 'day' | 'month') || 'day'
+        });
+
+        // 3. Retorna o JSON otimizado
+        res.status(200).json({
+            success: true,
+            granularity: granularity || 'day',
+            totalPoints: data.length,
+            data: data
+        });
+
+    } catch (error: any) {
+        logger.error("Erro ao gerar analytics do SIMA", {
+            message: error.message,
+            stack: error.stack,
+            query: req.query
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao processar dados analíticos.",
+        });
+    }
 };

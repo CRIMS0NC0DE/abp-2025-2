@@ -406,7 +406,7 @@ function SimaPage() {
   const mainNavLinks = [
     { label: 'Home', to: '/' },
     { label: 'Início', to: '/sima' },
-    { label: 'Banco de Dados', to: '/mapa' },
+    { label: 'Banco de Dados', to: '/sima-table' },
     { label: 'Publicações', to: '/publicacoesSima' },
     { label: 'BALCAR', to: '/balcar' },
     { label: 'FURNAS', to: '/furnas' },
@@ -522,11 +522,11 @@ return (
           modalContent={ModalProblemas}
         />
         <a
-          href="/sima/consulta"
+          href="/sima-table"
           className={`${cardStyles.card} ${styles.cardLink}`}
         >
           <img src={mapainterativo} alt="Mapa Interativo" className={cardStyles.icon} />
-          <h3 className={cardStyles.title}>Consultar Dados</h3>
+          <h3 className={cardStyles.title}>Mapa Interativo</h3>
         </a>
       </div>
 

@@ -61,7 +61,7 @@ export default function Balcar() {
 
     { label: 'Início', to: '/balcar' },
 
-    { label: 'Banco de Dados', to: '/mapa' },
+    { label: 'Banco de Dados', to: '/balcar-table' },
 
     { label: 'Publicações', to: '/publicacoesBalcar' },
 
@@ -297,7 +297,7 @@ export default function Balcar() {
     <ul style={modalStyles.ul}>
       <li style={modalStyles.li}>Arcilan Trevenzoli Assireu (INPE)</li>
       <li style={modalStyles.li}>Bohdan Matvienko Sikar (UFRJ/COPPE)</li>
-      <li style={modalStyles.li}>Corina Verónica Sidagis Galli (IIE)</li>
+      <li style_={modalStyles.li}>Corina Verónica Sidagis Galli (IIE)</li>
       <li style={modalStyles.li}>Ednaldo Oliveira dos Santos (UFRJ/COPPE)</li>
       <li style={modalStyles.li}>Elizabeth Matvienko Sikar (UFRJ/COPPE)</li>
       <li style={modalStyles.li}>Felipe Siqueira Pacheco (UFJF)</li>
@@ -471,24 +471,23 @@ export default function Balcar() {
 <div className={styles.cardContainer}>
   <h2 className={styles.cardTitle}>Equipe</h2>
 
-<ClickableCard
-  title="Coordenação Geral"
-  iconSrc={iconCoordenacaogeral}
-  modalContent={ModalPanorama}
-/>
-<div className={styles.cardColetasAnalises}>
   <ClickableCard
-    title="Time Coletas e Análises"
-    iconSrc={iconColetaseanalises}
-    modalContent={ModalUsinasHidreletricas}
+    title="Coordenação Geral"
+    iconSrc={iconCoordenacaogeral}
+    modalContent={ModalPanorama}
   />
-</div>
-
 <ClickableCard
-  title=" Instituições"
-  iconSrc={iconCoordenacaoporinstituicao}
-  modalContent={ModalPesquisasCorrelatadas}
+  title="Time Coletas e Análises"
+  iconSrc={iconColetaseanalises}
+  modalContent={ModalUsinasHidreletricas}
+  className={styles.cardColetasAnalises}
 />
+
+  <ClickableCard
+    title=" Instituições"
+    iconSrc={iconCoordenacaoporinstituicao}
+    modalContent={ModalPesquisasCorrelatadas}
+  />
   <ClickableCard
     title="+ Informações"
     iconSrc={iconMaisinformacoes}
@@ -500,17 +499,19 @@ export default function Balcar() {
 
   {/* COLUNA DIREITA - painel grande "Visualizar Dados" */}
 <div className={styles.rightColumn}>
+  <Link to="/balcar-table">
   <div className={styles.cardContainer2}>
     <button className={styles.cardButton} type="button">
       <img
         src={logoVisualizargraficos}
-        alt="Consultar Dados"
+        alt="Visualizar Dados"
         style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
       />
     </button>
 
-    <p className={styles.visualizarGraficos}>Visualizar Gráficos</p>
+    <p className={styles.visualizarGraficos}>Visualizar Dados</p>
   </div>
+  </Link>
 </div>
 
 

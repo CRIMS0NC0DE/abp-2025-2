@@ -1,32 +1,20 @@
+
 import express from "express";
-import reservatorio from "./reservatorio.routes";
-import instituicao from "./instituicao.routes";
-import tabelacampo from "./tabelacampo.routes";
+import fluxoInpe from "./fluxoInpe.routes";
 import campanha from "./campanha.routes";
-import fluxoinpe from "./fluxoinpe.routes";
+import instituicao from "./instituicao.routes";
 import sitio from "./sitio.routes";
-import { getCampanhaBalcar } from "../../controllers/balcar/campanha.controller";
-import { getFluxoinpe } from "../../controllers/balcar/fluxoinpe.controller";
-import { getInstituicaoBalcar } from "../../controllers/balcar/instituicao.controller";
-import { getReservatorioBalcar } from "../../controllers/balcar/reservatorio.controller";
-import { getSitioBalcar } from "../../controllers/balcar/sitio.controller";
-import { getTabelaCampo } from "../../controllers/balcar/tabelacampo.controller";
+import reservatorio from "./reservatorio.routes";
+import tabelaCampo from "./tabelaCampo.routes";
 
 const router = express.Router();
 
-//Get do Balcar
-router.get('/campanha', getCampanhaBalcar);
-router.get('/fluxoinpe', getFluxoinpe);
-router.get('/instituicao', getInstituicaoBalcar);
-router.get('/reservatorio', getReservatorioBalcar);
-router.get('/sitio', getSitioBalcar);
-router.get('/tabelacampo', getTabelaCampo);
-
-router.use("/reservatorio", reservatorio);
-router.use("/instituicao", instituicao);
-router.use("/tabelacampo", tabelacampo);
+router.use("/fluxo-inpe", fluxoInpe);
 router.use("/campanha", campanha);
-router.use("/fluxoinpe", fluxoinpe);
+router.use("/instituicao", instituicao);
 router.use("/sitio", sitio);
+router.use("/reservatorio", reservatorio);
+router.use("/tabela-campo", tabelaCampo);
 
 export default router;
+

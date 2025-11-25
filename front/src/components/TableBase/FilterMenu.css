@@ -1,0 +1,200 @@
+/* src/components/TableBase/FilterMenu.css */
+
+/* =========================================
+   1. LAYOUT & CONTAINER
+   ========================================= */
+
+/* Container principal do menu */
+.filter-menu {
+    background-color: #071D41;
+    padding: 15px;
+    
+    /* Dimensões Fixas na Horizontal */
+    width: 320px;
+    min-width: 320px;
+    
+    /* Altura Ocupando o Pai */
+    height: 100%;       
+    
+    /* Comportamento de Scroll e Flexbox */
+    box-sizing: border-box;
+    border-right: 1px solid #1a3c6e;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* <--- Garante que os itens comecem do topo */
+    overflow-y: auto;            /* <--- Cria scroll se os filtros estourarem a altura */
+    
+    /* Tipografia */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Seções do menu */
+.menu-section {
+    margin-bottom: 25px; /* Espaço padrão entre seções */
+    flex-shrink: 0;      /* Impede que a seção seja esmagada */
+}
+
+/* Títulos das seções */
+.filter-menu h2 {
+    color: #FF9D00;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #61dafb30;
+    padding-bottom: 5px;
+}
+
+/* =========================================
+   2. FORMULÁRIOS (INPUTS & LABELS)
+   ========================================= */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+/* Inputs e Selects Padrão */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   3. FILTROS DINÂMICOS (CARDS & ÍCONES)
+   ========================================= */
+
+.filter-row-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.filter-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-column-select {
+    flex: 1;
+    color: #f5961d;
+}
+
+.btn-remove-filter {
+    background: rgba(255, 77, 77, 0.1);
+    border: 1px solid rgba(255, 77, 77, 0.3);
+    border-radius: 4px;
+    color: #ff4d4d;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    height: 36px;
+    width: 36px;
+}
+
+.btn-remove-filter:hover {
+    background: rgba(255, 77, 77, 0.2);
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+.input-with-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon-overlay {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+}
+
+.input-with-padding {
+    padding-left: 32px !important; 
+}
+
+.filter-inputs-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* =========================================
+   4. BOTÕES 
+   ========================================= */
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #071D41;
+    transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-add {
+    background-color: #2D5C8F;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.btn-apply { background-color: #f5961d; color: #071D41; }
+.btn-graph { background-color: #8e44ad; color: white; }
+.btn-map { background-color: #00FF00; color: #071D41; }
+.btn-export { background-color: #00d2d3; color: #071D41; }
+
+.filters-placeholder {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+    padding: 10px;
+    border: 1px dashed #444;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}

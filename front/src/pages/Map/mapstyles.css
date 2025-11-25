@@ -1,0 +1,225 @@
+/* mapstyles.css */
+
+/* --- Variáveis de Cor (Nova Paleta) --- */
+:root {
+  /* Cores principais da paleta solicitada */
+  --sidebar-bg: #071D41;
+  --accent-primary: #f5961d;
+  --accent-secondary: #00FF00;
+
+  /* Cores de UI derivadas */
+  --sidebar-text: #F3F4F6;
+  --sidebar-text-muted: #AAAAAA;
+  --sidebar-item-bg: #0E2958; /* Tom mais claro que o fundo */
+  --sidebar-item-hover-bg: #1A3C7B;
+  --sidebar-border: #1A3C7B;
+
+  --main-bg: #FFFFFF;
+  --main-text: #333333;
+}
+
+
+
+/* --- Layout Principal --- */
+.map-layout-container {
+  display: flex;
+  /* Altura da viewport menos uma barra de navegação estimada de 80px */
+  height: calc(100vh - 80px);
+}
+
+/* --- Sidebar --- */
+.map-sidebar {
+  width: 384px; /* Equivalente a w-96 */
+  padding: 1rem; /* Equivalente a p-4 */
+  overflow-y: auto;
+  flex-shrink: 0;
+  height: 100%;
+  z-index: 10;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  border-right: 1px solid var(--sidebar-border);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.map-sidebar-header {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold;
+  margin-bottom: 0.25rem; /* mb-1 */
+  color: var(--sidebar-text);
+}
+
+.map-sidebar-subheader {
+  font-size: 0.875rem; /* text-sm */
+  margin-bottom: 1rem; /* mb-4 */
+  color: var(--sidebar-text-muted);
+}
+
+/* --- Barra de Busca --- */
+.map-search-container {
+  margin-bottom: 1.5rem; /* mb-6 */
+  position: relative;
+}
+
+.map-search-icon {
+  position: absolute;
+  left: 0.75rem; /* left-3 */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1rem; /* h-4 */
+  width: 1rem; /* w-4 */
+  color: var(--sidebar-text-muted);
+  pointer-events: none; /* Impede que o ícone capture cliques */
+}
+
+.map-search-input {
+  width: 100%;
+  padding-left: 2.5rem; /* pl-10 */
+  padding-right: 1rem; /* pr-4 */
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+  font-size: 0.875rem; /* text-sm */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid var(--sidebar-border);
+  background-color: var(--sidebar-item-bg);
+  color: var(--sidebar-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.map-search-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  /* Anel de foco laranja */
+  box-shadow: 0 0 0 2px var(--accent-primary);
+}
+
+/* --- Lista de Itens --- */
+.map-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* space-y-3 */
+}
+
+.map-sidebar-item {
+  padding: 0.75rem; /* p-3 */
+  border: 1px solid var(--sidebar-border);
+  border-radius: 0.5rem; /* rounded-lg */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--sidebar-item-bg);
+  /* Remove flex e alinhamento, já que os ícones sumiram */
+}
+
+.map-sidebar-item:hover {
+  background-color: var(--sidebar-item-hover-bg);
+  border-color: var(--accent-primary); /* Destaque laranja no hover */
+}
+
+.map-sidebar-item.selected {
+  background-color: var(--sidebar-item-hover-bg);
+  /* Borda verde (accent-secondary) na seleção */
+  border: 2px solid var(--accent-secondary);
+  /* Compensa a borda de 2px para manter o tamanho */
+  padding: calc(0.75rem - 1px);
+}
+
+.map-sidebar-item-title {
+  font-weight: 600; /* font-semibold */
+  color: var(--sidebar-text);
+}
+
+.map-sidebar-no-results {
+  text-align: center;
+  padding: 2rem; /* p-8 */
+  font-size: 0.875rem; /* text-sm */
+  color: var(--sidebar-text-muted);
+}
+
+/* --- Área do Mapa --- */
+.map-main-area {
+  flex: 1; /* flex-1 */
+  padding: 1rem; /* p-4 */
+  overflow: hidden;
+  background-color: var(--main-bg);
+}
+
+.map-main-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  margin-bottom: 1rem; /* mb-4 */
+  color: var(--main-text);
+}
+
+.map-container-wrapper {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* --- Estilos do Popup (Usando nova paleta) --- */
+.custom-map-popup .leaflet-popup-content-wrapper {
+  background-color: var(--sidebar-bg); /* Fundo azul escuro */
+  color: var(--sidebar-text); /* Texto claro */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.custom-map-popup .leaflet-popup-tip {
+  background: var(--sidebar-bg);
+}
+
+.custom-map-popup .leaflet-popup-close-button {
+  color: var(--sidebar-text) !important;
+  opacity: 0.7;
+}
+.custom-map-popup .leaflet-popup-close-button:hover {
+  opacity: 1;
+}
+
+/* Estilos específicos do conteúdo do popup */
+.custom-map-popup h3 {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--accent-primary); /* Título em laranja */
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+}
+
+.custom-map-popup p {
+  margin: 0.25rem 0;
+  color: var(--sidebar-text);
+}
+
+/* ... (todo o CSS anterior) ... */
+
+/* --- Estilos de Botão (Adicional para FurnasMap) --- */
+.map-sidebar-button {
+  width: 100%;
+  padding: 0.5rem 0.75rem; /* p-2 */
+  margin-top: 0.5rem;      /* mt-2 */
+  margin-bottom: 0.25rem;  /* mb-1 */
+  border-radius: 0.5rem;   /* rounded-lg */
+  font-size: 0.875rem;     /* text-sm */
+  font-weight: 500;        /* font-medium */
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.map-sidebar-button-primary {
+  background-color: var(--accent-primary); /* Laranja */
+  color: var(--sidebar-bg); /* Texto escuro para contraste */
+}
+
+.map-sidebar-button-primary:hover {
+  filter: brightness(1.1);
+}
+
+.map-sidebar-button-secondary {
+  background-color: var(--sidebar-item-bg);
+  color: var(--sidebar-text);
+}
+
+.map-sidebar-button-secondary:hover {
+  background-color: var(--sidebar-item-hover-bg);
+}

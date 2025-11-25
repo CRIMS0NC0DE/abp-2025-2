@@ -1,21 +1,16 @@
-
-
 .content {
   display: flex;
   flex-direction: row;
   grid-template-columns: 260px 1fr;
   gap: 5px;
   align-items: start;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-bottom: 60px;
 }
 
 .filterMenu {
   background: #071D41; /* Azul escuro */
   color: #fff;
   width: 304px;
-  height: auto;
+  height: 860px;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);

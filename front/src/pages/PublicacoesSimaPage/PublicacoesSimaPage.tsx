@@ -12,7 +12,7 @@ export default function PublicacoesSimaPage() {
   const mainNavLinks = [
     { label: 'Home', to: '/' },
     { label: 'Início', to: '/sima' },
-    { label: 'Banco de Dados', to: '/mapa' },
+    { label: 'Banco de Dados', to: '/sima-table' },
     { label: 'Publicações', to: '/publicacoesSimaPage' }, 
     { label: 'BALCAR', to: '/balcar' },
     { label: 'FURNAS', to: '/furnas' },

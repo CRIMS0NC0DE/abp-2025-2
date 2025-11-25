@@ -1,63 +1,176 @@
 import { Request, Response } from "express";
-import { balcarPool } from "../../configs/db";
 import { logger } from "../../configs/logger";
+
+// 1. Importa os Serviços
+import { DataFormatterService } from "../../services/dataFormatterService";
+import { ExportService, ExportFileOptions } from "../../services/exportService";
+
+// 2. Importa o Model
+import { TabelaCampoModel } from "../../models/balcar/tabelaCampo.model";
 
 const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
 
-export const getTabelaCampo = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const page = Number(req.query.page) || 1;
-    const limit = Number(req.query.limit) || PAGE_SIZE;
-    const offset = (page - 1) * limit;
+// --- ENDPOINTS ---
 
-    // consulta na tabela tbtabelacampo
-    const result = await balcarPool.query(
-      `
-      SELECT 
-        idtabelacampo,
-        nome,
-        rotulo,
-        unidade,
-        descricao,
-        ordem
-      FROM tbtabelacampo
-      ORDER BY idtabelacampo ASC
-      LIMIT $1 OFFSET $2
-      `,
-      [limit, offset],
-    );
+/**
+ * Endpoint: getAll
+ * Busca dados paginados e filtrados.
+ */
+export const getAll = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const page = parseInt(req.query.page as string) || 1;
+        const limit = parseInt(req.query.limit as string) || PAGE_SIZE;
 
-    // total de registros
-    const countResult = await balcarPool.query("SELECT COUNT(*) FROM tbtabelacampo");
-    const total = Number(countResult.rows[0].count);
+        // 1. Pede os dados paginados ao Model, passando os filtros
+        const { data: rawData, total } = await TabelaCampoModel.findPaginated({
+            filters: req.query, // O FilterService é aplicado dentro do Model
+            page,
+            limit,
+        });
 
-    // resposta formatada
-    const data = result.rows.map((row: any) => ({
-      idtabelacampo: row.idtabelacampo,
-      nome: row.nome,
-      rotulo: row.rotulo,
-      unidade: row.unidade,
-      descricao: row.descricao,
-      ordem: row.ordem,
-    }));
+        // 2. Formata os dados "crus" usando o Service
+        //    (Mantemos o padrão de formatação mesmo sem joins)
+        const data = rawData.map(DataFormatterService.formatListRow);
 
-    res.status(200).json({
-      success: true,
-      page,
-      limit,
-      total,
-      totalPages: Math.ceil(total / limit),
-      data,
-    });
-  } catch (error: any) {
-    logger.error("Erro ao consultar tbtabelacampo", {
-      message: error.message,
-      stack: error.stack,
-    });
+        // 3. Envia a resposta
+        res.status(200).json({
+            success: true,
+            page,
+            limit,
+            total,
+            totalPages: Math.ceil(total / limit),
+            data,
+        });
+    } catch (error: any) {
+        logger.error("Erro ao buscar campos da tabela", {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao buscar campos da tabela.",
+        });
+    }
+};
 
-    res.status(500).json({
-      success: false,
-      error: "Erro ao realizar a operação.",
-    });
-  }
+/**
+ * Endpoint: getById
+ * Busca um único registro por ID.
+ */
+export const getById = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const idtabelacampo = Number(req.params.idtabelacampo);
+
+        if (isNaN(idtabelacampo)) {
+            res.status(400).json({
+                success: false,
+                error: `ID ${req.params.idtabelacampo} inválido.`,
+            });
+            return;
+        }
+
+        // 1. Pede o dado ao Model
+        const rawData = await TabelaCampoModel.findById(idtabelacampo);
+
+        // 2. Verifica se foi encontrado
+        if (!rawData) {
+            res.status(404).json({
+                success: false,
+                message: "Campo da tabela não encontrado.",
+            });
+            return;
+        }
+
+        // 3. Retorna os dados crus (conforme exemplos)
+        const data = rawData;
+
+        // 4. Envia a resposta
+        res.status(200).json({
+            success: true,
+            data,
+        });
+    } catch (error: any) {
+        logger.error("Erro ao buscar campo da tabela por ID", {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao buscar campo da tabela.",
+        });
+    }
+};
+
+/**
+ * Endpoint: exportData
+ * Exporta dados para CSV ou XLSX, com base nos filtros.
+ * (Adicionado com base no exemplo)
+ */
+export const exportData = async (req: Request, res: Response): Promise<void> => {
+    try {
+        // 1. Extrai opções do body
+        const { format, range, includeHeaders, delimiter, encoding, filters, page, limit } =
+            req.body as ExportFileOptions & {
+                range: "page" | "all";
+                filters: any;
+                page?: number;
+                limit?: number;
+            };
+
+        // Opções para o ExportService
+        const exportOptions: ExportFileOptions = {
+            format,
+            includeHeaders,
+            delimiter,
+            encoding,
+        };
+
+        let rawData: any[];
+
+        // 2. Busca os dados no Model com base no 'range'
+        if (range === "page") {
+            const { data } = await TabelaCampoModel.findPaginated({
+                filters: filters || {},
+                page: page || 1,
+                limit: limit || PAGE_SIZE,
+            });
+            rawData = data;
+        } else {
+            // range === 'all'
+            rawData = await TabelaCampoModel.findAll({
+                filters: filters || {},
+            });
+        }
+
+        // 3. Formata os dados para "lista"
+        const formattedData = rawData.map(DataFormatterService.formatListRow);
+
+        // 4. Gera o buffer do arquivo
+        const fileBuffer = await ExportService.generateExportFile(formattedData, exportOptions);
+
+        // 5. Define os headers da resposta
+        const fileName = `export_tabela_campo_${new Date().toISOString().slice(0, 10)}.${format}`;
+
+        if (format === "xlsx") {
+            res.setHeader(
+                "Content-Type",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            );
+        } else {
+            res.setHeader("Content-Type", "text/csv; charset=" + (encoding || "utf-8"));
+        }
+        res.setHeader("Content-Disposition", `attachment; filename="${fileName}"`);
+
+        // 6. Envia o buffer como resposta
+        res.send(fileBuffer);
+    } catch (error: any) {
+        logger.error("Erro ao exportar dados de tbtabelacampo", {
+            message: error.message,
+            stack: error.stack,
+        });
+        res.status(500).json({
+            success: false,
+            error: "Erro ao gerar exportação.",
+        });
+    }
 };

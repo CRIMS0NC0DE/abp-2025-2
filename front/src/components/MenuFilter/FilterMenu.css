@@ -3,16 +3,14 @@
 /* Container principal do menu */
 .filter-menu {
     background-color: #071D41;
-    margin-top: 10px;
-    padding: 10px;
+    padding: 5px;
     width: 280px;
-    height: 110vh; 
-    max-height: 110vh; /* ← impede que ultrapasse a tela */
+    height: auto; 
+    max-height: 100vh; /* ← impede que ultrapasse a tela */
     color: white;
     font-family: Arial, sans-serif;
     overflow: hidden; /* ← remove a barra de rolagem */
     box-sizing: border-box;
-    border-radius: 10px;
 }
 
 /* Títulos das seções (Parâmetros, Gráficos) */

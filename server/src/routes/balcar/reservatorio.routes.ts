@@ -1,8 +1,11 @@
 import { Router } from "express";
-import { getReservatorioBalcar } from "../../controllers/balcar/reservatorio.controller";
+import {getAll, getById, exportData} from "../../controllers/balcar/reservatorio.controller";
 
 const router = Router();
 
-router.get("/all", getReservatorioBalcar);
+router.get("/all", getAll);
+router.get("/:idreservatorio", getById);
+router.post("/export", exportData);
+
 
 export default router;

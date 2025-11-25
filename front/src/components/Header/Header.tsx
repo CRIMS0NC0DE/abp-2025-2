@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 // --- asset imports
-import govLogo from '../../assets/govLogo.png';
 import inpeLogo from '../../assets/LogoInpe.png';
 
 export default function Header() {

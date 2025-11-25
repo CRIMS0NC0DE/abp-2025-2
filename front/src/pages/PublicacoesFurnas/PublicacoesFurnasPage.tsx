@@ -12,7 +12,7 @@ export default function PublicacoesFurnasPage() {
   const mainNavLinks = [
     { label: 'Home', to: '/' },
     { label: 'Início', to: '/furnas' },
-    { label: 'Banco de Dados', to: '/mapa' },
+    { label: 'Banco de Dados', to: '/furnas-table' },
     { label: 'Publicações', to: '/publicacoes' }, 
     { label: 'SIMA', to: '/sima' },
     { label: 'BALCAR', to: '/balcar' },

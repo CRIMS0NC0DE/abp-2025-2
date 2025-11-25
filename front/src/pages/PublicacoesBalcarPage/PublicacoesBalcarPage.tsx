@@ -11,8 +11,8 @@ export default function PublicacoesBalcarPage() {
   const mainNavLinks = [
     { label: 'Home', to: '/' },
     { label: 'Início', to: '/balcar' },
-    { label: 'Banco de Dados', to: '/mapa' },
-    { label: 'Publicações', to: '/publicacoesBalcarPage' }, 
+    { label: 'Banco de Dados', to: '/balcar-table' },
+    { label: 'Publicações', to: '/publicacoesBalcar' }, 
     { label: 'SIMA', to: '/sima' },
     { label: 'FURNAS', to: '/furnas' },
   ];
