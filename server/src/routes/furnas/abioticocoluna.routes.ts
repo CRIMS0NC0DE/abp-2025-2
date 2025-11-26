@@ -4,7 +4,7 @@ import {
 	getAll,
 	getById,
 	exportData,
-} from "../../controllers/furnas/abioticoColuna.controller";
+} from "../../controllers/furnas/abioticocoluna.controller";
 
 const router = Router();
 
