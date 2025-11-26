@@ -24,7 +24,7 @@ import { useTableData } from "../../hooks/useTableData";
 import type { FilterParams, ColumnInfo, ColumnType } from "../../types/types";
 
 // Imagem do Logo
-import logoSima from "../../assets/logoSima.png";
+import logoSima from "../../assets/LogoSIMA.png";
 
 // --- Tipos de Visualização ---
 // Adicionado 'graph' para suportar a nova visualização
