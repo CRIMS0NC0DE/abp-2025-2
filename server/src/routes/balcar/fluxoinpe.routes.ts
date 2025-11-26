@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAll, getById, exportData, getAnalytics } from "../../controllers/balcar/fluxoInpe.controller";
+import { getAll, getById, exportData, getAnalytics } from "../../controllers/balcar/fluxoinpe.controller";
 
 const router = Router();
 
