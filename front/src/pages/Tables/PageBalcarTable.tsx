@@ -20,7 +20,7 @@ import { useTableData } from "../../hooks/useTableData";
 import type { FilterParams, ColumnInfo, ColumnType } from "../../types/types";
 
 // Importação do Logo
-import logoBalcar from "../../assets/logoBalcar.png";
+import logoBalcar from "../../assets/LogoBalcar.png";
 
 // --- Tipos de Visualização ---
 // Adicionado 'graph'
