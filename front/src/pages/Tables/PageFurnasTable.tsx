@@ -16,7 +16,7 @@ import { ModalExport } from "../../components/Export/ModalExport";
 
 // Importando o Mapa e o Logo
 import FurnasMap from "../Map/FurnasMap";
-import logoFurnas from "../../assets/logoFurnas.png";
+import logoFurnas from "../../assets/LogoFurnas.png";
 
 // Importação do Gráfico (Novo)
 import GraficoFurnas from "../Grafico/GraficoFurnas";
