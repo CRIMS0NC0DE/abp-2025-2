@@ -1,11 +1,11 @@
 
 import express from "express";
-import fluxoInpe from "./fluxoInpe.routes";
+import fluxoInpe from "./fluxoinpe.routes";
 import campanha from "./campanha.routes";
 import instituicao from "./instituicao.routes";
 import sitio from "./sitio.routes";
 import reservatorio from "./reservatorio.routes";
-import tabelaCampo from "./tabelaCampo.routes";
+import tabelaCampo from "./tabelacampo.routes";
 
 const router = express.Router();
 
