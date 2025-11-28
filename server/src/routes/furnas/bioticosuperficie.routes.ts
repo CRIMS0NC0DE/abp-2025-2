@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAll, getById, exportData } from "../../controllers/furnas/bioticoSuperficie.controller";
+import { getAll, getById, exportData } from "../../controllers/furnas/bioticosuperficie.controller";
 
 const router = Router();
 
