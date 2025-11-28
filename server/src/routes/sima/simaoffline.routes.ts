@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {getAll, getById, exportData} from '../../controllers/sima/simaOffline.controller';
+import {getAll, getById, exportData} from '../../controllers/sima/simaoffline.controller';
 
 const router = Router();
 
