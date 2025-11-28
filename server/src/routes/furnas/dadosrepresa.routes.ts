@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {getAll, getById, exportData} from "../../controllers/furnas/dadosRepresa.controller";
+import {getAll, getById, exportData} from "../../controllers/furnas/dadosrepresa.controller";
 
 const router = Router();
 
