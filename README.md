@@ -202,6 +202,9 @@ Utilização do ambiente docker e tratamento de tasks.
 
 <h3>BURNDOWN 🔥</h3>
 
+<div>
+ <img src=front/src/assets/burndownSP3.png> 
+</div>
 
 ## TECNOLOGIAS UTILIZADAS
 
