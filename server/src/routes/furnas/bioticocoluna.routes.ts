@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAll, getById, exportData } from "../../controllers/furnas/bioticoColuna.controller";
+import { getAll, getById, exportData } from "../../controllers/furnas/bioticocoluna.controller";
 
 const router = Router();
 
