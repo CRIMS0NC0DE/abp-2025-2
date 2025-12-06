@@ -235,6 +235,6 @@ Utilização do ambiente docker e tratamento de tasks.
 | Bruno Mark        | Dev. Team     | [bruno-mark](https://github.com/bruno-mark)               |
 | Davi Snaider      | Dev. Team     | [davisnaider06](https://github.com/davisnaider06)         |
 | Henrique Pinho    | Dev. Team     | [rickshf](https://github.com/rickshf)                     |
-| Eric França       | Dev. Team     | [EricFranca96](https://github.com/EricFranca96)           |
+| Eric França       | Dev. Team     | [EricFranca96](https://github.com/EricFranca90)           |
  
 <br>
